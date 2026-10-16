@@ -1,0 +1,9 @@
+.DS_Store
+*.swp
+node_modules/
+.venv/
+__pycache__/
+scripts/snapshot-*.tsv
+scripts/quality-*.tsv
+scripts/.quality-cache/
+scripts/re_gh*
