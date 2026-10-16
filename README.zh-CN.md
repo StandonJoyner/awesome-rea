@@ -208,7 +208,7 @@ LibreDWG 是 GPL-3，与本应采用它的 LGPL 下游不兼容：一个技术�
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) - 覆盖 Windows / Linux / macOS 的逆向资源，以工具为主。★ 5,130。
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) - Android 逆向的训练、工具与资源。★ 2,739。
 - [morluto/awesome-reverse-engineering](https://github.com/morluto/awesome-reverse-engineering) - 面向二进制文件的逆向工具与学习资源；正是本清单刻意不做的那份工具清单。★ 598。
-- [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) - 自动刷新、带打分的反编译/重编译/逆向游戏清单：1,829 部作品共 2,118 个项目，每天从 `data/games.json` 重新生成。★ 975 · CC0 · 建库于 2026-10-09。它靠自动扩覆盖并给可玩性打分，本清单保留逐条主张的来源账本。
+- [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) - 自动刷新、带打分的反编译/重编译/逆向游戏清单：1,829 部作品共 2,118 个项目，每天从 `data/games.json` 重新生成。★ 975 · CC0 · 建库于 2026-10-09。它靠自动扩覆盖并给可玩性打分。
 
 ## 参与
 

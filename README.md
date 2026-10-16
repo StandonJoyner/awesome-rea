@@ -208,7 +208,7 @@ This list takes results only; these take tools or a wider net.
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) - Reverse-engineering resources across Windows, Linux and macOS, tool-heavy. ★ 5,130.
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) - Android RE training, tools and resources. ★ 2,739.
 - [morluto/awesome-reverse-engineering](https://github.com/morluto/awesome-reverse-engineering) - Curated RE tools and learning resources for binaries; the tool list this list deliberately is not. ★ 598.
-- [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) - Auto-refreshed, rated list of decompiled, recompiled and reverse-engineered games: 2,118 projects over 1,829 titles, regenerated daily from `data/games.json`. ★ 975 · CC0 · created 2026-10-09. It widens coverage automatically and scores playability; this list keeps a per-claim source ledger.
+- [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) - Auto-refreshed, rated list of decompiled, recompiled and reverse-engineered games: 2,118 projects over 1,829 titles, regenerated daily from `data/games.json`. ★ 975 · CC0 · created 2026-10-09. It widens coverage automatically and scores playability.
 
 ## Contributing
 
