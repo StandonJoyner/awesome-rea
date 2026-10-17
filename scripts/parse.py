@@ -216,7 +216,7 @@ def main():
     doc = {"schema": 1, "refreshed": refreshed, "title": blocks_en[0][1], "header": header,
            "sections": sections, "entries": entries,
            "counts": {"entries": len(entries), "sections": len(sections)}}
-    text = json.dumps(doc, ensure_ascii=False, indent=1)
+    text = json.dumps(doc, ensure_ascii=False, indent=2)
     if write_stdout:
         print(text)
     else:

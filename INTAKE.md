@@ -104,9 +104,9 @@ Precedents set while re-filing the list (follow them for new entries):
 
 ## The three stages and the three files
 
-Standardised 2026-10-17. **The scripts exist; the corpus was not built with them.** `parse.py` reads the two READMEs and the newest snapshot back into `entries.json` and `render.py` writes both READMEs from it; the migration test below passes, so the json holds every entry, token wording and paragraph the current files carry. `preflight.py` (stage 1), `quality.py` (stage 2), `merge.py` and `decide.py` (stage 3 and the ledger) are written and each has been run against live data — but `entries.json` came from the hand-written READMEs, not from a merge. **A merge has only ever been exercised against a copy of the corpus**, so nothing in stage 3 has rewritten a committed file yet, and `--out` and `--decisions` exist for that reason.
+Standardised 2026-10-17. **The corpus is now built with them.** `parse.py` read the two READMEs and the newest snapshot back into `entries.json`, the migration test below passed, and two merges have since been written through stage 3 and committed (`88a4d6e`: eleven entries, then three): the json holds every entry, token wording and paragraph the files carry, and **the READMEs are output only**. `--out` and `--decisions` still exist for a run against a copy of the corpus, which is how a batch is exercised before it touches the committed file.
 
-So, while `entries.json` stays uncommitted, the two READMEs may still be edited by hand and `verify.py refresh --apply` is still what rewrites their numbers, with `parse.py` bringing the json up to date and `render.py --check` proving the two did not drift. Committing the json — which is also what puts that check in CI, since the gate needs the corpus file — ends it: before, a contributor edits the READMEs and the pipeline keeps them honest; after, a contributor edits the json and the READMEs are output only.
+So `verify.py refresh --apply` is no longer the way numbers reach the product — it patches README tokens that `render.py` would overwrite on the next render; it stays the measurement step that writes the snapshot `merge.py` copies from. Committing `entries.json` also put `render.py --check` in reach of CI, since that gate needs the corpus file. One trap in the commands below: `--coverage` is the gate, not the merge — `merge.py pending.json` writes the corpus, `merge.py --coverage` only checks it, and `render.py` then writes both READMEs.
 
 | Stage | Input | Output | Committed |
 | --- | --- | --- | --- |
@@ -122,11 +122,19 @@ One intake pass is five steps, in this order, and nothing else:
 
 ```console
 $ python3 scripts/preflight.py --repos /path/to/batch.txt      # 1  measure + pre-screen: one request per slug
-$ python3 scripts/quality.py read --repos /path/to/batch.txt   # 2  the evidence pack: 0 requests if already cached
+$ python3 scripts/quality.py read --repos /path/to/batch.txt   # 2  the whole pack: sentences untruncated, 0 requests if cached
 $ …the A1–A3 read, from the pack alone…                        # 3  the only step that is a judgement, not plumbing
 $ python3 scripts/decide.py … · write pending-<date>.json      # 4  every row read gets a disposition, either way
-$ python3 scripts/merge.py pending-<date>.json --coverage      # 5  merge, hold the pass to the gate, then render
+$ python3 scripts/merge.py pending-<date>.json                 # 5a merge into entries.json
+$ python3 scripts/render.py                                    # 5b regenerate BOTH READMEs from the corpus
+$ python3 scripts/merge.py --coverage                          # 5c the gate: no read left without a disposition
 ```
+
+Step 5 is three commands because none of them implies the next: the merge does not render, and the coverage
+gate does not merge. **A pass that stops after 5a has changed the committed corpus and left the product
+unchanged** — the two READMEs move only when `render.py` writes them, never by hand. `merge.py` prints this
+chain after a successful write (`next: render.py && render.py --check && check-i18n.py && merge.py --coverage`);
+follow it rather than remembering it.
 
 Measured over the first full pass (18 rows, 2026-10-17): 2 were settled by `precheck` without any read, 5 ended
 as ledger lines, and the queue came down to **11 judgement reads**. Everything spent beyond those is in the list
@@ -149,10 +157,21 @@ below, so it is now forbidden rather than merely discouraged:
   `data/measurement/read-<date>.tsv` (which `quality.py read` appends to) has no disposition in the corpus, in
   the pending file, or in `decisions.jsonl`. Eleven of the first pass's 18 rows existed only as a table in a chat
   message — the exact failure the gate exists to catch.
-- **Do not make the editorial calls.** A new `###` platform level, and any borderline class decision (is a format
-  library whose README says "tools for modding" a result?), are the owner's. `merge.py` already refuses a heading
-  that does not exist in both READMEs; the correct output is `decide.py defer --blocked-on filing` plus the
-  question, not a heading invented in a PR.
+- **Do not read the cached README by hand.** No `cat` of `data/cache/quality/*.json`, no throwaway script to
+  pull a line out of it. The pass that followed the ban below's first run spent **six python calls on three
+  candidates**: stage 1 (1), the pack (1), two failed invocations of my own making, and three inline scripts
+  reading the cache — because the pack truncated each sentence at 180 characters and could not see that a
+  README paragraph wraps over three lines, so the verbatim `a2_quote` it was supposed to supply was not
+  really on the screen. `quality.py read` now caches the README as paragraph blocks (`readme_blocks`, fenced
+  code dropped) and prints whole sentences with the `a2_read_at` string to paste beside them, plus a `facts`
+  block of the format/boundary/unfinished sentences `desc`, `note` and `assets` are written from. A cache
+  written before that field costs one re-read, and the pack says so. If a sentence is still missing from the
+  screen, **the fix is the pack, not a fourth script.**
+- **Do not make the editorial calls.** A new `###` platform level, and any borderline class decision (is a
+  format library whose README says "tools for modding" a result?), are the owner's — until they say 你来定,
+  which transfers exactly the calls it names, for that batch, and no others. `merge.py` already refuses a
+  heading that does not exist in both READMEs; the correct output is `decide.py defer --blocked-on filing`
+  plus the question, not a heading invented in a PR.
 
 Rules stated elsewhere stay in force and are not repeated here: no hand-edited README, no invented or edited
 number, no guessed slug, no quote rewritten from memory — see `## Entry mechanics`, `### The commands` below and
@@ -177,11 +196,16 @@ license  archived  upstream_type  precheck  blocked_on  verdict  e  flags  quote
 - The three class words this column was drafted with — `vendor-source`, `tool-or-list`, `mod-or-hack` — were **measured out of the script on 2026-10-17** and are stage-2 human verdicts recorded in `blocked_on` and in the `decisions.jsonl` line. Screening a README for those words false-flagged **33 of the 136** entered repositories over the first 120 lines, and **1 of 136** narrowed to the description plus 8 lines anchored on a copula; against the 32 upstream refusal rows that band had, the same screen caught **4** — vendor-source 1/16 (`arx/ArxLibertatis` alone), tool-or-list 0/3, mod-or-hack 3/13. Filtering therefore runs **negatively**: positive method vocabulary is a weak and adversely correlated filter (over the 2,118-row pool it kept 57% overall and 44% of the ★≥1,000 band — the stricter the word list, the more real results it dropped).
 - `next` is one verb phrase — `read its README for the method claim` for a `pass` row, plus the two settled strings above — required whenever `quote` is empty and `blocked_on=A2`, and written by stage 1 for every row, so a queue is never a list of rows without an instruction.
 
-### `data/entries.json` (the corpus — to be committed with the pipeline)
+### `data/entries.json` (the corpus — committed, and written only by the pipeline)
 
 One object per entry, plus `header`, `sections` and `notes` for the prose the READMEs carry — measured at
 8,533 of 41,023 characters in `README.md`, which is why prose is in the schema: json that held only bullets
 would render a list that reads as machine output.
+
+`merge.py` and `parse.py` both write it with `json.dumps(..., ensure_ascii=False, indent=2)`, and that is the
+form committed here. It matters only for review: a writer at any other indent reflows all 7,000 lines, turning
+a three-entry merge into a 13,883-line diff in which no reviewer can find the three entries. If a merge ever
+shows a whole-file diff, the indent is the first thing to check, not the merge.
 
 | Field | Written by | Printed | Notes |
 | --- | --- | --- | --- |

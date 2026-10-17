@@ -290,7 +290,7 @@ def main():
                                            e["measured"]["stars"]), e)
     out = Path(a.out) if a.out else Path(a.corpus)
     tmp = out.with_suffix(out.suffix + ".tmp")
-    tmp.write_text(json.dumps(corpus, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    tmp.write_text(json.dumps(corpus, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     tmp.replace(out)
 
     log = Path(a.decisions)

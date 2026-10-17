@@ -11,16 +11,22 @@
   read --repo owner/repo    — stage 2's evidence pack: one screen per candidate, from the cache
   read --repos FILE         — the same for a batch of rows about to be read
   read ... --has FILE       — intersect the cached tree with a list of filenames you supply
+  read ... --out FILE       — also write the pack to FILE (it still prints)
   read ... --refresh        — re-read from the API instead of the cache, and say so
 
-`read` is what a stage-2 pass starts and ends with. It prints the measured row, the precheck, a tree
-summary, the external links that betray a pointer repository, and every method-shaped sentence in the
-README with the line it sits on — then it records the slug in `data/measurement/read-<date>.tsv`, which
-is what `merge.py --coverage` holds the pass to: after a `read`, a slug owes either a pending object or a
-`decisions.jsonl` line. It prints **no verdict and no prose**: the sentences are a locator, not a filter
-(`INTAKE.md`: a word screen over the first 120 lines false-flagged 33 of the 136 entered slugs), so which
-sentence the entry quotes, and whether the tree holds the reconstruction, stay the reader's. Nothing in
-the pack may be paraphrased into an entry without re-reading the line it came from.
+`read` is what a stage-2 pass starts and ends with, and it is meant to be **the only thing it does**: one
+call per batch prints the measured row, the precheck, a tree summary, the external links that betray a
+pointer repository, every method-shaped sentence in its entirety (wrap joined, markup stripped) with the
+`a2_read_at` locator to paste beside it, and the `facts` block of format/boundary/unfinished-state
+sentences that `desc`, `note` and `assets` are written from. It then records the slug in
+`data/measurement/read-<date>.tsv`, which is what `merge.py --coverage` holds the pass to: after a `read`,
+a slug owes either a pending object or a `decisions.jsonl` line. Reading `data/cache/quality/*.json` by
+hand, or writing a throwaway script to pull a README line out of it, is the work this screen exists to
+remove (`INTAKE.md`, `## The three stages and the three files`). It prints **no verdict and no prose**: the
+sentences are a locator, not a filter (`INTAKE.md`: a word screen over the first 120 lines false-flagged 33
+of the 136 entered slugs), so which sentence the entry quotes, and whether the tree holds the
+reconstruction, stay the reader's. Nothing in the pack may be paraphrased into an entry without re-reading
+the line it came from.
 
 Per repository `check` costs three requests: `GET /repos/{owner}/{repo}`, the README, and the
 recursive git tree. Responses are cached under data/cache/quality so a re-run is free; --refresh re-reads.
@@ -165,6 +171,7 @@ def fetch(repo, refresh=False):
            "readme_len": len(readme), "names": names, "tree_status": status,
            "tree_truncated": bool(tree.get("truncated")), "langs": langs,
            "readme_head": [line for line in readme.splitlines() if line.strip()][:400],
+           "readme_blocks": readme_blocks(readme),
            "fetched": datetime.date.today().isoformat()}
     if not rec["tree_truncated"] and len(names) < 5000:
         rec["readme_snips"] = ""  # quotes come from readme_head, kept small on purpose
@@ -298,7 +305,6 @@ SHAPE = (
 COPULA = re.compile(r"\b(?:is|are|was|were)\b|[是为]|は|です")
 DATA_DIR = re.compile(r"asset|resource|content|data|texture|audio|model|font|art|original|baserom|rom",
                       re.I)
-NOISE_LINE = re.compile(r"^(?:\||[<#!]|\[!\[|-{3,}|>|\d+\.)")
 ASSET_EXT = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tga", ".wav", ".ogg", ".mp3", ".mp4", ".arc",
              ".dat", ".bin", ".pak", ".mpq", ".grp", ".idx", ".nam", ".rom", ".z64", ".n64", ".gba",
              ".nds", ".iso", ".ttf", ".otf", ".xa", ".str", ".usm", ".umap", ".uasset"}
@@ -309,29 +315,114 @@ def shapes(line):
     return "+".join(label for label, rx in SHAPE if rx.search(line))
 
 
+def plain(s):
+    """README markup off, whitespace folded — the text an entry quotes, not the HTML it sits in."""
+    s = re.sub(r"<[^>]+>", " ", s)
+    s = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", s)
+    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)
+    s = re.sub(r"\*\*(.+?)\*\*", r"\1", s)
+    s = re.sub(r"__(.+?)__", r"\1", s)
+    return re.sub(r"`([^`]*)`", r"\1", re.sub(r"\s+", " ", s)).strip()
+
+
+def readme_blocks(text, cap=400):
+    """The README as quotable blocks — (first line, joined text) — with code fences dropped.
+
+    `readme_head` cannot answer "which sentence is this line part of", because the blank lines that ended
+    the paragraphs are gone by the time it is built. The boundary is recorded here, at fetch time, so a
+    stage-2 quote is a whole sentence rather than a wrapped fragment.
+    """
+    out, cur, start, fence = [], [], 0, False
+    for n, raw in enumerate(text.splitlines(), 1):
+        s = raw.strip()
+        if s.startswith("```"):
+            fence = not fence
+            s = ""
+        if fence or not s:
+            if cur:
+                out.append((start, plain(" ".join(cur))))
+                cur, start = [], 0
+            continue
+        start = start or n
+        cur.append(s)
+    if cur:
+        out.append((start, plain(" ".join(cur))))
+    return [(i, t) for i, t in out if len(t) >= 25][:cap]
+
+
+SENT = re.compile(r"(?<=[.!?])\s+")
+
+
+def quote_of(text, rxs=None):
+    """The one sentence in a block that carries the claim — a whole feature paragraph is not a quote.
+
+    Chosen by how many of the given patterns it names, then by brevity, so what lands in
+    `admission.a2_quote` is a sentence a later reader can find again in one look. A colon is not a sentence
+    end: splitting on it produced fragments like "XLSX is the native format:".
+    """
+    parts = [s.strip() for s in SENT.split(text) if s.strip()]
+    rxs = [rx for _, rx in SHAPE] if rxs is None else rxs
+    hits = [(sum(1 for rx in rxs if rx.search(s)), len(s), s) for s in parts
+            if len(s) >= 40 and any(rx.search(s) for rx in rxs)]
+    return max(hits, key=lambda h: (h[0], -h[1]))[2] if hits else ""
+
+
 def method_lines(rec, cap=12):
-    """Every method-shaped sentence in the cached README, with the line it sits on.
+    """Every method-shaped sentence the cached README publishes, whole, with the line it starts on.
 
     A locator, not a filter: `INTAKE.md` measured that the same vocabulary false-flagged 33 of the 136
-    entered slugs, so the pack ranks lines and never decides between them. Ranked by how many of the four
-    method shapes a line names, then by whether it reads as a sentence (a copula), then by document
-    order; table rows, badges, captions and release links are skipped as not sentences at all.
+    entered slugs, so the pack ranks sentences and never decides between them. Ranked by how many of the
+    four method shapes a sentence names, then by whether it reads as a sentence (a copula), then by
+    document order.
     """
-    from collections import Counter
     hits = []
-    for i, raw in enumerate(rec.get("readme_head") or [], 1):
-        s = re.sub(r"!\[[^\]]*\]\([^)]*\)|<img[^>]*>|\[[^\]]*\]\([^)]*\)", " ", raw.strip())
-        if NOISE_LINE.match(raw.strip()) or len(s) < 20 or "releases" in s.lower()[:40]:
+    for i, text in rec.get("readme_blocks") or []:
+        if "releases" in text.lower()[:40] or text.startswith("|"):
             continue
-        sh = shapes(s)
+        sh = shapes(text)
         if sh:
-            hits.append((-len(sh.split("+")), 0 if COPULA.search(s) else 1, i, sh,
-                         re.sub(r"\s+", " ", raw.strip())[:300]))
+            q = quote_of(text) or (text if len(text) >= 40 else "")
+            if q:
+                hits.append((-len(shapes(q).split("+")), 0 if COPULA.search(q) else 1, i,
+                             shapes(q), q))
     desc = (rec["meta"].get("description") or "").strip()
     if desc and shapes(desc):
         hits.append((-len(shapes(desc).split("+")), 0, 0, shapes(desc), desc))
     hits.sort()
     return [(i, sh, s) for _, _, i, sh, s in hits][:cap]
+
+
+RE_CAP = re.compile(r"\.[a-z0-9]{2,5}\b|import|export|convert|your own|bring your|ships no|"
+                    r"pre-?alpha|\bbeta\b|early development|not yet|still missing|incomplete|\bwip\b|"
+                    r"trademark|not affiliated", re.I)
+NOT_A_FORMAT = (r"(?:md|log|txt|dll|so|dylib|png|jpg|jpeg|svg|gif|html|json|yml|yaml|sh|py|rs|js|ts|css"
+                r"|xml|com|org|net|io|dev|gg|app|xyz|pdf|zip|tar|gz|exe|ini|toml|lock)\b")
+RE_EXT = re.compile(rf"\.(?!{NOT_A_FORMAT})[a-z0-9]{{2,5}}\b", re.I)
+RE_BOUND_PHRASE = re.compile(r"your own|bring your|ships no|not included|requires? the original", re.I)
+RE_STATUS = re.compile(r"pre-?alpha|\bbeta\b|early development|not yet|still missing|incomplete|\bwip\b|"
+                       r"active research|decompilation progress", re.I)
+
+
+def capability_lines(rec, cap=12):
+    """The README's own sentences about formats, the asset boundary and unfinished state.
+
+    These are what `desc`, `note` and `assets` get written from, so the pack prints them whole: without
+    this half of the screen a stage-2 pass had to open `data/cache/quality/*.json` itself, the hand work
+    `INTAKE.md` now forbids. Only a named data format, a boundary sentence or an admitted gap qualifies —
+    a dotted domain in a nav line is not a fact about the reconstruction.
+    """
+    hits = []
+    for i, text in rec.get("readme_blocks") or []:
+        if text.startswith("|"):
+            continue
+        q = quote_of(text, [RE_CAP])
+        if not q or q[-1] not in ".!?":
+            continue          # nav and link lines are not sentences about the reconstruction
+        score = (3 if RE_EXT.search(q) else 0) + (2 if RE_BOUND_PHRASE.search(q) else 0) + \
+            (1 if RE_STATUS.search(q) else 0)
+        hits.append((-score, i, q))
+    hits.sort()
+    return [(i, s) for _, i, s in hits[:cap]]
 
 
 def tree_pack(rec):
@@ -369,6 +460,24 @@ def intersect_has(rec, path):
     return want, [have[w] for w in want if w in have]
 
 
+class _Tee:
+    """Write the pack to a file and keep printing it, so one `read` run is both a screen and an artefact."""
+
+    def __init__(self, stdout, fh):
+        self.stdout, self.fh = stdout, fh
+
+    def write(self, s):
+        self.stdout.write(s)
+        self.fh.write(s)
+
+    def flush(self):
+        self.stdout.flush()
+        self.fh.flush()
+
+    def close(self):
+        self.fh.close()
+
+
 def record_read(repo, via):
     """The one trace a stage-2 pass must leave: `merge.py --coverage` holds it to pending or ledger."""
     MEAS.mkdir(parents=True, exist_ok=True)
@@ -385,6 +494,10 @@ def pack(repo, refresh=False, has=""):
     cached = cache_path(repo).exists() and not refresh
     rec = fetch(repo, refresh)
     via = "cache" if cached else ("network" if rec else "404")
+    if rec and cached and "readme_blocks" not in rec:
+        # a cache written before quotes were sentence-shaped cannot answer which sentence a line is in
+        rec = fetch(repo, True)
+        via = "cache, re-read once for quotable blocks"
     print(f"\n== {repo}   [{via}, cached fetch: {rec.get('fetched', '-') if rec else '-'}]")
     if not rec:
         print("   meta: 404 — `AGENTS.md` `## Removal` reason `gone` if this slug is entered, "
@@ -419,11 +532,26 @@ def pack(repo, refresh=False, has=""):
         want, found = intersect_has(rec, has)
         print(f"   --has    {len(found)}/{len(want)} of your names are in the tree: {' '.join(found[:8])}"
               + (" — none: no vendor-source filenames present" if not found else ""))
-    lines = method_lines(rec)
-    print(f"   A2       {len(lines)} method-shaped line(s) — a locator, not a filter. Quote one verbatim "
-          f"into admission.a2_quote, with the line it came from, or write no line")
-    for i, sh, s in lines:
-        print(f"     {('description' if i == 0 else f'head#{i}'):<12}{sh:<8}{s[:180]}")
+    hits = method_lines(rec)
+    print(f"   A2       {len(hits)} method-shaped sentence(s) — whole, markup stripped, ready to paste "
+          f"into admission.a2_quote with the locator below it, or write no line")
+    shown = set()
+    for i, sh, s in hits:
+        if s in shown:
+            continue
+        shown.add(s)
+        print(f"     {('description' if i == 0 else f'head#{i}'):<12}{sh:<8}{s}")
+        if i:
+            print(f"     {'':<12}{'':<8}a2_read_at → \"README.md head#{i}, {rec.get('fetched', '-')}\"")
+    caps = capability_lines(rec)
+    print(f"   facts    {len(caps)} sentence(s) on formats, the asset boundary and unfinished state — "
+          f"what desc, note and assets are written from")
+    seen_cap = set()
+    for i, s in caps:
+        if s in seen_cap:
+            continue
+        seen_cap.add(s)
+        print(f"     head#{i:<11}{s}")
     print("   decide   A1 who shipped it and did the rights holder release its source — the pack shows "
           "the licence field, not that. A2 which sentence above the entry quotes, and where it was read. "
           "A3 whether these paths are the reconstructed code, a mod loader, or a pointer.")
@@ -522,7 +650,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--refresh", action="store_true", help="ignore the cache")
     ap.add_argument("--has", default="", help="read: file of filenames to look for in the cached tree")
-    ap.add_argument("--out", default="", help="TSV to write")
+    ap.add_argument("--out", default="", help="check: TSV to write · read: also write the pack text here")
     ap.add_argument("--workers", type=int, default=4 if TOKEN else 1)
     a = ap.parse_args()
 
@@ -535,8 +663,20 @@ def main():
                      "not a sweep")
         print(f"evidence pack for {len(repos)} candidate(s); "
               f"{sum(1 for r in repos if cache_path(r).exists())} already cached")
-        for r in repos:
-            pack(r, a.refresh, a.has)
+        sink = sys.stdout
+        tee = None
+        if a.out:  # the pack is one screen per candidate; --out keeps it for the pending file's author
+            Path(a.out).parent.mkdir(parents=True, exist_ok=True)
+            tee = _Tee(sink, open(a.out, "w", encoding="utf-8"))
+            sys.stdout = tee
+        try:
+            for r in repos:
+                pack(r, a.refresh, a.has)
+        finally:
+            sys.stdout = sink
+            if tee:
+                tee.close()
+                print(f"pack written to {a.out}", file=sink)
         sys.exit(0)
 
     if a.aggregate:
