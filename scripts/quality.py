@@ -18,8 +18,10 @@ Four evidence classes, each either present in the repository or not:
   E3 repro      a build system or CI, so the reader can reproduce it
   E4 boundary   an explicit "ships no game files, bring your own copy"
 
-verdict: exclude (no source code, no README, archived) / eligible (E1 or E2) /
+verdict: exclude (no source code, no README) / eligible (E1 or E2) /
 conditional (E3 or E4 only) / watch (nothing checkable published).
+`archived` is a flag, not a verdict: an author who marks a finished reconstruction read-only
+has stated completion, not disqualification. A takedown does not set it — it returns 404.
 The `e` column writes `E1x` when that class is present and `E1-` when it is absent.
 GITHUB_TOKEN (or GH_TOKEN) enables parallel requests; anonymous runs serialise and sleep.
 """
@@ -190,7 +192,7 @@ def analyse(repo, refresh=False):
        not (m.get("subscribers_count") or 0):
         flags.append("nostars")
     ev = sum(bool(x) for x in (e1, e2, e3, e4))
-    if "shell" in flags or "noreadme" in flags or "archived" in flags:
+    if "shell" in flags or "noreadme" in flags:
         verdict = "exclude"
     elif e1 or e2:
         verdict = "eligible"
