@@ -36,7 +36,7 @@ DMCA_URL = "https://github.com/github/dmca"
 ENTRY = re.compile(r"^- \[[^\]]+\]\(https://github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)\) - (.*)$")
 LIC = re.compile(r"\b(AGPL-3\.0|GPL-3\.0|GPL-2\.0|LGPL-2\.1|LGPL-3\.0|Apache-2\.0|CC0-1\.0|"
                  r"BSD-\d-Clause|MPL-2\.0|MIT|ISC|Zlib)\b|\bno licen[cs]e declared\b", re.I)
-HEDGE = re.compile(r"-style|with additional terms|if declared|licence unknown|no licence", re.I)
+HEDGE = re.compile(r"-style|with additional terms|if declared|licence unknown|no licence|NOASSERTION", re.I)
 TOKEN = re.compile(r"[a-z0-9][a-z0-9_.-]*")
 NEED_ORDER = {"fix": 0, "read": 1, "none": 2}
 

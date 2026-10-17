@@ -6,7 +6,7 @@ whether an entry is still true, never whether a new project should be added.
 
 `scripts/recheck.py` is the whole mechanism. It reads `README.md` for the entry bullets and
 the newest `scripts/snapshot-<date>.tsv` for the measured numbers, so a pass costs
-**zero API requests** when the snapshot is fresh — measured 2026-10-17: 130 checked
+**zero API requests** when the snapshot is fresh — measured 2026-10-17: 131 checked
 repositories in 2.0 s. It refuses to run against a snapshot older than `--max-age` days
 (31 by default) rather than conclude from stale numbers, which is the mistake that produced
 five phantom rows in the first prototype (the snapshot still carried the four trainer
@@ -21,7 +21,7 @@ into `detail`:
 | --- | --- | --- | --- |
 | `gone` | the linked repository answers 404 | `fix` | one request to confirm, then the line goes or the URL is corrected |
 | `stale` | ★ ≥ `--floor` (1000) and no push for `--quiet` (365) days | `read` | nothing beyond a decision: dormancy alone never removes an entry |
-| `lic` | our entry line states a bare licence name the API's `license.spdx_id` does not confirm | `read` | re-read `LICENSE` once; a hedged line (`-style`, `with additional terms`, `if declared`) is not flagged |
+| `lic` | our entry line states a bare licence name the API's `license.spdx_id` does not confirm | `read` | re-read `LICENSE` once; a line that already hedges (`-style`, `with additional terms`, `if declared`, or one that names `NOASSERTION` itself) is not flagged |
 | `dmca` | a notice in `github/dmca` contains both the owner and the repository token | `read` | read that one notice file |
 
 Anything not in this table is out of scope by decision, not by oversight:
@@ -32,12 +32,12 @@ Anything not in this table is out of scope by decision, not by oversight:
   inside somebody else's repository really is the rights holder's build is something we
   cannot determine from the outside, so we do not write a test that we cannot run.
 - `archived` is recorded in the snapshot but triggers nothing. It is an owner's read-only
-  switch, and measured 2026-10-17 it is `false` for **all 130** linked repositories; treating
+  switch, and measured 2026-10-17 it is `false` for **all 131** linked repositories; treating
   it as a signal would mean guessing at intent.
 - The four `Related lists` repositories are skipped (`alphaSeclab/awesome-reverse-engineering`,
   `user1342/Awesome-Android-Reverse-Engineering`, `morluto/awesome-reverse-engineering`,
   `SubmitGame/awesome-decomp-games`): they are boundary lists we point at, not reconstructions,
-  so their push age makes no claim about a result. That is why the pass counts **130** of the 134
+  so their push age makes no claim about a result. That is why the pass counts **131** of the 135
   linked repositories.
 
 ## Output format
@@ -87,7 +87,7 @@ against the real corpus:
   that were removed, not the canonical URL. Recall near zero, so useless.
 - repository name alone: catastrophic. Our short names are English fragments — `tp` hit
   374,218 times, `key` 1,822, `mm` 204.
-- **repository name and owner token in the same file** — the rule shipped. Over 130 entries it
+- **repository name and owner token in the same file** — the rule shipped. Over 131 entries it
   returns 3 rows in 2 s, and each is annotated `[weak: no github.com/owner/repo]` when the
   notice does not name our exact URL, which tells the reader how attributable the match is
   before they open anything.
@@ -118,7 +118,7 @@ cost a few hundred tokens of context, not a sweep.
 
 ## What the first pass found, 2026-10-17
 
-130 repositories, 16 rows with `need != none`: 11 `stale`, 2 `lic`, 3 `dmca`. The `stale` set
+131 repositories, 16 rows with `need != none`: 11 `stale`, 2 `lic`, 3 `dmca`. The `stale` set
 is the expected one — `diasurgical/devilution`, `n64decomp/sm64`, `k4zmu2a/SpaceCadetPinball`,
 `wheybags/freeablo`, `in0finite/SanAndreasUnity`, `sm64pc/sm64ex`, `alexbatalov/fallout1-ce`
 and `-ce`, `yvt/openspades`, `sgan81/apfs-fuse`, `collinsmith/riiablo` — and none of them is a
@@ -137,7 +137,8 @@ not *delete*:
   `KOYK/OpenRA-Tiberian-Dawn-Apolyton`.
 
 The two real ones are legal-record material and are written up in `AGENTS.md`
-`## Takedown and legal record`. The `lic` rows (`snesrev/zelda3`, `LoreanXavier/pt-pc`) are the
+`## Takedown and legal record`; whether either is a reason to **remove** an entry is decided by
+the four reasons in `AGENTS.md` `## Removal`, not here. The `lic` rows (`snesrev/zelda3`, `LoreanXavier/pt-pc`) are the
 cases the hedge rule keeps: both lines say plain `MIT` while GitHub's classifier reports
 `NOASSERTION`, so the licence file exists but is not a stock text — worth one clause in the
 line, not an argument.
