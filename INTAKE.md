@@ -94,10 +94,10 @@ Precedents set while re-filing the list (follow them for new entries):
 - **No hard-wrapping**: one paragraph per line, entry bullets included.
 - Every URL appears **exactly once** in each README — `awesome-lint` fails on a duplicate. Where a project matters to two sections, link it in its type section and write its name as plain text (`owner/repo`) in the other; `Related lists` is plain text for that reason. That is also why the GitHub REST endpoint appears in the data-provenance line as code, not as a link.
 - Keep tables narrow enough that a wide cell is not needed: a row carrying twenty names belongs in prose, and since 2026-10-16 nothing in the README is that shape.
-- Entries within a section are listed **largest-first by stars as a courtesy**, not as a claim: `--apply` rewrites numbers without reordering lines, so the order goes stale by design. Never cite the ordering as data.
+- Entries within a section are listed **largest-first by stars as a courtesy**, not as a claim: a number refresh rewrites the numbers and never the line order, so the order goes stale by design. Never cite the ordering as data.
 - This is the shape the README *shows*. From the first render of `entries.json` (`## The three stages and the three files` below) it is output: the bullets are generated, and a contributor edits the json and the sentence inside it, not the rendered line.
 - `## Contents` must be the first section and must not list `Contributing`, `Footnotes`, or a licence; no `## Licence` section and no CI badge; no logo requirement unmet if you add one. Nested `###` platform levels are listed in `Contents` as sub-items.
-- Do not write a measurement date that `--apply` cannot patch ("re-read from the API on 2026-10-16", "measured 2026-10-16"). The refreshed-date line is the only snapshot date in the README; a `created <date>` is a historical fact and is allowed.
+- Do not write a measurement date into a rendered line: the refreshed-date line comes from `entries.json`'s `refreshed`, so anything hand-written there ("re-read from the API on 2026-10-16", "measured 2026-10-16") is overwritten by the next render. It is the only snapshot date in the README; a `created <date>` is a historical fact and is allowed.
 - Write for a reader who is scanning a list, not for a reader of our essay: no rhetorical framings like "the class most useful to 'get my old game running here'", no "cautionary tale" / "the most instructive entry" verdicts, and no bold one-line moral at the end of a paragraph. State what the project does, what was reconstructed, and what the numbers are; leave the judgement implicit in the entry list.
 - Fidelity distinctions that only our filing procedure cares about (byte-matching vs reassembles-to-ROM, for instance) stay in the entry line as two words, never in a paragraph explaining the ladder.
 - The colliding name stays recorded here only: `kaixinbaba/awesome-rea` exists at 5★ and presents OpenMW / ScummVM / OpenRA / Ruffle as "rea" results, which they are not — those are decades-old projects with no agent in their history, and this list's naming paragraph is what makes that distinction. The entry was deleted from Related lists on 2026-10-16: a same-name list we rate badly is not a resource a reader needs. Recognisability beat uniqueness, and this bullet is where the collision is documented.
@@ -106,7 +106,7 @@ Precedents set while re-filing the list (follow them for new entries):
 
 Standardised 2026-10-17. **The corpus is now built with them.** `parse.py` read the two READMEs and the newest snapshot back into `entries.json`, the migration test below passed, and two merges have since been written through stage 3 and committed (`88a4d6e`: eleven entries, then three): the json holds every entry, token wording and paragraph the files carry, and **the READMEs are output only**. `--out` and `--decisions` still exist for a run against a copy of the corpus, which is how a batch is exercised before it touches the committed file.
 
-So `verify.py refresh --apply` is no longer the way numbers reach the product — it patches README tokens that `render.py` would overwrite on the next render; it stays the measurement step that writes the snapshot `merge.py` copies from. Committing `entries.json` also put `render.py --check` in reach of CI, since that gate needs the corpus file. One trap in the commands below: `--coverage` is the gate, not the merge — `merge.py pending.json` writes the corpus, `merge.py --coverage` only checks it, and `render.py` then writes both READMEs.
+So `verify.py refresh --apply` is the measurement step and nothing more: it writes the snapshot `merge.py` copies from, then puts this run's numbers into `entries.json`'s `measured` and its date into `refreshed`. **It does not touch either README, and neither may a hand** — `render.py` writes them from the corpus, which is why `render.py --check` is a CI gate now (`lint.yml`, and in the refresh job before that PR opens). One trap in the commands below: `--coverage` is the gate, not the merge — `merge.py pending.json` writes the corpus, `merge.py --coverage` only checks it, and `render.py` then writes both READMEs.
 
 | Stage | Input | Output | Committed |
 | --- | --- | --- | --- |
@@ -213,7 +213,7 @@ shows a whole-file diff, the indent is the first thing to check, not the merge.
 | `section`, `platform` | stage 2 | no | the filing result from `## Filing axis`; `platform` only inside `Games` |
 | `desc` `{en, zh}` | stage 2 | yes | the sentence between ` - ` and `★`, verbatim, including a `created <date>` |
 | `tokens` | stage 2 builds it, stage 3 fills it | yes | the number tail, as an ordered list — see below |
-| `note` `{en, zh}` | stage 2 | yes | the closing sentence after the last token; 11 entries have one, and `--apply` has never rewritten it |
+| `note` `{en, zh}` | stage 2 | yes | the closing sentence after the last token; 11 entries have one, and a number refresh rewrites the tokens beside it, never this |
 | `measured` | `verify.py refresh` writes it, `merge.py` copies it | via `tokens` | `stars` `forks` `pushed` `archived` `license_spdx` `snapshot` — copied from `GET /repos/{owner}/{repo}` output and nothing else; see the number path under `### The commands` |
 | `method` | stage 2 | no | `M1`–`M4` |
 | `admission` | stage 2 | no | `a1` (the provenance sentence read), `a2_quote`, `a2_read_at`, `a3` |
@@ -225,8 +225,8 @@ bullets that print a ★ (2026-10-17, after the first real merge), the tail is *
 and every line so far is `stars` → `forks` → `pushed` with at most one literal inserted: 39 print only
 `★`, 96 print forks, 107 print a date, 10 print two dates, and 25 tokens are literals — 22 `created <date>`
 and 3 licence words (`d2r-mobile`, `Sengoku-Rance-Deck-Fix`, `SubmitGame/awesome-decomp-games`). A created
-date is a literal rather than a filled field because it is a historical fact: `--apply` rewrites `pushed`,
-never `created`.
+date is a literal rather than a filled field because it is a historical fact: a refresh rewrites
+`pushed`, never `created`.
 
 ```jsonc
 "tokens": [ {"t":"stars","field":"stars","en":"★ {stars}","zh":"★ {stars}"},
@@ -254,7 +254,7 @@ rejected row would silently disappear from the PR.
 A **`note`** (`{en, zh}`, after the last token, outside the bracket) is a closing sentence — 13 of the 146
 have one, in each language on the same slugs (`Its README declares LLM-assisted coding.`, `A post claims a
 Steam build runs; the repository does not say so.`, and eleven others). It is separate from the tokens
-because `--apply` never rewrites it. Numbers agree across the two files today — 0 divergences measured
+because a refresh leaves it alone. Numbers agree across the two files today — 0 divergences measured
 over 146 slugs — which the merge then guarantees instead of leaving to a reader's eye.
 
 ### `data/decisions.jsonl` (append-only)
@@ -316,7 +316,7 @@ which one, and invents nothing. Nothing else may fill `measured`.
 
 ### What the renderer must not do
 
-- Invent or add a number: a token absent from `measured` renders nothing, matching the rule that `--apply` never adds a missing `★`.
+- Invent or add a number: a token absent from `measured` renders nothing, and a slug the refresh did not measure keeps its last-known numbers rather than gaining a `★`.
 - Reorder in a way the reader can take as data (order is a courtesy — `## Entry mechanics`).
 - Emit a URL twice in one file, or write a heading in one language and not the other. `Contents` is generated from `sections`, including the `###` platform levels.
 - Rewrite prose as a side effect of a number refresh: `header`, `sections[].intro` and `notes` are inputs to a render, never outputs.

@@ -63,7 +63,7 @@ Four reasons only, each with what to read first: the link is dead, a DMCA notice
 
 ## Style
 
-- `README.md` is English; `README.zh-CN.md` is a full mirror of it — same sections, same entries, same ⚠ marks. Change both, or say in the PR which one you touched.
+- `README.md` is English; `README.zh-CN.md` is a full mirror of it — same sections, same entries, same ⚠ marks. Neither is edited by hand: both are rendered from `data/entries.json`, where every entry carries its `en` and `zh` wording together, so one edit moves both files and `scripts/check-i18n.py` is what proves they still match.
 - No game files, no ROMs, no cracked binaries, no keys **in this repository**. Most entries ask the reader to supply their own licensed copy and say so in the line; an entry whose upstream tree carries the original assets is written as such, and this list still ships none of them.
 - Retract visibly. If a number in this list is wrong, correct it in the same commit and keep the note explaining what was wrong and why it looked right.
 
@@ -73,10 +73,12 @@ Four reasons only, each with what to read first: the link is dead, a DMCA notice
 $ npx awesome-lint README.md
 $ python3 scripts/check-i18n.py
 $ python3 scripts/verify.py links
-$ GITHUB_TOKEN=$(gh auth token) python3 scripts/verify.py refresh --apply   # re-measure everything
+$ GITHUB_TOKEN=$(gh auth token) python3 scripts/verify.py refresh --apply   # re-measure everything into the corpus
+$ python3 scripts/render.py                                                 # regenerate both READMEs from it
+$ python3 scripts/render.py --check                                         # the render gate CI runs
 ```
 
-Leave the numbers to the last command and the refresh workflow: a PR that only changes a description should not contain hand-edited star counts.
+Leave the numbers to those commands and the refresh workflow: a PR that only changes a description should not contain hand-edited star counts, and `render.py --check` fails a README that was edited instead of rendered.
 
 To check A3 and see what a repository publishes as proof, run the intake gate before you write anything — it is not in CI, because it reads new repositories rather than the ones already entered:
 
