@@ -3,9 +3,9 @@
 node_modules/
 .venv/
 __pycache__/
-scripts/snapshot-*.tsv
-scripts/quality-*.tsv
-scripts/.quality-cache/
-scripts/re_gh*
-scripts/recheck-*.tsv
-scripts/.dmca-cache/
+
+# Measurement output and API response caches: local/CI evidence, never committed.
+# Everything the pipeline writes as evidence lives under data/, so two directory
+# patterns cover it; data/entries.json and data/decisions.jsonl stay tracked.
+data/measurement/
+data/cache/

@@ -2,10 +2,10 @@
 """Re-review the entered corpus: four machine checks, and one column that says who acts.
 
   recheck                  — check every repository linked from README.md
-  recheck --dmca-refresh   — fetch github/dmca into scripts/.dmca-cache/dmca first
+  recheck --dmca-refresh   — fetch github/dmca into data/cache/dmca first
   recheck --no-dmca        — skip the notices check (the only check that needs the clone)
 
-Reads the newest `scripts/snapshot-<date>.tsv` written by `verify.py refresh` and refuses to
+Reads the newest `data/measurement/snapshot-<date>.tsv` written by `verify.py refresh` and refuses to
 conclude from a snapshot older than --max-age days (31). It therefore costs zero API requests
 unless a repository linked in the README has no snapshot row, which is confirmed with one
 `GET /repos/{owner}/{repo}`; it costs one local scan of the notices clone otherwise.
@@ -30,8 +30,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+MEAS = ROOT / "data" / "measurement"
 README = ROOT / "README.md"
-DMCA = HERE / ".dmca-cache" / "dmca"
+DMCA = ROOT / "data" / "cache" / "dmca"
 DMCA_URL = "https://github.com/github/dmca"
 ENTRY = re.compile(r"^- \[[^\]]+\]\(https://github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)\) - (.*)$")
 LIC = re.compile(r"\b(AGPL-3\.0|GPL-3\.0|GPL-2\.0|LGPL-2\.1|LGPL-3\.0|Apache-2\.0|CC0-1\.0|"
@@ -72,9 +73,9 @@ def entries():
 
 
 def newest_snapshot(max_age):
-    paths = sorted(HERE.glob("snapshot-*.tsv"))
+    paths = sorted(MEAS.glob("snapshot-*.tsv"))
     if not paths:
-        sys.exit("no scripts/snapshot-<date>.tsv — run verify.py refresh first")
+        sys.exit("no data/measurement/snapshot-<date>.tsv — run verify.py refresh first")
     date = paths[-1].stem.split("snapshot-")[1]
     age = (datetime.date.today() - datetime.date.fromisoformat(date)).days
     if age > max_age:
@@ -175,7 +176,8 @@ def main():
                     "flags": ";".join(flags), "detail": ";".join(details), "need": need})
 
     date = today.isoformat()
-    path = HERE / f"recheck-{date}.tsv"
+    MEAS.mkdir(parents=True, exist_ok=True)
+    path = MEAS / f"recheck-{date}.tsv"
     with path.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, delimiter="\t",
                            fieldnames=["repo", "status", "stars", "pushed", "flags", "detail", "need"])

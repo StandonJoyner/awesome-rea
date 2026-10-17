@@ -1,11 +1,11 @@
 # RECHECK.md — the monthly look-back over what is already entered
 
 Operating procedure only; the reader-facing product is `README.md`. Admission lives in
-`AGENTS.md` (`## Admission`, tests A1–A3) and is **not** re-decided here: a recheck pass asks
+`INTAKE.md` (`## Admission`, tests A1–A3) and is **not** re-decided here: a recheck pass asks
 whether an entry is still true, never whether a new project should be added.
 
 `scripts/recheck.py` is the whole mechanism. It reads `README.md` for the entry bullets and
-the newest `scripts/snapshot-<date>.tsv` for the measured numbers, so a pass costs
+the newest `data/measurement/snapshot-<date>.tsv` for the measured numbers, so a pass costs
 **zero API requests** when the snapshot is fresh — measured 2026-10-17: 131 checked
 repositories in 2.0 s. It refuses to run against a snapshot older than `--max-age` days
 (31 by default) rather than conclude from stale numbers, which is the mistake that produced
@@ -37,12 +37,12 @@ Anything not in this table is out of scope by decision, not by oversight:
 - The four `Related lists` repositories are skipped (`alphaSeclab/awesome-reverse-engineering`,
   `user1342/Awesome-Android-Reverse-Engineering`, `morluto/awesome-reverse-engineering`,
   `SubmitGame/awesome-decomp-games`): they are boundary lists we point at, not reconstructions,
-  so their push age makes no claim about a result. That is why the pass counts **131** of the 135
-  linked repositories.
+  so their push age makes no claim about a result. That is why the 2026-10-17 pass counted **131** of the
+  135 repositories then linked; the number is that run's, not the corpus's.
 
 ## Output format
 
-`scripts/recheck-<date>.tsv`, gitignored like every other measurement artefact, seven columns:
+`data/measurement/recheck-<date>.tsv`, gitignored like every other measurement artefact, seven columns:
 
 ```
 repo	status	stars	pushed	flags	detail	need
@@ -72,12 +72,12 @@ python3 scripts/recheck.py                  # same pass against the existing clo
 Run `python3 scripts/verify.py refresh` first if the snapshot is not current — recheck reads
 it for stars, push date and licence, and will not run on a snapshot older than a month.
 
-The notices corpus is a **plain shallow clone** at `scripts/.dmca-cache/dmca/`
+The notices corpus is a **plain shallow clone** at `data/cache/dmca/`
 (59 MB, 23,839 files, first clone 29 s, `git pull --depth 1` afterwards), deliberately **not
 a git submodule**: a submodule would pin a third-party commit inside our published history and
 make every recursive clone of a documentation list fetch a corpus of legal filings. The
 `github/dmca` repository is third-party data, and the same reasoning that kept the census
-dumps out of the tree (`## Census` in AGENTS.md) keeps this out.
+dumps out of the tree (`## Census` in INTAKE.md) keeps this out.
 
 Matching is the part that needed measuring, not the fetching. Three candidate rules, tried
 against the real corpus:
@@ -109,8 +109,8 @@ cost a few hundred tokens of context, not a sweep.
 - `lic` opens `LICENSE` at the repository root — the header lines only, to see whether it is a
   stock text with added terms — and stops. Never re-read a README for a licence question.
 - `gone` is the only code that may need a second API call, and it has already spent it.
-- One fact per row goes back into a file: a legal or provenance fact into this document or
-  `AGENTS.md`, a wording fix into the entry line. An agent that finds nothing writes one clause
+- One fact per row goes back into a file: a legal or provenance fact into this document,
+  `AGENTS.md` or `INTAKE.md`, a wording fix into the entry line. An agent that finds nothing writes one clause
   saying so; it does not justify a non-finding.
 - The cap is the row count, not the clock: a pass with 16 actionable rows is 16 bounded reads.
   If `need` rows ever exceed about 40, the pass is too wide — narrow `--floor`/`--quiet` or

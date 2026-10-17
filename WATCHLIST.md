@@ -5,8 +5,8 @@ has been opened, and has had its numbers read from `GET /repos/{owner}/{repo}`. 
 a lead, not data: nothing on this list may be quoted into a README, and a lead's own numbers are
 dated facts about a past read, not a current measurement.
 
-Admission is decided in `AGENTS.md` (`## Admission`, tests A1–A3); which section an admitted
-project lands in is decided in `AGENTS.md` (`## Filing axis`). This file records, per lead, only
+Admission is decided in `INTAKE.md` (`## Admission`, tests A1–A3); which section an admitted
+project lands in is decided in `INTAKE.md` (`## Filing axis`). This file records, per lead, only
 what has been verified, what has not, and what the filing decision would be. Re-review of what
 is *already entered* is a different procedure and lives in `RECHECK.md`.
 
@@ -49,11 +49,11 @@ or a filing rule — never a star count, which is not an admission test in this 
 - **Expected shape** if they follow `d2r-mobile`: the Switch aarch64 program runs directly, only
   the non-executable instructions are rewritten, and the reconstructed object is the platform
   surface (NVN, syscalls, VFS, audio, input).
-- **Filing test, from the `## Filing axis` precedents in AGENTS.md**: ahead-of-time recompile plus
+- **Filing test, from the `## Filing axis` precedents in INTAKE.md**: ahead-of-time recompile plus
   a reimplemented surface is `Games / Nintendo` with a `→ iOS` destination, the way
   `jhaizhou-ops/d2r-mobile` is entered as Nintendo rather than Runtimes.
 - **Not an entry at all**: runtime emulation, cloud streaming, or a repack of an official build
-  labelled 移植 — that was the finding of the short-video wave, recorded under `## Census`.
+  labelled 移植 — that was the finding of the short-video wave, recorded under `INTAKE.md`'s `## Census`.
 
 ## 星之卡比 / Kirby
 
@@ -187,7 +187,7 @@ or a filing rule — never a star count, which is not an admission test in this 
   repository of **extracted RDR2 game content**, so under 「No game files, ROMs, cracked binaries,
   or keys anywhere in this repo」 its name is written as code and it gets no URL. This is the one
   case where that rule bites, and it is a rule about *our* tree: it says nothing about what a
-  linked repository holds (see `## Admission` in AGENTS.md).
+  linked repository holds (see `## Admission` in INTAKE.md).
 - **Queries with counts recorded** — `rage engine reimplementation` 0, `rdr2 decompil` 5,
   `gta5 decompil` 8, `gta v reverse engineering` 3, `gta engine reimplementation` 5 (hits are San
   Andreas and IV only).
@@ -272,7 +272,7 @@ or a filing rule — never a star count, which is not an admission test in this 
 
 - Expect these to be under-counted by the existing enumeration vocabulary: such projects
   self-describe as "port", "native run" or "compatibility layer", which is precisely the vocabulary
-  the rate-killed `linux-port` / `asset-extract` tokens failed to cover (see `## Census`).
+  the rate-killed `linux-port` / `asset-extract` tokens failed to cover (see `INTAKE.md`, `## Census`).
 - These families are the highest-DMCA-risk material in the corpus: Nintendo's 2026-08 notices are
   framed as TPM circumvention under DMCA §1201, not only copyright, which is what makes a whole
   fork network removable at once. Record the notice text if a takedown lands, and do not cite a

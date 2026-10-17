@@ -2,7 +2,7 @@
 
 This list is a set of **measurements**, not a set of opinions. The rules below exist so that every number in the README can be re-derived by someone else.
 
-The short version for a PR is here. The full operational spec — filing precedents, the sourcing ledger, known coverage holes, and how the numbers are refreshed — is [AGENTS.md](AGENTS.md); the leads that have not become entries are in [WATCHLIST.md](WATCHLIST.md), and looking back over repositories already entered is [RECHECK.md](RECHECK.md).
+The short version for a PR is here. The full operational spec is split: how a candidate is admitted, filed and rendered into both READMEs is [INTAKE.md](INTAKE.md), while the sourcing ledger, the removal reasons, the legal record and how the numbers are refreshed are [AGENTS.md](AGENTS.md); the leads that have not become entries are in [WATCHLIST.md](WATCHLIST.md), and looking back over repositories already entered is [RECHECK.md](RECHECK.md).
 
 ## What belongs
 
@@ -33,7 +33,7 @@ The classes that fail, in the order people hit them:
 
 Required fields:
 
-1. **A software-type section** — `Games`, `Applications`, `Runtimes and compatibility layers`, or `Formats, file systems and protocols`. Inside `Games`, also pick the platform subsection (`Nintendo`, `Sony PlayStation`, `Microsoft Xbox and Xbox 360`, `MS-DOS, Windows and Macintosh`, `Mobile`). The filing test for each section is in AGENTS.md, and it is applied only after A1–A3 pass; a new entry always goes in exactly one of them.
+1. **A software-type section** — `Games`, `Applications`, `Runtimes and compatibility layers`, or `Formats, file systems and protocols`. Inside `Games`, also pick the platform subsection (`Nintendo`, `Sony PlayStation`, `Microsoft Xbox and Xbox 360`, `MS-DOS, Windows and Macintosh`, `Mobile`). The filing test for each section is in INTAKE.md, and it is applied only after A1–A3 pass; a new entry always goes in exactly one of them.
 2. **Original platform** — the platform the thing being reconstructed ran on, in the vendor's own words, and for a port or recompile also where it runs now (`PS4 → Windows and Linux`). The type is carried by the section, so do not repeat it in the line.
 3. **Method** — one of the four live labels: byte-matching decompilation or disassembly, clean-room engine reimplementation, format/protocol/driver/API reimplementation, port and static recompilation (or compatibility patch). Say which one in words, in the line; the M1–M4 ids are internal and never appear in a README (M5, trainer and memory editing, was retired with its section on 2026-10-17). There is no separate index of methods to update.
 4. **Snapshot** — stars, and last-push or creation date wherever liveliness is part of the claim. Do not write a snapshot date into the entry: the README carries one refreshed date, and CI rewrites `★ <n>`, `<n> forks` and `pushed <date>` from `GET /repos/{owner}/{repo}`. A `created <date>` is a historical fact and stays.
@@ -44,9 +44,9 @@ Format rules the linter enforces, so learn them before CI does:
 - The README is not hard-wrapped: one paragraph per line, entry bullets included.
 - Link and description are separated by ` - `, and the description starts uppercase and ends with a period.
 - Every URL appears exactly once in the README. Where a project belongs to two sections, link it in its type section and write its name as plain text in the other. The Related lists section names repositories in plain text for the same reason; so does the legal record in AGENTS.md.
-- Section names stay short and are not self-explaining: `Games`, `Applications`, `Runtimes and compatibility layers`. If a name needs a paragraph to justify it, the paragraph goes in AGENTS.md and the name gets trimmed. Adding a section or a `Games` platform subsection means adding it to `Contents`, to `README.zh-CN.md`, and to the admission table in AGENTS.md.
+- Section names stay short and are not self-explaining: `Games`, `Applications`, `Runtimes and compatibility layers`. If a name needs a paragraph to justify it, the paragraph goes in INTAKE.md and the name gets trimmed. Adding a section or a `Games` platform subsection means adding it to `Contents`, to `README.zh-CN.md`, and to the filing table in INTAKE.md.
 - A list item either starts with a link (an entry) or is prose in a paragraph. Analysis without a link of its own goes in a paragraph, not a bullet.
-- Write for a reader scanning a list: no rhetorical framings, no "most instructive entry" verdicts, no bold one-line moral closing a paragraph. How the list is built, verified and refreshed is AGENTS.md material, not README prose.
+- Write for a reader scanning a list: no rhetorical framings, no "most instructive entry" verdicts, no bold one-line moral closing a paragraph. How the list is built, verified and refreshed is `INTAKE.md` and `AGENTS.md` material, not README prose.
 
 ## How an entry leaves
 

@@ -5,7 +5,7 @@
   refresh          — measure every linked repo again with GET /repos/{owner}/{repo}
   refresh --apply  — additionally rewrite the measured tokens in both READMEs
 
-refresh writes scripts/snapshot-<date>.tsv and prints the star delta against the newest
+refresh writes data/measurement/snapshot-<date>.tsv and prints the star delta against the newest
 older snapshot, plus any slug that no longer resolves.
 
 --apply only rewrites `★ <n>`, `<n> forks` and `pushed <date>` on entry bullets, plus the
@@ -23,8 +23,10 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-README = HERE.parent / "README.md"
-ZH = HERE.parent / "README.zh-CN.md"
+ROOT = HERE.parent
+MEAS = ROOT / "data" / "measurement"
+README = ROOT / "README.md"
+ZH = ROOT / "README.zh-CN.md"
 SLUG = re.compile(r"https://github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)")
 URL = re.compile(r"https?://[^\s)\[\]\"'<>]+")
 DELAY = 7.0  # anonymous GitHub search/core is per-IP; stay under the limit
@@ -159,12 +161,13 @@ def refresh(proxy=None, apply=False):
     if not rows:
         print("nothing measured — quota or network")
         return 1
-    out = HERE / f"snapshot-{date}.tsv"
+    MEAS.mkdir(parents=True, exist_ok=True)
+    out = MEAS / f"snapshot-{date}.tsv"
     with out.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, delimiter="\t", fieldnames=list(rows[0]))
         w.writeheader()
         w.writerows(rows)
-    prior = sorted(HERE.glob("snapshot-*.tsv"))
+    prior = sorted(MEAS.glob("snapshot-*.tsv"))
     if len(prior) >= 2:
         old = {r["repo"]: int(r["stars"]) for r in
                csv.DictReader(prior[-2].open(encoding="utf-8"), delimiter="\t")}
