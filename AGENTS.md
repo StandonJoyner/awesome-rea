@@ -134,6 +134,7 @@ An entry is deleted from **both** READMEs in one commit for exactly one of four 
 - Stars, push age, licence, `archived` and how the work was produced are **not** removal reasons, for the same reason they are not admission tests. `archived` in particular is an author marking a finished reconstruction read-only, which is a completion signal written into the line, not a disqualification.
 - After any removal, run `python3 scripts/check-i18n.py`: the mirror gate compares link sets and per-section entry counts, so a one-sided deletion fails it, and `awesome-lint` fails on a URL left behind in one file.
 
+## Sourcing ledger
 
 - Call `GET https://api.github.com/repos/{owner}/{repo}` and copy stars/forks/pushed from the response. Never use a search engine's number or a README badge.
 - Legal claims require the filing, the notice text, or the project's own statement. Otherwise mark the sentence `⚠` and state what was actually read.
