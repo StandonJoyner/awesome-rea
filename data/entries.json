@@ -291,7 +291,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 8889,
+        "stars": 8890,
         "forks": 1652,
         "pushed": "2024-02-04",
         "archived": false,
@@ -387,8 +387,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5888,
-        "forks": 441,
+        "stars": 5891,
+        "forks": 442,
         "pushed": "2026-10-11",
         "archived": false,
         "license_spdx": "CC0-1.0",
@@ -435,11 +435,11 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5639,
+        "stars": 5645,
         "forks": 919,
         "pushed": "2026-10-15",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -478,7 +478,7 @@
         "forks": 709,
         "pushed": "2026-10-14",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -514,7 +514,7 @@
         "forks": 1334,
         "pushed": "2026-10-06",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -558,7 +558,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 4865,
+        "stars": 4866,
         "forks": 453,
         "pushed": "2026-10-02",
         "archived": false,
@@ -658,7 +658,7 @@
         "forks": 4826,
         "pushed": "2026-10-01",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -708,8 +708,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3547,
-        "forks": 1025,
+        "stars": 3592,
+        "forks": 1034,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "MIT",
@@ -745,10 +745,10 @@
       "note": null,
       "measured": {
         "stars": 2528,
-        "forks": 984,
+        "forks": 985,
         "pushed": "2026-10-06",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -796,7 +796,7 @@
         "forks": 153,
         "pushed": "2026-10-11",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -840,11 +840,11 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2415,
-        "forks": 356,
+        "stars": 2416,
+        "forks": 357,
         "pushed": "2026-10-16",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -888,7 +888,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2331,
+        "stars": 2332,
         "forks": 274,
         "pushed": "2026-10-14",
         "archived": false,
@@ -936,11 +936,11 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2246,
-        "forks": 140,
+        "stars": 2249,
+        "forks": 142,
         "pushed": "2026-10-15",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1180,7 +1180,7 @@
         "forks": 574,
         "pushed": "2024-12-17",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1216,7 +1216,7 @@
         "forks": 595,
         "pushed": "2026-10-11",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1261,10 +1261,10 @@
       "note": null,
       "measured": {
         "stars": 1665,
-        "forks": 1040,
+        "forks": 1041,
         "pushed": "2026-09-26",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1312,7 +1312,7 @@
         "forks": 170,
         "pushed": "2026-09-26",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1359,7 +1359,7 @@
         "zh": "它的 README 记录 AI 工具只用在这个 PC 移植的代码上。"
       },
       "measured": {
-        "stars": 1493,
+        "stars": 1494,
         "forks": 126,
         "pushed": "2026-08-02",
         "archived": false,
@@ -1407,8 +1407,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1413,
-        "forks": 93,
+        "stars": 1414,
+        "forks": 94,
         "pushed": "2026-07-18",
         "archived": false,
         "license_spdx": "CC0-1.0",
@@ -1459,7 +1459,7 @@
         "forks": 138,
         "pushed": "2026-08-16",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1503,7 +1503,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1248,
+        "stars": 1250,
         "forks": 116,
         "pushed": "2026-10-14",
         "archived": false,
@@ -1551,8 +1551,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1169,
-        "forks": 110,
+        "stars": 1173,
+        "forks": 111,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "GPL-3.0",
@@ -1645,7 +1645,7 @@
         "forks": 273,
         "pushed": "2026-09-29",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1695,11 +1695,11 @@
       ],
       "note": null,
       "measured": {
-        "stars": 891,
+        "stars": 892,
         "forks": 348,
         "pushed": "2026-10-16",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1753,7 +1753,7 @@
         "forks": 205,
         "pushed": "2026-10-06",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1801,7 +1801,7 @@
         "forks": 21,
         "pushed": "2026-09-13",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1897,7 +1897,7 @@
         "forks": 21,
         "pushed": "2026-09-17",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -1945,7 +1945,7 @@
         "forks": 10,
         "pushed": "2025-02-26",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -2086,7 +2086,7 @@
       "note": null,
       "measured": {
         "stars": 3576,
-        "forks": 252,
+        "forks": 253,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "ISC",
@@ -2133,8 +2133,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3047,
-        "forks": 728,
+        "stars": 3060,
+        "forks": 733,
         "pushed": "2026-10-15",
         "archived": false,
         "license_spdx": "GPL-2.0",
@@ -2185,7 +2185,7 @@
         "forks": 264,
         "pushed": "2026-09-27",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -2229,8 +2229,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2914,
-        "forks": 187,
+        "stars": 2962,
+        "forks": 190,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "GPL-2.0",
@@ -2277,8 +2277,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1871,
-        "forks": 122,
+        "stars": 1873,
+        "forks": 124,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "NOASSERTION",
@@ -2373,7 +2373,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1148,
+        "stars": 1149,
         "forks": 111,
         "pushed": "2026-10-17",
         "archived": false,
@@ -2427,7 +2427,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 456,
+        "stars": 459,
         "forks": 33,
         "pushed": "2026-10-13",
         "archived": false,
@@ -2533,7 +2533,7 @@
         "forks": 3,
         "pushed": "2026-08-27",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -2577,9 +2577,9 @@
       ],
       "note": null,
       "measured": {
-        "stars": 140,
+        "stars": 145,
         "forks": 12,
-        "pushed": "2026-10-16",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-2.0",
         "snapshot": "2026-10-17"
@@ -2625,7 +2625,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 97,
+        "stars": 99,
         "forks": 4,
         "pushed": "2026-10-17",
         "archived": false,
@@ -2668,7 +2668,7 @@
       "note": null,
       "measured": {
         "stars": 5,
-        "forks": 0,
+        "forks": 1,
         "pushed": "2026-10-14",
         "archived": false,
         "license_spdx": "NOASSERTION",
@@ -2715,7 +2715,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5200,
+        "stars": 5201,
         "forks": 429,
         "pushed": "2026-06-29",
         "archived": false,
@@ -2763,11 +2763,11 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1640,
-        "forks": 70,
+        "stars": 1641,
+        "forks": 72,
         "pushed": "2026-07-24",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -2811,9 +2811,9 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1596,
-        "forks": 225,
-        "pushed": "2026-10-16",
+        "stars": 1610,
+        "forks": 226,
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "CC0-1.0",
         "snapshot": "2026-10-17"
@@ -2847,7 +2847,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 17579,
+        "stars": 17578,
         "forks": 3074,
         "pushed": "2026-10-11",
         "archived": false,
@@ -2895,9 +2895,9 @@
       ],
       "note": null,
       "measured": {
-        "stars": 16445,
-        "forks": 1947,
-        "pushed": "2026-10-14",
+        "stars": 16447,
+        "forks": 1948,
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-3.0",
         "snapshot": "2026-10-17"
@@ -2931,7 +2931,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 14509,
+        "stars": 14510,
         "forks": 1274,
         "pushed": "2026-10-15",
         "archived": false,
@@ -3027,7 +3027,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 9873,
+        "stars": 9875,
         "forks": 1071,
         "pushed": "2026-10-15",
         "archived": false,
@@ -3112,7 +3112,7 @@
       "note": null,
       "measured": {
         "stars": 8377,
-        "forks": 1302,
+        "forks": 1303,
         "pushed": "2026-10-15",
         "archived": false,
         "license_spdx": "NOASSERTION",
@@ -3147,7 +3147,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 6640,
+        "stars": 6641,
         "forks": 1140,
         "pushed": "2026-10-17",
         "archived": false,
@@ -3195,7 +3195,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5950,
+        "stars": 5952,
         "forks": 741,
         "pushed": "2026-10-17",
         "archived": false,
@@ -3246,7 +3246,7 @@
         "zh": "它的 README 声明了 LLM 辅助编码。"
       },
       "measured": {
-        "stars": 5302,
+        "stars": 5303,
         "forks": 122,
         "pushed": "2026-10-16",
         "archived": false,
@@ -3330,7 +3330,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 4706,
+        "stars": 4707,
         "forks": 338,
         "pushed": "2024-08-21",
         "archived": false,
@@ -3378,7 +3378,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 4594,
+        "stars": 4595,
         "forks": 437,
         "pushed": "2026-10-13",
         "archived": false,
@@ -3426,8 +3426,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3527,
-        "forks": 423,
+        "stars": 3528,
+        "forks": 424,
         "pushed": "2026-09-14",
         "archived": false,
         "license_spdx": "MIT",
@@ -3658,7 +3658,7 @@
       "note": null,
       "measured": {
         "stars": 2856,
-        "forks": 1437,
+        "forks": 1438,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "GPL-3.0",
@@ -3705,11 +3705,11 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2851,
+        "stars": 2852,
         "forks": 521,
         "pushed": "2026-10-16",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -3935,7 +3935,7 @@
       "measured": {
         "stars": 1980,
         "forks": 393,
-        "pushed": "2026-10-05",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-3.0",
         "snapshot": "2026-10-17"
@@ -3970,7 +3970,7 @@
       "note": null,
       "measured": {
         "stars": 1939,
-        "forks": 224,
+        "forks": 225,
         "pushed": "2026-10-14",
         "archived": false,
         "license_spdx": "MIT",
@@ -4137,7 +4137,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1583,
+        "stars": 1584,
         "forks": 104,
         "pushed": "2026-10-17",
         "archived": false,
@@ -4281,7 +4281,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1298,
+        "stars": 1299,
         "forks": 174,
         "pushed": "2025-12-24",
         "archived": false,
@@ -4331,7 +4331,7 @@
       "measured": {
         "stars": 1262,
         "forks": 227,
-        "pushed": "2026-10-12",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-2.0",
         "snapshot": "2026-10-17"
@@ -4569,8 +4569,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1145,
-        "forks": 260,
+        "stars": 1146,
+        "forks": 261,
         "pushed": "2026-09-06",
         "archived": false,
         "license_spdx": "NOASSERTION",
@@ -4723,7 +4723,7 @@
         "forks": 253,
         "pushed": "2026-10-16",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -4818,7 +4818,7 @@
         "zh": "它的 README 写明\"This whole project is written by an LLM.\""
       },
       "measured": {
-        "stars": 1069,
+        "stars": 1071,
         "forks": 130,
         "pushed": "2026-10-16",
         "archived": false,
@@ -4916,7 +4916,7 @@
       "measured": {
         "stars": 1009,
         "forks": 72,
-        "pushed": "2026-10-16",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-3.0",
         "snapshot": "2026-10-17"
@@ -5070,7 +5070,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 586,
+        "stars": 587,
         "forks": 119,
         "pushed": "2026-10-10",
         "archived": false,
@@ -5164,7 +5164,7 @@
       "measured": {
         "stars": 485,
         "forks": 59,
-        "pushed": "2026-10-16",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "MIT",
         "snapshot": "2026-10-17"
@@ -5248,7 +5248,7 @@
       "measured": {
         "stars": 368,
         "forks": 39,
-        "pushed": "2026-10-16",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "NOASSERTION",
         "snapshot": "2026-10-17"
@@ -5303,7 +5303,7 @@
       },
       "_section_index": 4,
       "measured": {
-        "stars": 193,
+        "stars": 196,
         "forks": 19,
         "pushed": "2026-10-17",
         "archived": false,
@@ -5353,7 +5353,7 @@
       "measured": {
         "stars": 173,
         "forks": 18,
-        "pushed": "2026-10-16",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-3.0",
         "snapshot": "2026-10-17"
@@ -5403,7 +5403,7 @@
         "forks": 19,
         "pushed": "2026-10-16",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "check": true
@@ -5562,8 +5562,8 @@
         "zh": "有帖子声称 Steam 版能跑，仓库里并没有这么写。"
       },
       "measured": {
-        "stars": 61,
-        "forks": 17,
+        "stars": 62,
+        "forks": 19,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "MIT",
@@ -5616,6 +5616,63 @@
       "check": true
     },
     {
+      "slug": "oliverjessner/OpenEmperor",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "method": "M2",
+      "assets": "reader-supplied",
+      "desc": {
+        "en": "Emperor: Rise of the Middle Kingdom, real-time strategy, Windows → Apple Silicon macOS, clean-room reimplementation in C++20 and SDL3 that reads the original game files the player supplies and bundles no original assets",
+        "zh": "《Emperor: Rise of the Middle Kingdom》，即时战略，Windows → Apple Silicon macOS，用 C++20 与 SDL3 的净室重写，读取玩家提供的原版游戏文件，不打包任何原始素材"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2026-09-15",
+          "zh": "建库于 2026-09-15"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Early development by its own description, and its documentation separates observed source facts, supported interpretation and authored preview behaviour — the map format and graphics IDs are recorded there as reverse-engineering evidence.",
+        "zh": "按其自身描述仍属早期开发；文档区分观察到的源码事实、有依据的推断与自己写的预览行为——地图格式与图形 ID 就是作为逆向证据记录在其中的。"
+      },
+      "admission": {
+        "a1": "Sierra's Emperor: Rise of the Middle Kingdom is a shipped commercial game whose source has never been released; the candidate's own licence file is custom (GitHub reports NOASSERTION, so no licence is claimed in the line) and it states original assets and decoded images are never bundled — an independent implementation, not vendor-released source.",
+        "a2_quote": "Clean-room reimplementation of Emperor: Rise of the Middle Kingdom in C++20 and SDL3. Built for modern systems, starting with Apple Silicon macOS. Early development; original game data required.",
+        "a2_read_at": "repository description (GET /repos/oliverjessner/OpenEmperor), 2026-10-17",
+        "a3": "707 paths, 288 .cpp and 127 .h under src/, with tests/, tools/ and a 173-file docs/ tree carrying the reverse-engineering evidence — the reconstruction is in the linked repository."
+      },
+      "_section_index": 4,
+      "measured": {
+        "stars": 16,
+        "forks": 2,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "NOASSERTION",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
       "slug": "lhr0909/richman4-remastered",
       "_section_index": 4,
       "section": "Games",
@@ -5649,7 +5706,7 @@
         "zh": "它的 NOTICE 把编译出的 APK 限制在构建者自己的设备上。"
       },
       "measured": {
-        "stars": 9,
+        "stars": 10,
         "forks": 3,
         "pushed": "2026-10-06",
         "archived": false,
@@ -5705,7 +5762,7 @@
       },
       "_section_index": 4,
       "measured": {
-        "stars": 8,
+        "stars": 11,
         "forks": 0,
         "pushed": "2026-10-16",
         "archived": false,
@@ -5741,7 +5798,7 @@
       "measured": {
         "stars": 3,
         "forks": 0,
-        "pushed": "2026-10-15",
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-2.0",
         "snapshot": "2026-10-17"
@@ -5838,7 +5895,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 145,
+        "stars": 148,
         "forks": 16,
         "pushed": "2026-10-17",
         "archived": false,
@@ -5875,7 +5932,7 @@
       "note": null,
       "measured": {
         "stars": 18695,
-        "forks": 1146,
+        "forks": 1147,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "NOASSERTION",
@@ -5913,8 +5970,8 @@
         "zh": "它的 README 写着\"Clean-room: built from public specifications and observation, with every asset original or openly licensed\"，因此按净室成果归档。"
       },
       "measured": {
-        "stars": 13694,
-        "forks": 3556,
+        "stars": 13774,
+        "forks": 3586,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "Apache-2.0",
@@ -5978,8 +6035,8 @@
       },
       "_section_index": 7,
       "measured": {
-        "stars": 5448,
-        "forks": 2485,
+        "stars": 5455,
+        "forks": 2487,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "Apache-2.0",
@@ -6035,8 +6092,65 @@
       },
       "_section_index": 7,
       "measured": {
-        "stars": 5446,
-        "forks": 2404,
+        "stars": 5451,
+        "forks": 2407,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "Apache-2.0",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "storytold/deckcraft",
+      "section": "Applications",
+      "platform": null,
+      "method": "M2",
+      "assets": "none-needed",
+      "desc": {
+        "en": "Microsoft PowerPoint, rebuilt clean-room in Rust: opens and saves .pptx, exports PDF, PNG/JPEG and an animated GIF of the deck, Apache-2.0",
+        "zh": "净室用 Rust 重写的 Microsoft PowerPoint：可打开与保存 .pptx，导出 PDF、PNG/JPEG 与整份演示的 GIF 动画，Apache-2.0"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2026-10-07",
+          "zh": "建库于 2026-10-07"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "The repository publishes its own unfinished state: it calls itself alpha heading for beta, and ROADMAP.md, docs/target-app-parity.md, docs/gaps.md and docs/parity-checklist.md carry the assessment.",
+        "zh": "仓库自己公布未完工的部分：README 称其为迈向 beta 的 alpha 版，ROADMAP.md、docs/target-app-parity.md、docs/gaps.md 与 docs/parity-checklist.md 给出分区评估。"
+      },
+      "admission": {
+        "a1": "Microsoft PowerPoint is a shipped commercial product whose source Microsoft has not released; the repository carries its own LICENSE-APACHE, LICENSE-MIT, NOTICE and ATTRIBUTION.md, and states that bundled fonts, icons and images keep their own open licences and are listed there by author, source and licence — an independent implementation, not vendor-released source.",
+        "a2_quote": "Presentations and slide shows; an open-source, clean-room reimplementation of Microsoft PowerPoint, rebuilt in pure Rust.",
+        "a2_read_at": "README.md head#12, 2026-10-17",
+        "a3": "686 paths, 417 .rs, with apps/ and crates/ at the root and crates/pdf named as a component in its own README — the reconstruction is in the linked repository."
+      },
+      "_section_index": 7,
+      "measured": {
+        "stars": 3603,
+        "forks": 2032,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "Apache-2.0",
@@ -6092,11 +6206,182 @@
       },
       "_section_index": 7,
       "measured": {
-        "stars": 3091,
-        "forks": 1938,
+        "stars": 3094,
+        "forks": 1939,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "Apache-2.0",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "storytold/figcraft",
+      "section": "Applications",
+      "platform": null,
+      "method": "M2",
+      "assets": "none-needed",
+      "desc": {
+        "en": "Figma, rebuilt clean-room in Rust: SVG, PNG, JPG, WebP and PDF in and out, .fig files opened best-effort, Apache-2.0",
+        "zh": "净室用 Rust 重写的 Figma：可进出 SVG、PNG、JPG、WebP 与 PDF，尽力打开 .fig 文件，Apache-2.0"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2026-10-09",
+          "zh": "建库于 2026-10-09"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Its own boundary statement is explicit — no proprietary code, file formats, icons or images, every icon drawn in code or made for the project — and the area-by-area picture is left to the roadmap and docs/target-app-parity.md.",
+        "zh": "它自己划的边界很清楚：不含专有代码、文件格式、图标或图片，每个图标都由代码绘制或为本项目制作；分区进度交给 roadmap 与 docs/target-app-parity.md。"
+      },
+      "admission": {
+        "a1": "Figma is a shipped commercial product whose application source Figma has not released; the repository carries LICENSE-APACHE, LICENSE-MIT, NOTICE and ATTRIBUTION.md and its README states plainly that no proprietary code, file formats, icons or images are used — an independent implementation, not vendor-released source.",
+        "a2_quote": "Interface design; an open-source, clean-room reimplementation of Figma, rebuilt in pure Rust.",
+        "a2_read_at": "README.md head#12, 2026-10-17",
+        "a3": "1,029 paths, 715 .rs, with apps/ and crates/ at the root and docs/control-protocol.md, docs/mcp.md and docs/cli.md describing what it implements — the reconstruction is in the linked repository."
+      },
+      "_section_index": 7,
+      "measured": {
+        "stars": 2219,
+        "forks": 805,
+        "pushed": "2026-10-17",
+        "archived": false,
+        "license_spdx": "Apache-2.0",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "ruvnet/open-claude-code",
+      "section": "Applications",
+      "platform": null,
+      "method": "M1",
+      "assets": "none-needed",
+      "desc": {
+        "en": "Anthropic's Claude Code CLI, rebuilt from an AI-assisted decompilation of the published npm bundle, mirroring its agent loop, tools, MCP transports and permission modes, MIT",
+        "zh": "对已发布的 npm 包做 AI 辅助反编译后重建的 Anthropic Claude Code 终端代理，复刻其 agent 循环、工具、MCP 传输与权限模式，MIT"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2025-02-24",
+          "zh": "建库于 2025-02-24"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "The repository holds two descriptions of itself at once: head#118 says the rebuild is informed by ruDevolution's decompilation of the published npm package, while a later line insists it is clean-room with no leaked source. Its own link list calls the remainder a path to 100%, and the decompiler is a submodule (ruvnet/rudevolution), not part of this tree.",
+        "zh": "这个仓库同时给了两种自我描述：一处说重建依据的是 ruDevolution 对已发布 npm 包的反编译，另一处又强调是不含泄漏源码的净室实现。它自己的链接列表把剩余部分称作「通往 100% 的路径」，而反编译器是子模块（ruvnet/rudevolution），不在本仓库树内。"
+      },
+      "admission": {
+        "a1": "Anthropic ships Claude Code as a published npm bundle; its GitHub repository (anthropics/claude-code, read 2026-10-17) has no CLI source at its root — .claude-plugin, examples, mods, plugins, scripts and CHANGELOG.md only — so the implementation the candidate rebuilds has not been released by the rights holder.",
+        "a2_quote": "Open Claude Code is a ground-up open source rebuild of Anthropic's Claude Code CLI, informed by ruDevolution's AI-powered decompilation of the published npm package.",
+        "a2_read_at": "README.md head#118, 2026-10-17",
+        "a3": "549 paths, 84 .ts and 47 .js: v2/src holds the rebuild's own architecture directories (agents, tools, mcp, permissions, hooks, config, auth, telemetry, plugins, skills, ui) around index.mjs, and archive/open_claude_code holds a full earlier attempt with cli.mjs and src/ — the reconstruction is in the linked repository, while the decompiler itself is a submodule."
+      },
+      "_section_index": 7,
+      "measured": {
+        "stars": 535,
+        "forks": 165,
+        "pushed": "2026-10-17",
+        "archived": false,
+        "license_spdx": "MIT",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "daijro/honeydew",
+      "section": "Applications",
+      "platform": null,
+      "method": "M2",
+      "assets": "reader-supplied",
+      "desc": {
+        "en": "FL Studio Mobile, rebuilt clean-room in Rust with browser and Android builds, opening FL Studio Mobile's .flm demo projects, GPL-3.0",
+        "zh": "净室用 Rust 重写的 FL Studio Mobile，有浏览器与 Android 构建，可打开 FL Studio Mobile 的 .flm 演示工程，GPL-3.0"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2026-10-14",
+          "zh": "建库于 2026-10-14"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Its own status: the first port supports playback and songs saved inside the app, while microphone recording, MIDI devices and Android file import/export are not available yet — and sounds and presets import from a copy of the app the reader owns.",
+        "zh": "它自己写的进度：首个移植支持播放与应用内保存歌曲，麦克风录音、MIDI 设备与 Android 文件导入导出还没做好；音色与预设要从使用者自己拥有的那份应用里导入。"
+      },
+      "admission": {
+        "a1": "FL Studio Mobile is Image-Line's shipped commercial app, whose source Image-Line has not released; the README states in its own words that Honeydew is an independent project, not affiliated with or endorsed by Image-Line, and ships THIRD_PARTY_NOTICES.md for the free instrument libraries it links.",
+        "a2_quote": "Honeydew is a clean-room reimplementation.",
+        "a2_read_at": "README.md head#37, 2026-10-17",
+        "a3": "924 paths, 528 .rs under crates/ and src/, with build.rs, Trunk.toml and an android/ directory producing the browser and APK builds its README documents — the reconstruction is in the linked repository."
+      },
+      "_section_index": 7,
+      "measured": {
+        "stars": 10,
+        "forks": 2,
+        "pushed": "2026-10-17",
+        "archived": false,
+        "license_spdx": "GPL-3.0",
         "snapshot": "2026-10-17"
       },
       "check": true
@@ -6156,7 +6441,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 18305,
+        "stars": 18309,
         "forks": 1299,
         "pushed": "2026-10-16",
         "archived": false,
@@ -6193,7 +6478,7 @@
       "note": null,
       "measured": {
         "stars": 18235,
-        "forks": 2265,
+        "forks": 2266,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-2.0",
@@ -6234,8 +6519,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 8377,
-        "forks": 730,
+        "stars": 8380,
+        "forks": 732,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "GPL-3.0",
@@ -6306,8 +6591,8 @@
       ],
       "note": null,
       "measured": {
-        "stars": 4268,
-        "forks": 346,
+        "stars": 4267,
+        "forks": 345,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "GPL-2.0",
@@ -6342,7 +6627,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3005,
+        "stars": 3006,
         "forks": 338,
         "pushed": "2026-10-14",
         "archived": false,
@@ -6790,7 +7075,7 @@
         "forks": 908,
         "pushed": "2021-09-01",
         "archived": false,
-        "license_spdx": "",
+        "license_spdx": null,
         "snapshot": "2026-10-17"
       },
       "method": null,
@@ -6822,7 +7107,7 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2739,
+        "stars": 2740,
         "forks": 296,
         "pushed": "2025-07-08",
         "archived": false,
@@ -6858,9 +7143,9 @@
       ],
       "note": null,
       "measured": {
-        "stars": 631,
-        "forks": 145,
-        "pushed": "2026-10-15",
+        "stars": 647,
+        "forks": 149,
+        "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "CC0-1.0",
         "snapshot": "2026-10-17"
@@ -6909,8 +7194,8 @@
         "zh": "它靠自动扩覆盖并给可玩性打分。"
       },
       "measured": {
-        "stars": 1039,
-        "forks": 42,
+        "stars": 1068,
+        "forks": 41,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "CC0-1.0",
