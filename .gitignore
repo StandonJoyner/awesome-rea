@@ -7,3 +7,5 @@ scripts/snapshot-*.tsv
 scripts/quality-*.tsv
 scripts/.quality-cache/
 scripts/re_gh*
+scripts/recheck-*.tsv
+scripts/.dmca-cache/
