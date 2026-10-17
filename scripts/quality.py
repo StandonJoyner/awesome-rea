@@ -11,17 +11,22 @@
   read --repo owner/repo    — stage 2's evidence pack: one screen per candidate, from the cache
   read --repos FILE         — the same for a batch of rows about to be read
   read ... --has FILE       — intersect the cached tree with a list of filenames you supply
+  read ... --docs N         — side-docs to pull per candidate (default 3, 0 = README only)
   read ... --out FILE       — also write the pack to FILE (it still prints)
   read ... --refresh        — re-read from the API instead of the cache, and say so
 
 `read` is what a stage-2 pass starts and ends with, and it is meant to be **the only thing it does**: one
-call per batch prints the measured row, the precheck, a tree summary, the external links that betray a
-pointer repository, every method-shaped sentence in its entirety (wrap joined, markup stripped) with the
-`a2_read_at` locator to paste beside it, and the `facts` block of format/boundary/unfinished-state
-sentences that `desc`, `note` and `assets` are written from. It then records the slug in
-`data/measurement/read-<date>.tsv`, which is what `merge.py --coverage` holds the pass to: after a `read`,
-a slug owes either a pending object or a `decisions.jsonl` line. Reading `data/cache/quality/*.json` by
-hand, or writing a throwaway script to pull a README line out of it, is the work this screen exists to
+call per batch prints the measured row, the precheck, a tree summary, where the source sits per top-level
+directory, the external links that betray a pointer repository, every method-shaped sentence in its entirety
+(wrap joined, markup stripped) with the `a2_read_at` locator to paste beside it, and the `facts` block of
+format/boundary/unfinished-state sentences that `desc`, `note` and `assets` are written from. Sentences come
+from the README **and from the side-docs the README does not carry** — `FAQ.md`, `ROADMAP.md`, a gaps or
+parity file, `NOTICE.md`/`ATTRIBUTION.md` — fetched once and cached, because a fact that lives in `FAQ.md`
+otherwise costs the reader four requests of their own. Each locator names the file it came from.
+It then records the slug in `data/measurement/read-<date>.tsv`, which is what `merge.py --coverage` holds the
+pass to: after a `read`, a slug owes either a pending object or a `decisions.jsonl` line. Reading
+`data/cache/quality/*.json` by hand, writing a throwaway script to pull a README line out of it, or `curl`ing
+`FAQ.md` because a fact looked like it lived there, is the work this screen exists to
 remove (`INTAKE.md`, `## The three stages and the three files`). It prints **no verdict and no prose**: the
 sentences are a locator, not a filter (`INTAKE.md`: a word screen over the first 120 lines false-flagged 33
 of the 136 entered slugs), so which sentence the entry quotes, and whether the tree holds the
@@ -31,6 +36,11 @@ the line it came from.
 Per repository `check` costs three requests: `GET /repos/{owner}/{repo}`, the README, and the
 recursive git tree. Responses are cached under data/cache/quality so a re-run is free; --refresh re-reads.
 The fourth request (releases) fires only when no build file was found.
+
+`read` adds up to `--docs` raw requests per candidate for its side-docs and **nothing else** — the
+source-per-directory screen and the submodule line are computed from the tree `check` already cached, at
+zero cost. `check` never fetches side-docs, so a sweep over every entered repository stays at three
+requests per repository (`INTAKE.md`: standards must not require measuring everything, every day).
 
 Four evidence classes, each either present in the repository or not:
 
@@ -61,6 +71,7 @@ import random
 import re
 import subprocess
 import sys
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -159,17 +170,28 @@ def fetch(repo, refresh=False):
     branch = meta.get("default_branch") or "HEAD"
     readme = gh(repo, "/readme", raw=True)
     tree = gh(repo, f"/git/trees/{branch}?recursive=1", timeout=120)
-    names = [t.get("path", "") for t in tree.get("tree", [])] if tree.get("tree") else []
-    status = "full" if names and not tree.get("truncated") else ("truncated" if names else "unknown")
+    entries = tree.get("tree") or []
+    names = [t.get("path", "") for t in entries]
+    # A gitlink is a directory that arrives by submodule: the code that lives there is not this
+    # repository's result, which is half of what A3 asks. The same response already says it, so it costs
+    # nothing to keep — a tree cached before this field simply prints no submodule line.
+    submodules = sorted({t["path"] for t in entries if t.get("type") == "commit"})
+    if not names:
+        status = "unknown"
+    else:
+        status = "full" if not tree.get("truncated") else "truncated"
     if status == "unknown":  # big repo or a slow answer: root listing plus the language bytes
         top = gh(repo, f"/git/trees/{branch}", timeout=45)
-        names = [t.get("path", "") for t in top.get("tree", [])] if top.get("tree") else []
+        entries = top.get("tree") or []
+        names = [t.get("path", "") for t in entries]
+        submodules = sorted({t["path"] for t in entries if t.get("type") == "commit"})
         status = "partial" if names else "none"
     langs = gh(repo, "/languages", timeout=45) if status != "full" else {}
     rec = {"repo": repo, "meta": {k: meta.get(k) for k in META_KEYS},
            "parent": parent_of(meta),
            "readme_len": len(readme), "names": names, "tree_status": status,
            "tree_truncated": bool(tree.get("truncated")), "langs": langs,
+           "submodules": submodules,
            "readme_head": [line for line in readme.splitlines() if line.strip()][:400],
            "readme_blocks": readme_blocks(readme),
            "fetched": datetime.date.today().isoformat()}
@@ -326,7 +348,10 @@ def plain(s):
 
 
 def readme_blocks(text, cap=400):
-    """The README as quotable blocks — (first line, joined text) — with code fences dropped.
+    """A document as quotable blocks — (first line, joined text) — with code fences dropped.
+
+    Built for the README and reused for every side-doc the pack fetches, so a sentence from `FAQ.md` is
+    located the same way as one from `README.md`.
 
     `readme_head` cannot answer "which sentence is this line part of", because the blank lines that ended
     the paragraphs are gone by the time it is built. The boundary is recorded here, at fetch time, so a
@@ -367,29 +392,31 @@ def quote_of(text, rxs=None):
     return max(hits, key=lambda h: (h[0], -h[1]))[2] if hits else ""
 
 
-def method_lines(rec, cap=12):
-    """Every method-shaped sentence the cached README publishes, whole, with the line it starts on.
+def method_lines(sources, rec, cap=12):
+    """Every method-shaped sentence the README **and its side-docs** publish, whole, with its locator.
 
     A locator, not a filter: `INTAKE.md` measured that the same vocabulary false-flagged 33 of the 136
     entered slugs, so the pack ranks sentences and never decides between them. Ranked by how many of the
     four method shapes a sentence names, then by whether it reads as a sentence (a copula), then by
-    document order.
+    document order — README before side-docs, and each file by its own line number.
     """
+    labels = [label for label, _ in sources] + [""]
     hits = []
-    for i, text in rec.get("readme_blocks") or []:
-        if "releases" in text.lower()[:40] or text.startswith("|"):
-            continue
-        sh = shapes(text)
-        if sh:
-            q = quote_of(text) or (text if len(text) >= 40 else "")
-            if q:
-                hits.append((-len(shapes(q).split("+")), 0 if COPULA.search(q) else 1, i,
-                             shapes(q), q))
+    for order, (_, blocks) in enumerate(sources):
+        for i, text in blocks:
+            if "releases" in text.lower()[:40] or text.startswith("|"):
+                continue
+            sh = shapes(text)
+            if sh:
+                q = quote_of(text) or (text if len(text) >= 40 else "")
+                if q:
+                    hits.append((-len(shapes(q).split("+")), 0 if COPULA.search(q) else 1, order, i,
+                                 shapes(q), q))
     desc = (rec["meta"].get("description") or "").strip()
     if desc and shapes(desc):
-        hits.append((-len(shapes(desc).split("+")), 0, 0, shapes(desc), desc))
+        hits.append((-len(shapes(desc).split("+")), 0, len(labels) - 1, 0, shapes(desc), desc))
     hits.sort()
-    return [(i, sh, s) for _, _, i, sh, s in hits][:cap]
+    return [(labels[o], i, sh, s) for _, _, o, i, sh, s in hits[:cap]]
 
 
 RE_CAP = re.compile(r"\.[a-z0-9]{2,5}\b|import|export|convert|your own|bring your|ships no|"
@@ -403,26 +430,28 @@ RE_STATUS = re.compile(r"pre-?alpha|\bbeta\b|early development|not yet|still mis
                        r"active research|decompilation progress", re.I)
 
 
-def capability_lines(rec, cap=12):
-    """The README's own sentences about formats, the asset boundary and unfinished state.
+def capability_lines(sources, cap=12):
+    """The sentences about formats, the asset boundary and unfinished state, README and side-docs alike.
 
     These are what `desc`, `note` and `assets` get written from, so the pack prints them whole: without
     this half of the screen a stage-2 pass had to open `data/cache/quality/*.json` itself, the hand work
     `INTAKE.md` now forbids. Only a named data format, a boundary sentence or an admitted gap qualifies —
     a dotted domain in a nav line is not a fact about the reconstruction.
     """
+    labels = [label for label, _ in sources]
     hits = []
-    for i, text in rec.get("readme_blocks") or []:
-        if text.startswith("|"):
-            continue
-        q = quote_of(text, [RE_CAP])
-        if not q or q[-1] not in ".!?":
-            continue          # nav and link lines are not sentences about the reconstruction
-        score = (3 if RE_EXT.search(q) else 0) + (2 if RE_BOUND_PHRASE.search(q) else 0) + \
-            (1 if RE_STATUS.search(q) else 0)
-        hits.append((-score, i, q))
+    for order, (_, blocks) in enumerate(sources):
+        for i, text in blocks:
+            if text.startswith("|"):
+                continue
+            q = quote_of(text, [RE_CAP])
+            if not q or q[-1] not in ".!?":
+                continue          # nav and link lines are not sentences about the reconstruction
+            score = (3 if RE_EXT.search(q) else 0) + (2 if RE_BOUND_PHRASE.search(q) else 0) + \
+                (1 if RE_STATUS.search(q) else 0)
+            hits.append((-score, order, i, q))
     hits.sort()
-    return [(i, s) for _, i, s in hits[:cap]]
+    return [(labels[o], i, s) for _, o, i, s in hits[:cap]]
 
 
 def tree_pack(rec):
@@ -437,6 +466,111 @@ def tree_pack(rec):
     assets = Counter(n.split("/")[0] for n in names
                      if os.path.splitext(n)[1].lower() in ASSET_EXT and "/" in n)
     return depth1, ext.most_common(6), data_dirs, docs, sum(assets.values()), assets.most_common(3)
+
+
+def source_dirs(rec, top=6):
+    """Where the source files actually sit, per top-level directory — the first half of an A3 read.
+
+    `--has` can only test filenames the reader already guessed; A3 asks the other question, *how much*
+    code is in this tree and *where*. This answers it from the cached recursive tree, so it costs no
+    request: `.` is the repository root, and a directory holding a large share of the source is where the
+    reconstruction lives. It ranks, it does not decide — a mod loader can hold plenty of its own code.
+    """
+    from collections import Counter
+    src = [n for n in (rec.get("names") or []) if os.path.splitext(n)[1].lower() in SOURCE_EXT]
+    if not src:
+        return [], 0, 0
+    per = {}
+    for n in src:
+        per.setdefault(n.split("/")[0] if "/" in n else ".", []).append(
+            os.path.splitext(n)[1].lower())
+    rows = []
+    for d, exts in per.items():
+        detail = " ".join(f"{e} {c}" for e, c in Counter(exts).most_common(3))
+        rows.append((len(exts), d, detail))
+    rows.sort(key=lambda r: (-r[0], r[1]))
+    total = len(src)
+    return [((d, n, f"{n * 100 // total}%", detail) for n, d, detail in rows[:top]),
+            len(per), total]
+
+
+# --------------------------------------------------------------------------- the side-docs a README omits
+
+DOC_NAMES = (                                   # (basename pattern, rank) — lower rank is fetched first
+    (re.compile(r"^faq\.md$", re.I), 0),
+    (re.compile(r"^roadmap\.md$", re.I), 1),
+    (re.compile(r"^(?:status|progress|gaps?|limitations|missing|caveats|unsupported)\.md$", re.I), 2),
+    (re.compile(r"^(?:target-app-)?parity.*\.md$", re.I), 3),
+    (re.compile(r"^(?:notice|attribution|credits|authors|third[-_]?part(?:ies|y)[-_]notices?)\.md$", re.I), 4),
+)
+DOC_CAP = 20_000        # characters kept per side-doc; a 400 KB changelog is not evidence, it is bulk
+
+
+def doc_shortlist(rec, cap):
+    """The side-docs worth a request, chosen from the cached tree — root first, then by rank.
+
+    Nothing is guessed at a URL: every path here is a path the tree already returned, so a repository
+    without a `FAQ.md` costs zero requests and a wrong name cannot be fetched.
+    """
+    cands = []
+    for n in rec.get("names") or []:
+        if not n.lower().endswith((".md", ".rst", ".txt")):
+            continue
+        base = os.path.basename(n)
+        for rx, rank in DOC_NAMES:
+            if rx.match(base):
+                cands.append((rank, n.count("/"), len(n), n))
+                break
+    cands.sort()
+    out, seen = [], set()
+    for _, _, _, n in cands:
+        # one basename once: a repository that keeps ROADMAP.md at the root and a copy under docs/ should
+        # spend its third slot on a parity or gaps file, which says something the other two do not.
+        b = os.path.basename(n).lower()
+        if b in seen:
+            continue
+        seen.add(b)
+        out.append(n)
+        if len(out) == cap:
+            break
+    return out
+
+
+def fetch_docs(repo, rec, cap=3, refresh=False):
+    """Pull the shortlisted side-docs once, keep their quotable blocks, and cache them in the record.
+
+    This is the difference between one pack call and the four raw requests a reader otherwise spends to
+    find the sentence in `FAQ.md` that settles `assets`. Blocks are stored rather than bodies: the cache
+    stays small and the locator (`FAQ.md head#14`) is a line number in the same file.
+    """
+    want = doc_shortlist(rec, cap)
+    have = rec.get("docs") or []
+    if want and not refresh and [d["path"] for d in have] == want:
+        return have, 0
+    out = []
+    for path in want:
+        body = gh(repo, "/contents/" + urllib.parse.quote(path), raw=True, timeout=45)[:DOC_CAP]
+        out.append({"path": path, "chars": len(body),
+                    "truncated": len(body) == DOC_CAP,
+                    "blocks": readme_blocks(body, cap=160)})
+    rec["docs"] = out
+    p = cache_path(repo)                    # write back beside the tree, so a re-run costs nothing
+    if p.exists():
+        cached = json.loads(p.read_text(encoding="utf-8"))
+        cached["docs"] = out
+        p.write_text(json.dumps(cached, ensure_ascii=False), encoding="utf-8")
+    return out, len(out)
+
+
+def blocks_of(rec, docs=()):
+    """Everything the pack quotes from, in order: the README, then each side-doc it fetched.
+
+    The README keeps the label `README.md`, so a locator written before side-docs existed still reads the
+    same way (`README.md head#12, 2026-10-17`) and an entry's `a2_read_at` never has to be re-derived.
+    """
+    out = [("README.md", rec.get("readme_blocks") or [])]
+    out += [(d["path"], d.get("blocks") or []) for d in docs]
+    return out
 
 
 def external_links(rec):
@@ -490,7 +624,7 @@ def record_read(repo, via):
     return p
 
 
-def pack(repo, refresh=False, has=""):
+def pack(repo, refresh=False, has="", docs_cap=3):
     cached = cache_path(repo).exists() and not refresh
     rec = fetch(repo, refresh)
     via = "cache" if cached else ("network" if rec else "404")
@@ -515,15 +649,26 @@ def pack(repo, refresh=False, has=""):
     state, hit = precheck(repo, rec.get("parent"))
     print(f"   precheck {state}{f' → {hit}' if hit else ''}"
           + ("  (settled without a read; the single-link rule)" if state != "pass" else ""))
-    depth1, ext, data_dirs, docs, n_assets, asset_dirs = tree_pack(rec)
+    depth1, ext, data_dirs, docs_dir, n_assets, asset_dirs = tree_pack(rec)
     print(f"   tree     {rec.get('tree_status')} · {len(rec.get('names') or [])} paths · "
           f"src: {', '.join(f'{k} {v}' for k, v in ext) or 'NONE'}")
     print(f"            root: {' '.join(depth1[:18])}")
     print(f"            data-ish dirs: {', '.join(f'{d} {c}' for d, c in data_dirs) or 'none'} · "
-          f"docs: {docs}")
+          f"docs: {docs_dir}")
     print(f"            asset-like files: {n_assets}"
           + (f", under {' '.join(f'{d} {c}' for d, c in asset_dirs)}" if asset_dirs else "")
-          + " — a hint for `assets`; the boundary claim is the README's own sentence (E4)")
+          + " — a hint for `assets`; the boundary claim is the README's or a side-doc's own sentence (E4)")
+    dirs, n_dirs, n_src = source_dirs(rec)
+    if dirs:
+        print(f"   A3 src   {n_src} source file(s) in {n_dirs} dir(s): "
+              + " · ".join(f"{d} {n} ({detail} · {pct})" for d, n, pct, detail in dirs))
+        print(f"            where the code sits is half of A3 — is that directory the reconstruction, a "
+              f"loader written around it, or a pointer to someone else's")
+    subs = rec.get("submodules")
+    if subs is not None:
+        print("   A3 sub   none: every path in the tree is this repository's own" if not subs else
+              f"   A3 sub   {len(subs)} submodule(s): {' '.join(subs[:6])}"
+              f"{' …' if len(subs) > 6 else ''} — code that arrives by gitlink is not this tree's result")
     links = external_links(rec)
     print(f"   links    {len(links)} external repo link(s)"
           + (f": {' '.join(links[:6])} — check whether the reconstruction lives there, that is A3"
@@ -532,26 +677,37 @@ def pack(repo, refresh=False, has=""):
         want, found = intersect_has(rec, has)
         print(f"   --has    {len(found)}/{len(want)} of your names are in the tree: {' '.join(found[:8])}"
               + (" — none: no vendor-source filenames present" if not found else ""))
-    hits = method_lines(rec)
+    docs, spent = ([], 0) if not docs_cap else fetch_docs(repo, rec, docs_cap, refresh)
+    if docs_cap:
+        if docs:
+            print(f"   docs     " + " · ".join(
+                f"{d['path']} {d['chars']:,}c{' (truncated)' if d['truncated'] else ''}" for d in docs)
+                + (f" — fetched now, {spent} request(s), cached for the next run" if spent
+                   else " — from the cache, 0 requests"))
+        else:
+            print("   docs     no FAQ/ROADMAP/gaps/parity/notice file in the tree — README only, 0 requests")
+    sources = blocks_of(rec, docs)
+    hits = method_lines(sources, rec)
     print(f"   A2       {len(hits)} method-shaped sentence(s) — whole, markup stripped, ready to paste "
           f"into admission.a2_quote with the locator below it, or write no line")
     shown = set()
-    for i, sh, s in hits:
+    for label, i, sh, s in hits:
         if s in shown:
             continue
         shown.add(s)
-        print(f"     {('description' if i == 0 else f'head#{i}'):<12}{sh:<8}{s}")
-        if i:
-            print(f"     {'':<12}{'':<8}a2_read_at → \"README.md head#{i}, {rec.get('fetched', '-')}\"")
-    caps = capability_lines(rec)
+        loc = "description" if not label else f"{label}#{i}"
+        print(f"     {loc:<20}{sh:<8}{s}")
+        if label:
+            print(f"     {'':<20}{'':<8}a2_read_at → \"{label} head#{i}, {rec.get('fetched', '-')}\"")
+    caps = capability_lines(sources)
     print(f"   facts    {len(caps)} sentence(s) on formats, the asset boundary and unfinished state — "
           f"what desc, note and assets are written from")
     seen_cap = set()
-    for i, s in caps:
+    for label, i, s in caps:
         if s in seen_cap:
             continue
         seen_cap.add(s)
-        print(f"     head#{i:<11}{s}")
+        print(f"     {f'{label}#{i}':<20}{s}")
     print("   decide   A1 who shipped it and did the rights holder release its source — the pack shows "
           "the licence field, not that. A2 which sentence above the entry quotes, and where it was read. "
           "A3 whether these paths are the reconstructed code, a mod loader, or a pointer.")
@@ -650,6 +806,8 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--refresh", action="store_true", help="ignore the cache")
     ap.add_argument("--has", default="", help="read: file of filenames to look for in the cached tree")
+    ap.add_argument("--docs", type=int, default=3,
+                    help="read: side-docs to fetch per candidate (0 = README only)")
     ap.add_argument("--out", default="", help="check: TSV to write · read: also write the pack text here")
     ap.add_argument("--workers", type=int, default=4 if TOKEN else 1)
     a = ap.parse_args()
@@ -671,7 +829,7 @@ def main():
             sys.stdout = tee
         try:
             for r in repos:
-                pack(r, a.refresh, a.has)
+                pack(r, a.refresh, a.has, a.docs)
         finally:
             sys.stdout = sink
             if tee:

@@ -122,7 +122,7 @@ One intake pass is five steps, in this order, and nothing else:
 
 ```console
 $ python3 scripts/preflight.py --repos /path/to/batch.txt      # 1  measure + pre-screen: one request per slug
-$ python3 scripts/quality.py read --repos /path/to/batch.txt   # 2  the whole pack: sentences untruncated, 0 requests if cached
+$ python3 scripts/quality.py read --repos /path/to/batch.txt   # 2  the whole pack: README + side-docs, sentences untruncated, 0 requests if cached
 $ …the A1–A3 read, from the pack alone…                        # 3  the only step that is a judgement, not plumbing
 $ python3 scripts/decide.py … · write pending-<date>.json      # 4  every row read gets a disposition, either way
 $ python3 scripts/merge.py pending-<date>.json                 # 5a merge into entries.json
@@ -167,6 +167,24 @@ below, so it is now forbidden rather than merely discouraged:
   block of the format/boundary/unfinished sentences `desc`, `note` and `assets` are written from. A cache
   written before that field costs one re-read, and the pack says so. If a sentence is still missing from the
   screen, **the fix is the pack, not a fourth script.**
+- **Do not fetch a side-doc instead.** The same ban covers `FAQ.md`, `ROADMAP.md`, a gaps or parity file and
+  `NOTICE.md`, which is where the asset boundary and the unfinished-state admission often live: on
+  2026-10-17 a batch read cost **five extra raw requests on one candidate** because the pack quoted only
+  `README.md` and the sentence that settled its `note` was in `FAQ.md`. The pack now shortlists those names
+  **from the cached tree** (so a repository without them costs nothing and a wrong filename cannot be
+  fetched), pulls at most three per candidate, 20 KB each, caches them in the same record, and prints their
+  sentences into `A2` and `facts` with a locator that names the file — `FAQ.md head#37, 2026-10-17`. It is
+  one basename per slot: a root `ROADMAP.md` and a `docs/roadmap.md` copy do not both get fetched. `--docs N`
+  sets the cap, `--docs 0` is the README-only pack of before. Measured cost: `storytold/deckcraft` 3
+  requests on a first read, **0 on the second**, and its `docs/gaps.md` lines (`.odp` unsupported,
+  `vbaProject.bin` untouched, SVG not rendered) reach the screen that previously cost three calls.
+- **Do not guess where the code is.** A3 asks whether the tree holds the reconstruction, and `--has` could
+  only ever test filenames the reader already guessed. The pack now prints the source files grouped by
+  top-level directory with each directory's share (`A3 src`) and the gitlinks it found (`A3 sub`) — both
+  computed from the tree that is already cached, at **zero requests**, and neither is a verdict: 130 of
+  `RSDKModding/RSDKv4-Decompilation`'s 148 source files sit in `RSDKv4/` while its four submodules are
+  vendored libraries, which is the opposite situation to a repository whose "reconstruction" is a submodule
+  pointer.
 - **Do not make the editorial calls.** A new `###` platform level, and any borderline class decision (is a
   format library whose README says "tools for modding" a result?), are the owner's — until they say 你来定,
   which transfers exactly the calls it names, for that batch, and no others. `merge.py` already refuses a
@@ -216,7 +234,7 @@ shows a whole-file diff, the indent is the first thing to check, not the merge.
 | `note` `{en, zh}` | stage 2 | yes | the closing sentence after the last token; 11 entries have one, and a number refresh rewrites the tokens beside it, never this |
 | `measured` | `verify.py refresh` writes it, `merge.py` copies it | via `tokens` | `stars` `forks` `pushed` `archived` `license_spdx` `snapshot` — copied from `GET /repos/{owner}/{repo}` output and nothing else; see the number path under `### The commands` |
 | `method` | stage 2 | no | `M1`–`M4` |
-| `admission` | stage 2 | no | `a1` (the provenance sentence read), `a2_quote`, `a2_read_at`, `a3` |
+| `admission` | stage 2 | no | `a1` (the provenance sentence read), `a2_quote`, `a2_read_at` (the file the quote came from and its line — `README.md head#12, 2026-10-17`, or `FAQ.md head#37, …`; the pack prints the string ready to paste), `a3` |
 | `assets` | stage 2 | no | `reader-supplied` · `shipped` · `none-needed`; the sentence `## Games` opens with depends on it |
 | `priority` | — | — | deliberately absent |
 
@@ -285,6 +303,7 @@ $ python3 scripts/preflight.py --repos path/to/one-owner-per-line.txt   # stage 
 $ python3 scripts/preflight.py --aggregate data.json --band 100:999     # stage 1, a catalogue dump
 $ python3 scripts/quality.py read --repo owner/repo                     # stage 2, the evidence pack; records the read
 $ python3 scripts/quality.py read --repos batch.txt --has names.txt     #   batched; --has intersects the cached tree
+$ python3 scripts/quality.py read --repos batch.txt --docs 0            #   README-only pack: no side-doc requests at all
 $ python3 scripts/quality.py check --repo owner/repo                    # stage 2's machine half: verdict, e, flags, quote
 $ python3 scripts/merge.py --coverage                                  # the pass gate: no read without a disposition
 $ python3 scripts/merge.py pending-<date>.json --dry-run                # stage 3, what would enter and where
