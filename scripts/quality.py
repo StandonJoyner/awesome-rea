@@ -20,6 +20,7 @@ Four evidence classes, each either present in the repository or not:
 
 verdict: exclude (no source code, no README, archived) / eligible (E1 or E2) /
 conditional (E3 or E4 only) / watch (nothing checkable published).
+The `e` column writes `E1x` when that class is present and `E1-` when it is absent.
 GITHUB_TOKEN (or GH_TOKEN) enables parallel requests; anonymous runs serialise and sleep.
 """
 import argparse
