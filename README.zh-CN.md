@@ -17,6 +17,7 @@
   - [Sony PlayStation](#sony-playstation)
   - [Microsoft Xbox 与 Xbox 360](#microsoft-xbox-与-xbox-360)
   - [MS-DOS、Windows 与 Macintosh](#ms-doswindows-与-macintosh)
+  - [家用电脑](#家用电脑)
   - [移动端](#移动端)
 - [应用程序](#应用程序)
 - [运行时与兼容层](#运行时与兼容层)
@@ -103,6 +104,7 @@ PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编
 - [OpenRA/OpenRA](https://github.com/OpenRA/OpenRA) - Westwood 的 Command & Conquer / Red Alert / Tiberian Sun 引擎，MS-DOS 与 Windows，净室重写。★ 17,579。
 - [OpenRCT2/OpenRCT2](https://github.com/OpenRCT2/OpenRCT2) - 过山车大亨 2，Windows → Windows、macOS、Linux、BSD 与 Android，自述"an open-source re-implementation"，使用原版游戏数据，GPL-3.0。★ 16,445 · 1,947 fork · 推送于 2026-10-14。
 - [SFTtech/openage](https://github.com/SFTtech/openage) - 帝国时代 II 引擎，MS-DOS 与 Windows，净室重写。★ 14,509。
+- [yairm210/Unciv](https://github.com/yairm210/Unciv) - 《文明5》，Windows → 安卓、Windows、macOS 与 Linux，Kotlin + LibGDX 的开源重制，自述主打可 mod，美术与音效全部自行创作。★ 11,452 · 1,977 fork · 推送于 2026-10-16。
 - [diasurgical/DevilutionX](https://github.com/diasurgical/DevilutionX) - 暗黑破坏神 与 Hellfire，Windows → Linux、macOS、Android、iOS、Nintendo Switch、PlayStation、Xbox 与 Amiga，把 `diasurgical/devilution` 的重建移植过去并加上自己的引擎工作，Sustainable Use License。★ 9,873 · 1,071 fork · 推送于 2026-10-15。
 - [diasurgical/devilution](https://github.com/diasurgical/devilution) - 暗黑破坏神，Windows，自述"a reconstructed form of Diablo's original source code"，从 Climax 的 PlayStation 符号文件与藏在 `DIABDAT.MPQ` 里的调试构建恢复出来，Sustainable Use License。★ 9,004 · 923 fork · 推送于 2025-09-15。
 - [OpenTTD/OpenTTD](https://github.com/OpenTTD/OpenTTD) - Transport Tycoon Deluxe 引擎，MS-DOS 与 Windows，净室重写。★ 8,377。
@@ -150,20 +152,32 @@ PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编
 - [exult/exult](https://github.com/exult/exult) - 创世纪 VII 引擎，MS-DOS 与 Macintosh，GPL-2.0。★ 693。
 - [opentyrian/opentyrian](https://github.com/opentyrian/opentyrian) - Tyrian 引擎，MS-DOS，GPL-2.0。★ 586。
 - [nxengine/nxengine-evo](https://github.com/nxengine/nxengine-evo) - Cave Story 引擎，Windows，净室重写。★ 551。
+- [omf2097/openomf](https://github.com/omf2097/openomf) - Diversions Entertainment 的 One Must Fall 2097，MS-DOS 1994 → Windows、Linux、macOS 与 BSD，起因是原版 IPX 联网"is a pain to set up"的引擎重制，跑读者自备的原版游戏资源，MIT。★ 485 · 59 fork · 推送于 2026-10-16。
 - [AlisterT/openjazz](https://github.com/AlisterT/openjazz) - Jazz Jackrabbit 引擎，MS-DOS，GPL-2.0。★ 409。
+- [stefanhendriks/Dune-II---The-Maker](https://github.com/stefanhendriks/Dune-II---The-Maker) - Westwood Studios 的 Dune 2，MS-DOS → Windows、Linux 与 macOS，基于 SDL3 的重制，仓库自带战役、地图与着色器资源，另加遭遇战、缩放与更高分辨率；LICENSE.md 是 MIT 全文而 GitHub 报成 NOASSERTION。★ 368 · 39 fork · 推送于 2026-10-16。
+- [IllegalCreed/type-pal](https://github.com/IllegalCreed/type-pal) - 软星的《仙剑奇侠传》，1995，DOS 与 Windows → 浏览器，以 TypeScript 从零写成，自带 MKF 解包、脚本虚拟机、调色板渲染与可视化编辑器，GPL-3.0。★ 193 · 19 fork · 建库于 2026-05-22 · 推送于 2026-10-17。reference/ 里保留 sdlpal 的 C 源码只作参考规格；仓库自述已入库的 demo 仍含少量 PAL 派生素材，尚未完成版权清理。
+- [Pyrdacor/freeserf.net](https://github.com/Pyrdacor/freeserf.net) - BlueByte 的 The Settlers I，DOS 与 Amiga → Windows、Linux、macOS 与 Android，以 C# 移植并扩展 freeserf 克隆，另加 AI 与局域网对战，跑读者手中原版数据，GPL-3.0。★ 173 · 18 fork · 推送于 2026-10-16。
+- [turican0/remc2](https://github.com/turican0/remc2) - Magic Carpet 2，MS-DOS → Windows 与 Linux，从出货汇编重建成 C/C++，并接续它所署名的那份逆向工作，带回归测试与自制高清素材，**未声明许可证**。★ 151 · 19 fork · 推送于 2026-10-16。
 - [mytbk/rich4](https://github.com/mytbk/rich4) - 大富翁4，Windows，反汇编之后改用 MinGW 与 `msvcrt` 重新链接成可运行的 `rich4.exe`，GPL-3.0。★ 146 · 20 fork · 建库于 2018-09-27 · 推送于 2026-10-08。
 - [Wargus/war1gus](https://github.com/Wargus/war1gus) - 把 WarCraft 1 做成建立在 Wargus 上的即时战略引擎，MS-DOS 与 Windows，GPL-2.0。★ 134。
 - [jhaizhou-ops/sts2-ios](https://github.com/jhaizhou-ops/sts2-ios) - 杀戮尖塔 2，Steam 的 Windows/Linux 构建 → iOS，"自带 Steam 副本"。★ 63 · 建库于 2026-07-15。
 - [N0zoM1z0/dx-ball](https://github.com/N0zoM1z0/dx-ball) - DX-Ball，MS-DOS：1996 年的共享软件 `DXBALL.EXE` 重建为 C 与 C++，自述"完全重建仍在进行"。★ 61。有帖子声称 Steam 版能跑，仓库里并没有这么写。
 - [N0zoM1z0/th04](https://github.com/N0zoM1z0/th04) - 东方 4，Windows：`MAIN.EXE` 重建为 C++，自述与原程序有 2,139 个逐字节匹配。★ 33。
 - [lhr0909/richman4-remastered](https://github.com/lhr0909/richman4-remastered) - 大富翁4，Windows → macOS、Android、iOS，引擎按 `mytbk/rich4` 公开的反汇编逐条重写，不是净室，GPL-3.0。★ 9 · 3 fork · 建库与推送于 2026-10-06。它的 NOTICE 把编译出的 APK 限制在构建者自己的设备上。
+- [bradhannah/UltimaVRedux](https://github.com/bradhannah/UltimaVRedux) - Ultima V: Warriors of Destiny，MS-DOS → Windows、macOS 与 Linux，以 Go 重建，读取玩家自备的原版文件，用命令行转换器保持 SAVED.GAM 存档兼容，并带开发者 Debug Workbench，MIT。★ 8 · 建库于 2026-10-06 · 推送于 2026-10-16。
 - [kichikuou/xsystem4](https://github.com/kichikuou/xsystem4) - AliceSoft System 4 视觉小说，把 Windows 上的作品重建到类 unix 系统，GPL-2.0。★ 3 · 推送于 2026-10-15。
+- [wicanr2/softworld_san1_remake](https://github.com/wicanr2/softworld_san1_remake) - 智冠的《三國演義》，1991，MS-DOS → Windows、Linux 与 macOS，引擎以 Go 与 Ebiten 按原版可查证的表现重写，保留两个版本已确认的规则差异，需读者自备原版数据。★ 3 · 建库于 2026-09-06 · 推送于 2026-10-15。它的规则验收是对拍：由项目自己的无头 DOS 执行器跑原版执行档，再拿读出的原版变量与调用逐项比对。
 
 `xsystem4` 带一份公开的 `game_compatibility.md`：66 部作品，41 支持、18 未知、7 不支持，其中 戦国ランス / Sengoku Rance、Rance VI、Rance 01、Rance 02 标为支持，ランス・クエスト 标为不支持。同一作者还维护 `xsystem35-sdl2`、`xsystem4-android`、`xsys35c`（见下文「格式、文件系统与协议」）、`system3-sdl2`、`sys4lang` 和 `libsys4`。
 
 `mytbk/rich4` 把自己的目标钉得很死：`rich4.exe` v3.11、588 KiB，SHA-256 `5a90aee28ee5f7a5c3ba5cb935c9e55751a529c25fcd91208748a66293569550`。2018 年三个月的工作做出了数据文件的解包算法与存档格式；2021 年借助 `mytbk/r2dumpbin` 把可执行文件变成可重新链接的汇编；2025 年 Watcom C 运行时被剥离到 MinGW 与 `msvcrt` 能链接出可运行的 `rich4.exe`。带注释的拆分放在 Codeberg 上的 `vimacs/rich4_asm`，`tytannial/rich4-re` 是同一部作品的第三个尝试。`lhr0909/richman4-remastered` 在自己的致谢里写明：每条规则、每个界面与动画时序都是照着那份公开反汇编重写的；素材来自 Steam 上架的《大富翁4》。
 
 暗黑破坏神这条线是一个起点、三个去处：`diasurgical/devilution` 从 Climax 的 PlayStation 移植留下的符号文件、以及藏在 `DIABDAT.MPQ` 里名为 `D1221A.MPQ` 的调试构建，重建出 1996 年的代码，并且刻意保留原版的 bug；`diasurgical/DevilutionX` 是这份重建的 SDL 移植，覆盖十几个平台；`d07RiV/diabloweb` 把 fork 过的 devilution 构建成浏览器里跑的 WebAssembly。三者的许可证都是 Sustainable Use License，也就是 GitHub 报成 `NOASSERTION` 的非商用许可证。凯撒大帝 III 也是同样的 fork 关系：`Keriew/augustus` 是 `bvschaik/julius` 的 fork，加了玩法改动，代价是放弃 Julius 一直坚持的双向存档兼容。辐射社区版写明了自己的方法链——每一个都建立在作者自己匹配出来的逆向底子上，而不是 Interplay 或 Bethesda 放出的源码。
+
+### 家用电脑
+
+- [Pyrdacor/Ambermoon.net](https://github.com/Pyrdacor/Ambermoon.net) - Ambermoon，Amiga → Windows、Linux、macOS 与 Android，以 C# 全量重写，原版数据格式在 Ambermoon.Data 各工程里重实现，运行需读者自备原版游戏文件，GPL-3.0。★ 541 · 34 fork · 推送于 2026-10-16。
+- [skoolkid/pyskool](https://github.com/skoolkid/pyskool) - Skool Daze（Microsphere，1984）与 Back to Skool（1985），Sinclair ZX Spectrum → 任何跑得动 Python 的平台，以 Python 与 Pygame 重写，学校、人物与行为都在它自己的源码里重建，GPL-3.0。★ 19 · 4 fork · 推送于 2026-10-16。
 
 ### 移动端
 
@@ -203,6 +217,7 @@ Wine 的代码页缺口：Wine 10.0 自带 76 个 `.nls` 代码页表，GB18030�
 - [f4pga/prjxray](https://github.com/f4pga/prjxray) - Xilinx 7 系列 FPGA 的比特流格式，ISC。★ 925。
 - [linux-apfs/linux-apfs-rw](https://github.com/linux-apfs/linux-apfs-rw) - Linux 内核里带写入支持的 APFS，GPL-2.0。★ 804。
 - [kichikuou/xsys35c](https://github.com/kichikuou/xsys35c) - DOS 与 Windows 上的 AliceSoft System 3.x 脚本字节码：同一套格式的编译器与反编译器，GPL-2.0。★ 40 · 推送于 2026-10-13。
+- [gibbed/Gibbed.LetUsClingTogether](https://github.com/gibbed/Gibbed.LetUsClingTogether) - PSP 版 Tactics Ogre: Let Us Cling Together 与其复刻版 Tactics Ogre: Reborn 的数据格式：.pac/.pakd 归档、编译后的 .xlc 表格、剧本与事件文件以及图像的解包与导出库，另附过场脚本反汇编器，Zlib。★ 36 · 6 fork · 推送于 2026-10-16。
 
 LibreDWG 是 GPL-3，与本应采用它的 LGPL 下游不兼容：一个技术上已经完成的格式重建，自己的生态却吸收不了。
 
@@ -217,4 +232,4 @@ LibreDWG 是 GPL-3，与本应采用它的 LGPL 下游不兼容：一个技术�
 
 ## 参与
 
-新增条目的规则见 [CONTRIBUTING.md](CONTRIBUTING.md)，清单如何分类、核验与刷新写在 `AGENTS.md`。决定大多数 PR 的两条：**按它重建的是哪一类软件归档，写明原始平台与重建方法**，"这个项目很牛，值得看"不构成一条条目；**核不实的说法加 ⚠，或者不写**——写出你真的读过的一手来源，或者写出你没读到什么。
+新增条目的规则见 [CONTRIBUTING.md](CONTRIBUTING.md)，清单如何分类、核验与刷新写在 `INTAKE.md` 与 `AGENTS.md`。决定大多数 PR 的两条：**按它重建的是哪一类软件归档，写明原始平台与重建方法**，"这个项目很牛，值得看"不构成一条条目；**核不实的说法加 ⚠，或者不写**——写出你真的读过的一手来源，或者写出你没读到什么。

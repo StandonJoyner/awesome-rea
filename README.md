@@ -17,6 +17,7 @@ Named for [`rea`](https://github.com/morluto/rea), an agent-driven reverse-engin
   - [Sony PlayStation](#sony-playstation)
   - [Microsoft Xbox and Xbox 360](#microsoft-xbox-and-xbox-360)
   - [MS-DOS, Windows and Macintosh](#ms-dos-windows-and-macintosh)
+  - [Home computers](#home-computers)
   - [Mobile](#mobile)
 - [Applications](#applications)
 - [Runtimes and compatibility layers](#runtimes-and-compatibility-layers)
@@ -103,6 +104,7 @@ Four different reconstructions sit behind the PlayStation entries. `Xeeynamo/sot
 - [OpenRA/OpenRA](https://github.com/OpenRA/OpenRA) - Westwood's Command & Conquer, Red Alert and Tiberian Sun engines, MS-DOS and Windows, clean-room. ★ 17,579.
 - [OpenRCT2/OpenRCT2](https://github.com/OpenRCT2/OpenRCT2) - RollerCoaster Tycoon 2, Windows → Windows, macOS, Linux, BSD and Android, "an open-source re-implementation" that uses the original game data, GPL-3.0. ★ 16,445 · 1,947 forks · pushed 2026-10-14.
 - [SFTtech/openage](https://github.com/SFTtech/openage) - Age of Empires II engine, MS-DOS and Windows, clean-room. ★ 14,509.
+- [yairm210/Unciv](https://github.com/yairm210/Unciv) - Sid Meier's Civilization V, Windows → Android, Windows, macOS and Linux, an open-source "moddability-focused" remake in Kotlin on LibGDX that authors its own art and audio. ★ 11,452 · 1,977 forks · pushed 2026-10-16.
 - [diasurgical/DevilutionX](https://github.com/diasurgical/DevilutionX) - Diablo and Hellfire, Windows → Linux, macOS, Android, iOS, Nintendo Switch, PlayStation, Xbox and Amiga, port of the `diasurgical/devilution` reconstruction with its own engine work, Sustainable Use License. ★ 9,873 · 1,071 forks · pushed 2026-10-15.
 - [diasurgical/devilution](https://github.com/diasurgical/devilution) - Diablo, Windows, "a reconstructed form of Diablo's original source code", recovered from the Climax PlayStation symbol file and the debug build hidden inside `DIABDAT.MPQ`, Sustainable Use License. ★ 9,004 · 923 forks · pushed 2025-09-15.
 - [OpenTTD/OpenTTD](https://github.com/OpenTTD/OpenTTD) - Transport Tycoon Deluxe engine, MS-DOS and Windows, clean-room. ★ 8,377.
@@ -150,20 +152,32 @@ Four different reconstructions sit behind the PlayStation entries. `Xeeynamo/sot
 - [exult/exult](https://github.com/exult/exult) - Ultima VII engine, MS-DOS and Macintosh, GPL-2.0. ★ 693.
 - [opentyrian/opentyrian](https://github.com/opentyrian/opentyrian) - Tyrian engine, MS-DOS, GPL-2.0. ★ 586.
 - [nxengine/nxengine-evo](https://github.com/nxengine/nxengine-evo) - Cave Story engine, Windows, clean-room. ★ 551.
+- [omf2097/openomf](https://github.com/omf2097/openomf) - One Must Fall 2097 by Diversions Entertainment, MS-DOS 1994 → Windows, Linux, macOS and BSD, engine remake started because the original's IPX networking "is a pain to set up", on the reader's own game resources, MIT. ★ 485 · 59 forks · pushed 2026-10-16.
 - [AlisterT/openjazz](https://github.com/AlisterT/openjazz) - Jazz Jackrabbit engine, MS-DOS, GPL-2.0. ★ 409.
+- [stefanhendriks/Dune-II---The-Maker](https://github.com/stefanhendriks/Dune-II---The-Maker) - Dune 2 by Westwood Studios, MS-DOS → Windows, Linux and macOS, SDL3 remake that carries its own campaign, map and shader resources in the tree and adds skirmish play, zooming and higher resolutions, MIT text in LICENSE.md where GitHub reports NOASSERTION. ★ 368 · 39 forks · pushed 2026-10-16.
+- [IllegalCreed/type-pal](https://github.com/IllegalCreed/type-pal) - 《仙剑奇侠传》 (PAL, Softstar, 1995), DOS and Windows → the browser, written from scratch in TypeScript with its own MKF extractor, script virtual machine, palette renderer and visual editor, GPL-3.0. ★ 193 · 19 forks · created 2026-05-22 · pushed 2026-10-17. It keeps a copy of sdlpal's C source in reference/ as a specification only, and says plainly that the committed demo still holds a little PAL-derived art that is not cleared for release.
+- [Pyrdacor/freeserf.net](https://github.com/Pyrdacor/freeserf.net) - The Settlers I by BlueByte, DOS and Amiga → Windows, Linux, macOS and Android, C# remake written as a port and extension of the freeserf clone, with added AI and local-network play, on the reader's original data files, GPL-3.0. ★ 173 · 18 forks · pushed 2026-10-16.
+- [turican0/remc2](https://github.com/turican0/remc2) - Magic Carpet 2, MS-DOS → Windows and Linux, rebuilt from the shipped assembler into C/C++ and continued from the reverse engineering it credits, with a regression test suite and its own enhanced asset set, **no license declared**. ★ 151 · 19 forks · pushed 2026-10-16.
 - [mytbk/rich4](https://github.com/mytbk/rich4) - Richman 4 (大富翁4), Windows, disassembly that re-links against MinGW and `msvcrt` into a runnable `rich4.exe`, GPL-3.0. ★ 146 · 20 forks · created 2018-09-27 · pushed 2026-10-08.
 - [Wargus/war1gus](https://github.com/Wargus/war1gus) - WarCraft 1 as a strategy engine on top of Wargus, MS-DOS and Windows, GPL-2.0. ★ 134.
 - [jhaizhou-ops/sts2-ios](https://github.com/jhaizhou-ops/sts2-ios) - Slay the Spire 2, Steam Windows and Linux build → iOS, "bring your own Steam copy". ★ 63 · created 2026-07-15.
 - [N0zoM1z0/dx-ball](https://github.com/N0zoM1z0/dx-ball) - DX-Ball, MS-DOS: the 1996 shareware `DXBALL.EXE` reconstructed to C and C++, "exact reconstruction is in progress". ★ 61. A post claims a Steam build runs; the repository does not say so.
 - [N0zoM1z0/th04](https://github.com/N0zoM1z0/th04) - Touhou 4, Windows: `MAIN.EXE` reconstructed to C++, with "2,139 matching bytes" claimed against the original. ★ 33.
 - [lhr0909/richman4-remastered](https://github.com/lhr0909/richman4-remastered) - Richman 4 (大富翁4), Windows → macOS, Android and iOS, engine rewritten rule by rule against `mytbk/rich4`'s published disassembly rather than clean-room, GPL-3.0. ★ 9 · 3 forks · created and pushed 2026-10-06. Its NOTICE limits a built APK to the builder's own devices.
+- [bradhannah/UltimaVRedux](https://github.com/bradhannah/UltimaVRedux) - Ultima V: Warriors of Destiny, MS-DOS → Windows, macOS and Linux, Go recreation that reads the player's own game files, keeps SAVED.GAM save compatibility through a command-line converter, and ships a developer Debug Workbench, MIT. ★ 8 · created 2026-10-06 · pushed 2026-10-16.
 - [kichikuou/xsystem4](https://github.com/kichikuou/xsystem4) - AliceSoft System 4 visual novels, Windows titles rebuilt for unix-like systems, GPL-2.0. ★ 3 · pushed 2026-10-15.
+- [wicanr2/softworld_san1_remake](https://github.com/wicanr2/softworld_san1_remake) - 《三國演義》 (Softworld, 1991), MS-DOS → Windows, Linux and macOS, engine rewritten in Go and Ebiten against the original's verifiable behaviour, keeping the confirmed rule differences of both releases, needs the reader's own game data. ★ 3 · created 2026-09-06 · pushed 2026-10-15. Rule restoration is signed off differentially: the project's own headless DOS runner executes the original executable and the remake is compared against variables and calls read out of it.
 
 `xsystem4` keeps a public `game_compatibility.md`: 66 titles, 41 supported, 18 unknown, 7 unsupported, with 戦国ランス / Sengoku Rance, Rance VI, Rance 01 and Rance 02 marked supported and ランス・クエスト unsupported. The same author also maintains `xsystem35-sdl2`, `xsystem4-android`, `xsys35c` (under Formats, file systems and protocols), `system3-sdl2`, `sys4lang` and `libsys4`.
 
 `mytbk/rich4` pins its target: `rich4.exe` v3.11, 588 KiB, SHA-256 `5a90aee28ee5f7a5c3ba5cb935c9e55751a529c25fcd91208748a66293569550`. Three months of work in 2018 produced the data-file unpacking algorithm and the save format; in 2021 the executable became re-linkable assembly via `mytbk/r2dumpbin`; in 2025 the Watcom C runtime was stripped far enough that MinGW and `msvcrt` link a runnable `rich4.exe`. The annotated split lives in `vimacs/rich4_asm` on Codeberg, and `tytannial/rich4-re` is a third attempt at the same title. `lhr0909/richman4-remastered` states in its own acknowledgements that every rule, screen and animation timing was rewritten against that published disassembly; the Steam release of 《大富翁4》 supplies the assets.
 
 The Diablo line has three destinations and one origin: `diasurgical/devilution` reconstructed the 1996 code from the symbol file the Climax PlayStation port left behind and from a debug build hidden inside `DIABDAT.MPQ` as `D1221A.MPQ`, and it deliberately keeps the original bugs; `diasurgical/DevilutionX` is the SDL port of that reconstruction to about a dozen platforms; `d07RiV/diabloweb` builds a forked devilution to WebAssembly for browsers. All three carry the Sustainable Use License, the non-commercial licence GitHub reports as `NOASSERTION`. `wheybags/freeablo` reimplements the same engine by another route and needs `Diablo.exe` as well as the MPQ. Caesar III has the same fork relationship: `Keriew/augustus` is the fork of `bvschaik/julius` that adds gameplay changes and gives up the two-way save compatibility Julius holds to. The Fallout community editions state their own method chain — each is built on the author's matching reverse-engineered base rather than on any Interplay or Bethesda source release.
+
+### Home computers
+
+- [Pyrdacor/Ambermoon.net](https://github.com/Pyrdacor/Ambermoon.net) - Ambermoon, Amiga → Windows, Linux, macOS and Android, full rewrite in C# with the original data formats reimplemented in its Ambermoon.Data projects, played on the game files the reader obtains itself, GPL-3.0. ★ 541 · 34 forks · pushed 2026-10-16.
+- [skoolkid/pyskool](https://github.com/skoolkid/pyskool) - Skool Daze (Microsphere, 1984) and Back to Skool (1985), Sinclair ZX Spectrum → any platform Python runs on, re-implementation in Python and Pygame with the schools, characters and behaviour rebuilt in its own source, GPL-3.0. ★ 19 · 4 forks · pushed 2026-10-16.
 
 ### Mobile
 
@@ -203,6 +217,7 @@ File formats, file systems and network protocols reimplemented from observation,
 - [f4pga/prjxray](https://github.com/f4pga/prjxray) - Xilinx 7-series FPGA bitstream format, ISC. ★ 925.
 - [linux-apfs/linux-apfs-rw](https://github.com/linux-apfs/linux-apfs-rw) - APFS with write support inside the Linux kernel, GPL-2.0. ★ 804.
 - [kichikuou/xsys35c](https://github.com/kichikuou/xsys35c) - AliceSoft System 3.x scripting bytecode on DOS and Windows: compiler and decompiler for the format, GPL-2.0. ★ 40 · pushed 2026-10-13.
+- [gibbed/Gibbed.LetUsClingTogether](https://github.com/gibbed/Gibbed.LetUsClingTogether) - Tactics Ogre: Let Us Cling Together on PSP and its remaster Tactics Ogre: Reborn: format libraries with unpackers and exporters for the .pac and .pakd archives, the compiled .xlc spreadsheet tables, screenplay and event files and images, plus a cutscene script disassembler, Zlib. ★ 36 · 6 forks · pushed 2026-10-16.
 
 LibreDWG is GPL-3, which is incompatible with the LGPL downstreams that would adopt it: a finished format reconstruction that its own ecosystem cannot absorb.
 
@@ -217,4 +232,4 @@ This list takes results only; these take tools or a wider net.
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for how to add an entry and `AGENTS.md` for how the list is classified, sourced and refreshed. The rules that decide most PRs: **file the entry under the kind of software it reconstructed, name the original platform and the method**, because "cool project, you should look at it" is not an entry; and **unverified claims get a ⚠ or stay out** — name the primary source you actually read, or write what you could not read.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for how to add an entry, and `INTAKE.md` and `AGENTS.md` for how the list is classified, sourced and refreshed. The rules that decide most PRs: **file the entry under the kind of software it reconstructed, name the original platform and the method**, because "cool project, you should look at it" is not an entry; and **unverified claims get a ⚠ or stay out** — name the primary source you actually read, or write what you could not read.
