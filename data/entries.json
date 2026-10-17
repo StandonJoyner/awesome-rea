@@ -4980,6 +4980,108 @@
       "check": true
     },
     {
+      "slug": "RSDKModding/Sonic-Mania-Decompilation",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "desc": {
+        "en": "Sonic Mania (2017), the game code around Retro Engine v5, self-described \"a complete decompilation\" that will not run without the assets from the official releases, custom licence",
+        "zh": "Sonic Mania（2017），Retro Engine v5 周围的游戏代码，自述\"a complete decompilation\"，没有官方发行版的素材就跑不起来，自定义许可证"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Its README adds a built-in mod loader and API calls on top of the decompilation.",
+        "zh": "它的 README 说明反编译之上另加了内置 mod 加载器与 API 调用。"
+      },
+      "method": "M1",
+      "admission": {
+        "a1": "Sonic Mania (2017) ships as a retail binary from Sega; the repository's README opens by asking readers to support the official release and states the decompilation will not run without its assets, so the source of what was decompiled has not been released.",
+        "a2_quote": "A complete decompilation of Sonic Mania (2017)",
+        "a2_read_at": "repository description, 2026-10-17",
+        "a3": "1,314 paths, 612 .c and 616 .h in the tree itself, plus Game/, SonicMania.sln, an Xcode project and a Switch icon; the engine arrives as the RSDKv5 submodule, which is why the README insists on a recursive clone."
+      },
+      "assets": "reader-supplied",
+      "_section_index": 4,
+      "measured": {
+        "stars": 817,
+        "forks": 199,
+        "pushed": "2026-09-21",
+        "archived": false,
+        "license_spdx": "NOASSERTION",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "RSDKModding/RSDKv3-Decompilation",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "desc": {
+        "en": "Retro Engine v3, the engine of the 2011 Sonic CD re-release, \"A complete decompilation\" that will not run without the official release's assets, with Windows, iOS/macOS, Android, UWP and PS Vita build files, custom licence",
+        "zh": "Retro Engine v3，2011 年索尼克 CD 重制版所用的引擎，自述\"A complete decompilation\"，没有官方发行版的素材就跑不起来，树中含 Windows、iOS/macOS、Android、UWP 与 PS Vita 构建文件，自定义许可证"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Its FAQ lists the ports of this engine decompilation maintained by other teams.",
+        "zh": "它的 FAQ 列出了其他团队维护的该引擎反编译移植。"
+      },
+      "method": "M1",
+      "admission": {
+        "a1": "The 2011 Sonic CD re-release ships as a retail binary; its README asks readers to support the official release and states the decompilation will not run without its assets, so the engine's source has not been released by its rights holder.",
+        "a2_quote": "A complete decompilation of Retro Engine v3.",
+        "a2_read_at": "README.md head#3, 2026-10-17",
+        "a3": "259 paths holding the engine as C++/.hpp/.cpp under RSDKv3/, with Android.mk, an Xcode project, a UWP solution and a Vita project beside CMakeLists.txt; the .java files are the Android build glue."
+      },
+      "assets": "reader-supplied",
+      "_section_index": 4,
+      "measured": {
+        "stars": 711,
+        "forks": 198,
+        "pushed": "2026-10-10",
+        "archived": false,
+        "license_spdx": "NOASSERTION",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
       "slug": "TheAssemblyArmada/Thyme",
       "_section_index": 4,
       "section": "Games",
@@ -5085,6 +5187,57 @@
         "a3": null
       },
       "assets": null,
+      "check": true
+    },
+    {
+      "slug": "RSDKModding/RSDKv5-Decompilation",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "desc": {
+        "en": "Retro Engine v5 and v5Ultimate, the engine behind Sonic Mania, \"A complete decompilation of Retro Engine v5 and v5Ultimate\", whose README disclaims ownership and names the engine's current owner, custom licence",
+        "zh": "Retro Engine v5 与 v5Ultimate，Sonic Mania 背后的引擎，自述\"A complete decompilation of Retro Engine v5 and v5Ultimate\"，其 README 声明自己不拥有该引擎并写出它现在的所有者，自定义许可证"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Its FAQ says the team is \"done with decompiling, at least for the time being\".",
+        "zh": "它的 FAQ 称该团队\"done with decompiling, at least for the time being\"。"
+      },
+      "method": "M1",
+      "admission": {
+        "a1": "Retro Engine v5(U) ships inside retail games only; the README states \"We do not own the Retro Engine in any way, shape or form\" and names Evening Star as its current owner, and forbids using the project to pirate the games, so no released source underlies it.",
+        "a2_quote": "A complete decompilation of Retro Engine v5 and v5Ultimate.",
+        "a2_read_at": "README.md head#3, 2026-10-17",
+        "a3": "501 paths holding the engine as 105 .hpp and 103 .cpp in RSDKv5/ and RSDKv5U/, with two solutions, two Xcode projects and an Android directory; the README carries no separate asset-boundary sentence, so reader-supplied rests on it being the engine of games it does not ship (its own piracy line names them)."
+      },
+      "assets": "reader-supplied",
+      "_section_index": 4,
+      "measured": {
+        "stars": 566,
+        "forks": 235,
+        "pushed": "2026-10-03",
+        "archived": false,
+        "license_spdx": "NOASSERTION",
+        "snapshot": "2026-10-17"
+      },
       "check": true
     },
     {

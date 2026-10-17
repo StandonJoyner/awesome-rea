@@ -148,9 +148,12 @@ PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编
 - [dkfans/keeperfx](https://github.com/dkfans/keeperfx) - 地下城守护者，Windows → Windows，自述"the whole codebase of Dungeon Keeper is remade"，起点是对原版可执行文件的反编译，之后一路重写，GPL-2.0。★ 1,020 · 133 fork · 推送于 2026-10-16。
 - [LostArtefacts/TRX](https://github.com/LostArtefacts/TRX) - 古墓丽影 1、2、3，MS-DOS 与 Windows → Windows 与 Linux，重实现是"through decompilation"得来的，保留每一代引擎各自的机制，GPL-3.0。★ 1,009 · 72 fork · 推送于 2026-10-17。
 - [lethal-guitar/RigelEngine](https://github.com/lethal-guitar/RigelEngine) - 毁灭公爵 II，MS-DOS → Windows、Linux、macOS、Steam Deck 与树莓派，自述"based on reverse engineering (specifically, disassembly of the original binaries)"，GPL-2.0。★ 1,007 · 69 fork · 推送于 2026-09-28。
+- [RSDKModding/Sonic-Mania-Decompilation](https://github.com/RSDKModding/Sonic-Mania-Decompilation) - Sonic Mania（2017），Retro Engine v5 周围的游戏代码，自述"a complete decompilation"，没有官方发行版的素材就跑不起来，自定义许可证。★ 817 · 199 fork · 推送于 2026-09-21。它的 README 说明反编译之上另加了内置 mod 加载器与 API 调用。
+- [RSDKModding/RSDKv3-Decompilation](https://github.com/RSDKModding/RSDKv3-Decompilation) - Retro Engine v3，2011 年索尼克 CD 重制版所用的引擎，自述"A complete decompilation"，没有官方发行版的素材就跑不起来，树中含 Windows、iOS/macOS、Android、UWP 与 PS Vita 构建文件，自定义许可证。★ 711 · 198 fork · 推送于 2026-10-10。它的 FAQ 列出了其他团队维护的该引擎反编译移植。
 - [TheAssemblyArmada/Thyme](https://github.com/TheAssemblyArmada/Thyme) - Three's Company 全动态影像游戏的引擎，MS-DOS，净室重写。★ 696。
 - [exult/exult](https://github.com/exult/exult) - 创世纪 VII 引擎，MS-DOS 与 Macintosh，GPL-2.0。★ 693。
 - [opentyrian/opentyrian](https://github.com/opentyrian/opentyrian) - Tyrian 引擎，MS-DOS，GPL-2.0。★ 587。
+- [RSDKModding/RSDKv5-Decompilation](https://github.com/RSDKModding/RSDKv5-Decompilation) - Retro Engine v5 与 v5Ultimate，Sonic Mania 背后的引擎，自述"A complete decompilation of Retro Engine v5 and v5Ultimate"，其 README 声明自己不拥有该引擎并写出它现在的所有者，自定义许可证。★ 566 · 235 fork · 推送于 2026-10-03。它的 FAQ 称该团队"done with decompiling, at least for the time being"。
 - [nxengine/nxengine-evo](https://github.com/nxengine/nxengine-evo) - Cave Story 引擎，Windows，净室重写。★ 551。
 - [omf2097/openomf](https://github.com/omf2097/openomf) - Diversions Entertainment 的 One Must Fall 2097，MS-DOS 1994 → Windows、Linux、macOS 与 BSD，起因是原版 IPX 联网"is a pain to set up"的引擎重制，跑读者自备的原版游戏资源，MIT。★ 485 · 59 fork · 推送于 2026-10-17。
 - [AlisterT/openjazz](https://github.com/AlisterT/openjazz) - Jazz Jackrabbit 引擎，MS-DOS，GPL-2.0。★ 409。
