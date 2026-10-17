@@ -6,20 +6,24 @@ The short version for a PR is here. The full operational spec — filing precede
 
 ## What belongs
 
-An entry must be a *finished result*: something that was taken apart and rebuilt, patched, or reimplemented. Acceptable shapes:
+Admission is three tests, all of them answered from the repository itself. A suggestion that cannot clear all three is a watch-list lead, not an entry.
 
-- source that compiles to (or is diffed against) the original binary;
-- a new engine that consumes the original data;
-- a behaviour-compatible reimplementation of a format, protocol, driver or API;
-- a port or compatibility patch that makes an unmodified binary run somewhere new.
+- **A1 — Provenance, in two halves.** There has to **be** something reconstructed — a program, engine, format or behaviour the rights holder actually shipped — and it has to have been arrived at **without the rights holder's source**: from a shipped binary, the original data or archives, or observed behaviour.
+- **A2 — Claim.** The project's **own README or description states which method** it used: byte-matching decompilation or disassembly, clean-room engine reimplementation, format/protocol/driver/API reimplementation, port or static recompilation of the original binary, or a compatibility patch. Quote the sentence; do not infer it.
+- **A3 — Artifact.** The linked repository **contains the reconstructed code** — not a compatibility database, showcase page, video, installer, run recipe, mod loader, or the documentation tree of a tool.
 
-**A trainer or memory editor is no longer admitted.** `## Trainers and modifiers` was deleted from both READMEs on 2026-10-17 with its four entries; the removed projects and the legal record that section carried are in AGENTS.md under `## Takedown and legal record`.
+The classes that fail, in the order people hit them:
 
-**Tools alone do not qualify.** Ghidra, x64dbg, ImHex and friends appear only where an entry is about a *result*. The lists this one draws its boundary against are named under Related lists in the README.
+| You are looking at | Fails | |
+| --- | --- | --- |
+| Source the vendor or the author released, then compiled, continued or ported (`source-sdk-2013`, C&C Generals, Descent 3, Flash Player, `Werkkzeug3`, `TerryCavanagh/VVVVVV`, the Quake `ioq3`/`yquake2`/`vkQuake` family, `chocolate-doom`, `OpenJK`) | **A1** | Nothing was reconstructed — the code was handed over. |
+| A debugger, decompiler, hex editor, dumper, launcher, or another awesome list | **A3** | This list carries outcomes, not instrumentation. |
+| A trainer or memory editor | **A3** | The class was deleted from both READMEs on 2026-10-17 and M5 retired with it; its legal record is in AGENTS.md under `## Takedown and legal record`. |
+| A ROM hack, fan level, randomizer, new content, or a multiplayer mod on someone else's port | **A1** | New work authored on top of a shipped work, not a reconstruction of it. |
+| A fork whose upstream is already entered | **A3** | One link per result; the fork belongs as plain text in that paragraph. |
+| A real project that publishes no method sentence | **A2** | Unprovable on one read, so it waits on the watch list until it states its method. |
 
-**An entry must link a repository that contains code.** Compatibility databases, launcher showcase pages, and video or stream links are not entries even when they are about one of these projects; they belong in a paragraph as plain text or nowhere.
-
-**Source the owner released is not a result.** Compiling a vendor's own release (`source-sdk-2013`, C&C Generals, Descent 3, Flash Player, `Werkkzeug3`) involves no reconstruction, so it gets no entry — there is no section for it and one will not be added.
+**Failing admission is not a grade.** Star count, last-push age, license and whether an agent helped are **not** admission tests — write dormancy or a missing license into the line as a plain status phrase, never as a reason to drop a project. A rejection names the test the project failed and nothing else.
 
 ## Entry format
 
@@ -29,7 +33,7 @@ An entry must be a *finished result*: something that was taken apart and rebuilt
 
 Required fields:
 
-1. **A software-type section** — `Games`, `Applications`, `Runtimes and compatibility layers`, or `Formats, file systems and protocols`. Inside `Games`, also pick the platform subsection (`Nintendo`, `Sony PlayStation`, `Microsoft Xbox and Xbox 360`, `MS-DOS, Windows and Macintosh`). The admission test for each section is in AGENTS.md; a new entry always goes in exactly one of them.
+1. **A software-type section** — `Games`, `Applications`, `Runtimes and compatibility layers`, or `Formats, file systems and protocols`. Inside `Games`, also pick the platform subsection (`Nintendo`, `Sony PlayStation`, `Microsoft Xbox and Xbox 360`, `MS-DOS, Windows and Macintosh`). The filing test for each section is in AGENTS.md, and it is applied only after A1–A3 pass; a new entry always goes in exactly one of them.
 2. **Original platform** — the platform the thing being reconstructed ran on, in the vendor's own words, and for a port or recompile also where it runs now (`PS4 → Windows and Linux`). The type is carried by the section, so do not repeat it in the line.
 3. **Method** — one of the four live labels: byte-matching decompilation or disassembly, clean-room engine reimplementation, format/protocol/driver/API reimplementation, port and static recompilation (or compatibility patch). Say which one in words, in the line; the M1–M4 ids are internal and never appear in a README (M5, trainer and memory editing, was retired with its section on 2026-10-17). There is no separate index of methods to update.
 4. **Snapshot** — stars, and last-push or creation date wherever liveliness is part of the claim. Do not write a snapshot date into the entry: the README carries one refreshed date, and CI rewrites `★ <n>`, `<n> forks` and `pushed <date>` from `GET /repos/{owner}/{repo}`. A `created <date>` is a historical fact and stays.
@@ -69,6 +73,12 @@ $ GITHUB_TOKEN=$(gh auth token) python3 scripts/verify.py refresh --apply   # re
 ```
 
 Leave the numbers to the last command and the refresh workflow: a PR that only changes a description should not contain hand-edited star counts.
+
+To check A3 and see what a repository publishes as proof, run the intake gate before you write anything — it is not in CI, because it reads new repositories rather than the ones already entered:
+
+```console
+$ GITHUB_TOKEN=$(gh auth token) python3 scripts/quality.py check --repos path/to/one-owner-per-line.txt
+```
 
 ## PRs
 
