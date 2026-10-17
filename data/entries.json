@@ -5931,6 +5931,177 @@
       "check": true
     },
     {
+      "slug": "storytold/gridcraft",
+      "section": "Applications",
+      "platform": null,
+      "method": "M2",
+      "assets": "none-needed",
+      "desc": {
+        "en": "Microsoft Excel, rebuilt clean-room in Rust with XLSX as its native format and XLSB and ODS worksheet data import, Apache-2.0",
+        "zh": "净室用 Rust 重写的 Microsoft Excel，以 XLSX 为原生格式，可导入 XLSB 与 ODS 工作表数据，Apache-2.0"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2026-10-07",
+          "zh": "建库于 2026-10-07"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "The repository publishes its own unfinished state: ROADMAP.md holds the stage, numbers and effort estimates and docs/gaps.md the ranked work left.",
+        "zh": "仓库自己公布未完工的部分：ROADMAP.md 写阶段、数字与工时估计，docs/gaps.md 是排序后的待办清单。"
+      },
+      "admission": {
+        "a1": "Excel is a shipped Microsoft product whose source Microsoft has not released; the README's own mark line states Microsoft, Excel and Microsoft 365 are Microsoft's trademarks while GridCraft is independent and unaffiliated.",
+        "a2_quote": "Spreadsheets and data; an open-source, clean-room reimplementation of Microsoft Excel, rebuilt in pure Rust.",
+        "a2_read_at": "README.md head#12, 2026-10-17",
+        "a3": "499 paths, 285 .rs — the README's own layer table names the crates it is built from (core, numfmt, formula, functions, model, calc, xlsx, chart, engine, ui-egui, mcp) with apps/gridcraft, apps/gridcraft-cli and apps/gridcraft-web above them."
+      },
+      "_section_index": 7,
+      "measured": {
+        "stars": 5448,
+        "forks": 2485,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "Apache-2.0",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "storytold/cadcraft",
+      "section": "Applications",
+      "platform": null,
+      "method": "M2",
+      "assets": "none-needed",
+      "desc": {
+        "en": "Autodesk AutoCAD, rebuilt clean-room in Rust: the command line, object snaps, layers, dimensions, hatches, blocks and DXF drawings, Apache-2.0",
+        "zh": "净室用 Rust 重写的 Autodesk AutoCAD：命令行、对象捕捉、图层、标注、填充、块与 DXF 图纸，Apache-2.0"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2026-10-07",
+          "zh": "建库于 2026-10-07"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Its README names the boundary itself: SHX fonts, including big fonts such as chineset.shx, are not read yet, so SHX-styled text is drawn with the project's own stroke font.",
+        "zh": "边界由它的 README 自己写明：SHX 字体（含 chineset.shx 这类大字体）尚未读取，SHX 样式的文字改用项目自带的笔画字体。"
+      },
+      "admission": {
+        "a1": "AutoCAD is a shipped Autodesk product with no released source; the README states the names are used only to describe the workflows and file formats it is compatible with, and that CADCraft is independent, unaffiliated and unendorsed.",
+        "a2_quote": "Computer-aided design and drafting; an open-source, clean-room reimplementation of Autodesk AutoCAD, rebuilt in pure Rust.",
+        "a2_read_at": "README.md head#12, 2026-10-17",
+        "a3": "819 paths, 579 .rs — examples/apartment.dxf is drawn by CADCraft's own commands and cadcraft-cli reads a DXF and converts it to SVG, so the reader and the writer are in this repository."
+      },
+      "_section_index": 7,
+      "measured": {
+        "stars": 5446,
+        "forks": 2404,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "Apache-2.0",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "storytold/soundcraft",
+      "section": "Applications",
+      "platform": null,
+      "method": "M2",
+      "assets": "none-needed",
+      "desc": {
+        "en": "Avid Pro Tools, rebuilt clean-room in Rust as a multitrack DAW with fader automation, a MIDI score editor and MusicXML export, Apache-2.0",
+        "zh": "净室用 Rust 重写的 Avid Pro Tools，作多轨音频工作站，带推子自动化、MIDI 音色编辑器与 MusicXML 导出，Apache-2.0"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        },
+        {
+          "t": "forks",
+          "field": "forks",
+          "en": "{forks} forks",
+          "zh": "{forks} fork"
+        },
+        {
+          "t": "literal",
+          "field": null,
+          "en": "created 2026-10-07",
+          "zh": "建库于 2026-10-07"
+        },
+        {
+          "t": "pushed",
+          "field": "pushed",
+          "en": "pushed {pushed}",
+          "zh": "推送于 {pushed}"
+        }
+      ],
+      "note": {
+        "en": "Parity with the target app is measured in the open: docs/target-app-parity.md holds the assessment and docs/parity-checklist.md compares the two menu by menu.",
+        "zh": "它与原版的对齐是公开量出来的：docs/target-app-parity.md 是评估，docs/parity-checklist.md 逐菜单对照。"
+      },
+      "admission": {
+        "a1": "Pro Tools is a shipped Avid product with no released source; the README states Avid and Pro Tools are Avid Technology's trademarks while SoundCraft is independent and unaffiliated.",
+        "a2_quote": "Recording, editing and mixing audio; an open-source, clean-room reimplementation of Avid Pro Tools, rebuilt in pure Rust.",
+        "a2_read_at": "README.md head#12, 2026-10-17",
+        "a3": "525 paths, 299 .rs — soundcraft-model is the session document and soundcraft-engine the commands, undo, editing, import/export and bounce, with the app in apps/soundcraft; the tree's 35 asset files are the project's own, listed with author and licence in ATTRIBUTION.md."
+      },
+      "_section_index": 7,
+      "measured": {
+        "stars": 3091,
+        "forks": 1938,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "Apache-2.0",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
       "slug": "soyrochus/mucrab",
       "_section_index": 7,
       "section": "Applications",

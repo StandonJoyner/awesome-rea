@@ -189,6 +189,9 @@ PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编
 
 - [ruffle-rs/ruffle](https://github.com/ruffle-rs/ruffle) - Adobe Flash Player，AVM2 加渲染，Rust，净室重写。★ 18,695。
 - [storytold/wordcraft](https://github.com/storytold/wordcraft) - 面向 Windows 与 Mac 的 Microsoft Word，直接吃原版文档格式，Apache-2.0，Rust。★ 13,694。它的 README 写着"Clean-room: built from public specifications and observation, with every asset original or openly licensed"，因此按净室成果归档。
+- [storytold/gridcraft](https://github.com/storytold/gridcraft) - 净室用 Rust 重写的 Microsoft Excel，以 XLSX 为原生格式，可导入 XLSB 与 ODS 工作表数据，Apache-2.0。★ 5,448 · 2,485 fork · 建库于 2026-10-07 · 推送于 2026-10-16。仓库自己公布未完工的部分：ROADMAP.md 写阶段、数字与工时估计，docs/gaps.md 是排序后的待办清单。
+- [storytold/cadcraft](https://github.com/storytold/cadcraft) - 净室用 Rust 重写的 Autodesk AutoCAD：命令行、对象捕捉、图层、标注、填充、块与 DXF 图纸，Apache-2.0。★ 5,446 · 2,404 fork · 建库于 2026-10-07 · 推送于 2026-10-16。边界由它的 README 自己写明：SHX 字体（含 chineset.shx 这类大字体）尚未读取，SHX 样式的文字改用项目自带的笔画字体。
+- [storytold/soundcraft](https://github.com/storytold/soundcraft) - 净室用 Rust 重写的 Avid Pro Tools，作多轨音频工作站，带推子自动化、MIDI 音色编辑器与 MusicXML 导出，Apache-2.0。★ 3,091 · 1,938 fork · 建库于 2026-10-07 · 推送于 2026-10-16。它与原版的对齐是公开量出来的：docs/target-app-parity.md 是评估，docs/parity-checklist.md 逐菜单对照。
 - [soyrochus/mucrab](https://github.com/soyrochus/mucrab) - muCommander，一个 Java 桌面应用按观测到的行为用 Rust 重写，附测试报告。★ 1。
 
 ## 运行时与兼容层
