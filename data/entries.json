@@ -20,8 +20,8 @@
       "zh": "本清单以 [`rea`](https://github.com/morluto/rea) 命名——一个 agent 驱动的逆向工具包。条目收的是重建物本身，无论是谁、用哪条工具链做出来的。"
     },
     {
-      "en": "★ counts and last-push dates are read from GitHub's `GET /repos/{owner}/{repo}` endpoint and are rewritten by a scheduled CI job. **Data last refreshed {refreshed}.** **⚠** marks a claim not read from a primary source, so it is not data. The maintenance rules for this list are in [AGENTS.md](AGENTS.md).",
-      "zh": "所有星标数与最近推送日期都读自 GitHub 的 `GET /repos/{owner}/{repo}` 接口，并由定时的 CI 作业重写。**数据刷新于 {refreshed}。** **⚠** 表示该说法没有读到一手来源，因此不算数据。本清单的维护规则写在 [AGENTS.md](AGENTS.md)。"
+      "en": "★ counts are read from GitHub's `GET /repos/{owner}/{repo}` endpoint and are rewritten by a scheduled CI job. **Data last refreshed {refreshed}.** **⚠** marks a claim not read from a primary source, so it is not data. The maintenance rules for this list are in [AGENTS.md](AGENTS.md).",
+      "zh": "所有星标数都读自 GitHub 的 `GET /repos/{owner}/{repo}` 接口，并由定时的 CI 作业重写。**数据刷新于 {refreshed}。** **⚠** 表示该说法没有读到一手来源，因此不算数据。本清单的维护规则写在 [AGENTS.md](AGENTS.md)。"
     }
   ],
   "sections": [
@@ -41,7 +41,8 @@
       "intro": {
         "en": "Engines, decompiled binaries and recompiles of shipped games. Almost all of these leave the game files to the reader's own licensed copy; an entry that carries the original assets says so in its line.",
         "zh": "出货作品的引擎、反编译产物与重编译版本。这些几乎都不带游戏文件，素材由用户以自己的合法副本提供；确实内置原版素材的条目会在行里写明。"
-      }
+      },
+      "i": 0
     },
     {
       "level": 3,
@@ -69,7 +70,8 @@
           "en": "The Super Mario 64 line is one reconstruction with several destinations: `n64decomp/sm64` builds the matching ROM from a `baserom.<VERSION>.z64`, `sm64-port/sm64-port` is the GitHub fork that adds native Linux and Windows targets, `sm64pc/sm64ex` forks that with enhancement packs and Emill's fast 3D renderer, and `coop-deluxe/sm64coopdx` continues the archived `djoslin0/sm64ex-coop` multiplayer mod on top of it. `HarbourMasters/Shipwright`, `2ship2harkinian/2ship2harkinian`, `HarbourMasters/SpaghettiKart` and `HarbourMasters/Starship` are one libultraship family — four titles, four ROM dumps, no shipped assets. Two of the decompilations state the boundary themselves: `zeldaret/tp` \"is not, and will not, produce a port\", which is the gap `TwilitRealm/dusklight` fills, and `SMGCommunity/Petari` refuses the port label outright; the Perfect Dark decompilation now lives on GitLab, with `n64decomp/perfect_dark` kept as a mirror.",
           "zh": "Super Mario 64 这条线是一次重建、好几个去处：`n64decomp/sm64` 用读者提供的 `baserom.<VERSION>.z64` 构建出匹配的 ROM；`sm64-port/sm64-port` 是加上原生 Linux 与 Windows 目标的那个 GitHub fork；`sm64pc/sm64ex` 再 fork 一次，加入增强包与 Emill 的高速 3D 渲染器；`coop-deluxe/sm64coopdx` 在它上面接着做已归档的 `djoslin0/sm64ex-coop` 联机 mod。`HarbourMasters/Shipwright`、`2ship2harkinian/2ship2harkinian`、`HarbourMasters/SpaghettiKart` 与 `HarbourMasters/Starship` 属于同一个 libultraship 家族——四部作品、四份 ROM dump、不附带素材。两份反编译自己写明了边界：`zeldaret/tp` \"is not, and will not, produce a port\"，这段空缺正是 `TwilitRealm/dusklight` 补上的，而 `SMGCommunity/Petari` 直接拒绝\"移植\"这个标签。完美黑暗的反编译现在住在 GitLab，`n64decomp/perfect_dark` 只作为镜像保留。"
         }
-      ]
+      ],
+      "i": 1
     },
     {
       "level": 3,
@@ -89,7 +91,8 @@
           "en": "Four different reconstructions sit behind the PlayStation entries. `Xeeynamo/sotn-decomp` compiles back to the same bytes as the shipped binaries. `OpenDriver2/REDRIVER2` translates the MIPS code to C and runs it natively without emulation. `FelipePrado0/gow3_pc` and `deadinside28/bloodborne_pc` keep the original console code running and reimplement the system layer under it. `LoreanXavier/pt-pc` is the exception in that set: P.T.'s logic was rewritten from observed behaviour in a new engine that reads the original archives, so no original binary executes. `TeamGDB/Yakumo` is again a different shape: the PSP machine code is translated ahead of time into C++ and compiled for the host, so neither an interpreter nor the original binary runs, while the PSP system software underneath it is reimplemented. The Windows distribution of the Bloodborne port is carried by the fork `Supermedo/bloodborne_pc`, whose contributor list includes the upstream author.",
           "zh": "PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编译回去的字节和出货二进制一样。`OpenDriver2/REDRIVER2` 把 MIPS 代码翻成 C 并原生运行，不经过模拟。`FelipePrado0/gow3_pc` 与 `deadinside28/bloodborne_pc` 让原版主机代码继续执行，重建的是它底下的那一层系统。`LoreanXavier/pt-pc` 是这组里的例外：P.T. 的逻辑是按观测到的行为在新引擎里重写的，由新引擎去读原版归档，没有任何原版二进制在跑。`TeamGDB/Yakumo` 又是另一种形态：PSP 机器码被提前翻译成 C++ 并编译成宿主机程序，既没有解释器也没有原版二进制在运行，重建的是它底下的 PSP 系统软件。血源诅咒这个移植的 Windows 发行由 fork `Supermedo/bloodborne_pc` 承担，它的贡献者列表里包含上游作者。"
         }
-      ]
+      ],
+      "i": 2
     },
     {
       "level": 3,
@@ -103,7 +106,23 @@
         "en": "Microsoft Xbox and Xbox 360",
         "zh": "Microsoft Xbox 与 Xbox 360"
       },
-      "in_contents": true
+      "in_contents": true,
+      "i": 3
+    },
+    {
+      "level": 3,
+      "en": "Sega",
+      "zh": "世嘉",
+      "anchor": {
+        "en": "sega",
+        "zh": "世嘉"
+      },
+      "toc_label": {
+        "en": "Sega",
+        "zh": "世嘉"
+      },
+      "in_contents": true,
+      "i": 4
     },
     {
       "level": 3,
@@ -131,7 +150,8 @@
           "en": "The Diablo line has three destinations and one origin: `diasurgical/devilution` reconstructed the 1996 code from the symbol file the Climax PlayStation port left behind and from a debug build hidden inside `DIABDAT.MPQ` as `D1221A.MPQ`, and it deliberately keeps the original bugs; `diasurgical/DevilutionX` is the SDL port of that reconstruction to about a dozen platforms; `d07RiV/diabloweb` builds a forked devilution to WebAssembly for browsers. All three carry the Sustainable Use License, the non-commercial licence GitHub reports as `NOASSERTION`. `wheybags/freeablo` reimplements the same engine by another route and needs `Diablo.exe` as well as the MPQ. Caesar III has the same fork relationship: `Keriew/augustus` is the fork of `bvschaik/julius` that adds gameplay changes and gives up the two-way save compatibility Julius holds to. The Fallout community editions state their own method chain — each is built on the author's matching reverse-engineered base rather than on any Interplay or Bethesda source release.",
           "zh": "暗黑破坏神这条线是一个起点、三个去处：`diasurgical/devilution` 从 Climax 的 PlayStation 移植留下的符号文件、以及藏在 `DIABDAT.MPQ` 里名为 `D1221A.MPQ` 的调试构建，重建出 1996 年的代码，并且刻意保留原版的 bug；`diasurgical/DevilutionX` 是这份重建的 SDL 移植，覆盖十几个平台；`d07RiV/diabloweb` 把 fork 过的 devilution 构建成浏览器里跑的 WebAssembly。三者的许可证都是 Sustainable Use License，也就是 GitHub 报成 `NOASSERTION` 的非商用许可证。凯撒大帝 III 也是同样的 fork 关系：`Keriew/augustus` 是 `bvschaik/julius` 的 fork，加了玩法改动，代价是放弃 Julius 一直坚持的双向存档兼容。辐射社区版写明了自己的方法链——每一个都建立在作者自己匹配出来的逆向底子上，而不是 Interplay 或 Bethesda 放出的源码。"
         }
-      ]
+      ],
+      "i": 5
     },
     {
       "level": 3,
@@ -145,7 +165,8 @@
         "en": "Home computers",
         "zh": "家用电脑"
       },
-      "in_contents": true
+      "in_contents": true,
+      "i": 6
     },
     {
       "level": 3,
@@ -159,7 +180,8 @@
         "en": "Mobile",
         "zh": "移动端"
       },
-      "in_contents": true
+      "in_contents": true,
+      "i": 7
     },
     {
       "level": 2,
@@ -177,7 +199,8 @@
       "intro": {
         "en": "Programs that are not games, reconstructed well enough to run the original content.",
         "zh": "不是游戏、但重建到能吃原版内容的程序。"
-      }
+      },
+      "i": 8
     },
     {
       "level": 2,
@@ -201,7 +224,8 @@
           "en": "Wine codepage gap: Wine 10.0 ships 76 `.nls` codepage tables, and GB18030 (`c_54936.nls`) is not one of them, so a Simplified-Chinese title that calls `MultiByteToWideChar(54936, …)` during process init hangs with no window. Two fixes exist: add the missing table to the prefix (under Proton it must land in `syswow64`, because Wine redirects a 32-bit process's `system32` lookups), or patch the executable to request CP936. ⚠ *Substituting the GBK table loses GB18030's 4-byte sequences, so either route is an approximation; what differs between them is invasiveness, not correctness.*",
           "zh": "Wine 的代码页缺口：Wine 10.0 自带 76 个 `.nls` 代码页表，GB18030（`c_54936.nls`）不在其中，所以一个在进程初始化时调用 `MultiByteToWideChar(54936, …)` 的简体中文作品会不开窗口地卡死。两种修法：把缺的表补进 prefix（在 Proton 下必须放进 `syswow64`，因为 Wine 自己会把 32 位进程对 `system32` 的查询重定向），或者改可执行文件让它请求 CP936。⚠ *换成 GBK 表都会丢掉 GB18030 的 4 字节序列，因此两条路都是近似；两者的实际区别是侵入程度，不是正确性。*"
         }
-      ]
+      ],
+      "i": 9
     },
     {
       "level": 2,
@@ -225,7 +249,8 @@
           "en": "LibreDWG is GPL-3, which is incompatible with the LGPL downstreams that would adopt it: a finished format reconstruction that its own ecosystem cannot absorb.",
           "zh": "LibreDWG 是 GPL-3，与本应采用它的 LGPL 下游不兼容：一个技术上已经完成的格式重建，自己的生态却吸收不了。"
         }
-      ]
+      ],
+      "i": 10
     },
     {
       "level": 2,
@@ -243,7 +268,8 @@
       "intro": {
         "en": "This list takes results only; these take tools or a wider net.",
         "zh": "本清单只收成果，下面这些收工具或撒更大的网。"
-      }
+      },
+      "i": 11
     },
     {
       "level": 2,
@@ -256,7 +282,8 @@
       "intro": {
         "en": "Read [CONTRIBUTING.md](CONTRIBUTING.md) for how to add an entry, and `INTAKE.md` and `AGENTS.md` for how the list is classified, sourced and refreshed. The rules that decide most PRs: **file the entry under the kind of software it reconstructed, name the original platform and the method**, because \"cool project, you should look at it\" is not an entry; and **unverified claims get a ⚠ or stay out** — name the primary source you actually read, or write what you could not read.",
         "zh": "新增条目的规则见 [CONTRIBUTING.md](CONTRIBUTING.md)，清单如何分类、核验与刷新写在 `INTAKE.md` 与 `AGENTS.md`。决定大多数 PR 的两条：**按它重建的是哪一类软件归档，写明原始平台与重建方法**，\"这个项目很牛，值得看\"不构成一条条目；**核不实的说法加 ⚠，或者不写**——写出你真的读过的一手来源，或者写出你没读到什么。"
-      }
+      },
+      "i": 12
     }
   ],
   "entries": [
@@ -266,8 +293,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Super Mario 64, Nintendo 64, decompilation to C that rebuilds a ROM matching the shipped one, CC0-1.0",
-        "zh": "Super Mario 64，任天堂 64，反编译成 C 之后能重新构建出与出货版本一致的 ROM，CC0-1.0"
+        "en": "Super Mario 64, Nintendo 64, decompilation to C that rebuilds a ROM matching the shipped one",
+        "zh": "Super Mario 64，任天堂 64，反编译成 C 之后能重新构建出与出货版本一致的 ROM"
       },
       "tokens": [
         {
@@ -275,18 +302,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -314,8 +329,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "The Legend of Zelda: Majora's Mask, Nintendo 64 → Windows, Linux and macOS, static recompilation of the cartridge binary, \"This is not an emulator\", GPL-3.0",
-        "zh": "塞尔达传说 姆吉拉的假面，任天堂 64 → Windows、Linux 与 macOS，对卡带二进制做静态重编译，自述\"This is not an emulator\"，GPL-3.0"
+        "en": "The Legend of Zelda: Majora's Mask, Nintendo 64 → Windows, Linux and macOS, static recompilation of the cartridge binary, \"This is not an emulator\"",
+        "zh": "塞尔达传说 姆吉拉的假面，任天堂 64 → Windows、Linux 与 macOS，对卡带二进制做静态重编译，自述\"This is not an emulator\""
       },
       "tokens": [
         {
@@ -323,18 +338,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -362,8 +365,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "The Legend of Zelda: Twilight Princess, GameCube → Windows, Linux, macOS, Android and iOS, \"a reverse-engineered reimplementation\" built on the `zeldaret/tp` decompilation, CC0-1.0",
-        "zh": "塞尔达传说 黄昏公主，GameCube → Windows、Linux、macOS、Android 与 iOS，自述\"a reverse-engineered reimplementation\"，建立在 `zeldaret/tp` 的反编译之上，CC0-1.0"
+        "en": "The Legend of Zelda: Twilight Princess, GameCube → Windows, Linux, macOS, Android and iOS, \"a reverse-engineered reimplementation\" built on the `zeldaret/tp` decompilation",
+        "zh": "塞尔达传说 黄昏公主，GameCube → Windows、Linux、macOS、Android 与 iOS，自述\"a reverse-engineered reimplementation\"，建立在 `zeldaret/tp` 的反编译之上"
       },
       "tokens": [
         {
@@ -371,18 +374,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -410,8 +401,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Zelda: Ocarina of Time, Nintendo 64 → Windows, Linux and macOS, source port of the `zeldaret/oot` decompilation onto libultraship, **no license declared**",
-        "zh": "塞尔达传说 时之笛，任天堂 64 → Windows、Linux 与 macOS，把 `zeldaret/oot` 的反编译移植到 libultraship 上的源码移植，**未声明许可证**"
+        "en": "Zelda: Ocarina of Time, Nintendo 64 → Windows, Linux and macOS, source port of the `zeldaret/oot` decompilation onto libultraship",
+        "zh": "塞尔达传说 时之笛，任天堂 64 → Windows、Linux 与 macOS，把 `zeldaret/oot` 的反编译移植到 libultraship 上的源码移植"
       },
       "tokens": [
         {
@@ -419,18 +410,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -533,8 +512,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "The Legend of Zelda: A Link to the Past, Super Nintendo → Windows, Linux and macOS, \"a reverse engineered clone\" in C that runs the original machine code side by side and compares RAM after each frame, MIT",
-        "zh": "塞尔达传说 众神的三角力量，超级任天堂 → Windows、Linux 与 macOS，C 语言写的\"a reverse engineered clone\"，与原版机器码并行运行并在每帧之后比对 RAM，MIT"
+        "en": "The Legend of Zelda: A Link to the Past, Super Nintendo → Windows, Linux and macOS, \"a reverse engineered clone\" in C that runs the original machine code side by side and compares RAM after each frame",
+        "zh": "塞尔达传说 众神的三角力量，超级任天堂 → Windows、Linux 与 macOS，C 语言写的\"a reverse engineered clone\"，与原版机器码并行运行并在每帧之后比对 RAM"
       },
       "tokens": [
         {
@@ -542,18 +521,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -581,8 +548,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Pokémon Red through Emerald, Game Boy and Game Boy Advance → Windows, Linux, macOS, iOS, Switch and consoles, engine and map behaviour hand-written in Lua from the pret disassemblies rather than clean-room, GPL-3.0 with additional terms",
-        "zh": "精灵宝可梦 红一直到绿宝石，Game Boy 与 Game Boy Advance → Windows、Linux、macOS、iOS、Switch 与各主机，引擎与地图行为是照 pret 的反编译手写的 Lua，不是净室，GPL-3.0 加附加条款"
+        "en": "Pokémon Red through Emerald, Game Boy and Game Boy Advance → Windows, Linux, macOS, iOS, Switch and consoles, engine and map behaviour hand-written in Lua from the pret disassemblies rather than clean-room",
+        "zh": "精灵宝可梦 红一直到绿宝石，Game Boy 与 Game Boy Advance → Windows、Linux、macOS、iOS、Switch 与各主机，引擎与地图行为是照 pret 的反编译手写的 Lua，不是净室"
       },
       "tokens": [
         {
@@ -590,18 +557,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -629,8 +584,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Pokémon Emerald, Game Boy Advance, decompilation that builds the SHA-1-matching ROM, **no license declared**",
-        "zh": "精灵宝可梦 绿宝石，Game Boy Advance，反编译，构建出的 ROM 通过 SHA-1 校验，**未声明许可证**"
+        "en": "Pokémon Emerald, Game Boy Advance, decompilation that builds the SHA-1-matching ROM",
+        "zh": "精灵宝可梦 绿宝石，Game Boy Advance，反编译，构建出的 ROM 通过 SHA-1 校验"
       },
       "tokens": [
         {
@@ -638,18 +593,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -686,24 +629,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "MIT",
-          "zh": "MIT"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-12",
-          "zh": "建库于 2026-10-12"
         }
       ],
       "note": null,
@@ -767,8 +692,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Mario Kart 64, Nintendo 64 → Windows, Linux, macOS and Nintendo Switch, source port on libultraship that requires the player's own ROM, **no license declared**",
-        "zh": "马里奥赛车 64，任天堂 64 → Windows、Linux、macOS 与 Nintendo Switch，libultraship 上的源码移植，要玩家自己的 ROM，**未声明许可证**"
+        "en": "Mario Kart 64, Nintendo 64 → Windows, Linux, macOS and Nintendo Switch, source port on libultraship that requires the player's own ROM",
+        "zh": "马里奥赛车 64，任天堂 64 → Windows、Linux、macOS 与 Nintendo Switch，libultraship 上的源码移植，要玩家自己的 ROM"
       },
       "tokens": [
         {
@@ -776,18 +701,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -815,8 +728,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Super Smash Bros. Melee, GameCube, matching decompilation of the USA 1.02 `main.dol`, **no license declared**",
-        "zh": "任天堂明星大乱斗 DX，GameCube，对美版 1.02 的 `main.dol` 做匹配反编译，**未声明许可证**"
+        "en": "Super Smash Bros. Melee, GameCube, matching decompilation of the USA 1.02 `main.dol`",
+        "zh": "任天堂明星大乱斗 DX，GameCube，对美版 1.02 的 `main.dol` 做匹配反编译"
       },
       "tokens": [
         {
@@ -824,18 +737,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -863,8 +764,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Majora's Mask, Nintendo 64 → Windows, Linux and macOS, source port on the same libultraship stack as `HarbourMasters/Shipwright`, CC0-1.0",
-        "zh": "姆吉拉的假面，任天堂 64 → Windows、Linux 与 macOS，与 `HarbourMasters/Shipwright` 同一套 libultraship 的源码移植，CC0-1.0"
+        "en": "Majora's Mask, Nintendo 64 → Windows, Linux and macOS, source port on the same libultraship stack as `HarbourMasters/Shipwright`",
+        "zh": "姆吉拉的假面，任天堂 64 → Windows、Linux 与 macOS，与 `HarbourMasters/Shipwright` 同一套 libultraship 的源码移植"
       },
       "tokens": [
         {
@@ -872,18 +773,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -911,8 +800,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "The Legend of Zelda: Breath of the Wild, Switch 1.5.0, \"experimental, WIP decompilation\", and its README states it **cannot** be used to play the game, **no license declared**",
-        "zh": "塞尔达传说 旷野之息，Switch 1.5.0，自述\"experimental, WIP decompilation\"，README 写明**不能**拿它玩游戏，**未声明许可证**"
+        "en": "The Legend of Zelda: Breath of the Wild, Switch 1.5.0, \"experimental, WIP decompilation\", and its README states it **cannot** be used to play the game",
+        "zh": "塞尔达传说 旷野之息，Switch 1.5.0，自述\"experimental, WIP decompilation\"，README 写明**不能**拿它玩游戏"
       },
       "tokens": [
         {
@@ -920,18 +809,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -959,8 +836,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Star Fox 64, Nintendo 64 → Windows, Linux, macOS and Nintendo Switch, source port of the SF64 decompilation, CC0-1.0",
-        "zh": "星际火狐 64，任天堂 64 → Windows、Linux、macOS 与 Nintendo Switch，SF64 反编译的源码移植，CC0-1.0"
+        "en": "Star Fox 64, Nintendo 64 → Windows, Linux, macOS and Nintendo Switch, source port of the SF64 decompilation",
+        "zh": "星际火狐 64，任天堂 64 → Windows、Linux、macOS 与 Nintendo Switch，SF64 反编译的源码移植"
       },
       "tokens": [
         {
@@ -968,18 +845,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1007,8 +872,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "The Legend of Zelda: Twilight Princess, GameCube, decompilation whose GameCube code \"is completely matching\", CC0-1.0",
-        "zh": "塞尔达传说 黄昏公主，GameCube，反编译，其 GameCube 代码自述\"is completely matching\"，CC0-1.0"
+        "en": "The Legend of Zelda: Twilight Princess, GameCube, decompilation whose GameCube code \"is completely matching\"",
+        "zh": "塞尔达传说 黄昏公主，GameCube，反编译，其 GameCube 代码自述\"is completely matching\""
       },
       "tokens": [
         {
@@ -1016,18 +881,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1055,8 +908,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Perfect Dark, Nintendo 64 → Windows, Linux, macOS and Nintendo Switch, work-in-progress port of the decompilation whose original has moved to GitLab, MIT",
-        "zh": "完美黑暗，任天堂 64 → Windows、Linux、macOS 与 Nintendo Switch，反编译的进行中移植，原始仓库已迁到 GitLab，MIT"
+        "en": "Perfect Dark, Nintendo 64 → Windows, Linux, macOS and Nintendo Switch, work-in-progress port of the decompilation whose original has moved to GitLab",
+        "zh": "完美黑暗，任天堂 64 → Windows、Linux、macOS 与 Nintendo Switch，反编译的进行中移植，原始仓库已迁到 GitLab"
       },
       "tokens": [
         {
@@ -1064,18 +917,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1103,8 +944,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Banjo-Kazooie, Nintendo 64 → Windows, Linux and macOS, static recompilation, \"not based on the source code provided by a decompilation\", GPL-3.0",
-        "zh": "班卓熊大冒险，任天堂 64 → Windows、Linux 与 macOS，静态重编译，自述\"not based on the source code provided by a decompilation\"，GPL-3.0"
+        "en": "Banjo-Kazooie, Nintendo 64 → Windows, Linux and macOS, static recompilation, \"not based on the source code provided by a decompilation\"",
+        "zh": "班卓熊大冒险，任天堂 64 → Windows、Linux 与 macOS，静态重编译，自述\"not based on the source code provided by a decompilation\""
       },
       "tokens": [
         {
@@ -1112,18 +953,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1151,8 +980,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Super Mario 64, Nintendo 64 → Windows, Linux and macOS, source port of the `n64decomp/sm64` decompilation with enhancement and camera mods, **no license declared**",
-        "zh": "Super Mario 64，任天堂 64 → Windows、Linux 与 macOS，`n64decomp/sm64` 反编译的源码移植，带增强包与镜头 mod，**未声明许可证**"
+        "en": "Super Mario 64, Nintendo 64 → Windows, Linux and macOS, source port of the `n64decomp/sm64` decompilation with enhancement and camera mods",
+        "zh": "Super Mario 64，任天堂 64 → Windows、Linux 与 macOS，`n64decomp/sm64` 反编译的源码移植，带增强包与镜头 mod"
       },
       "tokens": [
         {
@@ -1160,18 +989,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1235,8 +1052,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Pokémon FireRed and LeafGreen, Game Boy Advance, decompilation that builds six named ROM images including Switch revisions, **no license declared**",
-        "zh": "精灵宝可梦 火红/叶绿，Game Boy Advance，反编译，能构建六个具名 ROM 镜像，含 Switch 修订版，**未声明许可证**"
+        "en": "Pokémon FireRed and LeafGreen, Game Boy Advance, decompilation that builds six named ROM images including Switch revisions",
+        "zh": "精灵宝可梦 火红/叶绿，Game Boy Advance，反编译，能构建六个具名 ROM 镜像，含 Switch 修订版"
       },
       "tokens": [
         {
@@ -1244,18 +1061,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1283,8 +1088,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Paper Mario, Nintendo 64, work-in-progress decompilation with per-region SHA-1 progress, **no license declared**",
-        "zh": "纸片马里奥，任天堂 64，进行中的反编译，按地区给出 SHA-1 进度，**未声明许可证**"
+        "en": "Paper Mario, Nintendo 64, work-in-progress decompilation with per-region SHA-1 progress",
+        "zh": "纸片马里奥，任天堂 64，进行中的反编译，按地区给出 SHA-1 进度"
       },
       "tokens": [
         {
@@ -1292,18 +1097,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1331,8 +1124,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Animal Crossing, GameCube → Windows, \"a native PC port … built on top of the ac-decomp decompilation project\", custom licence",
-        "zh": "动物之森，GameCube → Windows，自述\"a native PC port … built on top of the ac-decomp decompilation project\"，自定义许可证"
+        "en": "Animal Crossing, GameCube → Windows, \"a native PC port … built on top of the ac-decomp decompilation project\"",
+        "zh": "动物之森，GameCube → Windows，自述\"a native PC port … built on top of the ac-decomp decompilation project\""
       },
       "tokens": [
         {
@@ -1340,18 +1133,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -1382,8 +1163,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Animal Crossing, GameCube, decompilation of the USA GAFE01 disc to C, CC0-1.0",
-        "zh": "动物之森，GameCube，把美版 GAFE01 光盘反编译成 C，CC0-1.0"
+        "en": "Animal Crossing, GameCube, decompilation of the USA GAFE01 disc to C",
+        "zh": "动物之森，GameCube，把美版 GAFE01 光盘反编译成 C"
       },
       "tokens": [
         {
@@ -1391,18 +1172,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1430,8 +1199,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Mario Kart 64, Nintendo 64, decompilation with non-matching assemblies still listed in `asm/non_matchings`, **no license declared**",
-        "zh": "马里奥赛车 64，任天堂 64，反编译，尚未匹配的汇编仍列在 `asm/non_matchings` 里，**未声明许可证**"
+        "en": "Mario Kart 64, Nintendo 64, decompilation with non-matching assemblies still listed in `asm/non_matchings`",
+        "zh": "马里奥赛车 64，任天堂 64，反编译，尚未匹配的汇编仍列在 `asm/non_matchings` 里"
       },
       "tokens": [
         {
@@ -1439,18 +1208,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1478,8 +1235,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Super Mario Galaxy, Wii, work-in-progress decompilation of `main.dol`, and its README states the project is \"not meant to be an effort to create a PC port\", CC0-1.0",
-        "zh": "超级马里奥 银河，Wii，`main.dol` 的进行中反编译，README 写明本项目\"not meant to be an effort to create a PC port\"，CC0-1.0"
+        "en": "Super Mario Galaxy, Wii, work-in-progress decompilation of `main.dol`, and its README states the project is \"not meant to be an effort to create a PC port\"",
+        "zh": "超级马里奥 银河，Wii，`main.dol` 的进行中反编译，README 写明本项目\"not meant to be an effort to create a PC port\""
       },
       "tokens": [
         {
@@ -1487,18 +1244,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1526,8 +1271,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Mario Kart Wii, Wii → Windows, Linux and macOS, static recompilation of a PAL `RMCP01` disc image, \"There's no emulator in the loop\", GPL-3.0",
-        "zh": "马里奥赛车 Wii，Wii → Windows、Linux 与 macOS，对 PAL 的 `RMCP01` 光盘镜像做静态重编译，自述\"There's no emulator in the loop\"，GPL-3.0"
+        "en": "Mario Kart Wii, Wii → Windows, Linux and macOS, static recompilation of a PAL `RMCP01` disc image, \"There's no emulator in the loop\"",
+        "zh": "马里奥赛车 Wii，Wii → Windows、Linux 与 macOS，对 PAL 的 `RMCP01` 光盘镜像做静态重编译，自述\"There's no emulator in the loop\""
       },
       "tokens": [
         {
@@ -1535,18 +1280,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1574,8 +1307,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "The Wind Waker, GameCube, byte-matching decompilation, CC0-1.0",
-        "zh": "风之杖，GameCube，逐字节匹配的反编译，CC0-1.0"
+        "en": "The Wind Waker, GameCube, byte-matching decompilation",
+        "zh": "风之杖，GameCube，逐字节匹配的反编译"
       },
       "tokens": [
         {
@@ -1583,12 +1316,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1616,8 +1343,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Pokémon Ruby and Sapphire, Game Boy Advance, self-described disassembly that builds the matching ROMs, **no license declared**",
-        "zh": "精灵宝可梦 红宝石/蓝宝石，Game Boy Advance，自述为反汇编，构建出匹配的 ROM，**未声明许可证**"
+        "en": "Pokémon Ruby and Sapphire, Game Boy Advance, self-described disassembly that builds the matching ROMs",
+        "zh": "精灵宝可梦 红宝石/蓝宝石，Game Boy Advance，自述为反汇编，构建出匹配的 ROM"
       },
       "tokens": [
         {
@@ -1625,18 +1352,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1664,8 +1379,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Pokémon Yellow, Game Boy, disassembly that reassembles to the SHA-1-checked original ROM, **no license declared**",
-        "zh": "精灵宝可梦 黄，Game Boy，反汇编，可重新装配回 SHA-1 校验的原版 ROM，**未声明许可证**"
+        "en": "Pokémon Yellow, Game Boy, disassembly that reassembles to the SHA-1-checked original ROM",
+        "zh": "精灵宝可梦 黄，Game Boy，反汇编，可重新装配回 SHA-1 校验的原版 ROM"
       },
       "tokens": [
         {
@@ -1673,24 +1388,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2015-05-10",
-          "zh": "建库于 2015-05-10"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1718,8 +1415,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Pokémon Gold and Silver, Game Boy Color, disassembly of both releases, each pinned by its own SHA-1, **no license declared**",
-        "zh": "精灵宝可梦 金/银，Game Boy 彩色版，两套发行各自用一个 SHA-1 钉住，**未声明许可证**"
+        "en": "Pokémon Gold and Silver, Game Boy Color, disassembly of both releases, each pinned by its own SHA-1",
+        "zh": "精灵宝可梦 金/银，Game Boy 彩色版，两套发行各自用一个 SHA-1 钉住"
       },
       "tokens": [
         {
@@ -1727,24 +1424,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2015-07-09",
-          "zh": "建库于 2015-07-09"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1772,8 +1451,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Kirby 64: The Crystal Shards, Nintendo 64, work-in-progress byte-matching decompilation, **no license declared**",
-        "zh": "星之卡比64，任天堂 64，进行中的逐字节匹配反编译，**未声明许可证**"
+        "en": "Kirby 64: The Crystal Shards, Nintendo 64, work-in-progress byte-matching decompilation",
+        "zh": "星之卡比64，任天堂 64，进行中的逐字节匹配反编译"
       },
       "tokens": [
         {
@@ -1781,18 +1460,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1829,12 +1496,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-06-14",
-          "zh": "建库于 2026-06-14"
         }
       ],
       "note": null,
@@ -1862,8 +1523,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Kirby & The Amazing Mirror, Game Boy Advance, work-in-progress decompilation, **no license declared**",
-        "zh": "星之卡比 镜之大迷宫，Game Boy Advance，进行中的反编译，**未声明许可证**"
+        "en": "Kirby & The Amazing Mirror, Game Boy Advance, work-in-progress decompilation",
+        "zh": "星之卡比 镜之大迷宫，Game Boy Advance，进行中的反编译"
       },
       "tokens": [
         {
@@ -1871,24 +1532,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2020-01-11",
-          "zh": "建库于 2020-01-11"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1916,8 +1559,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Kirby Air Ride, GameCube, decompilation, **no license declared**",
-        "zh": "Kirby Air Ride，GameCube，反编译，**未声明许可证**"
+        "en": "Kirby Air Ride, GameCube, decompilation",
+        "zh": "Kirby Air Ride，GameCube，反编译"
       },
       "tokens": [
         {
@@ -1925,18 +1568,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -1964,8 +1595,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Kirby's Epic Yarn, Wii, byte-matching decompilation of the USA release, CC0-1.0",
-        "zh": "星之卡比 毛线传说，Wii，针对美版发行的逐字节匹配反编译，CC0-1.0"
+        "en": "Kirby's Epic Yarn, Wii, byte-matching decompilation of the USA release",
+        "zh": "星之卡比 毛线传说，Wii，针对美版发行的逐字节匹配反编译"
       },
       "tokens": [
         {
@@ -1973,18 +1604,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2012,8 +1631,8 @@
       "section": "Games",
       "platform": "Nintendo",
       "desc": {
-        "en": "Tekken Tag Tournament 2, Wii U → Linux, static recompilation, MIT, no game files",
-        "zh": "铁拳 Tag Tournament 2，Wii U → Linux，静态重编译，MIT，不含游戏文件"
+        "en": "Tekken Tag Tournament 2, Wii U → Linux, static recompilation, no game files",
+        "zh": "铁拳 Tag Tournament 2，Wii U → Linux，静态重编译，不含游戏文件"
       },
       "tokens": [
         {
@@ -2021,18 +1640,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} fork",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-05",
-          "zh": "建库于 2026-10-05"
         }
       ],
       "note": null,
@@ -2069,18 +1676,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2108,8 +1703,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "Bloodborne, PS4 → Linux, the game's own x86-64 code running against \"a runtime written for this one game \\[that\\] replaces the PS4 system libraries\", with graphics translated to Vulkan, GPL-2.0",
-        "zh": "血源诅咒，PS4 → Linux，游戏自己的 x86-64 代码跑在\"a runtime written for this one game \\[that\\] replaces the PS4 system libraries\"之上，图形转译到 Vulkan，GPL-2.0"
+        "en": "Bloodborne, PS4 → Linux, the game's own x86-64 code running against \"a runtime written for this one game \\[that\\] replaces the PS4 system libraries\", with graphics translated to Vulkan",
+        "zh": "血源诅咒，PS4 → Linux，游戏自己的 x86-64 代码跑在\"a runtime written for this one game \\[that\\] replaces the PS4 system libraries\"之上，图形转译到 Vulkan"
       },
       "tokens": [
         {
@@ -2117,18 +1712,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2156,8 +1739,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "wipEout, PlayStation → Windows, Linux, macOS and the browser, \"a re-implementation of the 1995 PSX game\", **no license declared**",
-        "zh": "wipEout，PlayStation → Windows、Linux、macOS 与浏览器，自述\"a re-implementation of the 1995 PSX game\"，**未声明许可证**"
+        "en": "wipEout, PlayStation → Windows, Linux, macOS and the browser, \"a re-implementation of the 1995 PSX game\"",
+        "zh": "wipEout，PlayStation → Windows、Linux、macOS 与浏览器，自述\"a re-implementation of the 1995 PSX game\""
       },
       "tokens": [
         {
@@ -2165,18 +1748,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2204,8 +1775,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "God of War III Remastered, PS4 → Windows and Linux, static recompilation of the original console binary, GPL-2.0, C++",
-        "zh": "God of War III Remastered，PS4 → Windows 与 Linux，直接执行原版主机二进制的静态重编译，GPL-2.0，C++"
+        "en": "God of War III Remastered, PS4 → Windows and Linux, static recompilation of the original console binary, C++",
+        "zh": "God of War III Remastered，PS4 → Windows 与 Linux，直接执行原版主机二进制的静态重编译，C++"
       },
       "tokens": [
         {
@@ -2213,18 +1784,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-08",
-          "zh": "建库于 2026-10-08"
         }
       ],
       "note": null,
@@ -2252,8 +1811,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "P.T., PS4 → Windows, Linux and macOS, \"the game logic was rebuilt in C++ from the original's behaviour\" in a new engine that reads the original archives, MIT",
-        "zh": "P.T.，PS4 → Windows、Linux 与 macOS，自述\"the game logic was rebuilt in C++ from the original's behaviour\"，新引擎读原版归档，MIT"
+        "en": "P.T., PS4 → Windows, Linux and macOS, \"the game logic was rebuilt in C++ from the original's behaviour\" in a new engine that reads the original archives",
+        "zh": "P.T.，PS4 → Windows、Linux 与 macOS，自述\"the game logic was rebuilt in C++ from the original's behaviour\"，新引擎读原版归档"
       },
       "tokens": [
         {
@@ -2261,18 +1820,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2300,8 +1847,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "Driver 2, PlayStation → Windows, Linux and the browser, \"completely disassembled and translated from MIPS back to C… no emulation involved\", MIT",
-        "zh": "Driver 2，PlayStation → Windows、Linux 与浏览器，自述\"completely disassembled and translated from MIPS back to C… no emulation involved\"，MIT"
+        "en": "Driver 2, PlayStation → Windows, Linux and the browser, \"completely disassembled and translated from MIPS back to C… no emulation involved\"",
+        "zh": "Driver 2，PlayStation → Windows、Linux 与浏览器，自述\"completely disassembled and translated from MIPS back to C… no emulation involved\""
       },
       "tokens": [
         {
@@ -2309,18 +1856,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2348,8 +1883,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "Castlevania: Symphony of the Night, PlayStation, PSP and Saturn, \"the code compiles byte-for-byte to the same binaries of the game\", AGPL-3.0",
-        "zh": "恶魔城X 月下夜想曲，PlayStation、PSP 与世嘉土星，自述\"the code compiles byte-for-byte to the same binaries of the game\"，AGPL-3.0"
+        "en": "Castlevania: Symphony of the Night, PlayStation, PSP and Saturn, \"the code compiles byte-for-byte to the same binaries of the game\"",
+        "zh": "恶魔城X 月下夜想曲，PlayStation、PSP 与世嘉土星，自述\"the code compiles byte-for-byte to the same binaries of the game\""
       },
       "tokens": [
         {
@@ -2357,18 +1892,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2396,8 +1919,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "Monster Hunter Portable 3rd HD Ver., PSP → Windows, Linux, macOS and Android, static recompilation of the PSP machine code into C++ on a reimplemented PSP system surface, \"It is not an emulator — there is no interpreter or JIT at the heart of it — and it is not a decompilation\", MIT, no game assets; the installer accepts only the original PS3 release `NPJB-40001`",
-        "zh": "Monster Hunter Portable 3rd HD Ver.，PSP → Windows、Linux、macOS 与 Android，把 PSP 机器码提前翻译成 C++ 的静态重编译，跑在一套重实现的 PSP 系统软件上，自述\"It is not an emulator — there is no interpreter or JIT at the heart of it — and it is not a decompilation\"，MIT，不含游戏素材；安装器只接受 PS3 上的原版发行 `NPJB-40001`"
+        "en": "Monster Hunter Portable 3rd HD Ver., PSP → Windows, Linux, macOS and Android, static recompilation of the PSP machine code into C++ on a reimplemented PSP system surface, \"It is not an emulator — there is no interpreter or JIT at the heart of it — and it is not a decompilation\", no game assets; the installer accepts only the original PS3 release `NPJB-40001`",
+        "zh": "Monster Hunter Portable 3rd HD Ver.，PSP → Windows、Linux、macOS 与 Android，把 PSP 机器码提前翻译成 C++ 的静态重编译，跑在一套重实现的 PSP 系统软件上，自述\"It is not an emulator — there is no interpreter or JIT at the heart of it — and it is not a decompilation\"，不含游戏素材; 安装器只接受 PS3 上的原版发行 `NPJB-40001`"
       },
       "tokens": [
         {
@@ -2405,24 +1928,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-09-18",
-          "zh": "建库于 2026-09-18"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2450,8 +1955,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "Street Fighter III: 3rd Strike, PlayStation 2, byte-matching decompilation, AGPL-3.0",
-        "zh": "Street Fighter III: 3rd Strike，PlayStation 2，逐字节匹配的反编译，AGPL-3.0"
+        "en": "Street Fighter III: 3rd Strike, PlayStation 2, byte-matching decompilation",
+        "zh": "Street Fighter III: 3rd Strike，PlayStation 2，逐字节匹配的反编译"
       },
       "tokens": [
         {
@@ -2459,24 +1964,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2024-09-28",
-          "zh": "建库于 2024-09-28"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "last push {pushed}",
-          "zh": "最近推送 {pushed}"
         }
       ],
       "note": null,
@@ -2504,8 +1991,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "Tekken 3, PlayStation 1 → PC, static recompilation, **no license declared**",
-        "zh": "铁拳 3，PlayStation 1 → PC，静态重编译，**未声明许可证**"
+        "en": "Tekken 3, PlayStation 1 → PC, static recompilation",
+        "zh": "铁拳 3，PlayStation 1 → PC，静态重编译"
       },
       "tokens": [
         {
@@ -2513,18 +2000,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-07-31",
-          "zh": "建库于 2026-07-31"
         }
       ],
       "note": null,
@@ -2552,8 +2027,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "God of War III Remastered, PS4 → Android, \"Native Android port of God of War III Remastered (PS4)\", GPL-2.0",
-        "zh": "God of War III Remastered，PS4 → Android，自述\"Native Android port of God of War III Remastered (PS4)\"，GPL-2.0"
+        "en": "God of War III Remastered, PS4 → Android, \"Native Android port of God of War III Remastered (PS4)\"",
+        "zh": "God of War III Remastered，PS4 → Android，自述\"Native Android port of God of War III Remastered (PS4)\""
       },
       "tokens": [
         {
@@ -2561,18 +2036,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-14",
-          "zh": "建库于 2026-10-14"
         }
       ],
       "note": null,
@@ -2600,8 +2063,8 @@
       "section": "Games",
       "platform": "Sony PlayStation",
       "desc": {
-        "en": "God of War, PS2 → Windows PC, static recompilation, GPL-3.0",
-        "zh": "God of War，PS2 → Windows PC，静态重编译，GPL-3.0"
+        "en": "God of War, PS2 → Windows PC, static recompilation",
+        "zh": "God of War，PS2 → Windows PC，静态重编译"
       },
       "tokens": [
         {
@@ -2609,18 +2072,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-05",
-          "zh": "建库于 2026-10-05"
         }
       ],
       "note": null,
@@ -2657,12 +2108,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-11",
-          "zh": "建库于 2026-10-11"
         }
       ],
       "note": null,
@@ -2690,8 +2135,8 @@
       "section": "Games",
       "platform": "Microsoft Xbox and Xbox 360",
       "desc": {
-        "en": "Sonic Unleashed, Xbox 360 → Windows and Linux, \"created through the process of static recompilation\" of the disc build, GPL-3.0",
-        "zh": "Sonic Unleashed，Xbox 360 → Windows 与 Linux，自述光盘构建\"created through the process of static recompilation\"，GPL-3.0"
+        "en": "Sonic Unleashed, Xbox 360 → Windows and Linux, \"created through the process of static recompilation\" of the disc build",
+        "zh": "Sonic Unleashed，Xbox 360 → Windows 与 Linux，自述光盘构建\"created through the process of static recompilation\""
       },
       "tokens": [
         {
@@ -2699,18 +2144,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2738,8 +2171,8 @@
       "section": "Games",
       "platform": "Microsoft Xbox and Xbox 360",
       "desc": {
-        "en": "Skate 3, Xbox 360 → Windows, Linux and macOS, native recompilation with its own Direct3D 12 and Vulkan renderer and no GPU emulation, **no license declared**",
-        "zh": "Skate 3，Xbox 360 → Windows、Linux 与 macOS，原生重编译，自带 Direct3D 12 与 Vulkan 渲染器，不做 GPU 模拟，**未声明许可证**"
+        "en": "Skate 3, Xbox 360 → Windows, Linux and macOS, native recompilation with its own Direct3D 12 and Vulkan renderer and no GPU emulation",
+        "zh": "Skate 3，Xbox 360 → Windows、Linux 与 macOS，原生重编译，自带 Direct3D 12 与 Vulkan 渲染器，不做 GPU 模拟"
       },
       "tokens": [
         {
@@ -2747,18 +2180,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2786,8 +2207,8 @@
       "section": "Games",
       "platform": "Microsoft Xbox and Xbox 360",
       "desc": {
-        "en": "Halo: Combat Evolved, Xbox build 2342 → Windows, Linux, Android and the browser, decompilation of the Xbox binary, \"You do not need the Xbox SDK\", CC0-1.0",
-        "zh": "光环 战斗进化，Xbox 2342 版 → Windows、Linux、Android 与浏览器，对 Xbox 二进制的反编译，自述\"You do not need the Xbox SDK\"，CC0-1.0"
+        "en": "Halo: Combat Evolved, Xbox build 2342 → Windows, Linux, Android and the browser, decompilation of the Xbox binary, \"You do not need the Xbox SDK\"",
+        "zh": "光环 战斗进化，Xbox 2342 版 → Windows、Linux、Android 与浏览器，对 Xbox 二进制的反编译，自述\"You do not need the Xbox SDK\""
       },
       "tokens": [
         {
@@ -2795,18 +2216,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2830,7 +2239,7 @@
     },
     {
       "slug": "OpenRA/OpenRA",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -2866,12 +2275,12 @@
     },
     {
       "slug": "OpenRCT2/OpenRCT2",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "RollerCoaster Tycoon 2, Windows → Windows, macOS, Linux, BSD and Android, \"an open-source re-implementation\" that uses the original game data, GPL-3.0",
-        "zh": "过山车大亨 2，Windows → Windows、macOS、Linux、BSD 与 Android，自述\"an open-source re-implementation\"，使用原版游戏数据，GPL-3.0"
+        "en": "RollerCoaster Tycoon 2, Windows → Windows, macOS, Linux, BSD and Android, \"an open-source re-implementation\" that uses the original game data",
+        "zh": "过山车大亨 2，Windows → Windows、macOS、Linux、BSD 与 Android，自述\"an open-source re-implementation\"，使用原版游戏数据"
       },
       "tokens": [
         {
@@ -2879,18 +2288,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2914,7 +2311,7 @@
     },
     {
       "slug": "SFTtech/openage",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -2964,18 +2361,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -2985,7 +2370,7 @@
         "a2_read_at": "README.md head#15, 2026-10-17",
         "a3": "core/ holds the engine and rules in 800 .kt files, with desktop/ and android/ frontends; android/assets is the project's own media, not Firaxis files."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 11452,
         "forks": 1977,
@@ -2998,12 +2383,12 @@
     },
     {
       "slug": "diasurgical/DevilutionX",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Diablo and Hellfire, Windows → Linux, macOS, Android, iOS, Nintendo Switch, PlayStation, Xbox and Amiga, port of the `diasurgical/devilution` reconstruction with its own engine work, Sustainable Use License",
-        "zh": "暗黑破坏神 与 Hellfire，Windows → Linux、macOS、Android、iOS、Nintendo Switch、PlayStation、Xbox 与 Amiga，把 `diasurgical/devilution` 的重建移植过去并加上自己的引擎工作，Sustainable Use License"
+        "en": "Diablo and Hellfire, Windows → Linux, macOS, Android, iOS, Nintendo Switch, PlayStation, Xbox and Amiga, port of the `diasurgical/devilution` reconstruction with its own engine work",
+        "zh": "暗黑破坏神 与 Hellfire，Windows → Linux、macOS、Android、iOS、Nintendo Switch、PlayStation、Xbox 与 Amiga，把 `diasurgical/devilution` 的重建移植过去并加上自己的引擎工作"
       },
       "tokens": [
         {
@@ -3011,18 +2396,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3046,12 +2419,12 @@
     },
     {
       "slug": "diasurgical/devilution",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Diablo, Windows, \"a reconstructed form of Diablo's original source code\", recovered from the Climax PlayStation symbol file and the debug build hidden inside `DIABDAT.MPQ`, Sustainable Use License",
-        "zh": "暗黑破坏神，Windows，自述\"a reconstructed form of Diablo's original source code\"，从 Climax 的 PlayStation 符号文件与藏在 `DIABDAT.MPQ` 里的调试构建恢复出来，Sustainable Use License"
+        "en": "Diablo, Windows, \"a reconstructed form of Diablo's original source code\", recovered from the Climax PlayStation symbol file and the debug build hidden inside `DIABDAT.MPQ`",
+        "zh": "暗黑破坏神，Windows，自述\"a reconstructed form of Diablo's original source code\"，从 Climax 的 PlayStation 符号文件与藏在 `DIABDAT.MPQ` 里的调试构建恢复出来"
       },
       "tokens": [
         {
@@ -3059,18 +2432,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3094,7 +2455,7 @@
     },
     {
       "slug": "OpenTTD/OpenTTD",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -3130,7 +2491,7 @@
     },
     {
       "slug": "OpenMW/openmw",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -3166,12 +2527,12 @@
     },
     {
       "slug": "vcmi/vcmi",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Heroes of Might and Magic III engine, Windows → Windows, macOS, Linux, Android and iOS, recreation that requires the original data files, GPL-2.0",
-        "zh": "魔法门之英雄无敌 III 引擎，Windows → Windows、macOS、Linux、Android 与 iOS，重建，需要原版数据文件，GPL-2.0"
+        "en": "Heroes of Might and Magic III engine, Windows → Windows, macOS, Linux, Android and iOS, recreation that requires the original data files",
+        "zh": "魔法门之英雄无敌 III 引擎，Windows → Windows、macOS、Linux、Android 与 iOS，重建，需要原版数据文件"
       },
       "tokens": [
         {
@@ -3179,18 +2540,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3214,12 +2563,12 @@
     },
     {
       "slug": "OpenSC2K/OpenSC2K",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "SimCity 2000, MS-DOS, Windows 3.x and Macintosh → Windows, Linux and macOS, \"an independently written re-implementation\" that names reverse engineering of the original executable among its methods, MIT",
-        "zh": "模拟城市 2000，MS-DOS、Windows 3.x 与 Macintosh → Windows、Linux 与 macOS，自述\"an independently written re-implementation\"，并把对原版可执行文件的逆向列在自己的方法里，MIT"
+        "en": "SimCity 2000, MS-DOS, Windows 3.x and Macintosh → Windows, Linux and macOS, \"an independently written re-implementation\" that names reverse engineering of the original executable among its methods",
+        "zh": "模拟城市 2000，MS-DOS、Windows 3.x 与 Macintosh → Windows、Linux 与 macOS，自述\"an independently written re-implementation\"，并把对原版可执行文件的逆向列在自己的方法里"
       },
       "tokens": [
         {
@@ -3227,18 +2576,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -3265,12 +2602,12 @@
     },
     {
       "slug": "XProger/OpenLara",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Tomb Raider 1 engine, MS-DOS, BSD-2",
-        "zh": "古墓丽影 1 引擎，MS-DOS，BSD-2"
+        "en": "Tomb Raider 1 engine, MS-DOS",
+        "zh": "古墓丽影 1 引擎，MS-DOS"
       },
       "tokens": [
         {
@@ -3301,12 +2638,12 @@
     },
     {
       "slug": "k4zmu2a/SpaceCadetPinball",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "3D Pinball for Windows – Space Cadet, Windows → Windows, Linux and macOS, every subroutine decompiled and converted to compilable C++, MIT",
-        "zh": "3D Pinball for Windows – Space Cadet，Windows → Windows、Linux 与 macOS，每个子程序都被反编译并转成可编译的 C++，MIT"
+        "en": "3D Pinball for Windows – Space Cadet, Windows → Windows, Linux and macOS, every subroutine decompiled and converted to compilable C++",
+        "zh": "3D Pinball for Windows – Space Cadet，Windows → Windows、Linux 与 macOS，每个子程序都被反编译并转成可编译的 C++"
       },
       "tokens": [
         {
@@ -3314,18 +2651,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3349,12 +2674,12 @@
     },
     {
       "slug": "CorsixTH/CorsixTH",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Theme Hospital, MS-DOS and Windows → Windows, macOS, Linux and BSD, reimplementation with most game logic in Lua on the original data, MIT-style licence",
-        "zh": "主题医院，MS-DOS 与 Windows → Windows、macOS、Linux 与 BSD，重写，大部分游戏逻辑用 Lua 跑在原版数据上，MIT 风格许可证"
+        "en": "Theme Hospital, MS-DOS and Windows → Windows, macOS, Linux and BSD, reimplementation with most game logic in Lua on the original data",
+        "zh": "主题医院，MS-DOS 与 Windows → Windows、macOS、Linux 与 BSD，重写，大部分游戏逻辑用 Lua 跑在原版数据上"
       },
       "tokens": [
         {
@@ -3362,18 +2687,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3397,12 +2710,12 @@
     },
     {
       "slug": "Interkarma/daggerfall-unity",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "The Elder Scrolls II: Daggerfall, MS-DOS → Windows, Linux and macOS, recreation in Unity that reads the original archives, MIT",
-        "zh": "上古卷轴II 匕首谷，MS-DOS → Windows、Linux 与 macOS，Unity 里的重建，读原版归档，MIT"
+        "en": "The Elder Scrolls II: Daggerfall, MS-DOS → Windows, Linux and macOS, recreation in Unity that reads the original archives",
+        "zh": "上古卷轴II 匕首谷，MS-DOS → Windows、Linux 与 macOS，Unity 里的重建，读原版归档"
       },
       "tokens": [
         {
@@ -3410,18 +2723,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3445,12 +2746,12 @@
     },
     {
       "slug": "ihhub/fheroes2",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Heroes of Might and Magic II engine, MS-DOS and Windows → Windows, macOS and Linux, recreation \"written from scratch\" on the original resources, GPL-2.0",
-        "zh": "魔法门之英雄无敌 II 引擎，MS-DOS 与 Windows → Windows、macOS 与 Linux，自述在原版资源上\"written from scratch\"的重建，GPL-2.0"
+        "en": "Heroes of Might and Magic II engine, MS-DOS and Windows → Windows, macOS and Linux, recreation \"written from scratch\" on the original resources",
+        "zh": "魔法门之英雄无敌 II 引擎，MS-DOS 与 Windows → Windows、macOS 与 Linux，自述在原版资源上\"written from scratch\"的重建"
       },
       "tokens": [
         {
@@ -3458,18 +2759,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3493,12 +2782,12 @@
     },
     {
       "slug": "isledecomp/isle",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "LEGO Island, Windows, decompilation whose cold rebuild with the original MSVC 4.2 \"reproduces all three retail binaries byte for byte\", LGPL-3.0",
-        "zh": "LEGO Island，Windows，反编译，用原版 MSVC 4.2 冷构建\"reproduces all three retail binaries byte for byte\"，LGPL-3.0"
+        "en": "LEGO Island, Windows, decompilation whose cold rebuild with the original MSVC 4.2 \"reproduces all three retail binaries byte for byte\"",
+        "zh": "LEGO Island，Windows，反编译，用原版 MSVC 4.2 冷构建\"reproduces all three retail binaries byte for byte\""
       },
       "tokens": [
         {
@@ -3506,18 +2795,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -3544,12 +2821,12 @@
     },
     {
       "slug": "bvschaik/julius",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Caesar III, Windows → Windows, Linux, macOS, PS Vita, Nintendo Switch, Android and the browser, reimplementation with \"the same logic as the original\", save-compatible in both directions, AGPL-3.0",
-        "zh": "凯撒大帝 III，Windows → Windows、Linux、macOS、PS Vita、Nintendo Switch、Android 与浏览器，重写，自述与原版\"the same logic as the original\"，存档双向兼容，AGPL-3.0"
+        "en": "Caesar III, Windows → Windows, Linux, macOS, PS Vita, Nintendo Switch, Android and the browser, reimplementation with \"the same logic as the original\", save-compatible in both directions",
+        "zh": "凯撒大帝 III，Windows → Windows、Linux、macOS、PS Vita、Nintendo Switch、Android 与浏览器，重写，自述与原版\"the same logic as the original\"，存档双向兼容"
       },
       "tokens": [
         {
@@ -3557,18 +2834,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3592,12 +2857,12 @@
     },
     {
       "slug": "alexbatalov/fallout1-ce",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Fallout, Windows → Windows, Linux, macOS, Android and iOS, \"fully working re-implementation of Fallout, with the same original gameplay\", built on the author's own reverse-engineered `alexbatalov/fallout1-re`, Sustainable Use License",
-        "zh": "辐射，Windows → Windows、Linux、macOS、Android 与 iOS，自述\"fully working re-implementation of Fallout, with the same original gameplay\"，建立在作者自己逆向出的 `alexbatalov/fallout1-re` 上，Sustainable Use License"
+        "en": "Fallout, Windows → Windows, Linux, macOS, Android and iOS, \"fully working re-implementation of Fallout, with the same original gameplay\", built on the author's own reverse-engineered `alexbatalov/fallout1-re`",
+        "zh": "辐射，Windows → Windows、Linux、macOS、Android 与 iOS，自述\"fully working re-implementation of Fallout, with the same original gameplay\"，建立在作者自己逆向出的 `alexbatalov/fallout1-re` 上"
       },
       "tokens": [
         {
@@ -3605,18 +2870,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3640,12 +2893,12 @@
     },
     {
       "slug": "scummvm/scummvm",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "SCUMM and roughly 250 further adventure-game engines, MS-DOS, Windows and Macintosh, GPL-3.0",
-        "zh": "SCUMM 以及约 250 个其他冒险游戏引擎，MS-DOS、Windows 与 Macintosh，GPL-3.0"
+        "en": "SCUMM and roughly 250 further adventure-game engines, MS-DOS, Windows and Macintosh",
+        "zh": "SCUMM 以及约 250 个其他冒险游戏引擎，MS-DOS、Windows 与 Macintosh"
       },
       "tokens": [
         {
@@ -3676,12 +2929,12 @@
     },
     {
       "slug": "FWGS/xash3d-fwgs",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Half-Life's GoldSrc engine, Windows → Linux, Android and handhelds, engine reimplementation that runs the reader's own installation, **no license declared**",
-        "zh": "半条金的 GoldSrc 引擎，Windows → Linux、Android 与掌机，能跑读者自己那份安装文件的引擎重写，**未声明许可证**"
+        "en": "Half-Life's GoldSrc engine, Windows → Linux, Android and handhelds, engine reimplementation that runs the reader's own installation",
+        "zh": "半条金的 GoldSrc 引擎，Windows → Linux、Android 与掌机，能跑读者自己那份安装文件的引擎重写"
       },
       "tokens": [
         {
@@ -3689,18 +2942,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3724,12 +2965,12 @@
     },
     {
       "slug": "in0finite/SanAndreasUnity",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Grand Theft Auto: San Andreas, Windows → Windows, Linux, macOS and Android, \"an open source reimplementation of GTA San Andreas game engine in Unity\" reading the original data, MIT",
-        "zh": "侠盗猎车手 圣安地列斯，Windows → Windows、Linux、macOS 与 Android，自述\"an open source reimplementation of GTA San Andreas game engine in Unity\"，读原版数据，MIT"
+        "en": "Grand Theft Auto: San Andreas, Windows → Windows, Linux, macOS and Android, \"an open source reimplementation of GTA San Andreas game engine in Unity\" reading the original data",
+        "zh": "侠盗猎车手 圣安地列斯，Windows → Windows、Linux、macOS 与 Android，自述\"an open source reimplementation of GTA San Andreas game engine in Unity\"，读原版数据"
       },
       "tokens": [
         {
@@ -3737,18 +2978,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "last push {pushed}",
-          "zh": "最近推送 {pushed}"
         }
       ],
       "note": null,
@@ -3772,12 +3001,12 @@
     },
     {
       "slug": "alexbatalov/fallout2-ce",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Fallout 2, Windows → Windows, Linux, macOS, Android and iOS, the same model as `alexbatalov/fallout1-ce` on the author's reverse-engineered `alexbatalov/fallout2-re`, Sustainable Use License",
-        "zh": "辐射 2，Windows → Windows、Linux、macOS、Android 与 iOS，与 `alexbatalov/fallout1-ce` 同一套模式，底子是作者逆向出的 `alexbatalov/fallout2-re`，Sustainable Use License"
+        "en": "Fallout 2, Windows → Windows, Linux, macOS, Android and iOS, the same model as `alexbatalov/fallout1-ce` on the author's reverse-engineered `alexbatalov/fallout2-re`",
+        "zh": "辐射 2，Windows → Windows、Linux、macOS、Android 与 iOS，与 `alexbatalov/fallout1-ce` 同一套模式，底子是作者逆向出的 `alexbatalov/fallout2-re`"
       },
       "tokens": [
         {
@@ -3785,18 +3014,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3820,7 +3037,7 @@
     },
     {
       "slug": "OpenXcom/OpenXcom",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -3856,12 +3073,12 @@
     },
     {
       "slug": "wheybags/freeablo",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Diablo 1.09, Windows → Windows, Linux and macOS, independent reimplementation of the engine, needing both `DIABDAT.MPQ` and `Diablo.exe` from the reader's copy, GPL-3.0",
-        "zh": "暗黑破坏神 1.09，Windows → Windows、Linux 与 macOS，引擎的独立重写，读者要同时提供 `DIABDAT.MPQ` 与 `Diablo.exe`，GPL-3.0"
+        "en": "Diablo 1.09, Windows → Windows, Linux and macOS, independent reimplementation of the engine, needing both `DIABDAT.MPQ` and `Diablo.exe` from the reader's copy",
+        "zh": "暗黑破坏神 1.09，Windows → Windows、Linux 与 macOS，引擎的独立重写，读者要同时提供 `DIABDAT.MPQ` 与 `Diablo.exe`"
       },
       "tokens": [
         {
@@ -3869,18 +3086,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "archived, last push {pushed}",
-          "zh": "已归档，最近推送 {pushed}"
         }
       ],
       "note": null,
@@ -3904,12 +3109,12 @@
     },
     {
       "slug": "sdlpal/sdlpal",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "仙剑奇侠传 / The Legend of Sword and Fairy, MS-DOS and Windows → Windows, Linux, macOS, Android, iOS, 3DS, Wii, PSP and the browser, cross-platform reimplementation built on the PAL Research Project's format documents, GPL-3.0",
-        "zh": "仙剑奇侠传，MS-DOS 与 Windows → Windows、Linux、macOS、Android、iOS、3DS、Wii、PSP 与浏览器，建立在 PAL Research Project 格式文档上的跨平台重写，GPL-3.0"
+        "en": "仙剑奇侠传 / The Legend of Sword and Fairy, MS-DOS and Windows → Windows, Linux, macOS, Android, iOS, 3DS, Wii, PSP and the browser, cross-platform reimplementation built on the PAL Research Project's format documents",
+        "zh": "仙剑奇侠传，MS-DOS 与 Windows → Windows、Linux、macOS、Android、iOS、3DS、Wii、PSP 与浏览器，建立在 PAL Research Project 格式文档上的跨平台重写"
       },
       "tokens": [
         {
@@ -3917,18 +3122,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -3952,7 +3145,7 @@
     },
     {
       "slug": "OpenLoco/OpenLoco",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -3988,7 +3181,7 @@
     },
     {
       "slug": "OpenDUNE/OpenDUNE",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -4024,7 +3217,7 @@
     },
     {
       "slug": "OpenSAGE/OpenSAGE",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -4060,12 +3253,12 @@
     },
     {
       "slug": "Try/OpenGothic",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Gothic 2: Night of the Raven, Windows → Windows, Linux and macOS, re-implementation aiming at a client compatible with the original data and mods, MIT",
-        "zh": "哥特王朝 2 乌鸦的复仇，Windows → Windows、Linux 与 macOS，重实现，目标是能吃原版数据与 mod 的客户端，MIT"
+        "en": "Gothic 2: Night of the Raven, Windows → Windows, Linux and macOS, re-implementation aiming at a client compatible with the original data and mods",
+        "zh": "哥特王朝 2 乌鸦的复仇，Windows → Windows、Linux 与 macOS，重实现，目标是能吃原版数据与 mod 的客户端"
       },
       "tokens": [
         {
@@ -4073,18 +3266,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4108,12 +3289,12 @@
     },
     {
       "slug": "openblack/openblack",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Black & White, Windows → Windows, Linux and macOS, \"open source reimplementation … written in modern C++\" reading the original assets, GPL-3.0",
-        "zh": "黑与白，Windows → Windows、Linux 与 macOS，自述\"open source reimplementation … written in modern C++\"，读原版素材，GPL-3.0"
+        "en": "Black & White, Windows → Windows, Linux and macOS, \"open source reimplementation … written in modern C++\" reading the original assets",
+        "zh": "黑与白，Windows → Windows、Linux 与 macOS，自述\"open source reimplementation … written in modern C++\"，读原版素材"
       },
       "tokens": [
         {
@@ -4121,18 +3302,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4156,12 +3325,12 @@
     },
     {
       "slug": "afritz1/OpenTESArena",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "The Elder Scrolls: Arena, MS-DOS → Windows, Linux and macOS, \"replicate all aspects of the original game with a clean-room approach\", MIT",
-        "zh": "上古卷轴 竞技场，MS-DOS → Windows、Linux 与 macOS，自述\"replicate all aspects of the original game with a clean-room approach\"，MIT"
+        "en": "The Elder Scrolls: Arena, MS-DOS → Windows, Linux and macOS, \"replicate all aspects of the original game with a clean-room approach\"",
+        "zh": "上古卷轴 竞技场，MS-DOS → Windows、Linux 与 macOS，自述\"replicate all aspects of the original game with a clean-room approach\""
       },
       "tokens": [
         {
@@ -4169,18 +3338,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4204,12 +3361,12 @@
     },
     {
       "slug": "doukutsu-rs/doukutsu-rs",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Cave Story, Windows → Windows, macOS, Linux, Android and Nintendo Switch, Rust reimplementation of the engine as a drop-in for the shipped executable, MIT",
-        "zh": "Cave Story，Windows → Windows、macOS、Linux、Android 与 Nintendo Switch，用 Rust 重写引擎，可直接替换出货的可执行文件，MIT"
+        "en": "Cave Story, Windows → Windows, macOS, Linux, Android and Nintendo Switch, Rust reimplementation of the engine as a drop-in for the shipped executable",
+        "zh": "Cave Story，Windows → Windows、macOS、Linux、Android 与 Nintendo Switch，用 Rust 重写引擎，可直接替换出货的可执行文件"
       },
       "tokens": [
         {
@@ -4217,18 +3374,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4252,12 +3397,12 @@
     },
     {
       "slug": "NagyD/SDLPoP",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Prince of Persia, MS-DOS → Windows, Linux, macOS and OS/2, \"open-source port … based on the disassembly of the DOS version\", GPL-3.0",
-        "zh": "波斯王子，MS-DOS → Windows、Linux、macOS 与 OS/2，自述\"open-source port … based on the disassembly of the DOS version\"，GPL-3.0"
+        "en": "Prince of Persia, MS-DOS → Windows, Linux, macOS and OS/2, \"open-source port … based on the disassembly of the DOS version\"",
+        "zh": "波斯王子，MS-DOS → Windows、Linux、macOS 与 OS/2，自述\"open-source port … based on the disassembly of the DOS version\""
       },
       "tokens": [
         {
@@ -4265,18 +3410,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "last push {pushed}",
-          "zh": "最近推送 {pushed}"
         }
       ],
       "note": null,
@@ -4300,12 +3433,12 @@
     },
     {
       "slug": "gemrb/gemrb",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "BioWare's Infinity Engine behind Baldur's Gate, Icewind Dale and Planescape: Torment, Windows → Windows, Linux, macOS, Android, iOS and consoles, reimplementation working from the data formats, GPL-2.0",
-        "zh": "BioWare 的 Infinity 引擎，也就是博德之门、冰风谷与异域镇魂曲背后的那一套，Windows → Windows、Linux、macOS、Android、iOS 与各主机，从数据格式入手的重写，GPL-2.0"
+        "en": "BioWare's Infinity Engine behind Baldur's Gate, Icewind Dale and Planescape: Torment, Windows → Windows, Linux, macOS, Android, iOS and consoles, reimplementation working from the data formats",
+        "zh": "BioWare 的 Infinity 引擎，也就是博德之门、冰风谷与异域镇魂曲背后的那一套，Windows → Windows、Linux、macOS、Android、iOS 与各主机，从数据格式入手的重写"
       },
       "tokens": [
         {
@@ -4313,18 +3446,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4348,12 +3469,12 @@
     },
     {
       "slug": "yvt/openspades",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Ace of Spades 0.75, Windows → Linux, Windows and macOS, compatible client: the voxel engine and the server protocol reimplemented from observation, GPL-3.0",
-        "zh": "Ace of Spades 0.75，Windows → Linux、Windows 与 macOS，兼容客户端：体素引擎与服务端协议都按观测重写，GPL-3.0"
+        "en": "Ace of Spades 0.75, Windows → Linux, Windows and macOS, compatible client: the voxel engine and the server protocol reimplemented from observation",
+        "zh": "Ace of Spades 0.75，Windows → Linux、Windows 与 macOS，兼容客户端：体素引擎与服务端协议都按观测重写"
       },
       "tokens": [
         {
@@ -4361,18 +3482,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "last push {pushed}",
-          "zh": "最近推送 {pushed}"
         }
       ],
       "note": null,
@@ -4396,12 +3505,12 @@
     },
     {
       "slug": "dethrace-labs/dethrace",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Carmageddon, MS-DOS → Windows, Linux and macOS, \"replacing the original assembly code with equivalent C code, function by function\", from the Watcom symbol file left on the Splat Pack CD, GPL-3.0",
-        "zh": "Carmageddon，MS-DOS → Windows、Linux 与 macOS，自述\"replacing the original assembly code with equivalent C code, function by function\"，起点是 Splat Pack 光盘上留下的 Watcom 符号文件，GPL-3.0"
+        "en": "Carmageddon, MS-DOS → Windows, Linux and macOS, \"replacing the original assembly code with equivalent C code, function by function\", from the Watcom symbol file left on the Splat Pack CD",
+        "zh": "Carmageddon，MS-DOS → Windows、Linux 与 macOS，自述\"replacing the original assembly code with equivalent C code, function by function\"，起点是 Splat Pack 光盘上留下的 Watcom 符号文件"
       },
       "tokens": [
         {
@@ -4409,18 +3518,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4444,12 +3541,12 @@
     },
     {
       "slug": "xoreos/xoreos",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "BioWare's Aurora engine and derivatives: Neverwinter Nights, Knights of the Old Republic, Jade Empire, The Witcher, Windows and Xbox → Windows, macOS and Linux, reimplementation of the resource and script formats with gameplay still partial, GPL-3.0",
-        "zh": "BioWare 的 Aurora 引擎及其衍生作品：无冬之夜、旧共和国武士、翡翠帝国、巫师，Windows 与 Xbox → Windows、macOS 与 Linux，资源格式与脚本格式的重写，玩法部分仍不完整，GPL-3.0"
+        "en": "BioWare's Aurora engine and derivatives: Neverwinter Nights, Knights of the Old Republic, Jade Empire, The Witcher, Windows and Xbox → Windows, macOS and Linux, reimplementation of the resource and script formats with gameplay still partial",
+        "zh": "BioWare 的 Aurora 引擎及其衍生作品：无冬之夜、旧共和国武士、翡翠帝国、巫师，Windows 与 Xbox → Windows、macOS 与 Linux，资源格式与脚本格式的重写，玩法部分仍不完整"
       },
       "tokens": [
         {
@@ -4457,18 +3554,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4492,12 +3577,12 @@
     },
     {
       "slug": "TheForceEngine/TheForceEngine",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Star Wars: Dark Forces, MS-DOS → Windows, Linux and macOS, \"reverse engineer and rebuild the Jedi Engine for modern systems\", GPL-2.0",
-        "zh": "星球大战 黑暗力量，MS-DOS → Windows、Linux 与 macOS，自述\"reverse engineer and rebuild the Jedi Engine for modern systems\"，GPL-2.0"
+        "en": "Star Wars: Dark Forces, MS-DOS → Windows, Linux and macOS, \"reverse engineer and rebuild the Jedi Engine for modern systems\"",
+        "zh": "星球大战 黑暗力量，MS-DOS → Windows、Linux 与 macOS，自述\"reverse engineer and rebuild the Jedi Engine for modern systems\""
       },
       "tokens": [
         {
@@ -4505,18 +3590,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4540,12 +3613,12 @@
     },
     {
       "slug": "RSDKModding/RSDKv4-Decompilation",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Sonic 1 and Sonic 2 (2013), the Retro Engine v4, Windows, Nintendo Switch and Android releases, \"a complete decompilation\" that will not run without the officially released assets, custom licence",
-        "zh": "索尼克 1 与索尼克 2（2013），Retro Engine v4，Windows、Nintendo Switch 与 Android 发行，自述\"a complete decompilation\"，没有官方放出的素材就跑不起来，自定义许可证"
+        "en": "Sonic 1 and Sonic 2 (2013), the Retro Engine v4, Windows, Nintendo Switch and Android releases, \"a complete decompilation\" that will not run without the officially released assets",
+        "zh": "索尼克 1 与索尼克 2（2013），Retro Engine v4，Windows、Nintendo Switch 与 Android 发行，自述\"a complete decompilation\"，没有官方放出的素材就跑不起来"
       },
       "tokens": [
         {
@@ -4553,18 +3626,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4588,12 +3649,12 @@
     },
     {
       "slug": "dpjudas/SurrealEngine",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Unreal Engine 1, Windows → Windows, macOS and Linux, self-described as a project that \"aims to reimplement Unreal Engine 1\", loading the reader's own original copies of Unreal, Unreal Tournament and Deus Ex, zlib-style licence",
-        "zh": "Unreal Engine 1，Windows → Windows、macOS 与 Linux，自述是一个\"aims to reimplement Unreal Engine 1\"的项目，读读者自己那份 Unreal、Unreal Tournament 与 Deus Ex 的原版安装，zlib 风格许可证"
+        "en": "Unreal Engine 1, Windows → Windows, macOS and Linux, self-described as a project that \"aims to reimplement Unreal Engine 1\", loading the reader's own original copies of Unreal, Unreal Tournament and Deus Ex",
+        "zh": "Unreal Engine 1，Windows → Windows、macOS 与 Linux，自述是一个\"aims to reimplement Unreal Engine 1\"的项目，读读者自己那份 Unreal、Unreal Tournament 与 Deus Ex 的原版安装"
       },
       "tokens": [
         {
@@ -4601,18 +3662,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4636,12 +3685,12 @@
     },
     {
       "slug": "collinsmith/riiablo",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Diablo II, Windows → PC and Android, Java and LibGDX rebuild \"from scratch\" on the original MPQ assets, Apache-2.0",
-        "zh": "暗黑破坏神 II，Windows → PC 与 Android，用 Java 与 LibGDX 在原版 MPQ 素材上\"from scratch\"重建，Apache-2.0"
+        "en": "Diablo II, Windows → PC and Android, Java and LibGDX rebuild \"from scratch\" on the original MPQ assets",
+        "zh": "暗黑破坏神 II，Windows → PC 与 Android，用 Java 与 LibGDX 在原版 MPQ 素材上\"from scratch\"重建"
       },
       "tokens": [
         {
@@ -4649,18 +3698,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "last push {pushed}",
-          "zh": "最近推送 {pushed}"
         }
       ],
       "note": {
@@ -4687,12 +3724,12 @@
     },
     {
       "slug": "gta-reversed/gta-reversed",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Grand Theft Auto: San Andreas, Windows, rewrite of the shipped 1.0 executable \"function by function\" that replaces the game's own routines at load time, **no license declared**",
-        "zh": "侠盗猎车手 圣安地列斯，Windows，把出货的 1.0 可执行文件\"function by function\"重写，在加载时替换游戏自己的例程，**未声明许可证**"
+        "en": "Grand Theft Auto: San Andreas, Windows, rewrite of the shipped 1.0 executable \"function by function\" that replaces the game's own routines at load time",
+        "zh": "侠盗猎车手 圣安地列斯，Windows，把出货的 1.0 可执行文件\"function by function\"重写，在加载时替换游戏自己的例程"
       },
       "tokens": [
         {
@@ -4700,18 +3737,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -4738,12 +3763,12 @@
     },
     {
       "slug": "isledecomp/isle-portable",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "LEGO Island, Windows 9x → Windows, macOS, Linux, iOS, Android, Nintendo Switch, PS Vita and Xbox One, the `isledecomp/isle` C++ moved to modern hosts by replacing the Windows-only libraries, LGPL-3.0",
-        "zh": "LEGO Island，Windows 9x → Windows、macOS、Linux、iOS、Android、Nintendo Switch、PS Vita 与 Xbox One，把 `isledecomp/isle` 的 C++ 搬到现代宿主，办法是换掉只能跑 Windows 的那些库，LGPL-3.0"
+        "en": "LEGO Island, Windows 9x → Windows, macOS, Linux, iOS, Android, Nintendo Switch, PS Vita and Xbox One, the `isledecomp/isle` C++ moved to modern hosts by replacing the Windows-only libraries",
+        "zh": "LEGO Island，Windows 9x → Windows、macOS、Linux、iOS、Android、Nintendo Switch、PS Vita 与 Xbox One，把 `isledecomp/isle` 的 C++ 搬到现代宿主，办法是换掉只能跑 Windows 的那些库"
       },
       "tokens": [
         {
@@ -4751,18 +3776,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4786,12 +3799,12 @@
     },
     {
       "slug": "vladtrc/iw4L",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Call of Duty: Modern Warfare 2 (2009), Windows → Windows, Linux and macOS, runtime reimplemented in Rust over the reader's own installation, Apache-2.0",
-        "zh": "使命召唤 现代战争 2（2009），Windows → Windows、Linux 与 macOS，在读者自己的安装之上用 Rust 重写运行时，Apache-2.0"
+        "en": "Call of Duty: Modern Warfare 2 (2009), Windows → Windows, Linux and macOS, runtime reimplemented in Rust over the reader's own installation",
+        "zh": "使命召唤 现代战争 2（2009），Windows → Windows、Linux 与 macOS，在读者自己的安装之上用 Rust 重写运行时"
       },
       "tokens": [
         {
@@ -4799,18 +3812,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -4837,12 +3838,12 @@
     },
     {
       "slug": "dkfans/keeperfx",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Dungeon Keeper, Windows → Windows, \"the whole codebase of Dungeon Keeper is remade\", begun as a decompilation of the original executables and since rewritten, GPL-2.0",
-        "zh": "地下城守护者，Windows → Windows，自述\"the whole codebase of Dungeon Keeper is remade\"，起点是对原版可执行文件的反编译，之后一路重写，GPL-2.0"
+        "en": "Dungeon Keeper, Windows → Windows, \"the whole codebase of Dungeon Keeper is remade\", begun as a decompilation of the original executables and since rewritten",
+        "zh": "地下城守护者，Windows → Windows，自述\"the whole codebase of Dungeon Keeper is remade\"，起点是对原版可执行文件的反编译，之后一路重写"
       },
       "tokens": [
         {
@@ -4850,18 +3851,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4885,12 +3874,12 @@
     },
     {
       "slug": "LostArtefacts/TRX",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Tomb Raider 1, 2 and 3, MS-DOS and Windows → Windows and Linux, reimplementation reached \"through decompilation\", keeping each classic engine's distinct mechanics, GPL-3.0",
-        "zh": "古墓丽影 1、2、3，MS-DOS 与 Windows → Windows 与 Linux，重实现是\"through decompilation\"得来的，保留每一代引擎各自的机制，GPL-3.0"
+        "en": "Tomb Raider 1, 2 and 3, MS-DOS and Windows → Windows and Linux, reimplementation reached \"through decompilation\", keeping each classic engine's distinct mechanics",
+        "zh": "古墓丽影 1、2、3，MS-DOS 与 Windows → Windows 与 Linux，重实现是\"through decompilation\"得来的，保留每一代引擎各自的机制"
       },
       "tokens": [
         {
@@ -4898,18 +3887,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4933,12 +3910,12 @@
     },
     {
       "slug": "lethal-guitar/RigelEngine",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Duke Nukem II, MS-DOS → Windows, Linux, macOS, Steam Deck and Raspberry Pi, \"based on reverse engineering (specifically, disassembly of the original binaries)\", GPL-2.0",
-        "zh": "毁灭公爵 II，MS-DOS → Windows、Linux、macOS、Steam Deck 与树莓派，自述\"based on reverse engineering (specifically, disassembly of the original binaries)\"，GPL-2.0"
+        "en": "Duke Nukem II, MS-DOS → Windows, Linux, macOS, Steam Deck and Raspberry Pi, \"based on reverse engineering (specifically, disassembly of the original binaries)\"",
+        "zh": "毁灭公爵 II，MS-DOS → Windows、Linux、macOS、Steam Deck 与树莓派，自述\"based on reverse engineering (specifically, disassembly of the original binaries)\""
       },
       "tokens": [
         {
@@ -4946,18 +3923,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -4984,8 +3949,8 @@
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Sonic Mania (2017), the game code around Retro Engine v5, self-described \"a complete decompilation\" that will not run without the assets from the official releases, custom licence",
-        "zh": "Sonic Mania（2017），Retro Engine v5 周围的游戏代码，自述\"a complete decompilation\"，没有官方发行版的素材就跑不起来，自定义许可证"
+        "en": "Sonic Mania (2017), the game code around Retro Engine v5, self-described \"a complete decompilation\" that will not run without the assets from the official releases",
+        "zh": "Sonic Mania（2017），Retro Engine v5 周围的游戏代码，自述\"a complete decompilation\"，没有官方发行版的素材就跑不起来"
       },
       "tokens": [
         {
@@ -4993,18 +3958,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -5019,7 +3972,7 @@
         "a3": "1,314 paths, 612 .c and 616 .h in the tree itself, plus Game/, SonicMania.sln, an Xcode project and a Switch icon; the engine arrives as the RSDKv5 submodule, which is why the README insists on a recursive clone."
       },
       "assets": "reader-supplied",
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 817,
         "forks": 199,
@@ -5035,8 +3988,8 @@
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Retro Engine v3, the engine of the 2011 Sonic CD re-release, \"A complete decompilation\" that will not run without the official release's assets, with Windows, iOS/macOS, Android, UWP and PS Vita build files, custom licence",
-        "zh": "Retro Engine v3，2011 年索尼克 CD 重制版所用的引擎，自述\"A complete decompilation\"，没有官方发行版的素材就跑不起来，树中含 Windows、iOS/macOS、Android、UWP 与 PS Vita 构建文件，自定义许可证"
+        "en": "Retro Engine v3, the engine of the 2011 Sonic CD re-release, \"A complete decompilation\" that will not run without the official release's assets, with Windows, iOS/macOS, Android, UWP and PS Vita build files",
+        "zh": "Retro Engine v3，2011 年索尼克 CD 重制版所用的引擎，自述\"A complete decompilation\"，没有官方发行版的素材就跑不起来，树中含 Windows、iOS/macOS、Android、UWP 与 PS Vita 构建文件"
       },
       "tokens": [
         {
@@ -5044,18 +3997,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -5070,7 +4011,7 @@
         "a3": "259 paths holding the engine as C++/.hpp/.cpp under RSDKv3/, with Android.mk, an Xcode project, a UWP solution and a Vita project beside CMakeLists.txt; the .java files are the Android build glue."
       },
       "assets": "reader-supplied",
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 711,
         "forks": 198,
@@ -5083,7 +4024,7 @@
     },
     {
       "slug": "TheAssemblyArmada/Thyme",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -5119,12 +4060,12 @@
     },
     {
       "slug": "exult/exult",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Ultima VII engine, MS-DOS and Macintosh, GPL-2.0",
-        "zh": "创世纪 VII 引擎，MS-DOS 与 Macintosh，GPL-2.0"
+        "en": "Ultima VII engine, MS-DOS and Macintosh",
+        "zh": "创世纪 VII 引擎，MS-DOS 与 Macintosh"
       },
       "tokens": [
         {
@@ -5155,12 +4096,12 @@
     },
     {
       "slug": "opentyrian/opentyrian",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Tyrian engine, MS-DOS, GPL-2.0",
-        "zh": "Tyrian 引擎，MS-DOS，GPL-2.0"
+        "en": "Tyrian engine, MS-DOS",
+        "zh": "Tyrian 引擎，MS-DOS"
       },
       "tokens": [
         {
@@ -5194,8 +4135,8 @@
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Retro Engine v5 and v5Ultimate, the engine behind Sonic Mania, \"A complete decompilation of Retro Engine v5 and v5Ultimate\", whose README disclaims ownership and names the engine's current owner, custom licence",
-        "zh": "Retro Engine v5 与 v5Ultimate，Sonic Mania 背后的引擎，自述\"A complete decompilation of Retro Engine v5 and v5Ultimate\"，其 README 声明自己不拥有该引擎并写出它现在的所有者，自定义许可证"
+        "en": "Retro Engine v5 and v5Ultimate, the engine behind Sonic Mania, \"A complete decompilation of Retro Engine v5 and v5Ultimate\", whose README disclaims ownership and names the engine's current owner",
+        "zh": "Retro Engine v5 与 v5Ultimate，Sonic Mania 背后的引擎，自述\"A complete decompilation of Retro Engine v5 and v5Ultimate\"，其 README 声明自己不拥有该引擎并写出它现在的所有者"
       },
       "tokens": [
         {
@@ -5203,18 +4144,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -5229,7 +4158,7 @@
         "a3": "501 paths holding the engine as 105 .hpp and 103 .cpp in RSDKv5/ and RSDKv5U/, with two solutions, two Xcode projects and an Android directory; the README carries no separate asset-boundary sentence, so reader-supplied rests on it being the engine of games it does not ship (its own piracy line names them)."
       },
       "assets": "reader-supplied",
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 566,
         "forks": 235,
@@ -5242,7 +4171,7 @@
     },
     {
       "slug": "nxengine/nxengine-evo",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -5283,8 +4212,8 @@
       "method": "M2",
       "assets": "reader-supplied",
       "desc": {
-        "en": "One Must Fall 2097 by Diversions Entertainment, MS-DOS 1994 → Windows, Linux, macOS and BSD, engine remake started because the original's IPX networking \"is a pain to set up\", on the reader's own game resources, MIT",
-        "zh": "Diversions Entertainment 的 One Must Fall 2097，MS-DOS 1994 → Windows、Linux、macOS 与 BSD，起因是原版 IPX 联网\"is a pain to set up\"的引擎重制，跑读者自备的原版游戏资源，MIT"
+        "en": "One Must Fall 2097 by Diversions Entertainment, MS-DOS 1994 → Windows, Linux, macOS and BSD, engine remake started because the original's IPX networking \"is a pain to set up\", on the reader's own game resources",
+        "zh": "Diversions Entertainment 的 One Must Fall 2097，MS-DOS 1994 → Windows、Linux、macOS 与 BSD，起因是原版 IPX 联网\"is a pain to set up\"的引擎重制，跑读者自备的原版游戏资源"
       },
       "tokens": [
         {
@@ -5292,18 +4221,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -5313,7 +4230,7 @@
         "a2_read_at": "README.md head#5-6, 2026-10-17 (one sentence wrapped across two lines)",
         "a3": "src/ with 245 .c and 231 .h, CMakeLists.txt and CI workflows; the tree ships no original data — PATHS.md, read 2026-10-17, defines the resource path as \"for original game resources and additional OpenOMF resources (read-only)\"."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 485,
         "forks": 59,
@@ -5325,13 +4242,49 @@
       "check": true
     },
     {
-      "slug": "AlisterT/openjazz",
+      "slug": "sonicretro/s1disasm",
+      "section": "Games",
+      "platform": "Sega",
+      "desc": {
+        "en": "Sonic the Hedgehog (1991), the 16-bit Mega Drive/Genesis cartridge disassembled to 455 .asm files that assemble back into a ROM",
+        "zh": "Sonic the Hedgehog（1991），16 位 Mega Drive/Genesis 卡带的反汇编，455 个 .asm 文件可重新装配成 ROM"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": null,
+      "method": "M1",
+      "admission": {
+        "a1": "Sega shipped Sonic the Hedgehog (1991) as a Mega Drive/Genesis cartridge and never released its source; the repository is the disassembly itself, and --has found no original ROM committed in its tree (0/11 candidate names), so the code and data are all recovered rather than supplied.",
+        "a2_quote": "# Sonic the Hedgehog (16-bit) Disassembly",
+        "a2_read_at": "README.md head#1, 2026-10-17",
+        "a3": "1,009 paths holding 455 .asm across the ROM's own sections (_incObj 136, _maps 132, sound 70, _anim 49, _inc 33), no submodule and no external repository link, so the reconstruction is this tree and not a pointer."
+      },
+      "assets": "none-needed",
       "_section_index": 4,
+      "measured": {
+        "stars": 452,
+        "forks": 145,
+        "pushed": "2026-10-15",
+        "archived": false,
+        "license_spdx": "",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "AlisterT/openjazz",
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Jazz Jackrabbit engine, MS-DOS, GPL-2.0",
-        "zh": "Jazz Jackrabbit 引擎，MS-DOS，GPL-2.0"
+        "en": "Jazz Jackrabbit engine, MS-DOS",
+        "zh": "Jazz Jackrabbit 引擎，MS-DOS"
       },
       "tokens": [
         {
@@ -5367,8 +4320,8 @@
       "method": "M2",
       "assets": "none-needed",
       "desc": {
-        "en": "Dune 2 by Westwood Studios, MS-DOS → Windows, Linux and macOS, SDL3 remake that carries its own campaign, map and shader resources in the tree and adds skirmish play, zooming and higher resolutions, MIT text in LICENSE.md where GitHub reports NOASSERTION",
-        "zh": "Westwood Studios 的 Dune 2，MS-DOS → Windows、Linux 与 macOS，基于 SDL3 的重制，仓库自带战役、地图与着色器资源，另加遭遇战、缩放与更高分辨率；LICENSE.md 是 MIT 全文而 GitHub 报成 NOASSERTION"
+        "en": "Dune 2 by Westwood Studios, MS-DOS → Windows, Linux and macOS, SDL3 remake that carries its own campaign, map and shader resources in the tree and adds skirmish play, zooming and higher resolutions",
+        "zh": "Westwood Studios 的 Dune 2，MS-DOS → Windows、Linux 与 macOS，基于 SDL3 的重制，仓库自带战役、地图与着色器资源，另加遭遇战、缩放与更高分辨率"
       },
       "tokens": [
         {
@@ -5376,18 +4329,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -5397,7 +4338,7 @@
         "a2_read_at": "README.md head#12, 2026-10-17",
         "a3": "src/ in 194 .cpp and 211 .h with Catch2 tests built alongside as d2tm_tests; resources/bin holds 431 project-authored paths (per-mission .ini campaigns, .map files, .hlsl shaders) and no original Dune 2 data files."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 368,
         "forks": 39,
@@ -5409,14 +4350,12 @@
       "check": true
     },
     {
-      "slug": "IllegalCreed/type-pal",
+      "slug": "sonicretro/s2disasm",
       "section": "Games",
-      "platform": "MS-DOS, Windows and Macintosh",
-      "method": "M2",
-      "assets": "reader-supplied",
+      "platform": "Sega",
       "desc": {
-        "en": "《仙剑奇侠传》 (PAL, Softstar, 1995), DOS and Windows → the browser, written from scratch in TypeScript with its own MKF extractor, script virtual machine, palette renderer and visual editor, GPL-3.0",
-        "zh": "软星的《仙剑奇侠传》，1995，DOS 与 Windows → 浏览器，以 TypeScript 从零写成，自带 MKF 解包、脚本虚拟机、调色板渲染与可视化编辑器，GPL-3.0"
+        "en": "Sonic the Hedgehog 2 (1992), the 16-bit Mega Drive/Genesis cartridge disassembled to 332 .asm files that assemble back into a ROM",
+        "zh": "Sonic the Hedgehog 2（1992），16 位 Mega Drive/Genesis 卡带的反汇编，332 个 .asm 文件可重新装配成 ROM"
       },
       "tokens": [
         {
@@ -5424,24 +4363,47 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
+        }
+      ],
+      "note": {
+        "en": "Its README says the built ROM is named 's2built.bin'.",
+        "zh": "它的 README 说明构建出的 ROM 名为 's2built.bin'。"
+      },
+      "method": "M1",
+      "admission": {
+        "a1": "Sega shipped Sonic the Hedgehog 2 (1992) as a Mega Drive/Genesis cartridge and never released its source; the README's own build line states \"The built ROM will be called 's2built.bin'\", and --has found no original ROM committed in the tree (0/11 candidate names), so nothing external is required to rebuild it.",
+        "a2_quote": "# Sonic the Hedgehog 2 (16-bit) Disassembly",
+        "a2_read_at": "README.md head#1, 2026-10-17",
+        "a3": "1,140 paths holding 332 .asm, concentrated in the ROM's own data sections (mappings 211, sound 113) with the master s2.asm at the root, plus build_tools 16 of C/.h/.lua and SonLVL editor INI helpers; no submodule, no external repository link, and no committed original ROM."
+      },
+      "assets": "none-needed",
+      "_section_index": 4,
+      "measured": {
+        "stars": 317,
+        "forks": 93,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "",
+        "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "IllegalCreed/type-pal",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "method": "M2",
+      "assets": "reader-supplied",
+      "desc": {
+        "en": "《仙剑奇侠传》 (PAL, Softstar, 1995), DOS and Windows → the browser, written from scratch in TypeScript with its own MKF extractor, script virtual machine, palette renderer and visual editor",
+        "zh": "软星的《仙剑奇侠传》，1995，DOS 与 Windows → 浏览器，以 TypeScript 从零写成，自带 MKF 解包、脚本虚拟机、调色板渲染与可视化编辑器"
+      },
+      "tokens": [
         {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-05-22",
-          "zh": "建库于 2026-05-22"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
         }
       ],
       "note": {
@@ -5454,7 +4416,7 @@
         "a2_read_at": "README.md head#3, 2026-10-17 (README.md is the Chinese README; README.en.md mirrors it)",
         "a3": "2,100 .ts sources in packages/game, pal-extract, shared, content and migrate — the runtime and the editor, not a loader; reference/sdlpal is a C reference copy and the README says the extraction, VM, rendering, combat and editor are all TypeScript (head#50)."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 196,
         "forks": 19,
@@ -5472,8 +4434,8 @@
       "method": "M2",
       "assets": "reader-supplied",
       "desc": {
-        "en": "The Settlers I by BlueByte, DOS and Amiga → Windows, Linux, macOS and Android, C# remake written as a port and extension of the freeserf clone, with added AI and local-network play, on the reader's original data files, GPL-3.0",
-        "zh": "BlueByte 的 The Settlers I，DOS 与 Amiga → Windows、Linux、macOS 与 Android，以 C# 移植并扩展 freeserf 克隆，另加 AI 与局域网对战，跑读者手中原版数据，GPL-3.0"
+        "en": "The Settlers I by BlueByte, DOS and Amiga → Windows, Linux, macOS and Android, C# remake written as a port and extension of the freeserf clone, with added AI and local-network play, on the reader's original data files",
+        "zh": "BlueByte 的 The Settlers I，DOS 与 Amiga → Windows、Linux、macOS 与 Android，以 C# 移植并扩展 freeserf 克隆，另加 AI 与局域网对战，跑读者手中原版数据"
       },
       "tokens": [
         {
@@ -5481,18 +4443,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -5502,7 +4452,7 @@
         "a2_read_at": "README.md head#2, 2026-10-17",
         "a3": "Freeserf.Core, Renderer, Audio and Network projects, 221 .cs files — the engine itself; the README's own boundary line: \"To avoid copyright issues I won't provide any copyrighted data from the original game like music or graphics\" (head#3)."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 173,
         "forks": 18,
@@ -5520,8 +4470,8 @@
       "method": "M1",
       "assets": "reader-supplied",
       "desc": {
-        "en": "Magic Carpet 2, MS-DOS → Windows and Linux, rebuilt from the shipped assembler into C/C++ and continued from the reverse engineering it credits, with a regression test suite and its own enhanced asset set, **no license declared**",
-        "zh": "Magic Carpet 2，MS-DOS → Windows 与 Linux，从出货汇编重建成 C/C++，并接续它所署名的那份逆向工作，带回归测试与自制高清素材，**未声明许可证**"
+        "en": "Magic Carpet 2, MS-DOS → Windows and Linux, rebuilt from the shipped assembler into C/C++ and continued from the reverse engineering it credits, with a regression test suite and its own enhanced asset set",
+        "zh": "Magic Carpet 2，MS-DOS → Windows 与 Linux，从出货汇编重建成 C/C++，并接续它所署名的那份逆向工作，带回归测试与自制高清素材"
       },
       "tokens": [
         {
@@ -5529,18 +4479,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -5550,7 +4488,7 @@
         "a2_read_at": "README.md head#2, 2026-10-17 (verbatim, including the trailing <br /> and the misspelling of Tomas Vesely's name)",
         "a3": "src/ in 219 .h, 166 .cpp and 30 .c with CMake, sanitiser options and CI, plus remc2-regression-test; the 5,367 enhancedassets paths are the project's own upscaled art. Boundary read at head#36: \"Anyone with the GOG edition can download this repo, extract the Game Assets (from a legal GOG copy of the game) and run it.\""
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 151,
         "forks": 19,
@@ -5563,12 +4501,12 @@
     },
     {
       "slug": "mytbk/rich4",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Richman 4 (大富翁4), Windows, disassembly that re-links against MinGW and `msvcrt` into a runnable `rich4.exe`, GPL-3.0",
-        "zh": "大富翁4，Windows，反汇编之后改用 MinGW 与 `msvcrt` 重新链接成可运行的 `rich4.exe`，GPL-3.0"
+        "en": "Richman 4 (大富翁4), Windows, disassembly that re-links against MinGW and `msvcrt` into a runnable `rich4.exe`",
+        "zh": "大富翁4，Windows，反汇编之后改用 MinGW 与 `msvcrt` 重新链接成可运行的 `rich4.exe`"
       },
       "tokens": [
         {
@@ -5576,24 +4514,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2018-09-27",
-          "zh": "建库于 2018-09-27"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -5617,12 +4537,12 @@
     },
     {
       "slug": "Wargus/war1gus",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "WarCraft 1 as a strategy engine on top of Wargus, MS-DOS and Windows, GPL-2.0",
-        "zh": "把 WarCraft 1 做成建立在 Wargus 上的即时战略引擎，MS-DOS 与 Windows，GPL-2.0"
+        "en": "WarCraft 1 as a strategy engine on top of Wargus, MS-DOS and Windows",
+        "zh": "把 WarCraft 1 做成建立在 Wargus 上的即时战略引擎，MS-DOS 与 Windows"
       },
       "tokens": [
         {
@@ -5653,7 +4573,7 @@
     },
     {
       "slug": "jhaizhou-ops/sts2-ios",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -5666,12 +4586,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-07-15",
-          "zh": "建库于 2026-07-15"
         }
       ],
       "note": null,
@@ -5695,7 +4609,7 @@
     },
     {
       "slug": "N0zoM1z0/dx-ball",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -5734,7 +4648,7 @@
     },
     {
       "slug": "N0zoM1z0/th04",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
@@ -5784,24 +4698,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-09-15",
-          "zh": "建库于 2026-09-15"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -5814,7 +4710,7 @@
         "a2_read_at": "repository description (GET /repos/oliverjessner/OpenEmperor), 2026-10-17",
         "a3": "707 paths, 288 .cpp and 127 .h under src/, with tests/, tools/ and a 173-file docs/ tree carrying the reverse-engineering evidence — the reconstruction is in the linked repository."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 16,
         "forks": 2,
@@ -5827,12 +4723,12 @@
     },
     {
       "slug": "lhr0909/richman4-remastered",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "Richman 4 (大富翁4), Windows → macOS, Android and iOS, engine rewritten rule by rule against `mytbk/rich4`'s published disassembly rather than clean-room, GPL-3.0",
-        "zh": "大富翁4，Windows → macOS、Android、iOS，引擎按 `mytbk/rich4` 公开的反汇编逐条重写，不是净室，GPL-3.0"
+        "en": "Richman 4 (大富翁4), Windows → macOS, Android and iOS, engine rewritten rule by rule against `mytbk/rich4`'s published disassembly rather than clean-room",
+        "zh": "大富翁4，Windows → macOS、Android、iOS，引擎按 `mytbk/rich4` 公开的反汇编逐条重写，不是净室"
       },
       "tokens": [
         {
@@ -5840,18 +4736,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "created and pushed {pushed}",
-          "zh": "建库与推送于 {pushed}"
         }
       ],
       "note": {
@@ -5883,8 +4767,8 @@
       "method": "M2",
       "assets": "reader-supplied",
       "desc": {
-        "en": "Ultima V: Warriors of Destiny, MS-DOS → Windows, macOS and Linux, Go recreation that reads the player's own game files, keeps SAVED.GAM save compatibility through a command-line converter, and ships a developer Debug Workbench, MIT",
-        "zh": "Ultima V: Warriors of Destiny，MS-DOS → Windows、macOS 与 Linux，以 Go 重建，读取玩家自备的原版文件，用命令行转换器保持 SAVED.GAM 存档兼容，并带开发者 Debug Workbench，MIT"
+        "en": "Ultima V: Warriors of Destiny, MS-DOS → Windows, macOS and Linux, Go recreation that reads the player's own game files, keeps SAVED.GAM save compatibility through a command-line converter, and ships a developer Debug Workbench",
+        "zh": "Ultima V: Warriors of Destiny，MS-DOS → Windows、macOS 与 Linux，以 Go 重建，读取玩家自备的原版文件，用命令行转换器保持 SAVED.GAM 存档兼容，并带开发者 Debug Workbench"
       },
       "tokens": [
         {
@@ -5892,18 +4776,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-06",
-          "zh": "建库于 2026-10-06"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -5913,7 +4785,7 @@
         "a2_read_at": "README.md head#4-5, 2026-10-17 (one sentence wrapped across two lines)",
         "a3": "2,346 .go files under internal/ and pkg/ with a Makefile and golangci CI; data/ holds 35 project-authored paths and no original game files."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 11,
         "forks": 0,
@@ -5926,12 +4798,12 @@
     },
     {
       "slug": "kichikuou/xsystem4",
-      "_section_index": 4,
+      "_section_index": 5,
       "section": "Games",
       "platform": "MS-DOS, Windows and Macintosh",
       "desc": {
-        "en": "AliceSoft System 4 visual novels, Windows titles rebuilt for unix-like systems, GPL-2.0",
-        "zh": "AliceSoft System 4 视觉小说，把 Windows 上的作品重建到类 unix 系统，GPL-2.0"
+        "en": "AliceSoft System 4 visual novels, Windows titles rebuilt for unix-like systems",
+        "zh": "AliceSoft System 4 视觉小说，把 Windows 上的作品重建到类 unix 系统"
       },
       "tokens": [
         {
@@ -5939,12 +4811,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -5982,18 +4848,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-09-06",
-          "zh": "建库于 2026-09-06"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6006,7 +4860,7 @@
         "a2_read_at": "README.md, 2026-10-17",
         "a3": "cmd/san1 and cmd/san1assets hold the Go engine; docs/formats holds the container-format documents and docs/playtest the differential-run records."
       },
-      "_section_index": 4,
+      "_section_index": 5,
       "measured": {
         "stars": 3,
         "forks": 0,
@@ -6019,12 +4873,12 @@
     },
     {
       "slug": "JoppieToppie/Galaxy-on-Fire-2-Unity-Remake",
-      "_section_index": 6,
+      "_section_index": 7,
       "section": "Games",
       "platform": "Mobile",
       "desc": {
-        "en": "Galaxy on Fire 2, Android and iOS → Windows, Linux and Android, Unity remake whose game logic is \"ported from the decompiled game code\", the original assets shipped in the tree, Apache-2.0 text in its LICENSE.md where GitHub reports NOASSERTION",
-        "zh": "Galaxy on Fire 2，Android 与 iOS → Windows、Linux 与 Android，Unity 重制，游戏逻辑自述\"ported from the decompiled game code\"，原版素材随仓库内置，LICENSE.md 是 Apache-2.0 全文而 GitHub 报成 `NOASSERTION`"
+        "en": "Galaxy on Fire 2, Android and iOS → Windows, Linux and Android, Unity remake whose game logic is \"ported from the decompiled game code\", the original assets shipped in the tree",
+        "zh": "Galaxy on Fire 2，Android 与 iOS → Windows、Linux 与 Android，Unity 重制，游戏逻辑自述\"ported from the decompiled game code\"，原版素材随仓库内置"
       },
       "tokens": [
         {
@@ -6032,18 +4886,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -6067,7 +4909,7 @@
     },
     {
       "slug": "ruffle-rs/ruffle",
-      "_section_index": 7,
+      "_section_index": 8,
       "section": "Applications",
       "platform": null,
       "desc": {
@@ -6103,12 +4945,12 @@
     },
     {
       "slug": "storytold/wordcraft",
-      "_section_index": 7,
+      "_section_index": 8,
       "section": "Applications",
       "platform": null,
       "desc": {
-        "en": "Microsoft Word for Windows and Mac, consuming the original document formats, Apache-2.0, Rust",
-        "zh": "面向 Windows 与 Mac 的 Microsoft Word，直接吃原版文档格式，Apache-2.0，Rust"
+        "en": "Microsoft Word for Windows and Mac, consuming the original document formats, Rust",
+        "zh": "面向 Windows 与 Mac 的 Microsoft Word，直接吃原版文档格式，Rust"
       },
       "tokens": [
         {
@@ -6147,8 +4989,8 @@
       "method": "M2",
       "assets": "none-needed",
       "desc": {
-        "en": "Microsoft Excel, rebuilt clean-room in Rust with XLSX as its native format and XLSB and ODS worksheet data import, Apache-2.0",
-        "zh": "净室用 Rust 重写的 Microsoft Excel，以 XLSX 为原生格式，可导入 XLSB 与 ODS 工作表数据，Apache-2.0"
+        "en": "Microsoft Excel, rebuilt clean-room in Rust with XLSX as its native format and XLSB and ODS worksheet data import",
+        "zh": "净室用 Rust 重写的 Microsoft Excel，以 XLSX 为原生格式，可导入 XLSB 与 ODS 工作表数据"
       },
       "tokens": [
         {
@@ -6156,24 +4998,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-07",
-          "zh": "建库于 2026-10-07"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6186,7 +5010,7 @@
         "a2_read_at": "README.md head#12, 2026-10-17",
         "a3": "499 paths, 285 .rs — the README's own layer table names the crates it is built from (core, numfmt, formula, functions, model, calc, xlsx, chart, engine, ui-egui, mcp) with apps/gridcraft, apps/gridcraft-cli and apps/gridcraft-web above them."
       },
-      "_section_index": 7,
+      "_section_index": 8,
       "measured": {
         "stars": 5455,
         "forks": 2487,
@@ -6204,8 +5028,8 @@
       "method": "M2",
       "assets": "none-needed",
       "desc": {
-        "en": "Autodesk AutoCAD, rebuilt clean-room in Rust: the command line, object snaps, layers, dimensions, hatches, blocks and DXF drawings, Apache-2.0",
-        "zh": "净室用 Rust 重写的 Autodesk AutoCAD：命令行、对象捕捉、图层、标注、填充、块与 DXF 图纸，Apache-2.0"
+        "en": "Autodesk AutoCAD, rebuilt clean-room in Rust: the command line, object snaps, layers, dimensions, hatches, blocks and DXF drawings",
+        "zh": "净室用 Rust 重写的 Autodesk AutoCAD：命令行、对象捕捉、图层、标注、填充、块与 DXF 图纸"
       },
       "tokens": [
         {
@@ -6213,24 +5037,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-07",
-          "zh": "建库于 2026-10-07"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6243,7 +5049,7 @@
         "a2_read_at": "README.md head#12, 2026-10-17",
         "a3": "819 paths, 579 .rs — examples/apartment.dxf is drawn by CADCraft's own commands and cadcraft-cli reads a DXF and converts it to SVG, so the reader and the writer are in this repository."
       },
-      "_section_index": 7,
+      "_section_index": 8,
       "measured": {
         "stars": 5451,
         "forks": 2407,
@@ -6261,8 +5067,8 @@
       "method": "M2",
       "assets": "none-needed",
       "desc": {
-        "en": "Microsoft PowerPoint, rebuilt clean-room in Rust: opens and saves .pptx, exports PDF, PNG/JPEG and an animated GIF of the deck, Apache-2.0",
-        "zh": "净室用 Rust 重写的 Microsoft PowerPoint：可打开与保存 .pptx，导出 PDF、PNG/JPEG 与整份演示的 GIF 动画，Apache-2.0"
+        "en": "Microsoft PowerPoint, rebuilt clean-room in Rust: opens and saves .pptx, exports PDF, PNG/JPEG and an animated GIF of the deck",
+        "zh": "净室用 Rust 重写的 Microsoft PowerPoint：可打开与保存 .pptx，导出 PDF、PNG/JPEG 与整份演示的 GIF 动画"
       },
       "tokens": [
         {
@@ -6270,24 +5076,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-07",
-          "zh": "建库于 2026-10-07"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6300,7 +5088,7 @@
         "a2_read_at": "README.md head#12, 2026-10-17",
         "a3": "686 paths, 417 .rs, with apps/ and crates/ at the root and crates/pdf named as a component in its own README — the reconstruction is in the linked repository."
       },
-      "_section_index": 7,
+      "_section_index": 8,
       "measured": {
         "stars": 3603,
         "forks": 2032,
@@ -6318,8 +5106,8 @@
       "method": "M2",
       "assets": "none-needed",
       "desc": {
-        "en": "Avid Pro Tools, rebuilt clean-room in Rust as a multitrack DAW with fader automation, a MIDI score editor and MusicXML export, Apache-2.0",
-        "zh": "净室用 Rust 重写的 Avid Pro Tools，作多轨音频工作站，带推子自动化、MIDI 音色编辑器与 MusicXML 导出，Apache-2.0"
+        "en": "Avid Pro Tools, rebuilt clean-room in Rust as a multitrack DAW with fader automation, a MIDI score editor and MusicXML export",
+        "zh": "净室用 Rust 重写的 Avid Pro Tools，作多轨音频工作站，带推子自动化、MIDI 音色编辑器与 MusicXML 导出"
       },
       "tokens": [
         {
@@ -6327,24 +5115,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-07",
-          "zh": "建库于 2026-10-07"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6357,7 +5127,7 @@
         "a2_read_at": "README.md head#12, 2026-10-17",
         "a3": "525 paths, 299 .rs — soundcraft-model is the session document and soundcraft-engine the commands, undo, editing, import/export and bounce, with the app in apps/soundcraft; the tree's 35 asset files are the project's own, listed with author and licence in ATTRIBUTION.md."
       },
-      "_section_index": 7,
+      "_section_index": 8,
       "measured": {
         "stars": 3094,
         "forks": 1939,
@@ -6375,8 +5145,8 @@
       "method": "M2",
       "assets": "none-needed",
       "desc": {
-        "en": "Figma, rebuilt clean-room in Rust: SVG, PNG, JPG, WebP and PDF in and out, .fig files opened best-effort, Apache-2.0",
-        "zh": "净室用 Rust 重写的 Figma：可进出 SVG、PNG、JPG、WebP 与 PDF，尽力打开 .fig 文件，Apache-2.0"
+        "en": "Figma, rebuilt clean-room in Rust: SVG, PNG, JPG, WebP and PDF in and out, .fig files opened best-effort",
+        "zh": "净室用 Rust 重写的 Figma：可进出 SVG、PNG、JPG、WebP 与 PDF，尽力打开 .fig 文件"
       },
       "tokens": [
         {
@@ -6384,24 +5154,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-09",
-          "zh": "建库于 2026-10-09"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6414,7 +5166,7 @@
         "a2_read_at": "README.md head#12, 2026-10-17",
         "a3": "1,029 paths, 715 .rs, with apps/ and crates/ at the root and docs/control-protocol.md, docs/mcp.md and docs/cli.md describing what it implements — the reconstruction is in the linked repository."
       },
-      "_section_index": 7,
+      "_section_index": 8,
       "measured": {
         "stars": 2219,
         "forks": 805,
@@ -6432,8 +5184,8 @@
       "method": "M1",
       "assets": "none-needed",
       "desc": {
-        "en": "Anthropic's Claude Code CLI, rebuilt from an AI-assisted decompilation of the published npm bundle, mirroring its agent loop, tools, MCP transports and permission modes, MIT",
-        "zh": "对已发布的 npm 包做 AI 辅助反编译后重建的 Anthropic Claude Code 终端代理，复刻其 agent 循环、工具、MCP 传输与权限模式，MIT"
+        "en": "Anthropic's Claude Code CLI, rebuilt from an AI-assisted decompilation of the published npm bundle, mirroring its agent loop, tools, MCP transports and permission modes",
+        "zh": "对已发布的 npm 包做 AI 辅助反编译后重建的 Anthropic Claude Code 终端代理，复刻其 agent 循环、工具、MCP 传输与权限模式"
       },
       "tokens": [
         {
@@ -6441,24 +5193,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2025-02-24",
-          "zh": "建库于 2025-02-24"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6471,7 +5205,7 @@
         "a2_read_at": "README.md head#118, 2026-10-17",
         "a3": "549 paths, 84 .ts and 47 .js: v2/src holds the rebuild's own architecture directories (agents, tools, mcp, permissions, hooks, config, auth, telemetry, plugins, skills, ui) around index.mjs, and archive/open_claude_code holds a full earlier attempt with cli.mjs and src/ — the reconstruction is in the linked repository, while the decompiler itself is a submodule."
       },
-      "_section_index": 7,
+      "_section_index": 8,
       "measured": {
         "stars": 535,
         "forks": 165,
@@ -6489,8 +5223,8 @@
       "method": "M2",
       "assets": "reader-supplied",
       "desc": {
-        "en": "FL Studio Mobile, rebuilt clean-room in Rust with browser and Android builds, opening FL Studio Mobile's .flm demo projects, GPL-3.0",
-        "zh": "净室用 Rust 重写的 FL Studio Mobile，有浏览器与 Android 构建，可打开 FL Studio Mobile 的 .flm 演示工程，GPL-3.0"
+        "en": "FL Studio Mobile, rebuilt clean-room in Rust with browser and Android builds, opening FL Studio Mobile's .flm demo projects",
+        "zh": "净室用 Rust 重写的 FL Studio Mobile，有浏览器与 Android 构建，可打开 FL Studio Mobile 的 .flm 演示工程"
       },
       "tokens": [
         {
@@ -6498,24 +5232,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-14",
-          "zh": "建库于 2026-10-14"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": {
@@ -6528,7 +5244,7 @@
         "a2_read_at": "README.md head#37, 2026-10-17",
         "a3": "924 paths, 528 .rs under crates/ and src/, with build.rs, Trunk.toml and an android/ directory producing the browser and APK builds its README documents — the reconstruction is in the linked repository."
       },
-      "_section_index": 7,
+      "_section_index": 8,
       "measured": {
         "stars": 10,
         "forks": 2,
@@ -6541,7 +5257,7 @@
     },
     {
       "slug": "soyrochus/mucrab",
-      "_section_index": 7,
+      "_section_index": 8,
       "section": "Applications",
       "platform": null,
       "desc": {
@@ -6577,12 +5293,12 @@
     },
     {
       "slug": "doitsujin/dxvk",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
-        "en": "Direct3D 9/10/11 translated onto Vulkan for Windows and under Wine, Zlib",
-        "zh": "把 Direct3D 9/10/11 转译到 Vulkan，供 Windows 与 Wine 使用，Zlib"
+        "en": "Direct3D 9/10/11 translated onto Vulkan for Windows and under Wine",
+        "zh": "把 Direct3D 9/10/11 转译到 Vulkan，供 Windows 与 Wine 使用"
       },
       "tokens": [
         {
@@ -6613,12 +5329,12 @@
     },
     {
       "slug": "reactos/reactos",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
-        "en": "Windows NT on x86, from black-box observation, GPL-2.0",
-        "zh": "x86 上的 Windows NT，由黑盒观测得出，GPL-2.0"
+        "en": "Windows NT on x86, from black-box observation",
+        "zh": "x86 上的 Windows NT，由黑盒观测得出"
       },
       "tokens": [
         {
@@ -6649,12 +5365,12 @@
     },
     {
       "slug": "azahar-emu/azahar",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
         "en": "Nintendo 3DS, emulated on Windows, Linux and macOS; the active successor to Citra",
-        "zh": "Nintendo 3DS，在 Windows、Linux 与 macOS 上模拟；Citra 的活跃后继"
+        "zh": "Nintendo 3DS，在 Windows、Linux 与 macOS 上模拟; Citra 的活跃后继"
       },
       "tokens": [
         {
@@ -6662,12 +5378,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2024-03-04",
-          "zh": "建库于 2024-03-04"
         }
       ],
       "note": null,
@@ -6691,12 +5401,12 @@
     },
     {
       "slug": "focus-creative-games/hybridclr",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
-        "en": "Unity IL2CPP managed runtime on iOS, Android and desktop, MIT",
-        "zh": "iOS、Android 与桌面上的 Unity IL2CPP 托管运行时，MIT"
+        "en": "Unity IL2CPP managed runtime on iOS, Android and desktop",
+        "zh": "iOS、Android 与桌面上的 Unity IL2CPP 托管运行时"
       },
       "tokens": [
         {
@@ -6727,12 +5437,12 @@
     },
     {
       "slug": "AsahiLinux/m1n1",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
-        "en": "Boot and firmware interfaces on Apple silicon, GPL-2.0",
-        "zh": "Apple 芯片上的引导与固件接口，GPL-2.0"
+        "en": "Boot and firmware interfaces on Apple silicon",
+        "zh": "Apple 芯片上的引导与固件接口"
       },
       "tokens": [
         {
@@ -6763,12 +5473,12 @@
     },
     {
       "slug": "HansKristian-Work/vkd3d-proton",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
-        "en": "Direct3D 12 translated onto Vulkan under Wine and Proton, LGPL-2.1",
-        "zh": "把 Direct3D 12 转译到 Vulkan，跑在 Wine 与 Proton 下，LGPL-2.1"
+        "en": "Direct3D 12 translated onto Vulkan under Wine and Proton",
+        "zh": "把 Direct3D 12 转译到 Vulkan，跑在 Wine 与 Proton 下"
       },
       "tokens": [
         {
@@ -6799,12 +5509,12 @@
     },
     {
       "slug": "ExpansionPak/ModernGekko",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
-        "en": "Runtime that GameCube and Wii recompilations load into, built on the Dolphin codebase, with a code-mod ABI for `mod.so`, `mod.dll` and `mod.dylib` packages, GPL-3.0",
-        "zh": "GameCube 与 Wii 重编译作品载入进去的运行时，以 Dolphin 代码库为基础，并带一套 `mod.so`、`mod.dll`、`mod.dylib` 包的 code-mod ABI，GPL-3.0"
+        "en": "Runtime that GameCube and Wii recompilations load into, built on the Dolphin codebase, with a code-mod ABI for `mod.so`, `mod.dll` and `mod.dylib` packages",
+        "zh": "GameCube 与 Wii 重编译作品载入进去的运行时，以 Dolphin 代码库为基础，并带一套 `mod.so`、`mod.dll`、`mod.dylib` 包的 code-mod ABI"
       },
       "tokens": [
         {
@@ -6812,24 +5522,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-06-25",
-          "zh": "建库于 2026-06-25"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -6853,7 +5545,7 @@
     },
     {
       "slug": "yuzuatri/Sengoku-Rance-Deck-Fix",
-      "_section_index": 8,
+      "_section_index": 9,
       "section": "Runtimes and compatibility layers",
       "platform": null,
       "desc": {
@@ -6866,18 +5558,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "MIT",
-          "zh": "MIT"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-02",
-          "zh": "建库于 2026-10-02"
         }
       ],
       "note": null,
@@ -6901,12 +5581,12 @@
     },
     {
       "slug": "librespot-org/librespot",
-      "_section_index": 9,
+      "_section_index": 10,
       "section": "Formats, file systems and protocols",
       "platform": null,
       "desc": {
-        "en": "Spotify Connect and playback protocol, for Linux and other platforms, MIT",
-        "zh": "Spotify Connect 与播放控制协议，面向 Linux 等平台，MIT"
+        "en": "Spotify Connect and playback protocol, for Linux and other platforms",
+        "zh": "Spotify Connect 与播放控制协议，面向 Linux 等平台"
       },
       "tokens": [
         {
@@ -6937,12 +5617,12 @@
     },
     {
       "slug": "sgan81/apfs-fuse",
-      "_section_index": 9,
+      "_section_index": 10,
       "section": "Formats, file systems and protocols",
       "platform": null,
       "desc": {
-        "en": "Apple File System read path on Linux and macOS, GPL-2.0; dormant",
-        "zh": "Apple File System 的读取路径，Linux 与 macOS，GPL-2.0；已停更"
+        "en": "Apple File System read path on Linux and macOS, dormant",
+        "zh": "Apple File System 的读取路径，Linux 与 macOS，已停更"
       },
       "tokens": [
         {
@@ -6973,12 +5653,12 @@
     },
     {
       "slug": "LibreDWG/libredwg",
-      "_section_index": 9,
+      "_section_index": 10,
       "section": "Formats, file systems and protocols",
       "platform": null,
       "desc": {
-        "en": "AutoCAD DWG, GPL-3.0; this is the official GitHub mirror",
-        "zh": "AutoCAD DWG，GPL-3.0；这是官方 GitHub 镜像"
+        "en": "AutoCAD DWG, this is the official GitHub mirror",
+        "zh": "AutoCAD DWG，这是官方 GitHub 镜像"
       },
       "tokens": [
         {
@@ -7009,12 +5689,12 @@
     },
     {
       "slug": "tuxera/ntfs-3g",
-      "_section_index": 9,
+      "_section_index": 10,
       "section": "Formats, file systems and protocols",
       "platform": null,
       "desc": {
-        "en": "NTFS read and write on Linux, GPL-2.0",
-        "zh": "Linux 上的 NTFS 读写，GPL-2.0"
+        "en": "NTFS read and write on Linux",
+        "zh": "Linux 上的 NTFS 读写"
       },
       "tokens": [
         {
@@ -7045,7 +5725,7 @@
     },
     {
       "slug": "f4pga/prjxray",
-      "_section_index": 9,
+      "_section_index": 10,
       "section": "Formats, file systems and protocols",
       "platform": null,
       "desc": {
@@ -7081,12 +5761,12 @@
     },
     {
       "slug": "linux-apfs/linux-apfs-rw",
-      "_section_index": 9,
+      "_section_index": 10,
       "section": "Formats, file systems and protocols",
       "platform": null,
       "desc": {
-        "en": "APFS with write support inside the Linux kernel, GPL-2.0",
-        "zh": "Linux 内核里带写入支持的 APFS，GPL-2.0"
+        "en": "APFS with write support inside the Linux kernel",
+        "zh": "Linux 内核里带写入支持的 APFS"
       },
       "tokens": [
         {
@@ -7117,12 +5797,12 @@
     },
     {
       "slug": "kichikuou/xsys35c",
-      "_section_index": 9,
+      "_section_index": 10,
       "section": "Formats, file systems and protocols",
       "platform": null,
       "desc": {
-        "en": "AliceSoft System 3.x scripting bytecode on DOS and Windows: compiler and decompiler for the format, GPL-2.0",
-        "zh": "DOS 与 Windows 上的 AliceSoft System 3.x 脚本字节码：同一套格式的编译器与反编译器，GPL-2.0"
+        "en": "AliceSoft System 3.x scripting bytecode on DOS and Windows: compiler and decompiler for the format",
+        "zh": "DOS 与 Windows 上的 AliceSoft System 3.x 脚本字节码：同一套格式的编译器与反编译器"
       },
       "tokens": [
         {
@@ -7130,12 +5810,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -7164,8 +5838,8 @@
       "method": "M3",
       "assets": "reader-supplied",
       "desc": {
-        "en": "Tactics Ogre: Let Us Cling Together on PSP and its remaster Tactics Ogre: Reborn: format libraries with unpackers and exporters for the .pac and .pakd archives, the compiled .xlc spreadsheet tables, screenplay and event files and images, plus a cutscene script disassembler, Zlib",
-        "zh": "PSP 版 Tactics Ogre: Let Us Cling Together 与其复刻版 Tactics Ogre: Reborn 的数据格式：.pac/.pakd 归档、编译后的 .xlc 表格、剧本与事件文件以及图像的解包与导出库，另附过场脚本反汇编器，Zlib"
+        "en": "Tactics Ogre: Let Us Cling Together on PSP and its remaster Tactics Ogre: Reborn: format libraries with unpackers and exporters for the .pac and .pakd archives, the compiled .xlc spreadsheet tables, screenplay and event files and images, plus a cutscene script disassembler",
+        "zh": "PSP 版 Tactics Ogre: Let Us Cling Together 与其复刻版 Tactics Ogre: Reborn 的数据格式：.pac/.pakd 归档、编译后的 .xlc 表格、剧本与事件文件以及图像的解包与导出库，另附过场脚本反汇编器"
       },
       "tokens": [
         {
@@ -7173,18 +5847,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -7194,7 +5856,7 @@
         "a2_read_at": "README.md head#33, 2026-10-17",
         "a3": "152 .cs in projects/, 53 of them in the …FileFormats libraries, plus docs/ holding the opcode and text-encoding tables (cutscene_scripting/psp_natives.md, text_encoding/psp_codepoints_EN.md); asset-like files in the tree: 0."
       },
-      "_section_index": 9,
+      "_section_index": 10,
       "measured": {
         "stars": 36,
         "forks": 6,
@@ -7207,7 +5869,7 @@
     },
     {
       "slug": "alphaSeclab/awesome-reverse-engineering",
-      "_section_index": 10,
+      "_section_index": 11,
       "section": "Related lists",
       "platform": null,
       "desc": {
@@ -7243,7 +5905,7 @@
     },
     {
       "slug": "user1342/Awesome-Android-Reverse-Engineering",
-      "_section_index": 10,
+      "_section_index": 11,
       "section": "Related lists",
       "platform": null,
       "desc": {
@@ -7279,12 +5941,12 @@
     },
     {
       "slug": "morluto/awesome-reverse-engineering",
-      "_section_index": 10,
+      "_section_index": 11,
       "section": "Related lists",
       "platform": null,
       "desc": {
         "en": "Curated RE tools and learning resources for binaries; the tool list this list deliberately is not",
-        "zh": "面向二进制文件的逆向工具与学习资源；正是本清单刻意不做的那份工具清单"
+        "zh": "面向二进制文件的逆向工具与学习资源; 正是本清单刻意不做的那份工具清单"
       },
       "tokens": [
         {
@@ -7315,7 +5977,7 @@
     },
     {
       "slug": "SubmitGame/awesome-decomp-games",
-      "_section_index": 10,
+      "_section_index": 11,
       "section": "Related lists",
       "platform": null,
       "desc": {
@@ -7328,18 +5990,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "CC0",
-          "zh": "CC0"
-        },
-        {
-          "t": "literal",
-          "field": null,
-          "en": "created 2026-10-09",
-          "zh": "建库于 2026-10-09"
         }
       ],
       "note": {
@@ -7371,8 +6021,8 @@
       "method": "M2",
       "assets": "reader-supplied",
       "desc": {
-        "en": "Ambermoon, Amiga → Windows, Linux, macOS and Android, full rewrite in C# with the original data formats reimplemented in its Ambermoon.Data projects, played on the game files the reader obtains itself, GPL-3.0",
-        "zh": "Ambermoon，Amiga → Windows、Linux、macOS 与 Android，以 C# 全量重写，原版数据格式在 Ambermoon.Data 各工程里重实现，运行需读者自备原版游戏文件，GPL-3.0"
+        "en": "Ambermoon, Amiga → Windows, Linux, macOS and Android, full rewrite in C# with the original data formats reimplemented in its Ambermoon.Data projects, played on the game files the reader obtains itself",
+        "zh": "Ambermoon，Amiga → Windows、Linux、macOS 与 Android，以 C# 全量重写，原版数据格式在 Ambermoon.Data 各工程里重实现，运行需读者自备原版游戏文件"
       },
       "tokens": [
         {
@@ -7380,18 +6030,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -7401,7 +6039,7 @@
         "a2_read_at": "README.md head#3, 2026-10-17",
         "a3": "623 .cs across Ambermoon.Core, Amber.Game, Amber.Abstractions, the Frontend and the Ambermoon.Data.Legacy / .FileSystems readers; the 171 asset-like paths are AmbermoonAndroid icons and screenshots."
       },
-      "_section_index": 5,
+      "_section_index": 6,
       "measured": {
         "stars": 541,
         "forks": 34,
@@ -7419,8 +6057,8 @@
       "method": "M2",
       "assets": "none-needed",
       "desc": {
-        "en": "Skool Daze (Microsphere, 1984) and Back to Skool (1985), Sinclair ZX Spectrum → any platform Python runs on, re-implementation in Python and Pygame with the schools, characters and behaviour rebuilt in its own source, GPL-3.0",
-        "zh": "Skool Daze（Microsphere，1984）与 Back to Skool（1985），Sinclair ZX Spectrum → 任何跑得动 Python 的平台，以 Python 与 Pygame 重写，学校、人物与行为都在它自己的源码里重建，GPL-3.0"
+        "en": "Skool Daze (Microsphere, 1984) and Back to Skool (1985), Sinclair ZX Spectrum → any platform Python runs on, re-implementation in Python and Pygame with the schools, characters and behaviour rebuilt in its own source",
+        "zh": "Skool Daze（Microsphere，1984）与 Back to Skool（1985），Sinclair ZX Spectrum → 任何跑得动 Python 的平台，以 Python 与 Pygame 重写，学校、人物与行为都在它自己的源码里重建"
       },
       "tokens": [
         {
@@ -7428,18 +6066,6 @@
           "field": "stars",
           "en": "★ {stars}",
           "zh": "★ {stars}"
-        },
-        {
-          "t": "forks",
-          "field": "forks",
-          "en": "{forks} forks",
-          "zh": "{forks} fork"
-        },
-        {
-          "t": "pushed",
-          "field": "pushed",
-          "en": "pushed {pushed}",
-          "zh": "推送于 {pushed}"
         }
       ],
       "note": null,
@@ -7449,7 +6075,7 @@
         "a2_read_at": "README.md head#16, 2026-10-17",
         "a3": "67 .py files including pyskool.py and the launcher scripts, plus tests/ and a sphinx man/ docs site; asset-like files in the tree: 0 — the launcher scripts, images, ini and sound files are generated from the repo's own content by `make scripts images ini sounds` (head#23-25)."
       },
-      "_section_index": 5,
+      "_section_index": 6,
       "measured": {
         "stars": 19,
         "forks": 4,
