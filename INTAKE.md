@@ -83,10 +83,19 @@ Precedents set while re-filing the list (follow them for new entries):
 ## Entry mechanics
 
 ```markdown
-- [owner/repo](https://github.com/owner/repo) - Title or product, original platform → destination, method label, license if declared. ★ 1,234 · 12 forks · pushed 2026-10-15.
+- [owner/repo](https://github.com/owner/repo) - Title or product, original platform → destination, method label. ★ 1,234.
 ```
 
-- Real examples of the shape: `- Zelda: Ocarina of Time, Nintendo 64, byte-matching decompilation.` / `- God of War III Remastered, PS4 → Windows and Linux, static recompilation of the original console binary, GPL-2.0, C++.`
+- Real examples of the shape: `- Zelda: Ocarina of Time, Nintendo 64, byte-matching decompilation.` / `- God of War III Remastered, PS4 → Windows and Linux, static recompilation of the original console binary, C++.`
+- **Nothing after the ★ but the star count, and no licence anywhere in the line** (the owner's rule of
+  2026-10-17: 「不要显示license，后面只展示star数，其他不要」). Measured before the change, over 159 entries: 108 fork
+  tokens, 107 push-date tokens, 30 `created <date>` literals, 3 licence literals, and 122 descriptions ending
+  on a licence clause — all of it stripped in one pass and re-rendered, with no non-licence text lost (the
+  pass was verified segment by segment). `forks`, `pushed`, `archived` and `license_spdx` stay in `measured`:
+  `RECHECK.md`'s triggers read them, and the refresh keeps them true; the reader simply no longer sees them.
+  `merge.py` now fails a pending object whose `tokens` are not exactly `[stars]`, and one whose `desc` ends on
+  a licence clause, so the shape cannot drift back — `BSD` counts as an operating system, only `BSD-<n>` is a
+  licence.
 - The **software type comes from the section**, so never repeat it in the line — no `**Game code**` prefix any more.
 - The link must be a repository that contains code. The description starts uppercase, ends with a period, and is separated from the link by ` - `.
 - A port or recompile states both ends (`PS4 → Windows and Linux`); a non-port states only the platform it came from. Platform names are the vendor's own (Nintendo 64, not "N64" on first use).
@@ -225,11 +234,21 @@ form committed here. It matters only for review: a writer at any other indent re
 a three-entry merge into a 13,883-line diff in which no reviewer can find the three entries. If a merge ever
 shows a whole-file diff, the indent is the first thing to check, not the merge.
 
+**A new filing level is inserted in `sections`, and then the corpus is renumbered.** An entry's heading comes from
+its own `section` and `platform` names; the `_section_index` each entry carries is a cache of that answer, because
+inserting a `###` between two existing levels shifts every position after it. Both the render and the merge resolve
+by name, and `render.py` **refuses** a corpus whose cache disagrees, printing the slugs and their real index — the
+command that repairs it is `python3 scripts/render.py --renumber`, which writes only those numbers and touches no
+heading. Measured the hard way on 2026-10-17: a `### Sega` level added to `sections` without renumbering left 103
+entries one heading away from home and rendered the whole `MS-DOS, Windows and Macintosh` block under `### Sega`,
+while `render.py --check` and `check-i18n.py` both passed — they prove the two files are the render and its mirror,
+not that the render filed anything correctly.
+
 | Field | Written by | Printed | Notes |
 | --- | --- | --- | --- |
 | `slug` | stage 2 | link text | key; unique; `url` is derived from it and never stored, so a mistyped owner cannot survive a refresh — `parse.py` fails if a README's link text and its URL path ever disagree |
 | `section`, `platform` | stage 2 | no | the filing result from `## Filing axis`; `platform` only inside `Games` |
-| `desc` `{en, zh}` | stage 2 | yes | the sentence between ` - ` and `★`, verbatim, including a `created <date>` |
+| `desc` `{en, zh}` | stage 2 | yes | the sentence between ` - ` and `★`, verbatim; it carries no licence clause and no `created <date>` — both left the line on 2026-10-17, and `merge.py` refuses a `desc` that ends on a licence statement |
 | `tokens` | stage 2 builds it, stage 3 fills it | yes | the number tail, as an ordered list — see below |
 | `note` `{en, zh}` | stage 2 | yes | the closing sentence after the last token; 11 entries have one, and a number refresh rewrites the tokens beside it, never this |
 | `measured` | `verify.py refresh` writes it, `merge.py` copies it | via `tokens` | `stars` `forks` `pushed` `archived` `license_spdx` `snapshot` — copied from `GET /repos/{owner}/{repo}` output and nothing else; see the number path under `### The commands` |
@@ -238,20 +257,21 @@ shows a whole-file diff, the indent is the first thing to check, not the merge.
 | `assets` | stage 2 | no | `reader-supplied` · `shipped` · `none-needed`; the sentence `## Games` opens with depends on it |
 | `priority` | — | — | deliberately absent |
 
-`tokens` is what lets a rendered README match a hand-written one byte for byte. Measured over the 146
-bullets that print a ★ (2026-10-17, after the first real merge), the tail is **four** kinds in one order,
-and every line so far is `stars` → `forks` → `pushed` with at most one literal inserted: 39 print only
-`★`, 96 print forks, 107 print a date, 10 print two dates, and 25 tokens are literals — 22 `created <date>`
-and 3 licence words (`d2r-mobile`, `Sengoku-Rance-Deck-Fix`, `SubmitGame/awesome-decomp-games`). A created
-date is a literal rather than a filled field because it is a historical fact: a refresh rewrites
-`pushed`, never `created`.
+`tokens` is what lets a rendered README match a hand-written one byte for byte. **Since the owner's 2026-10-17
+rule one kind is in use, on every line:**
 
 ```jsonc
-"tokens": [ {"t":"stars","field":"stars","en":"★ {stars}","zh":"★ {stars}"},
-            {"t":"forks","field":"forks","en":"{forks} forks","zh":"{forks} fork"},
-            {"t":"pushed","field":"pushed","en":"last push {pushed}","zh":"最近推送 {pushed}"},
-            {"t":"literal","field":null,"en":"MIT","zh":"MIT"} ]
+"tokens": [ {"t":"stars","field":"stars","en":"★ {stars}","zh":"★ {stars}"} ]
 ```
+
+`forks`, `pushed` and `literal` stay implemented and remain in the schema — the renderer still joins with
+`" · "`, a filled token still has to name its own field and carry `{field}` in both languages, and the corpus
+below the rule is what that machinery was built for. Measured over the 146 bullets that printed a ★ after the
+first real merge, the tail was **four** kinds in one order, every line `stars` → `forks` → `pushed` with at
+most one literal inserted: 39 print only `★`, 96 print forks, 107 print a date, 10 print two dates, and 25
+tokens are literals — 22 `created <date>` and 3 licence words (`d2r-mobile`, `Sengoku-Rance-Deck-Fix`,
+`SubmitGame/awesome-decomp-games`). A created date is a literal rather than a filled field because it is a
+historical fact: a refresh rewrites `pushed`, never `created`.
 
 Joined with `" · "`. Every token stores **its own wording per locale**, with `{field}` naming which
 `measured` value fills it; the value itself is never in the json, only its name. That is what makes the

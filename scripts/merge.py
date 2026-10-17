@@ -44,17 +44,24 @@ import argparse
 import csv
 import datetime
 import json
+import re
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+sys.path.insert(0, str(HERE))
+import render                                    # one shared rule for which heading an entry files under
 MEAS = ROOT / "data" / "measurement"
 DATA = ROOT / "data"
 REQUIRED = ("slug", "section", "desc", "tokens")
 METHODS = ("M1", "M2", "M3", "M4")
 ASSETS = ("reader-supplied", "shipped", "none-needed")
 TOKEN_KINDS = ("stars", "forks", "pushed", "literal")
+# What may not end an entry line since the owner's 2026-10-17 rule: a licence statement. `BSD` alone is
+# deliberately absent — it appears as an operating system in platform lists, so only `BSD-<n>` is a licence.
+LICENCE_CLAUSE = re.compile(r"(?:licen[cs]e|许可证|未声明|L?AGPL|L?GPL|\bMIT\b|Apache-\d|CC0|MPL|Unlicense|"
+                            r"BSD-\d|zlib|Sustainable Use|NOASSERTION)", re.I)
 
 
 def read_tsv(path):
@@ -101,6 +108,17 @@ def check(entry, problems):
     toks = entry.get("tokens") or []
     if not toks:
         problems.append(f"{entry.get('slug', '?')}: an entry prints no numbers, so write it as prose")
+    kinds = [t.get("t") for t in toks]
+    if kinds and kinds != ["stars"]:
+        problems.append(
+            f"{entry.get('slug', '?')}: the line prints ★ only ({kinds}) — forks, push dates, created "
+            "literals and licence words left the entry line on 2026-10-17; forks and pushed stay in "
+            "`measured`, where RECHECK.md reads them, they are simply not printed")
+    for lang in ("en", "zh"):
+        last = re.split(", |，", (entry.get("desc") or {}).get(lang, "").rstrip())[-1]
+        if LICENCE_CLAUSE.search(last):
+            problems.append(f"{entry.get('slug', '?')}: desc.{lang} ends on a licence clause "
+                            f"{last!r} — no licence is shown on an entry line")
     for t in toks:
         kind = t.get("t")
         if kind not in TOKEN_KINDS:
@@ -123,19 +141,13 @@ def check(entry, problems):
 
 
 def resolve(entry, sections):
-    """The heading index an entry files under: the platform level if it names one, else the section."""
-    want = entry["section"]
-    level2 = [i for i, s in enumerate(sections) if s["level"] == 2 and s["en"] == want]
-    if not level2:
-        return None, f"no ## {want} heading in the corpus"
-    top = level2[0]
-    if not entry.get("platform"):
-        return (top, "") if sections[top]["level"] == 2 else (None, f"{want} needs a platform")
-    kids = [i for i in range(top + 1, len(sections))
-            if sections[i]["level"] == 3 and sections[i]["en"] == entry["platform"]]
-    if not kids:
-        return None, f"no ### {entry['platform']} under ## {want}"
-    return kids[0], ""
+    """The heading index an entry files under — the renderer's rule, not a second copy of it.
+
+    Kept as one shared function because the merge and the render must never disagree about filing: the
+    merge's insert position is computed from the same names the render groups by, so a heading added to
+    `sections` cannot leave the corpus ordered one way and rendered another.
+    """
+    return render.resolve_heading(entry, sections)
 
 
 def measure(entry, snap_date, snap, cand_date, cand):
@@ -149,16 +161,19 @@ def measure(entry, snap_date, snap, cand_date, cand):
     return None, ""
 
 
-def position(corpus_entries, index, stars):
-    """Insert before the first row of the same heading whose star count is lower — nothing moves."""
-    for i, e in enumerate(corpus_entries):
-        if e["_section_index"] == index:
-            start = i
-            break
-    else:
+def position(corpus_entries, sections, index, stars):
+    """Insert before the first row of the same heading whose star count is lower — nothing moves.
+
+    The heading of each *existing* row is resolved by name, exactly as the render resolves it, so an entry
+    is never placed next to a stale `_section_index` that a newly inserted heading has invalidated.
+    """
+    def at(i):
+        return resolve(corpus_entries[i], sections)[0]
+
+    start = next((i for i in range(len(corpus_entries)) if at(i) == index), None)
+    if start is None:
         return len(corpus_entries)
-    end = next((i for i, e in enumerate(corpus_entries[start:], start)
-                if e["_section_index"] != index), len(corpus_entries))
+    end = next((i for i in range(start, len(corpus_entries)) if at(i) != index), len(corpus_entries))
     for i in range(start, end):
         m = corpus_entries[i].get("measured") or {}
         if (m.get("stars") or 0) < stars:
@@ -281,12 +296,13 @@ def main():
         for e in merged:
             print(f"  would add {e['slug']}  ★ {e['measured']['stars']:,} "
                   f"({sources[e['slug']]}-{e['measured']['snapshot']}.tsv) at corpus index "
-                  f"{position(corpus['entries'], e['_section_index'], e['measured']['stars'])}, "
+                  f"{position(corpus['entries'], corpus['sections'], e['_section_index'],
+                              e['measured']['stars'])}, "
                   f"in ## {e['section']}" + (f" / {e['platform']}" if e.get("platform") else ""))
         sys.exit(1 if problems else 0)
 
     for e in sorted(merged, key=lambda x: x["_section_index"]):
-        corpus["entries"].insert(position(corpus["entries"], e["_section_index"],
+        corpus["entries"].insert(position(corpus["entries"], corpus["sections"], e["_section_index"],
                                            e["measured"]["stars"]), e)
     out = Path(a.out) if a.out else Path(a.corpus)
     tmp = out.with_suffix(out.suffix + ".tmp")
