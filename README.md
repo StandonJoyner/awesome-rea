@@ -1,4 +1,4 @@
-# Awesome REA [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Reverse-Engineering Results [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 Finished reverse-engineering results: reimplemented engines, byte-matching decompilations, reimplemented formats, protocols, drivers and APIs, platform ports, compatibility patches.
 

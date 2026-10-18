@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "refreshed": "2026-10-17",
-  "title": "# Awesome REA [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)",
+  "title": "# Awesome Reverse-Engineering Results [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)",
   "header": [
     {
       "en": "Finished reverse-engineering results: reimplemented engines, byte-matching decompilations, reimplemented formats, protocols, drivers and APIs, platform ports, compatibility patches.",

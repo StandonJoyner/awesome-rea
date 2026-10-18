@@ -1,4 +1,4 @@
-# Awesome REA [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Reverse-Engineering Results [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 已完成的逆向成果：重写的引擎、逐字节匹配的源码还原、重实现的格式/协议/驱动/API、平台移植、兼容性补丁。
 
