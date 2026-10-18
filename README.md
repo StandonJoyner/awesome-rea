@@ -6,10 +6,6 @@ Finished reverse-engineering results: reimplemented engines, byte-matching decom
 
 This list catalogues **outcomes**, not instrumentation: the programs, formats and protocols people have actually taken apart and rebuilt. Entries are filed by the **kind of software** that was reconstructed, and inside `Games` by the **platform it originally ran on**. Each line states that platform — both ends for a port — and the method it was rebuilt by. Debuggers, decompilers, hex editors, trainers and similar tooling are out of scope; the tool lists are named under Related lists.
 
-Named for [`rea`](https://github.com/morluto/rea), an agent-driven reverse-engineering toolkit. Entries are the reconstructions themselves, whatever toolchain or person produced them.
-
-★ counts are read from GitHub's `GET /repos/{owner}/{repo}` endpoint and are rewritten by a scheduled CI job. **Data last refreshed 2026-10-17.** **⚠** marks a claim not read from a primary source, so it is not data. The maintenance rules for this list are in [AGENTS.md](AGENTS.md).
-
 ## Contents
 
 - [Games](#games)

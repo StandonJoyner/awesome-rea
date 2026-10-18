@@ -148,15 +148,12 @@ def main():
     blocks_en, blocks_zh = blockify(en_lines), blockify(zh_lines)
     assert [k for k, _ in blocks_en] == [k for k, _ in blocks_zh], "block kinds differ by language"
 
-    # numbers and the refreshed date live in the provenance paragraph
+    # the refreshed date is the newest snapshot's; no README prints it any more
     pre = [v for k, v in blocks_en if k == "pre"]
     pre_zh = [v for k, v in blocks_zh if k == "pre"]
-    prov = next(l for l in pre if "Data last refreshed" in l)
-    refreshed = re.search(r"Data last refreshed (\d{4}-\d\d-\d\d)", prov).group(1)
+    refreshed = snap_date
     header = [{"en": e, "zh": z} for e, z in zip(pre, pre_zh)]
     for h in header:
-        h["en"] = h["en"].replace(f"Data last refreshed {refreshed}", "Data last refreshed {refreshed}")
-        h["zh"] = h["zh"].replace(f"数据刷新于 {refreshed}", "数据刷新于 {refreshed}")
         if h["en"].startswith("- [") or h["zh"].startswith("- ["):
             sys.exit("a pre-Contents bullet is not a header paragraph — the parser would drop it")
 

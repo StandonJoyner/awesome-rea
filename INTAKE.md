@@ -100,12 +100,12 @@ Precedents set while re-filing the list (follow them for new entries):
 - A port or recompile states both ends (`PS4 → Windows and Linux`); a non-port states only the platform it came from. Platform names are the vendor's own (Nintendo 64, not "N64" on first use).
 - A list item either starts with a link (an entry) or is prose in a paragraph. Analysis without a link of its own goes in a paragraph, never a bullet.
 - **No hard-wrapping**: one paragraph per line, entry bullets included.
-- Every URL appears **exactly once** in each README — `awesome-lint` fails on a duplicate. Where a project matters to two sections, link it in its type section and write its name as plain text (`owner/repo`) in the other; `Related lists` is plain text for that reason. That is also why the GitHub REST endpoint appears in the data-provenance line as code, not as a link.
+- Every URL appears **exactly once** in each README — `awesome-lint` fails on a duplicate. Where a project matters to two sections, link it in its type section and write its name as plain text (`owner/repo`) in the other; `Related lists` is plain text for that reason.
 - Keep tables narrow enough that a wide cell is not needed: a row carrying twenty names belongs in prose, and since 2026-10-16 nothing in the README is that shape.
 - Entries within a section are listed **largest-first by stars as a courtesy**, not as a claim: a number refresh rewrites the numbers and never the line order, so the order goes stale by design. Never cite the ordering as data.
 - This is the shape the README *shows*. From the first render of `entries.json` (`## The three stages and the three files` below) it is output: the bullets are generated, and a contributor edits the json and the sentence inside it, not the rendered line.
 - `## Contents` must be the first section and must not list `Contributing`, `Footnotes`, or a licence; no `## Licence` section and no CI badge; no logo requirement unmet if you add one. Nested `###` platform levels are listed in `Contents` as sub-items.
-- Do not write a measurement date into a rendered line: the refreshed-date line comes from `entries.json`'s `refreshed`, so anything hand-written there ("re-read from the API on 2026-10-16", "measured 2026-10-16") is overwritten by the next render. It is the only snapshot date in the README; a `created <date>` is a historical fact and is allowed.
+- Do not write a date into a rendered line, measured or historical: nothing in either README prints one any more — the header paragraph that carried the refreshed date was deleted on 2026-10-18, and `refreshed` stays a field in `entries.json` — so a hand-written one ("re-read from the API on 2026-10-16", "measured 2026-10-16", `created 2026-09-29`) is either a figure the next refresh silently makes false or a token `merge.py` refuses.
 - Write for a reader who is scanning a list, not for a reader of our essay: no rhetorical framings like "the class most useful to 'get my old game running here'", no "cautionary tale" / "the most instructive entry" verdicts, and no bold one-line moral at the end of a paragraph. State what the project does, what was reconstructed, and what the numbers are; leave the judgement implicit in the entry list.
 - Fidelity distinctions that only our filing procedure cares about (byte-matching vs reassembles-to-ROM, for instance) stay in the entry line as two words, never in a paragraph explaining the ladder.
 - The colliding name stays recorded here only: `kaixinbaba/awesome-rea` exists at 5★ and presents OpenMW / ScummVM / OpenRA / Ruffle as "rea" results, which they are not — those are decades-old projects with no agent in their history, and this list's naming paragraph is what makes that distinction. The entry was deleted from Related lists on 2026-10-16: a same-name list we rate badly is not a resource a reader needs. Recognisability beat uniqueness, and this bullet is where the collision is documented.
@@ -361,8 +361,8 @@ which one, and invents nothing. Nothing else may fill `measured`.
 - Rewrite prose as a side effect of a number refresh: `header`, `sections[].intro` and `notes` are inputs to a render, never outputs.
 
 **Migration acceptance test.** Rendered `README.md` and `README.zh-CN.md` must equal the committed files
-**byte for byte** (the refreshed-date line included: `refreshed` is a field in the json, so no exception is
-needed), the link set must round-trip, and per-heading entry counts and ⚠ counts must hold. A mismatch is
+**byte for byte** (no date exception is needed any more: `refreshed` is a field in the json and no README
+prints it), the link set must round-trip, and per-heading entry counts and ⚠ counts must hold. A mismatch is
 fixed in the renderer or the json, never by editing a README to satisfy the test. **Run 2026-10-17 at the
 migration baseline: both files identical**, with `check-i18n.py` reporting 138 links and 135 entries on both
 sides and no GitHub URL repeated in either file. **Re-run the same evening after the first real merge**

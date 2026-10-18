@@ -14,14 +14,6 @@
     {
       "en": "This list catalogues **outcomes**, not instrumentation: the programs, formats and protocols people have actually taken apart and rebuilt. Entries are filed by the **kind of software** that was reconstructed, and inside `Games` by the **platform it originally ran on**. Each line states that platform — both ends for a port — and the method it was rebuilt by. Debuggers, decompilers, hex editors, trainers and similar tooling are out of scope; the tool lists are named under Related lists.",
       "zh": "本清单收录的是**成果**而不是仪器：别人真的拆开并且真的重建了哪些程序、格式和协议。条目按**被重建的软件类型**归档；在「游戏」一节里再按**它原来跑在什么平台**上分二级。每一行都写明那个平台（移植会写两端）以及它是**用哪种方法**重建的。调试器、反编译器、十六进制编辑器、修改器一类工具不在范围内，工具清单见文末「相关清单」。"
-    },
-    {
-      "en": "Named for [`rea`](https://github.com/morluto/rea), an agent-driven reverse-engineering toolkit. Entries are the reconstructions themselves, whatever toolchain or person produced them.",
-      "zh": "本清单以 [`rea`](https://github.com/morluto/rea) 命名——一个 agent 驱动的逆向工具包。条目收的是重建物本身，无论是谁、用哪条工具链做出来的。"
-    },
-    {
-      "en": "★ counts are read from GitHub's `GET /repos/{owner}/{repo}` endpoint and are rewritten by a scheduled CI job. **Data last refreshed {refreshed}.** **⚠** marks a claim not read from a primary source, so it is not data. The maintenance rules for this list are in [AGENTS.md](AGENTS.md).",
-      "zh": "所有星标数都读自 GitHub 的 `GET /repos/{owner}/{repo}` 接口，并由定时的 CI 作业重写。**数据刷新于 {refreshed}。** **⚠** 表示该说法没有读到一手来源，因此不算数据。本清单的维护规则写在 [AGENTS.md](AGENTS.md)。"
     }
   ],
   "sections": [
