@@ -25,6 +25,8 @@ The classes that fail, in the order people hit them:
 
 **Failing admission is not a grade.** Star count, last-push age, license and whether an agent helped are **not** admission tests — write dormancy or a missing license into the line as a plain status phrase, never as a reason to drop a project. A rejection names the test the project failed and nothing else.
 
+**And passing is entering.** A project you have read that clears all three tests is submitted for inclusion, not held back — a proposal to defer a passing project needs an open question to name (a test to re-run, a section to create), and "we don't want more of this" is not one. The editorial choice lives upstream of the tests: which repositories get read at all.
+
 ## Entry format
 
 ```markdown

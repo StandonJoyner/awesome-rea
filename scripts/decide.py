@@ -41,10 +41,10 @@ def validate(rec):
         if not rec["quote"].strip() or not rec["read_at"].strip():
             return "a refusal needs the sentence actually read and the file it was read from"
     if d == "defer":
-        if rec["blocked_on"] not in ("A1", "A2", "A3", "filing", "none"):
-            return f"defer names an A-test or none, not {rec['blocked_on']!r}"
+        if rec["blocked_on"] not in ("A1", "A2", "A3", "filing"):
+            return f"defer names an unresolved A-test or filing, not {rec['blocked_on']!r} — a passing project enters (INTAKE.md, ## Admission)"
         if not rec["note"].strip():
-            return "a deferral must say what it is waiting for, or whose editorial call it is"
+            return "a deferral must say what it is waiting for"
     if d == "remove" and rec["blocked_on"] not in REMOVALS:
         return f"remove must name one of {' · '.join(REMOVALS)}"
     if d == "wording-fix" and not rec["note"].strip():
