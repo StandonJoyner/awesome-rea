@@ -77,7 +77,7 @@ The notices corpus is a **plain shallow clone** at `data/cache/dmca/`
 a git submodule**: a submodule would pin a third-party commit inside our published history and
 make every recursive clone of a documentation list fetch a corpus of legal filings. The
 `github/dmca` repository is third-party data, and the same reasoning that kept the census
-dumps out of the tree (`## Census` in INTAKE.md) keeps this out.
+dumps out of the tree (`AGENTS.md`, `## Repository layout`) keeps this out.
 
 Matching is the part that needed measuring, not the fetching. Three candidate rules, tried
 against the real corpus:
