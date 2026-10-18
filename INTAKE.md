@@ -38,24 +38,21 @@ Sections are the **kind of software that was reconstructed**, because that is th
 | `## Runtimes and compatibility layers` | The artifact is the platform the program expects: an API, firmware interface, managed runtime, emulator, or the patch that unblocks a title on a new host. |
 | `## Formats, file systems and protocols` | The artifact is a data structure or a wire protocol reimplemented from observation.                                |
 
-Four type sections since 2026-10-17: the fifth, `## Trainers and modifiers`, was deleted with its four entries, so a repository whose artifact reads or writes another process's memory at runtime has no filing home and fails A3, and does not enter. The removed class and its legal record are in `AGENTS.md`, `## Takedown and legal record`.
+Four type sections since 2026-10-17; the fifth, `## Trainers and modifiers`, was deleted with its four entries, so a runtime memory editor has no filing home and fails **A3** — the class is the row in `## Admission` above and its legal record is `AGENTS.md`, `## Takedown and legal record`.
 
 `Games` second levels: `### Nintendo`, `### Sony PlayStation`, `### Microsoft Xbox and Xbox 360`, `### MS-DOS, Windows and Macintosh`, `### Home computers`, `### Mobile`, keyed on the platform the original software ran on. Add a platform level only when an entered title's original platform is not covered by one that exists — the Xbox level was created on 2026-10-16 for three titles, `### Mobile` on 2026-10-17 for one (`Galaxy on Fire 2`, Android and iOS), `### Home computers` on 2026-10-17 for two (`Pyrdacor/Ambermoon.net` on the Amiga, `skoolkid/pyskool` on the Sinclair ZX Spectrum), none as a placeholder. The home-computer level covers the 8- and 16-bit machines that are neither a PC nor a console; a title whose original ran on both a home computer and DOS files under the PC level with both named in its line, because the heading is one home and the line carries the rest (`Pyrdacor/freeserf.net`: DOS and Amiga data). A destination belongs in the entry line, never in a heading (`PS4 → Windows and Linux`).
 
-Precedents set while re-filing, follow them for new entries:
+Precedents set while re-filing — each is one rule plus the slugs it was set on; follow them for new entries:
 
-- `jhaizhou-ops/d2r-mobile` is **Games / Nintendo** (Switch), not Runtimes: it reimplements a platform surface, but the artifact the reader gets is Diablo II running on a Mac.
-- `JoppieToppie/Galaxy-on-Fire-2-Unity-Remake` is **Games / Mobile**, keyed on Android and iOS as the platform the original ran on — the same test that puts a Switch→iOS recompile under Nintendo rather than here. Its line is the one place in the README that says the reconstruction ships the original assets, because it does; `## Games`' intro is worded to allow that one entry rather than to describe the corpus. Whether a linked repository holds vendor binaries is not a thing either file rules on (see `## Admission` above).
-- `yuzuatri/Sengoku-Rance-Deck-Fix` is **Runtimes and compatibility layers** even though it patches one game: what was reconstructed is the missing codepage behaviour, and it sits next to the Wine paragraph that explains it.
-- `azahar-emu/azahar` is **Runtimes** (it runs games but is not a game); `ruffle-rs/ruffle`, `storytold/wordcraft`, `soyrochus/mucrab` are **Applications**; `kichikuou/xsys35c` is **Formats** (a bytecode format's compiler and decompiler), while `kichikuou/xsystem4` is **Games** (it plays AliceSoft titles).
-- `gibbed/Gibbed.LetUsClingTogether` is **Formats** on the `xsys35c` precedent even though its own README opens "Tools for modding": what the linked repository holds is the read of the game's data structures — 152 .cs files, 53 of them in the `…FileFormats` projects, and `docs/` with the cutscene opcode and text-encoding tables. So the rule for a mod-tool self-description is: **file on the artifact, not the purpose**, and A3 decides it — format libraries and importers/exporters of the reconstructed structures are in, a repository that only ships a loader, redirect or save-scumming hook into the shipped game is not.
+- **What the reader gets decides, not the surface reimplemented.** `jhaizhou-ops/d2r-mobile` is Games / Nintendo, not Runtimes, because the artifact is Diablo II running on a Mac; `yuzuatri/Sengoku-Rance-Deck-Fix` is the mirror case — Runtimes, though it patches one title, because what was reconstructed is missing codepage behaviour and it belongs beside the Wine paragraph that explains it.
+- **A runner is Runtimes, a player is Games, a non-game program is Applications.** `azahar-emu/azahar` runs games and is not one; `kichikuou/xsystem4` plays AliceSoft titles while `kichikuou/xsys35c`, that bytecode format's compiler and decompiler, is Formats; `ruffle-rs/ruffle`, `storytold/wordcraft` and `soyrochus/mucrab` are Applications.
+- **File on the artifact, not the purpose**, and A3 draws the line. `gibbed/Gibbed.LetUsClingTogether` is Formats on the `xsys35c` precedent though its README opens "Tools for modding": the repository holds the *read* of the game's data structures (152 .cs files, 53 of them in the `…FileFormats` projects, plus `docs/` with the cutscene opcode and text-encoding tables). Format libraries and importers/exporters of reconstructed structures are in; a repository that only ships a loader, redirect or save-scumming hook into the shipped game is not.
+- **`Games` keys on the original platform, and one heading holds it.** `JoppieToppie/Galaxy-on-Fire-2-Unity-Remake` is Games / Mobile on Android and iOS — the same test that files a Switch→iOS recompile under Nintendo instead. Its line is the one place in the README saying the reconstruction ships the original assets, because it does, and `## Games`' intro is worded to allow that entry rather than to describe the corpus; whether a linked repository holds vendor binaries is not a thing either file rules on (`## Admission` above).
 - The one ledger section left at the bottom of the README (`Related lists`) is a ledger, not a type section. A repository mentioned there is linked once, in its type section, and written as plain text here. `Takedown and licence history` was the other ledger until 2026-10-17; its content is now `AGENTS.md`, `## Takedown and legal record`.
 
 ## Method labels: four live internal ids, written inline
 
-M1–M5 are **internal ids for the method label written into each entry line**; M5 is retired (see the table below), so four are in use. They are no longer the filing axis — `## Filing axis` above is — and the codes themselves never appear in a README. Since 2026-10-16 there is also no README paragraph set that groups repositories by them. Every project still has exactly one home, and that home is a type section. These must never become sections either: how a result was produced (agent, Ghidra, a person), how it attracted attention (a short-video wave), what its license is, whether it was taken down. Those are attributes to write into the entry, or material for `## Takedown and legal record` in `AGENTS.md`.
-
-M5 — trainer and memory editing — was **retired on 2026-10-17** with the `## Trainers and modifiers` section. The id survives here so an old entry line is not reinterpreted, but no repository admitted on that signal belongs in the README now.
+M1–M5 are **internal ids for the method label written into each entry line**, so the codes themselves never appear in a README. **M5 — trainer and memory editing — was retired on 2026-10-17 with the section it named**, so four are in use: the id keeps its row below only so an old entry line is not reinterpreted, and no repository admitted on that signal belongs in the list now. The methods are no longer the filing axis — `## Filing axis` above is — and since 2026-10-16 there is no README paragraph set that groups repositories by them either. Every project has exactly one home, and that home is a type section. These must never become sections either: how a result was produced (agent, Ghidra, a person), how it attracted attention (a short-video wave), what its license is, whether it was taken down. Those are attributes to write into the entry, or material for `## Takedown and legal record` in `AGENTS.md`.
 
 Judge by **what the artifact is**, not by the technique used to obtain it:
 
@@ -70,14 +67,12 @@ Judge by **what the artifact is**, not by the technique used to obtain it:
 
 M4 covers two README labels: use **Port and static recompilation** when the artifact moves a whole game to a new platform, **Compatibility patch** when it unblocks one title on a host it already nominally supported.
 
-Precedents set while re-filing the list (follow them for new entries):
+Precedents set while re-filing the list — one rule plus the slugs it was set on; follow them for new entries:
 
-- Static recompilation of a console game to a new platform is **M4 / Port and static recompilation** (`gow3_pc`, `Tekken3Recomp`, `god-of-war-recomp`, `tkdr-recomp`, `TeamGDB/Yakumo`): recompilation is the means, "runs where it did not before" is the product.
-- `N0zoM1z0/th04` and `N0zoM1z0/dx-ball` are **M1** on the strength of their own claims ("2,139 matching bytes", "exact reconstruction is in progress"). If a project later drops the byte-matching claim, reclassify.
-- `soyrochus/mucrab` is **M3**, not M2: it reimplements an application's observed behaviour and consumes no original game data.
-- `storytold/wordcraft` is **M2** and is *not* agent-RE output: it is filed clean-room on the strength of its own README, which since 2026-10-16 reads "Clean-room: built from public specifications and observation, with every asset original or openly licensed". The earlier sentence this bullet and the README line quoted ("we explicitly do not use reverse engineering… 100% clean room") is **no longer in that repository** — code search for it returns `total_count = 0` — so the README now quotes the current text; see `## Sourcing ledger` in `AGENTS.md`. Never label clean-room work as agent output. `sushi-shi/homm1-decomp` belongs to a different model; `Moxnatiy/OpenBattlefield2` is Ghidra work.
-- Officially released source that merely got compiled is **not RE** and fails admission at **A1**; the class, the worked examples and the reason live in `## Admission` above. Do not file such a repository under a method label, and do not link it from a type section.
-- Tools (debuggers, decompilers, hex editors, MCP bridges) are out of scope entirely, at **A3**; the boundary lists are named under "Related lists".
+- **Recompilation is the means; "runs where it did not before" is the product**, so a static recompilation of a console game is M4 / Port and static recompilation: `FelipePrado0/gow3_pc`, `fabioap-cpu/Tekken3Recomp`, `KIexster/god-of-war-recomp`, `gasparegas/tkdr-recomp`, `TeamGDB/Yakumo`.
+- **M1 rests on the project's own byte claim, not on ours.** `N0zoM1z0/th04` and `N0zoM1z0/dx-ball` are M1 on "2,139 matching bytes" and "exact reconstruction is in progress"; if a project later drops the claim, reclassify it.
+- **M2 consumes original data; M3 reimplements observed behaviour.** `soyrochus/mucrab` is M3, not M2 — no original game data in it. `storytold/wordcraft` is M2 on its README's current line ("Clean-room: built from public specifications and observation, with every asset original or openly licensed") and is *not* agent-RE output: never label clean-room work as agent output. The sentence this bullet quoted until 2026-10-16 is no longer in that repository, and the retraction with what was actually read is `AGENTS.md`, `## Sourcing ledger`.
+- **Two classes never reach a method label at all**: source the rights holder released and then merely compiled fails **A1**, and tooling — debuggers, decompilers, hex editors, MCP bridges — fails **A3**. Both are `## Admission` above, with the worked examples; neither is filed under a type section.
 
 ## Entry mechanics
 
@@ -87,11 +82,10 @@ Precedents set while re-filing the list (follow them for new entries):
 
 - Real examples of the shape: `- Zelda: Ocarina of Time, Nintendo 64, byte-matching decompilation.` / `- God of War III Remastered, PS4 → Windows and Linux, static recompilation of the original console binary, C++.`
 - **Nothing after the ★ but the star count, and no licence anywhere in the line** (the owner's rule of
-  2026-10-17: 「不要显示license，后面只展示star数，其他不要」). Measured before the change, over 159 entries: 108 fork
-  tokens, 107 push-date tokens, 30 `created <date>` literals, 3 licence literals, and 122 descriptions ending
-  on a licence clause — all of it stripped in one pass and re-rendered, with no non-licence text lost (the
-  pass was verified segment by segment). `forks`, `pushed`, `archived` and `license_spdx` stay in `measured`:
-  `RECHECK.md`'s triggers read them, and the refresh keeps them true; the reader simply no longer sees them.
+  2026-10-17: 「不要显示license，后面只展示star数，其他不要」; what the corpus-wide strip measured and how it was
+  verified is recorded once in `AGENTS.md`'s removal list, not here). `forks`, `pushed`, `archived` and
+  `license_spdx` stay in `measured`: `RECHECK.md`'s triggers read them, and the refresh keeps them true; the
+  reader simply no longer sees them.
   `merge.py` now fails a pending object whose `tokens` are not exactly `[stars]`, and one whose `desc` ends on
   a licence clause, so the shape cannot drift back — `BSD` counts as an operating system, only `BSD-<n>` is a
   licence.
@@ -108,11 +102,11 @@ Precedents set while re-filing the list (follow them for new entries):
 - Do not write a date into a rendered line, measured or historical: nothing in either README prints one any more — the header paragraph that carried the refreshed date was deleted on 2026-10-18, and `refreshed` stays a field in `entries.json` — so a hand-written one ("re-read from the API on 2026-10-16", "measured 2026-10-16", `created 2026-09-29`) is either a figure the next refresh silently makes false or a token `merge.py` refuses.
 - Write for a reader who is scanning a list, not for a reader of our essay: no rhetorical framings like "the class most useful to 'get my old game running here'", no "cautionary tale" / "the most instructive entry" verdicts, and no bold one-line moral at the end of a paragraph. State what the project does, what was reconstructed, and what the numbers are; leave the judgement implicit in the entry list.
 - Fidelity distinctions that only our filing procedure cares about (byte-matching vs reassembles-to-ROM, for instance) stay in the entry line as two words, never in a paragraph explaining the ladder.
-- The colliding name stays recorded here only: `kaixinbaba/awesome-rea` exists at 5★ and presents OpenMW / ScummVM / OpenRA / Ruffle as "rea" results, which they are not — those are decades-old projects with no agent in their history, and this list's naming paragraph is what makes that distinction. The entry was deleted from Related lists on 2026-10-16: a same-name list we rate badly is not a resource a reader needs. Recognisability beat uniqueness, and this bullet is where the collision is documented.
+- The colliding name stays recorded here only: `kaixinbaba/awesome-rea` exists at 5★ and presents OpenMW / ScummVM / OpenRA / Ruffle as "rea" results, which they are not — those are decades-old projects with no agent in their history. The README paragraph that used to draw that line was deleted on 2026-10-18 (`AGENTS.md`'s removal list), so this bullet is where the distinction now lives. The entry was deleted from Related lists on 2026-10-16: a same-name list we rate badly is not a resource a reader needs, and recognisability beat uniqueness.
 
 ## The three stages and the three files
 
-Standardised 2026-10-17. **The corpus is now built with them.** `parse.py` read the two READMEs and the newest snapshot back into `entries.json`, the migration test below passed, and two merges have since been written through stage 3 and committed (`88a4d6e`: eleven entries, then three): the json holds every entry, token wording and paragraph the files carry, and **the READMEs are output only**. `--out` and `--decisions` still exist for a run against a copy of the corpus, which is how a batch is exercised before it touches the committed file.
+Standardised 2026-10-17. **The corpus is now built with them.** `parse.py` read the two READMEs and the newest snapshot back into `entries.json`, the acceptance test below passed, and every merge since has gone through stage 3, so an entry admitted by the pipeline leaves a corpus diff **and** an `admit` line — entries entered before the ledger exist in the corpus without one, which is why the file is a record of decisions and not a count of the corpus. The json holds every entry, token wording and paragraph the files carry, and **the READMEs are output only**. `--out` and `--decisions` still exist for a run against a copy of the corpus, which is how a batch is exercised before it touches the committed file.
 
 So `verify.py refresh --apply` is the measurement step and nothing more: it writes the snapshot `merge.py` copies from, then puts this run's numbers into `entries.json`'s `measured` and its date into `refreshed`. **It does not touch either README, and neither may a hand** — `render.py` writes them from the corpus, which is why `render.py --check` is a CI gate now (`lint.yml`, and in the refresh job before that PR opens). One trap in the commands below: `--coverage` is the gate, not the merge — `merge.py pending.json` writes the corpus, `merge.py --coverage` only checks it, and `render.py` then writes both READMEs.
 
@@ -217,22 +211,21 @@ license  archived  upstream_type  precheck  blocked_on  verdict  e  flags  quote
 - `slug` is the key and is only written after `GET /repos/{owner}/{repo}` answers 200 — never a guessed URL. This is all stage 1 costs: **one metadata request per candidate**, no README and no file tree; stage 2 pays for the README and the tree, once, and only for the rows it reads.
 - `source` = `search` · `catalogue` · `owner`. `blocked_on` = `A1` · `A2` · `A3` · `filing` · `none`, and `verdict`, `e`, `flags`, `quote` are stage 2's, taken from `quality.py`. `upstream_type` is filled only where a source supplies one (`decompilation`, `static-recomp`, `source-port`, …) — a hint, never a verdict.
 - `priority` = `P1`–`P4`, the ★×recency band, defined in `scripts/preflight.py` as **P1** ★≥1,000 or (★≥100 and pushed within 90 days) · **P2** ★≥100 or (★≥10 within 90 days) · **P3** ★≥10 · **P4** the rest. **It orders work and decides how many rows a pass reads; it does not decide admission.** It is carried no further than this file: an entry object has no `priority`, because a reader cannot evaluate one.
-  - Measured 2026-10-17 over the newest corpus snapshot (136 rows): **P1 118 · P2 10 · P3 2 · P4 6** — 86.8% of what is entered sits in the top band, so the band ranks the queue, not the corpus.
-  - Measured over that upstream queue (`data/games.json`, 2,118 rows read 2026-10-17, this list's slugs removed and duplicates folded: 1,937 rows): **P1 367 · P2 861 · P3 511 · P4 198**. The 367 P1 rows are `decompilation` 106 · `static-recomp` 93 · `source-port` 77 · `engine-remake` 70 by upstream `type` — a hint, not a verdict: `source-port` straddles `## Method labels`, because a port built on a *decompilation* is M4 and admissible while a build on *vendor-released source* is not a result at all, and no upstream `type` field tells the two apart. Read together: a P1 pass costs 367 metadata requests in stage 1, and stage 2 is where the per-row human read begins.
-- `precheck` = `pass` · `already-entered` · `fork-of-entered` — the only three states the API settles without prose: the slug is in the corpus, or its `parent`/`source` field names a repository that is. `already-entered` sets `next` to *nothing — the reader already has it through one entry*, `fork-of-entered` to *write its facts into the parent entry's paragraph, then refuse it*; both are the single-link rule of `## Entry mechanics`, applied before anyone opens a README. The fork class is the one the API, not words, settles: over the four recorded fork refusals `parent`/`source` catches 3 (`Keriew/augustus` → `bvschaik/julius`, `Supermedo/bloodborne_pc` → `deadinside28/bloodborne_pc`, `sm64-port/sm64-port` → `n64decomp/sm64`) and misses `d07RiV/diabloweb`, a WebAssembly build *of* a devilution fork rather than a fork of one, which has no `parent` and stays a prose read at stage 2.
+  - Measured 2026-10-17 over then-newest `data/measurement/snapshot-2026-10-17.tsv` (136 rows, banded by `preflight.py`'s rule above): **P1 118 · P2 10 · P3 2 · P4 6**, so 86.8% of what was then entered sat in the top band — the band ranks the queue, not the corpus.
+  - Measured the same day over a local copy of the upstream list's own `data/games.json` dump (2,118 rows read 2026-10-17, this list's slugs removed and duplicates folded to 1,937; a gitignored input, like every measurement file, so that count is a record and not a re-runnable query): **P1 367 · P2 861 · P3 511 · P4 198**. The load-bearing half is its P1 split by upstream `type` — `decompilation` 106 · `static-recomp` 93 · `source-port` 77 · `engine-remake` 70 — because `source-port` straddles `## Method labels`: a port built on a *decompilation* is M4 and admissible, a build on *vendor-released source* is not a result at all, and no upstream `type` field tells the two apart. So a catalogue's type is a hint, never a verdict; a P1 pass costs 367 stage-1 metadata requests, and stage 2 is where the per-row read begins.
+- `precheck` = `pass` · `already-entered` · `fork-of-entered` — the only three states the API settles without prose: the slug is in the corpus, or its `parent`/`source` field names a repository that is. `already-entered` sets `next` to *nothing — the reader already has it through one entry*, `fork-of-entered` to *write its facts into the parent entry's paragraph, then refuse it*; both are the single-link rule of `## Entry mechanics`, applied before anyone opens a README. The fork class is the one the API, not words, settles: observed 2026-10-17 in a stage-1 batch, `parent`/`source` caught 3 of 4 fork refusals (`Keriew/augustus` → `bvschaik/julius`, `Supermedo/bloodborne_pc` → `deadinside28/bloodborne_pc`, `sm64-port/sm64-port` → `n64decomp/sm64`) and missed `d07RiV/diabloweb`, a WebAssembly build *of* a devilution fork rather than a fork of one, which has no `parent` and stays a prose read at stage 2. Those four rows are gone — the batch TSV was overwritten by the defect below, and none of them reached `decisions.jsonl` — so the split is a dated observation, not a re-runnable count; the machine settles it for any future row.
 - The three class words this column was drafted with — `vendor-source`, `tool-or-list`, `mod-or-hack` — were **measured out of the script on 2026-10-17** and are stage-2 human verdicts recorded in `blocked_on` and in the `decisions.jsonl` line. Screening a README for those words false-flagged **33 of the 136** entered repositories over the first 120 lines, and **1 of 136** narrowed to the description plus 8 lines anchored on a copula; against the 32 upstream refusal rows that band had, the same screen caught **4** — vendor-source 1/16 (`arx/ArxLibertatis` alone), tool-or-list 0/3, mod-or-hack 3/13. Filtering therefore runs **negatively**: positive method vocabulary is a weak and adversely correlated filter (over the 2,118-row pool it kept 57% overall and 44% of the ★≥1,000 band — the stricter the word list, the more real results it dropped).
 - `next` is one verb phrase — `read its README for the method claim` for a `pass` row, plus the two settled strings above — required whenever `quote` is empty and `blocked_on=A2`, and written by stage 1 for every row, so a queue is never a list of rows without an instruction.
 
 ### `data/entries.json` (the corpus — committed, and written only by the pipeline)
 
-One object per entry, plus `header`, `sections` and `notes` for the prose the READMEs carry — measured at
-8,533 of 41,023 characters in `README.md`, which is why prose is in the schema: json that held only bullets
-would render a list that reads as machine output.
+One object per entry, plus `header`, `sections` and `notes` for the prose the READMEs carry — which is why
+prose is in the schema: json that held only bullets would render a list that reads as machine output.
 
 `merge.py` and `parse.py` both write it with `json.dumps(..., ensure_ascii=False, indent=2)`, and that is the
-form committed here. It matters only for review: a writer at any other indent reflows all 7,000 lines, turning
-a three-entry merge into a 13,883-line diff in which no reviewer can find the three entries. If a merge ever
-shows a whole-file diff, the indent is the first thing to check, not the merge.
+form committed here. It matters only for review: a writer at any other indent reflows every line of the file —
+measured once as a 13,883-line diff for a three-entry merge, in which no reviewer can find the three entries. If
+a merge ever shows a whole-file diff, the indent is the first thing to check, not the merge.
 
 **A new filing level is inserted in `sections`, and then the corpus is renumbered.** An entry's heading comes from
 its own `section` and `platform` names; the `_section_index` each entry carries is a cache of that answer, because
@@ -250,12 +243,17 @@ not that the render filed anything correctly.
 | `section`, `platform` | stage 2 | no | the filing result from `## Filing axis`; `platform` only inside `Games` |
 | `desc` `{en, zh}` | stage 2 | yes | the sentence between ` - ` and `★`, verbatim; it carries no licence clause and no `created <date>` — both left the line on 2026-10-17, and `merge.py` refuses a `desc` that ends on a licence statement |
 | `tokens` | stage 2 builds it, stage 3 fills it | yes | the number tail, as an ordered list — see below |
-| `note` `{en, zh}` | stage 2 | yes | the closing sentence after the last token; 11 entries have one, and a number refresh rewrites the tokens beside it, never this |
+| `note` `{en, zh}` | stage 2 | yes | the closing sentence after the last token; a number refresh rewrites the tokens beside it, never this |
 | `measured` | `verify.py refresh` writes it, `merge.py` copies it | via `tokens` | `stars` `forks` `pushed` `archived` `license_spdx` `snapshot` — copied from `GET /repos/{owner}/{repo}` output and nothing else; see the number path under `### The commands` |
 | `method` | stage 2 | no | `M1`–`M4` |
 | `admission` | stage 2 | no | `a1` (the provenance sentence read), `a2_quote`, `a2_read_at` (the file the quote came from and its line — `README.md head#12, 2026-10-17`, or `FAQ.md head#37, …`; the pack prints the string ready to paste), `a3` |
 | `assets` | stage 2 | no | `reader-supplied` · `shipped` · `none-needed`; the sentence `## Games` opens with depends on it |
 | `priority` | — | — | deliberately absent |
+
+`method`, `assets` and `admission.a2_quote` are filled **together or not at all**: they are stage 2's read of a
+repository, and `parse.py` — which rebuilt the corpus from printed lines — cannot recover any of them, so an
+entry entered before the pipeline carries all three as null. A refresh never fills them and neither does
+inference; filling one for an old entry means re-reading that repository at stage 2.
 
 `tokens` is what lets a rendered README match a hand-written one byte for byte. **Since the owner's 2026-10-17
 rule one kind is in use, on every line:**
@@ -265,22 +263,19 @@ rule one kind is in use, on every line:**
 ```
 
 `forks`, `pushed` and `literal` stay implemented and remain in the schema — the renderer still joins with
-`" · "`, a filled token still has to name its own field and carry `{field}` in both languages, and the corpus
-below the rule is what that machinery was built for. Measured over the 146 bullets that printed a ★ after the
-first real merge, the tail was **four** kinds in one order, every line `stars` → `forks` → `pushed` with at
-most one literal inserted: 39 print only `★`, 96 print forks, 107 print a date, 10 print two dates, and 25
-tokens are literals — 22 `created <date>` and 3 licence words (`d2r-mobile`, `Sengoku-Rance-Deck-Fix`,
-`SubmitGame/awesome-decomp-games`). A created date is a literal rather than a filled field because it is a
-historical fact: a refresh rewrites `pushed`, never `created`.
+`" · "`, a filled token still has to name its own field and carry `{field}` in both languages — because that is
+the shape the corpus had until the 2026-10-17 rule took it away, and `git show 6ab778e^:README.md` renders it:
+every line ran `stars → forks → pushed` with at most one literal inserted. A `created <date>` was a **literal**
+rather than a filled field because it is a historical fact — a refresh rewrites `pushed`, never `created`.
 
-Joined with `" · "`. Every token stores **its own wording per locale**, with `{field}` naming which
-`measured` value fills it; the value itself is never in the json, only its name. That is what makes the
-render exact rather than merely plausible: over the 117 date tokens on those 107 lines, English prints
-`pushed` 88, `created` 22, `last push` 5, `created and pushed` 1, `archived, last push` 1, and Chinese
-prints `推送于` 88, `建库于` 22, `最近推送` 5, `建库与推送于` 1, `已归档，最近推送` 1 — count for count, with 10 lines
-carrying two. A renderer that derived the word from the field name would get 29 of the 107 wrong:
-`README.md:87` reads `created 2024-09-28 · last push 2026-04-03`, `README.md:125` reads
-`archived, last push 2023-04-13`. The wording is data, not formatting.
+Every token stores **its own wording per locale**, with `{field}` naming which `measured` value fills it; the
+value itself is never in the json, only its name. That is what makes the render exact rather than merely
+plausible, and the reason is that old shape: one date could print as `pushed`, `last push`, `created and pushed`
+or `archived, last push`, a line could carry two of them, and `created` printed beside a filled `pushed` on the
+same bullet (`crowded-street/3s-decomp`: `created 2024-09-28 · last push 2026-04-03`; `wheybags/freeablo`:
+`archived, last push 2023-04-13`). Chinese carries a separate wording for each — `推送于`, `最近推送`,
+`建库与推送于`, `已归档，最近推送`. A renderer that derived the word from the field name could not reproduce any of
+those. **The wording is data, not formatting.**
 
 `merge.py` holds a pending object to that shape before it writes anything: the kind must be one of the
 four, a filled token must name its own field and carry `{field}` in **both** languages, a literal must name
@@ -289,11 +284,12 @@ from the corpus, and the `section`/`platform` pair already a heading on both sid
 file: **a pending batch merges whole or not at all**, because a half-merged batch is not reviewable and a
 rejected row would silently disappear from the PR.
 
-A **`note`** (`{en, zh}`, after the last token, outside the bracket) is a closing sentence — 13 of the 146
-have one, in each language on the same slugs (`Its README declares LLM-assisted coding.`, `A post claims a
-Steam build runs; the repository does not say so.`, and eleven others). It is separate from the tokens
-because a refresh leaves it alone. Numbers agree across the two files today — 0 divergences measured
-over 146 slugs — which the merge then guarantees instead of leaving to a reader's eye.
+A **`note`** (`{en, zh}`, after the last token, outside the bracket) is a closing sentence — two worked examples,
+verbatim from the corpus: `Its README declares LLM-assisted coding.` and `A post claims a Steam build runs; the
+repository does not say so.` It is separate from the tokens because a refresh leaves it alone, and it exists in
+both languages on the same slug (`parse.py` fails on a note in one language only). **How many entries carry one
+is a read of `entries.json`, not something to write down here.** The two READMEs cannot disagree about a number,
+because both render from the same `measured` object — that is construction, not a result to measure.
 
 ### `data/decisions.jsonl` (append-only)
 
@@ -360,11 +356,11 @@ which one, and invents nothing. Nothing else may fill `measured`.
 - Emit a URL twice in one file, or write a heading in one language and not the other. `Contents` is generated from `sections`, including the `###` platform levels.
 - Rewrite prose as a side effect of a number refresh: `header`, `sections[].intro` and `notes` are inputs to a render, never outputs.
 
-**Migration acceptance test.** Rendered `README.md` and `README.zh-CN.md` must equal the committed files
-**byte for byte** (no date exception is needed any more: `refreshed` is a field in the json and no README
-prints it), the link set must round-trip, and per-heading entry counts and ⚠ counts must hold. A mismatch is
-fixed in the renderer or the json, never by editing a README to satisfy the test. **Run 2026-10-17 at the
-migration baseline: both files identical**, with `check-i18n.py` reporting 138 links and 135 entries on both
-sides and no GitHub URL repeated in either file. **Re-run the same evening after the first real merge**
-(11 entries): identical again, 149 links and 146 entries. It runs locally today and enters
-`.github/workflows/lint.yml` with `entries.json`; once in CI, no later render can silently rewrite prose.
+**Acceptance test for the render.** Rendered `README.md` and `README.zh-CN.md` must equal the committed files
+**byte for byte** (no date exception is needed: `refreshed` is a field in the json and no README prints it), the
+link set must round-trip, and per-heading entry counts and ⚠ counts must hold. A mismatch is fixed in the
+renderer or the json, never by editing a README to satisfy the test. The test is `render.py --check` and
+`check-i18n.py`, and both gate every push and pull request in `.github/workflows/lint.yml` — so the link and
+entry counts it states are that run's output, not figures to freeze in this file. Its two first runs,
+2026-10-17 at the migration baseline and again the same evening after the first real merge, both came back
+identical.
