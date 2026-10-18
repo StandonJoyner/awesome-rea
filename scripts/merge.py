@@ -22,7 +22,7 @@ pending file is committed with a PR and a half-merged batch is not reviewable:
   · a slug already in the corpus — an update is a `wording-fix` decision, not a second entry;
   · a missing or unreadable numbers row — no figure is invented;
   · no `admission.a2_quote` or `a2_read_at` — A2 is the sentence actually read, and an entry without
-    it is a lead in WATCHLIST.md;
+    it is a lead, not an entry;
   · a `method` outside M1–M4, an `assets` value outside the three, a token kind outside the four, a
     token whose `field` or `{placeholder}` disagrees with its kind or is worded in one language only;
   · a `section` or `platform` with no heading in both READMEs — a new filing level is an editorial
@@ -100,7 +100,7 @@ def check(entry, problems):
     adm = entry.get("admission") or {}
     if not (adm.get("a2_quote") or "").strip() or not (adm.get("a2_read_at") or "").strip():
         problems.append(f"{entry.get('slug', '?')}: no a2_quote/a2_read_at — fails A2 as an entry, "
-                        "so it is a lead in WATCHLIST.md")
+                        "so it is a lead, not an entry")
     if entry.get("method") not in METHODS:
         problems.append(f"{entry.get('slug', '?')}: method must be one of {' · '.join(METHODS)}")
     if entry.get("assets") not in ASSETS:

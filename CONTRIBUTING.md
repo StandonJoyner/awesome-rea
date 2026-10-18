@@ -2,11 +2,11 @@
 
 This list is a set of **measurements**, not a set of opinions. The rules below exist so that every number in the README can be re-derived by someone else.
 
-The short version for a PR is here. The full operational spec is split: how a candidate is admitted, filed and rendered into both READMEs is [INTAKE.md](INTAKE.md), while the sourcing ledger, the removal reasons, the legal record and how the numbers are refreshed are [AGENTS.md](AGENTS.md); the leads that have not become entries are in [WATCHLIST.md](WATCHLIST.md), and looking back over repositories already entered is [RECHECK.md](RECHECK.md).
+The short version for a PR is here. The full operational spec is split: how a candidate is admitted, filed and rendered into both READMEs is [INTAKE.md](INTAKE.md), while the sourcing ledger, the removal reasons, the legal record and how the numbers are refreshed are [AGENTS.md](AGENTS.md), and looking back over repositories already entered is [RECHECK.md](RECHECK.md).
 
 ## What belongs
 
-Admission is three tests, all of them answered from the repository itself. A suggestion that cannot clear all three is a lead in [WATCHLIST.md](WATCHLIST.md), not an entry.
+Admission is three tests, all of them answered from the repository itself. A suggestion that cannot clear all three is a lead, not an entry.
 
 - **A1 — Provenance, in two halves.** There has to **be** something reconstructed — a program, engine, format or behaviour the rights holder actually shipped — and it has to have been arrived at **without the rights holder's source**: from a shipped binary, the original data or archives, or observed behaviour.
 - **A2 — Claim.** The project's **own README or description states which method** it used: byte-matching decompilation or disassembly, clean-room engine reimplementation, format/protocol/driver/API reimplementation, port or static recompilation of the original binary, or a compatibility patch. Quote the sentence; do not infer it.
@@ -21,7 +21,7 @@ The classes that fail, in the order people hit them:
 | A trainer or memory editor | **A3** | The class was deleted from both READMEs on 2026-10-17 and M5 retired with it; its legal record is in AGENTS.md under `## Takedown and legal record`. |
 | A ROM hack, fan level, randomizer, new content, or a multiplayer mod on someone else's port | **A1** | New work authored on top of a shipped work, not a reconstruction of it. |
 | A fork whose upstream is already entered | **A3** | One link per result; the fork belongs as plain text in that paragraph. |
-| A real project that publishes no method sentence | **A2** | Unprovable on one read, so it waits in `WATCHLIST.md` until the project states its method. |
+| A real project that publishes no method sentence | **A2** | Unprovable on one read, so it waits as a lead until the project states its method. |
 
 **Failing admission is not a grade.** Star count, last-push age, license and whether an agent helped are **not** admission tests — write dormancy or a missing license into the line as a plain status phrase, never as a reason to drop a project. A rejection names the test the project failed and nothing else.
 

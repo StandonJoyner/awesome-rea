@@ -1,7 +1,5 @@
 # INTAKE.md — how a repository becomes an entry
 
-Split out of `AGENTS.md` on the owner's instruction of 2026-10-17 (「把收录相关的移出去，单独做一个文档。」, then 「aggregator 这种一次性工作直接删掉」), because the admission-and-filing material had grown to three quarters of a file whose job is to be the whole operational spec. `AGENTS.md` keeps the removal side, the sourcing ledger, the legal record, the refresh automation and the language mirror, and points here.
-
 Read in this order: **`## Admission`** decides whether a candidate enters, **`## Filing axis`** where it files, **`## Method labels`** and **`## Entry mechanics`** what its line says, **`## The three stages and the three files`** how it is written down and rendered, and the last two sections where candidates come from. Nothing here is reader-facing product; `README.md` is. A number still comes only from `GET /repos/{owner}/{repo}`, through one of the two files the pipeline names.
 
 ## Admission: the three tests every entry has to pass
@@ -21,7 +19,7 @@ Six classes fail, and the class plus the test letter is what a rejection cites �
 | Runtime read/write of another process's state — trainers and memory editors | **A3** | The class and its section were deleted 2026-10-17 and M5 retired; the record is in `AGENTS.md`, `## Takedown and legal record`. |
 | Original or fan content, ROM hacks, new levels, randomizers, multiplayer mods on somebody else's port (`space-station-14`, `freedoom`, `celeste64`, `Rangi42/polishedcrystal`, `coop-deluxe/sm64coopdx`, `zsrtp/Randomizer`) | **A1** | Nothing shipped was reconstructed; new work was authored on top of the shipped work. |
 | A fork of a repository already entered (`sm64-port/sm64-port`, `Keriew/augustus`, `Supermedo/bloodborne_pc`, `d07RiV/diabloweb`, `HayatoG/dusklight`) | **A3** + the single-link rule | The reader reaches the result through the one entry; the fork is prose in that paragraph. |
-| A real project whose README publishes no method sentence at all | **A2** | Unprovable in one pass, so it is a lead in `WATCHLIST.md`, not an entry — and A2 is re-run the day the project states its method. |
+| A real project whose README publishes no method sentence at all | **A2** | Unprovable in one pass, so it stays a lead rather than an entry — and A2 is re-run the day the project states its method. |
 
 - **What is machine-checkable and what is not.** `scripts/quality.py` answers A3 (404, `exclude` for no code or no README) and measures the E1–E4 completion evidence, but **no E-class or flag means "vendor source" or "the original binaries are in this tree"** — the A1 read is of the credits section, the README's own provenance sentences, and the repository root listing. `JoppieToppie/Galaxy-on-Fire-2-Unity-Remake` is the worked case: the gate returned `conditional` on its CI alone while `Reference/binaries/` held the shipped ARM library and a modded APK.
 - **Nothing here or in `AGENTS.md` rules on what a linked repository's tree contains.** The only boundary rule we have is 「No game files, ROMs, cracked binaries, or keys anywhere in this repo」, and it constrains *our* tree; it was cited once as a reason to hold an entry and that citation was wrong, because a link to somebody else's repository is not our copy of their files. Whether a binary inside a third-party repository really is the rights holder's build cannot be determined from the outside, so on 2026-10-17 the owner declined to adopt a proposed rule that would have excluded such repositories (**「不加这条规则，我们没有能力判断仓库里放的是不是厂商的程序」**) and none was written. A1 still asks only *how the project obtained what it reconstructed*; where the project keeps its reference material is not an admission test, and it is not a recheck trigger either (see `RECHECK.md`).
@@ -56,7 +54,7 @@ Precedents set while re-filing, follow them for new entries:
 
 M1–M5 are **internal ids for the method label written into each entry line**; M5 is retired (see the table below), so four are in use. They are no longer the filing axis — `## Filing axis` above is — and the codes themselves never appear in a README. Since 2026-10-16 there is also no README paragraph set that groups repositories by them. Every project still has exactly one home, and that home is a type section. These must never become sections either: how a result was produced (agent, Ghidra, a person), how it attracted attention (a short-video wave), what its license is, whether it was taken down. Those are attributes to write into the entry, or material for `## Takedown and legal record` in `AGENTS.md`.
 
-M5 — trainer and memory editing — was **retired on 2026-10-17** with the `## Trainers and modifiers` section. The id survives here so an old entry line or a note in `WATCHLIST.md` is not reinterpreted, but no repository admitted on that signal belongs in the README now.
+M5 — trainer and memory editing — was **retired on 2026-10-17** with the `## Trainers and modifiers` section. The id survives here so an old entry line is not reinterpreted, but no repository admitted on that signal belongs in the README now.
 
 Judge by **what the artifact is**, not by the technique used to obtain it:
 
@@ -368,27 +366,3 @@ migration baseline: both files identical**, with `check-i18n.py` reporting 138 l
 sides and no GitHub URL repeated in either file. **Re-run the same evening after the first real merge**
 (11 entries): identical again, 149 links and 146 entries. It runs locally today and enters
 `.github/workflows/lint.yml` with `entries.json`; once in CI, no later render can silently rewrite prose.
-
-## Census: coverage and its known holes
-
-Enumeration vocabulary used to build the corpus: `reverse-engineering`, `decompilation`, `reimplementation`, `clean-room`, `engine-reimpl`, `decomp-project`, `trainer`, plus format and port tokens. Corpus: 572 raw search rows (topic enumeration + curated `repo:` batches + single-token searches) → deduplicated into the current entries.
-
-A second channel was opened on 2026-10-16: `SubmitGame/awesome-decomp-games`, a union of thirteen upstream catalogues, read as a **slug queue**. Its `data/games.json` is not in this repository and its `type` field is inherited from upstream, so a row there is enumeration and never corroboration: every slug it contributed was live-measured through `GET /repos/{owner}/{repo}` and had its own README read before a line was written, and a generated row carries no method claim, so bulk import would put an unverified claim into both READMEs. Two blind spots are structural, not accidental: it indexes English/Japanese game catalogues, so a Chinese-side corpus is invisible to it (nothing matching 大富翁/Monopoly is in its rows, and the 移植-wave material is outside its scope by construction), and its rows are games, so the non-game class this list carries — `ruffle`, `wordcraft`, `reactos`, `dxvk`, `xsystem4`, `libredwg` — has no rows there at all.
-
-Measured limits — treat these as open work, not as settled completeness:
-
-- [`topic:reverse-engineering`](https://github.com/search?q=topic%3Areverse-engineering&type=repositories) returns 14,217 repositories and is overwhelmingly **tooling**, so topic enumeration alone cannot find results.
-- Three planned tokens — `linux-port`, `wine-nls`, `asset-extract` — returned nothing because anonymous search is rate-limited per source IP and the run was killed mid-flight. Projects that self-describe only as "compatibility layer", "port", or "native run" are therefore **systematically under-counted**: `jhaizhou-ops/d2r-mobile` (created 2026-10-12) was missed on exactly that basis and entered the list only after a reader asked.
-- No systematic census of single-title Proton/Wine patches exists yet.
-- The short-video 移植 wave (抖音 / 快手 / B站 advertising ports of 战神, 街霸, 铁拳, 拳皇) was measured on 2026-10-16 and is now internal-only. Seven repositories behind it are real engineering and carry the M1 (`3s-decomp`) and M4 (`gow3_pc`, `gow3_android`, `Tekken3Recomp`, `god-of-war-recomp`, `Tekken-Tag-2-Recompiled`, `tkdr-recomp`) method labels; since the 2026-10-16 re-file they sit in `Games`, spread over the Nintendo, Sony PlayStation and MS-DOS/Windows platform subsections; the rest is (a) repack of an official build — "街霸VS铁拳 非官方移植安卓!**移植自 IOS 版**" redistributes Capcom's own iOS release, (b) emulation or cloud streaming labelled 移植, or (c) nothing at all — 「20人团队呕心沥血十天10夜移植《街霸6》手机版」 with an empty description and no SF6 reimplementation anywhere. Reach ran the wrong way: repo-naming videos drew 1,167–5,199 bilibili plays (BV1MSpz6QEJM 1,167 → BV1uNpU6CEyj 5,199), gated repacks and fabrications 7,391–26,271. No title-specific DMCA was found for any of the seven; the only platform signal was self-reported in a video title (「…视频被举报了,重新发下」, BV1dQJ66tEdZ, 2026-10-15).
-- Douyin cannot be measured at all: `douyin.com/` and `douyin.com/search/…` return byte-identical 72,914-byte JS application shells with no server-rendered titles, which is why every play count above is bilibili's.
-- Absence from this list is not evidence of non-existence.
-
-## Candidates: leads that are not yet entries
-
-The candidate list is its own file, **`WATCHLIST.md`**, one block per lead with the same five fields every time: **Asked** (who asked, and when), **Verified** (what was read, from where, on what date), **Negative finding** (queries run and their counts, so nobody repeats or invents one), **Refused, with the test** (the A-test or filing rule each neighbouring candidate failed), and **If it appears / Filing consequence** (which section, which platform, which words the line must use). A lead never enters a README before its repository exists, has been opened, and has had its numbers read from `GET /repos/{owner}/{repo}`; until then it is a lead recorded there, not data, and nothing in it may be quoted into a README.
-
-Two things from that file are operating rules rather than leads, so they are restated where they apply:
-
-- Candidates are expected to be **under-counted by the existing enumeration vocabulary**: such projects self-describe as "port", "native run" or "compatibility layer", which is precisely the vocabulary the rate-killed `linux-port` / `asset-extract` tokens failed to cover (see `## Census`).
-- The console families there are the corpus's **highest-DMCA-risk material**: Nintendo's 2026-08 notices are framed as TPM circumvention under DMCA §1201, not only copyright, which is what makes a whole fork network removable at once. Record the notice text if a takedown lands, and do not cite a fork as current after one.
