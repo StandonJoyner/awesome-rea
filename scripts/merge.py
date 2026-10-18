@@ -60,7 +60,9 @@ ASSETS = ("reader-supplied", "shipped", "none-needed")
 TOKEN_KINDS = ("stars", "forks", "pushed", "literal")
 # What may not end an entry line since the owner's 2026-10-17 rule: a licence statement. `BSD` alone is
 # deliberately absent — it appears as an operating system in platform lists, so only `BSD-<n>` is a licence.
-LICENCE_CLAUSE = re.compile(r"(?:licen[cs]e|许可证|未声明|L?AGPL|L?GPL|\bMIT\b|Apache-\d|CC0|MPL|Unlicense|"
+# `MPL` carries boundaries for the mirror-image reason: unbounded it matched the -mpl- of "reimplemented"
+# and refused a line that names no licence (measured 2026-10-18 on nanolathe-gg/nanolathe).
+LICENCE_CLAUSE = re.compile(r"(?:licen[cs]e|许可证|未声明|L?AGPL|L?GPL|\bMIT\b|Apache-\d|CC0|\bMPL\b|Unlicense|"
                             r"BSD-\d|zlib|Sustainable Use|NOASSERTION)", re.I)
 
 
