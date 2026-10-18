@@ -197,6 +197,7 @@ PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编
 
 不是游戏、但重建到能吃原版内容的程序。
 
+- [storytold/photocraft](https://github.com/storytold/photocraft) - Adobe Photoshop，直接吃原版 PSD 文档，纯 Rust 重建。★ 66,463。它的 README 写着"an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust"，因此按净室成果归档。
 - [ruffle-rs/ruffle](https://github.com/ruffle-rs/ruffle) - Adobe Flash Player，AVM2 加渲染，Rust，净室重写。★ 18,695。
 - [storytold/wordcraft](https://github.com/storytold/wordcraft) - 面向 Windows 与 Mac 的 Microsoft Word，直接吃原版文档格式，Rust。★ 13,774。它的 README 写着"Clean-room: built from public specifications and observation, with every asset original or openly licensed"，因此按净室成果归档。
 - [storytold/gridcraft](https://github.com/storytold/gridcraft) - 净室用 Rust 重写的 Microsoft Excel，以 XLSX 为原生格式，可导入 XLSB 与 ODS 工作表数据。★ 5,455。仓库自己公布未完工的部分：ROADMAP.md 写阶段、数字与工时估计，docs/gaps.md 是排序后的待办清单。

@@ -4908,6 +4908,43 @@
       "check": true
     },
     {
+      "slug": "storytold/photocraft",
+      "section": "Applications",
+      "platform": null,
+      "desc": {
+        "en": "Adobe Photoshop, consuming the original PSD documents, rebuilt in pure Rust",
+        "zh": "Adobe Photoshop，直接吃原版 PSD 文档，纯 Rust 重建"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "Its README states \"an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust\", so it is filed as clean-room work.",
+        "zh": "它的 README 写着\"an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust\"，因此按净室成果归档。"
+      },
+      "method": "M2",
+      "assets": "reader-supplied",
+      "admission": {
+        "a2_quote": "Image editing; an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust.",
+        "a2_read_at": "README.md head#12, 2026-10-18"
+      },
+      "_section_index": 8,
+      "measured": {
+        "stars": 66463,
+        "forks": 11612,
+        "pushed": "2026-10-18",
+        "archived": false,
+        "license_spdx": "Apache-2.0",
+        "snapshot": "2026-10-18"
+      },
+      "check": true
+    },
+    {
       "slug": "ruffle-rs/ruffle",
       "_section_index": 8,
       "section": "Applications",

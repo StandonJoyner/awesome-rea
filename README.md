@@ -197,6 +197,7 @@ The Diablo line has three destinations and one origin: `diasurgical/devilution` 
 
 Programs that are not games, reconstructed well enough to run the original content.
 
+- [storytold/photocraft](https://github.com/storytold/photocraft) - Adobe Photoshop, consuming the original PSD documents, rebuilt in pure Rust. ★ 66,463. Its README states "an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust", so it is filed as clean-room work.
 - [ruffle-rs/ruffle](https://github.com/ruffle-rs/ruffle) - Adobe Flash Player, AVM2 plus rendering, Rust, clean-room. ★ 18,695.
 - [storytold/wordcraft](https://github.com/storytold/wordcraft) - Microsoft Word for Windows and Mac, consuming the original document formats, Rust. ★ 13,774. Its README states "Clean-room: built from public specifications and observation, with every asset original or openly licensed", so it is filed as clean-room work.
 - [storytold/gridcraft](https://github.com/storytold/gridcraft) - Microsoft Excel, rebuilt clean-room in Rust with XLSX as its native format and XLSB and ODS worksheet data import. ★ 5,455. The repository publishes its own unfinished state: ROADMAP.md holds the stage, numbers and effort estimates and docs/gaps.md the ranked work left.
