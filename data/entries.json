@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "refreshed": "2026-10-18",
+  "refreshed": "2026-10-19",
   "title": "# Awesome Reverse-Engineering Results [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)",
   "header": [
     {
@@ -298,12 +298,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 8891,
-        "forks": 1654,
+        "stars": 8896,
+        "forks": 1655,
         "pushed": "2024-02-04",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -334,12 +334,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 7457,
-        "forks": 344,
+        "stars": 7465,
+        "forks": 345,
         "pushed": "2026-09-25",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -370,12 +370,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5919,
+        "stars": 5936,
         "forks": 444,
         "pushed": "2026-10-11",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -406,12 +406,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5658,
-        "forks": 922,
-        "pushed": "2026-10-17",
+        "stars": 5670,
+        "forks": 923,
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -445,12 +445,12 @@
         "zh": "符号匹配工作流的标杆项目。"
       },
       "measured": {
-        "stars": 5600,
+        "stars": 5601,
         "forks": 710,
-        "pushed": "2026-10-14",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -486,7 +486,7 @@
         "pushed": "2026-10-06",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -517,12 +517,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 4874,
-        "forks": 453,
+        "stars": 4877,
+        "forks": 455,
         "pushed": "2026-10-02",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -553,12 +553,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3964,
+        "stars": 3973,
         "forks": 357,
-        "pushed": "2026-10-15",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -589,12 +589,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3608,
-        "forks": 4835,
+        "stars": 3609,
+        "forks": 4840,
         "pushed": "2026-10-01",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -625,12 +625,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3762,
-        "forks": 1066,
+        "stars": 3827,
+        "forks": 1080,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -661,12 +661,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2531,
+        "stars": 2532,
         "forks": 986,
         "pushed": "2026-10-06",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -697,12 +697,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2421,
-        "forks": 154,
+        "stars": 2427,
+        "forks": 156,
         "pushed": "2026-10-11",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -733,12 +733,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2421,
-        "forks": 359,
+        "stars": 2426,
+        "forks": 360,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -769,12 +769,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2338,
-        "forks": 276,
+        "stars": 2342,
+        "forks": 278,
         "pushed": "2026-10-14",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -805,12 +805,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2262,
+        "stars": 2275,
         "forks": 142,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -841,12 +841,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2103,
+        "stars": 2106,
         "forks": 144,
         "pushed": "2026-09-15",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -877,12 +877,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2093,
+        "stars": 2094,
         "forks": 206,
         "pushed": "2026-06-23",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -913,12 +913,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2059,
+        "stars": 2062,
         "forks": 158,
         "pushed": "2026-08-13",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -949,12 +949,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2052,
+        "stars": 2055,
         "forks": 75,
         "pushed": "2026-09-25",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -985,12 +985,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1866,
-        "forks": 574,
+        "stars": 1867,
+        "forks": 575,
         "pushed": "2024-12-17",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1021,12 +1021,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1747,
+        "stars": 1748,
         "forks": 596,
         "pushed": "2026-10-11",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1057,12 +1057,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1671,
-        "forks": 1045,
+        "stars": 1673,
+        "forks": 1046,
         "pushed": "2026-09-26",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1094,11 +1094,11 @@
       "note": null,
       "measured": {
         "stars": 1636,
-        "forks": 171,
+        "forks": 170,
         "pushed": "2026-09-26",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1132,12 +1132,12 @@
         "zh": "它的 README 记录 AI 工具只用在这个 PC 移植的代码上。"
       },
       "measured": {
-        "stars": 1501,
-        "forks": 128,
+        "stars": 1505,
+        "forks": 129,
         "pushed": "2026-08-02",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1169,11 +1169,11 @@
       "note": null,
       "measured": {
         "stars": 1419,
-        "forks": 94,
+        "forks": 95,
         "pushed": "2026-07-18",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1209,7 +1209,7 @@
         "pushed": "2026-08-16",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1240,12 +1240,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1258,
-        "forks": 116,
-        "pushed": "2026-10-17",
+        "stars": 1269,
+        "forks": 117,
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1287,12 +1287,12 @@
       },
       "_section_index": 1,
       "measured": {
-        "stars": 1251,
-        "forks": 140,
+        "stars": 1295,
+        "forks": 146,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -1315,12 +1315,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1184,
+        "stars": 1191,
         "forks": 111,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1351,12 +1351,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1102,
+        "stars": 1106,
         "forks": 173,
-        "pushed": "2026-10-14",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1387,12 +1387,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1005,
+        "stars": 1004,
         "forks": 273,
         "pushed": "2026-09-29",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1428,7 +1428,7 @@
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1464,7 +1464,7 @@
         "pushed": "2026-10-06",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1500,7 +1500,7 @@
         "pushed": "2026-09-13",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1531,12 +1531,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 209,
+        "stars": 213,
         "forks": 25,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1572,7 +1572,7 @@
         "pushed": "2026-09-17",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1614,12 +1614,12 @@
       },
       "_section_index": 1,
       "measured": {
-        "stars": 147,
-        "forks": 22,
+        "stars": 152,
+        "forks": 23,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -1647,7 +1647,7 @@
         "pushed": "2025-02-26",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1683,7 +1683,7 @@
         "pushed": "2026-10-14",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1714,12 +1714,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 10,
+        "stars": 11,
         "forks": 1,
-        "pushed": "2026-10-16",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1750,12 +1750,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3581,
-        "forks": 254,
+        "stars": 3589,
+        "forks": 255,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "ISC",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1786,12 +1786,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3192,
-        "forks": 789,
+        "stars": 3249,
+        "forks": 821,
         "pushed": "2026-10-15",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1822,12 +1822,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2981,
-        "forks": 264,
+        "stars": 2983,
+        "forks": 265,
         "pushed": "2026-09-27",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1858,12 +1858,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3251,
-        "forks": 205,
+        "stars": 3378,
+        "forks": 219,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1894,12 +1894,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1923,
-        "forks": 126,
-        "pushed": "2026-10-16",
+        "stars": 1956,
+        "forks": 129,
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1930,12 +1930,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1413,
+        "stars": 1415,
         "forks": 91,
         "pushed": "2026-09-22",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -1966,12 +1966,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1152,
-        "forks": 111,
+        "stars": 1154,
+        "forks": 112,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "AGPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2002,12 +2002,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 467,
+        "stars": 474,
         "forks": 34,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2043,7 +2043,7 @@
         "pushed": "2026-04-03",
         "archived": false,
         "license_spdx": "AGPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2079,7 +2079,7 @@
         "pushed": "2026-08-27",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2110,12 +2110,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 172,
-        "forks": 16,
+        "stars": 180,
+        "forks": 19,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2146,12 +2146,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 116,
-        "forks": 4,
+        "stars": 123,
+        "forks": 5,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2182,12 +2182,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 7,
+        "stars": 9,
         "forks": 1,
         "pushed": "2026-10-14",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2218,12 +2218,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5214,
+        "stars": 5221,
         "forks": 429,
         "pushed": "2026-06-29",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2254,12 +2254,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1662,
+        "stars": 1671,
         "forks": 73,
         "pushed": "2026-07-24",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2290,12 +2290,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1651,
-        "forks": 232,
+        "stars": 1682,
+        "forks": 237,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2326,12 +2326,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 17585,
-        "forks": 3075,
+        "stars": 17590,
+        "forks": 3076,
         "pushed": "2026-10-11",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2362,12 +2362,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 16449,
-        "forks": 1948,
+        "stars": 16452,
+        "forks": 1949,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2398,12 +2398,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 14515,
+        "stars": 14518,
         "forks": 1275,
         "pushed": "2026-10-15",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2442,12 +2442,12 @@
       },
       "_section_index": 5,
       "measured": {
-        "stars": 11458,
+        "stars": 11459,
         "forks": 1980,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -2470,12 +2470,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 9891,
+        "stars": 9895,
         "forks": 1076,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2506,12 +2506,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 9005,
+        "stars": 9007,
         "forks": 923,
         "pushed": "2025-09-15",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2542,12 +2542,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 8381,
-        "forks": 1304,
+        "stars": 8387,
+        "forks": 1305,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2578,12 +2578,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 6644,
+        "stars": 6646,
         "forks": 1140,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2614,12 +2614,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5955,
-        "forks": 744,
+        "stars": 5958,
+        "forks": 742,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2653,12 +2653,12 @@
         "zh": "它的 README 声明了 LLM 辅助编码。"
       },
       "measured": {
-        "stars": 5308,
+        "stars": 5309,
         "forks": 123,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2689,12 +2689,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5127,
+        "stars": 5128,
         "forks": 428,
         "pushed": "2026-07-26",
         "archived": false,
         "license_spdx": "BSD-2-Clause",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2725,12 +2725,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 4711,
-        "forks": 339,
+        "stars": 4713,
+        "forks": 342,
         "pushed": "2024-08-21",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2761,12 +2761,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 4598,
+        "stars": 4600,
         "forks": 438,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2797,12 +2797,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3533,
-        "forks": 425,
+        "stars": 3535,
+        "forks": 426,
         "pushed": "2026-09-14",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2838,7 +2838,7 @@
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2872,12 +2872,12 @@
         "zh": "它只能构建 32 位的 Windows。"
       },
       "measured": {
-        "stars": 3493,
+        "stars": 3494,
         "forks": 147,
         "pushed": "2026-09-18",
         "archived": false,
         "license_spdx": "LGPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2908,12 +2908,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3401,
-        "forks": 453,
+        "stars": 3402,
+        "forks": 455,
         "pushed": "2026-09-12",
         "archived": false,
         "license_spdx": "AGPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2944,12 +2944,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2947,
-        "forks": 240,
+        "stars": 2948,
+        "forks": 241,
         "pushed": "2025-01-15",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -2980,12 +2980,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2858,
-        "forks": 1441,
+        "stars": 2860,
+        "forks": 1440,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3016,12 +3016,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2854,
-        "forks": 520,
-        "pushed": "2026-10-17",
+        "stars": 2859,
+        "forks": 521,
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3052,12 +3052,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2651,
+        "stars": 2653,
         "forks": 467,
         "pushed": "2023-06-16",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3088,12 +3088,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2463,
+        "stars": 2465,
         "forks": 223,
         "pushed": "2025-02-17",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3129,7 +3129,7 @@
         "pushed": "2026-09-28",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3160,12 +3160,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 2170,
+        "stars": 2171,
         "forks": 196,
         "pushed": "2023-04-13",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3198,10 +3198,10 @@
       "measured": {
         "stars": 1983,
         "forks": 394,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3237,7 +3237,7 @@
         "pushed": "2026-10-14",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3273,7 +3273,7 @@
         "pushed": "2026-09-30",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3304,12 +3304,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1651,
+        "stars": 1653,
         "forks": 161,
         "pushed": "2026-03-30",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3342,10 +3342,10 @@
       "measured": {
         "stars": 1624,
         "forks": 145,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3376,12 +3376,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1585,
+        "stars": 1587,
         "forks": 104,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3417,7 +3417,7 @@
         "pushed": "2026-10-08",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3448,12 +3448,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1314,
+        "stars": 1315,
         "forks": 82,
         "pushed": "2026-10-13",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3484,12 +3484,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1301,
+        "stars": 1302,
         "forks": 174,
         "pushed": "2025-12-24",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3525,7 +3525,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3561,7 +3561,7 @@
         "pushed": "2024-06-06",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3592,12 +3592,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1222,
-        "forks": 99,
-        "pushed": "2026-10-17",
+        "stars": 1223,
+        "forks": 100,
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3633,7 +3633,7 @@
         "pushed": "2026-09-04",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3664,12 +3664,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1167,
+        "stars": 1168,
         "forks": 91,
         "pushed": "2026-10-12",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3705,7 +3705,7 @@
         "pushed": "2026-09-06",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3737,11 +3737,11 @@
       "note": null,
       "measured": {
         "stars": 1118,
-        "forks": 59,
+        "forks": 58,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3775,12 +3775,12 @@
         "zh": "README 写明还不能玩。"
       },
       "measured": {
-        "stars": 1105,
+        "stars": 1106,
         "forks": 123,
         "pushed": "2025-01-13",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3814,12 +3814,12 @@
         "zh": "README 估计\"about 50-60% of the code is done\"。"
       },
       "measured": {
-        "stars": 1082,
-        "forks": 259,
-        "pushed": "2026-10-17",
+        "stars": 1093,
+        "forks": 260,
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3855,7 +3855,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "LGPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3889,12 +3889,12 @@
         "zh": "它的 README 写明\"This whole project is written by an LLM.\""
       },
       "measured": {
-        "stars": 1083,
-        "forks": 134,
+        "stars": 1091,
+        "forks": 136,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3927,10 +3927,10 @@
       "measured": {
         "stars": 1022,
         "forks": 133,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -3961,12 +3961,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1011,
+        "stars": 1012,
         "forks": 73,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4002,7 +4002,7 @@
         "pushed": "2026-09-28",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4044,12 +4044,12 @@
       "assets": "reader-supplied",
       "_section_index": 5,
       "measured": {
-        "stars": 819,
+        "stars": 820,
         "forks": 199,
         "pushed": "2026-09-21",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4088,7 +4088,7 @@
         "pushed": "2026-10-10",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4116,7 +4116,7 @@
         "pushed": "2024-10-31",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4148,11 +4148,11 @@
       "note": null,
       "measured": {
         "stars": 694,
-        "forks": 106,
+        "forks": 107,
         "pushed": "2026-10-13",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4183,12 +4183,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 588,
+        "stars": 590,
         "forks": 120,
-        "pushed": "2026-10-10",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4235,7 +4235,7 @@
         "pushed": "2026-10-03",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4263,7 +4263,7 @@
         "pushed": "2026-03-04",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4307,7 +4307,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4341,12 +4341,12 @@
       },
       "_section_index": 5,
       "measured": {
-        "stars": 221,
-        "forks": 13,
+        "stars": 222,
+        "forks": 14,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4380,12 +4380,12 @@
       },
       "_section_index": 5,
       "measured": {
-        "stars": 118,
-        "forks": 8,
+        "stars": 119,
+        "forks": 9,
         "pushed": "2026-10-15",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4419,12 +4419,12 @@
       },
       "_section_index": 5,
       "measured": {
-        "stars": 48,
+        "stars": 50,
         "forks": 1,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4463,7 +4463,7 @@
         "pushed": "2026-09-20",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4494,12 +4494,12 @@
       "assets": "none-needed",
       "_section_index": 4,
       "measured": {
-        "stars": 453,
+        "stars": 454,
         "forks": 145,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4522,12 +4522,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 410,
+        "stars": 411,
         "forks": 58,
         "pushed": "2026-09-01",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4566,12 +4566,12 @@
       },
       "_section_index": 5,
       "measured": {
-        "stars": 369,
+        "stars": 370,
         "forks": 39,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4610,7 +4610,7 @@
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4644,12 +4644,12 @@
       },
       "_section_index": 5,
       "measured": {
-        "stars": 208,
+        "stars": 216,
         "forks": 20,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4685,7 +4685,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4721,7 +4721,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4744,12 +4744,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 146,
-        "forks": 20,
+        "stars": 147,
+        "forks": 21,
         "pushed": "2026-10-08",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4785,7 +4785,7 @@
         "pushed": "2026-06-22",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4816,12 +4816,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 69,
+        "stars": 71,
         "forks": 27,
         "pushed": "2026-07-15",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4856,11 +4856,11 @@
       },
       "measured": {
         "stars": 66,
-        "forks": 19,
+        "forks": 20,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4896,7 +4896,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -4938,12 +4938,12 @@
       },
       "_section_index": 5,
       "measured": {
-        "stars": 17,
+        "stars": 18,
         "forks": 2,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -4969,12 +4969,12 @@
         "zh": "它的 NOTICE 把编译出的 APK 限制在构建者自己的设备上。"
       },
       "measured": {
-        "stars": 10,
+        "stars": 11,
         "forks": 3,
         "pushed": "2026-10-06",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5018,7 +5018,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5046,7 +5046,7 @@
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5093,7 +5093,7 @@
         "pushed": "2026-10-15",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5116,12 +5116,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 161,
+        "stars": 168,
         "forks": 16,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5161,12 +5161,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 66813,
-        "forks": 11724,
+        "stars": 67439,
+        "forks": 11863,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5189,12 +5189,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 18703,
-        "forks": 1147,
+        "stars": 18708,
+        "forks": 1146,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "NOASSERTION",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5228,12 +5228,12 @@
         "zh": "它的 README 写着\"Clean-room: built from public specifications and observation, with every asset original or openly licensed\"，因此按净室成果归档。"
       },
       "measured": {
-        "stars": 14179,
-        "forks": 3739,
+        "stars": 14380,
+        "forks": 3823,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5275,12 +5275,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 5662,
-        "forks": 2607,
+        "stars": 5736,
+        "forks": 2660,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5314,12 +5314,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 5662,
-        "forks": 2534,
+        "stars": 5771,
+        "forks": 2574,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5353,12 +5353,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 3731,
-        "forks": 2109,
+        "stars": 3800,
+        "forks": 2151,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5392,12 +5392,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 3207,
-        "forks": 2024,
+        "stars": 3270,
+        "forks": 2062,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5431,12 +5431,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 2532,
-        "forks": 943,
+        "stars": 2633,
+        "forks": 1005,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "Apache-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5470,12 +5470,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 788,
-        "forks": 122,
+        "stars": 815,
+        "forks": 127,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5509,12 +5509,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 536,
+        "stars": 537,
         "forks": 166,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5548,12 +5548,12 @@
       },
       "_section_index": 8,
       "measured": {
-        "stars": 13,
+        "stars": 15,
         "forks": 2,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -5578,10 +5578,10 @@
       "measured": {
         "stars": 1,
         "forks": 0,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5612,12 +5612,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 18320,
-        "forks": 1301,
+        "stars": 18321,
+        "forks": 1302,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "Zlib",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5648,12 +5648,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 18243,
-        "forks": 2266,
+        "stars": 18256,
+        "forks": 2268,
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5684,12 +5684,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 8394,
-        "forks": 739,
+        "stars": 8400,
+        "forks": 742,
         "pushed": "2026-10-17",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5725,7 +5725,7 @@
         "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5758,10 +5758,10 @@
       "measured": {
         "stars": 4267,
         "forks": 347,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5792,12 +5792,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 3006,
+        "stars": 3008,
         "forks": 339,
         "pushed": "2026-10-14",
         "archived": false,
         "license_spdx": "LGPL-2.1",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5833,7 +5833,7 @@
         "pushed": "2026-09-17",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5869,7 +5869,7 @@
         "pushed": "2026-10-03",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5901,11 +5901,11 @@
       "note": null,
       "measured": {
         "stars": 7302,
-        "forks": 937,
+        "forks": 938,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5941,7 +5941,7 @@
         "pushed": "2024-08-13",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -5972,12 +5972,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1628,
+        "stars": 1629,
         "forks": 372,
         "pushed": "2026-10-13",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6008,12 +6008,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 1521,
+        "stars": 1524,
         "forks": 222,
         "pushed": "2026-09-29",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6049,7 +6049,7 @@
         "pushed": "2025-06-05",
         "archived": false,
         "license_spdx": "ISC",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6085,7 +6085,7 @@
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6121,7 +6121,7 @@
         "pushed": "2026-10-13",
         "archived": false,
         "license_spdx": "GPL-2.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6165,7 +6165,7 @@
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "Zlib",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -6188,12 +6188,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 5140,
+        "stars": 5142,
         "forks": 909,
         "pushed": "2021-09-01",
         "archived": false,
         "license_spdx": null,
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6229,7 +6229,7 @@
         "pushed": "2025-07-08",
         "archived": false,
         "license_spdx": "MIT",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6260,12 +6260,12 @@
       ],
       "note": null,
       "measured": {
-        "stars": 733,
-        "forks": 167,
-        "pushed": "2026-10-17",
+        "stars": 831,
+        "forks": 183,
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6299,12 +6299,12 @@
         "zh": "它靠自动扩覆盖并给可玩性打分。"
       },
       "measured": {
-        "stars": 1568,
-        "forks": 71,
+        "stars": 1751,
+        "forks": 84,
         "pushed": "2026-10-16",
         "archived": false,
         "license_spdx": "CC0-1.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "method": null,
       "admission": {
@@ -6345,10 +6345,10 @@
       "measured": {
         "stars": 542,
         "forks": 34,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     },
@@ -6381,10 +6381,10 @@
       "measured": {
         "stars": 19,
         "forks": 4,
-        "pushed": "2026-10-17",
+        "pushed": "2026-10-18",
         "archived": false,
         "license_spdx": "GPL-3.0",
-        "snapshot": "2026-10-18"
+        "snapshot": "2026-10-19"
       },
       "check": true
     }
