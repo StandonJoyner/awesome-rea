@@ -1258,6 +1258,45 @@
       "check": true
     },
     {
+      "slug": "peiikai/LASRecomp",
+      "section": "Games",
+      "platform": "Nintendo",
+      "desc": {
+        "en": "The Legend of Zelda: Link's Awakening, Nintendo Switch → Windows, macOS and Linux, static recompilation of the Switch code, where the game code is built on each player's machine from their own v1.0.0 files",
+        "zh": "塞尔达传说 织梦岛，任天堂 Switch → Windows、macOS 与 Linux，对 Switch 程序做静态重编译，游戏代码在玩家本机由其自备的 v1.0.0 文件生成"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "Its README states nearly all of the code, tooling, reverse engineering and documentation was written by an AI (Claude, through Claude Code), directed, tested and reviewed by a human.",
+        "zh": "它的 README 写明本仓库几乎所有代码、工具、逆向工程与文档都由 AI（Claude Code）写成，再由人指导、测试与审阅。"
+      },
+      "method": "M4",
+      "assets": "reader-supplied",
+      "admission": {
+        "a1": "Recompiled from the Nintendo Switch Link's Awakening v1.0.0 code; no source was published by Nintendo",
+        "a2_quote": "LAS Recomp is a static recompilation of The Legend of Zelda: Link's Awakening (Nintendo Switch, 2019) into a native Windows, macOS and Linux application.",
+        "a2_read_at": "README.md head#11, 2026-10-18",
+        "a3": "runtime/ 112 and tools/ 89 source files in this tree, including the recompiler; third_party/ holds vendored libraries"
+      },
+      "_section_index": 1,
+      "measured": {
+        "stars": 1231,
+        "forks": 139,
+        "pushed": "2026-10-18",
+        "archived": false,
+        "license_spdx": "NOASSERTION",
+        "snapshot": "2026-10-18"
+      },
+      "check": true
+    },
+    {
       "slug": "patchzyy/Wiicompiled",
       "_section_index": 1,
       "section": "Games",
@@ -1543,6 +1582,45 @@
         "a3": null
       },
       "assets": null,
+      "check": true
+    },
+    {
+      "slug": "chasem-dev/sms-pc-port",
+      "section": "Games",
+      "platform": "Nintendo",
+      "desc": {
+        "en": "Super Mario Sunshine, GameCube → Windows, Linux and macOS, native port built from the matching GMSE01 decompilation, reading models, textures, levels, music and movies from the player's own disc image",
+        "zh": "超级马里奥 阳光，GameCube → Windows、Linux 与 macOS，基于对应 GMSE01 反编译成果写成的原生移植，模型、贴图、关卡、音乐与影片读取玩家自备的光盘镜像"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "The decompilation it builds on arrives as a gitlink; what this tree holds is the port's platform layer and build tooling.",
+        "zh": "它所依据的反编译成果以 gitlink 子模块引入，本树放的是移植的平台层与构建工具。"
+      },
+      "method": "M4",
+      "assets": "reader-supplied",
+      "admission": {
+        "a1": "Built from the community GMSE01 decompilation of the shipped GameCube binary, not source Nintendo released",
+        "a2_quote": "A native PC port of Super Mario Sunshine (GameCube, North America, GMSE01), built from the matching decompilation.",
+        "a2_read_at": "README.md head#9, 2026-10-18",
+        "a3": "platform/ 123 and tools/ 98 source files are the port's own code; the decomp submodule is the game code"
+      },
+      "_section_index": 1,
+      "measured": {
+        "stars": 145,
+        "forks": 22,
+        "pushed": "2026-10-17",
+        "archived": false,
+        "license_spdx": "MIT",
+        "snapshot": "2026-10-18"
+      },
       "check": true
     },
     {
@@ -4234,6 +4312,162 @@
       "check": true
     },
     {
+      "slug": "nanolathe-gg/nanolathe",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "desc": {
+        "en": "Total Annihilation engine, Windows → Linux, Windows, macOS and the browser, reimplemented in Go on Ebitengine with its file-format and behaviour research published in the tree",
+        "zh": "Total Annihilation 引擎，Windows → Linux、Windows、macOS 与浏览器，用 Go 在 Ebitengine 上重建，格式与行为研究文档一并放在仓库里"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "Its README states the engine is still in beta, and its NOTICE bars retail source code and extracted game art from the repository.",
+        "zh": "它的 README 自述引擎仍在 beta 阶段，NOTICE 则禁止提交原版程序代码与提取出的游戏美术。"
+      },
+      "method": "M2",
+      "assets": "reader-supplied",
+      "admission": {
+        "a1": "Reimplemented from the retail Total Annihilation behaviour and file formats; the original engine's source was not published",
+        "a2_quote": "Its current focus is a clean-room reimplementation of Total Annihilation.",
+        "a2_read_at": "README.md head#5, 2026-10-18",
+        "a3": "internal/ 3,237 and cmd/ 661 Go files, with formats/ 59 and vfs/ 22; no gitlinks in the tree"
+      },
+      "_section_index": 5,
+      "measured": {
+        "stars": 221,
+        "forks": 13,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "MIT",
+        "snapshot": "2026-10-18"
+      },
+      "check": true
+    },
+    {
+      "slug": "N0zoM1z0/th08",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "desc": {
+        "en": "Touhou 8: Imperishable Night, Windows: the Japanese 1.00d executable reconstructed to C++ to reproduce \"its machine code, binary interfaces, and executable layout\" on the original Visual C++ .NET 2002 toolchain",
+        "zh": "东方8 永夜抄，Windows：把日文版 1.00d 可执行文件重建为 C++，用原版 Visual C++ .NET 2002 工具链复现 \"its machine code, binary interfaces, and executable layout\""
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "Its README says AI coding agents carry out the reverse engineering, matching, semantic recovery, tooling, documentation and porting in this continuation of the GensokyoClub work.",
+        "zh": "它的 README 写道，这次接续 GensokyoClub 的工作由 AI 编码代理承担逆向、比对、语义恢复、工具、文档与移植。"
+      },
+      "method": "M1",
+      "assets": "reader-supplied",
+      "admission": {
+        "a1": "Reconstructed from the legally obtained Japanese TH08 1.00d executable; Team Shanghai Alice has not published its source",
+        "a2_quote": "Our goal is an exact reconstruction of the original Japanese TH08 1.00d executable: recover C++ that, with the original Visual C++ .NET 2002 toolchain, reproduces its machine code, binary interfaces, and executable layout.",
+        "a2_read_at": "README.md head#14, 2026-10-18",
+        "a3": "src/ 116 C++ and header files plus scripts/ 84; the only gitlink is 3rdparty/Detours"
+      },
+      "_section_index": 5,
+      "measured": {
+        "stars": 118,
+        "forks": 8,
+        "pushed": "2026-10-15",
+        "archived": false,
+        "license_spdx": "MIT",
+        "snapshot": "2026-10-18"
+      },
+      "check": true
+    },
+    {
+      "slug": "whylurking/IsaacRecomp",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "desc": {
+        "en": "The Binding of Isaac, Windows Flash → Windows, Linux, Android and Nintendo Switch, static recompilation of the AVM1 code into C++ on an engine written from scratch, reading graphics, sound and music from the player's own Steam Isaac.exe",
+        "zh": "《以撒的结合》，Windows Flash → Windows、Linux、Android 与任天堂 Switch，把 AVM1 代码静态重编译为 C++ 并跑在从零写成的引擎上，图像、音效与音乐读取玩家自备的 Steam 版 Isaac.exe"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "Its README states the Flash Player 8 semantics are ported from Ruffle and names JPEXS as the decompiler its tooling uses.",
+        "zh": "它的 README 写道 Flash Player 8 语义取自 Ruffle 的移植，并列出工具链使用 JPEXS 反编译器。"
+      },
+      "method": "M4",
+      "assets": "reader-supplied",
+      "admission": {
+        "a1": "Recompiled from the shipped Flash game's AVM1 code; the developer never published it",
+        "a2_quote": "This project translates all of the game's original code into C++ and runs it on a modern, native engine written from scratch.",
+        "a2_read_at": "README.md head#35, 2026-10-18",
+        "a3": "gen/ and gen720/ 86 generated C++ files plus rt/ 26 runtime files and tools/; no gitlinks in the tree"
+      },
+      "_section_index": 5,
+      "measured": {
+        "stars": 47,
+        "forks": 1,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "license_spdx": "NOASSERTION",
+        "snapshot": "2026-10-18"
+      },
+      "check": true
+    },
+    {
+      "slug": "N0zoM1z0/th095",
+      "section": "Games",
+      "platform": "MS-DOS, Windows and Macintosh",
+      "desc": {
+        "en": "Touhou 9.5: Shoot the Bullet, Windows: the Japanese 1.02a executable reconstructed to C++, where its exact totals count only functions whose pinned VC7.1 unit passes the project's zero-difference comparator",
+        "zh": "东方9.5 文花帖，Windows：把日文版 1.02a 可执行文件重建为 C++，其 exact 计数只认在钉定的 VC7.1 编译下通过零差异比对的函数"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "Its README states that all confirmed authored functions have reconstructed source and the reconstructed Windows i386 build is playable.",
+        "zh": "它的 README 写道，所有已确认的原作函数都已重建出源码，重建出的 Windows i386 版本可以游玩。"
+      },
+      "method": "M1",
+      "assets": "reader-supplied",
+      "admission": {
+        "a1": "Reconstructed from the legally obtained Japanese TH095 1.02a executable; no vendor source exists",
+        "a2_quote": "Exact totals count only functions whose configured VC7.1 unit passes the canonical zero-difference comparator and is recorded consistently in both config/matches.csv and config/functions.csv.",
+        "a2_read_at": "docs/PROGRESS.md head#17, 2026-10-18",
+        "a3": "src/ 196 files, 108 .hpp and 88 .cpp; no gitlinks in the tree"
+      },
+      "_section_index": 5,
+      "measured": {
+        "stars": 25,
+        "forks": 1,
+        "pushed": "2026-09-20",
+        "archived": false,
+        "license_spdx": "MIT",
+        "snapshot": "2026-10-18"
+      },
+      "check": true
+    },
+    {
       "slug": "sonicretro/s1disasm",
       "section": "Games",
       "platform": "Sega",
@@ -5203,6 +5437,45 @@
         "archived": false,
         "license_spdx": "Apache-2.0",
         "snapshot": "2026-10-17"
+      },
+      "check": true
+    },
+    {
+      "slug": "AnkioTomas/qqpet",
+      "section": "Applications",
+      "platform": null,
+      "desc": {
+        "en": "Tencent's QQ Pet desktop client, Windows → Windows, macOS, Linux, Android, HarmonyOS and iOS, rebuilt from the Arctic Penguin T800 client, with its Flash content played by Ruffle",
+        "zh": "腾讯 QQ 宠物桌面客户端，Windows → Windows、macOS、Linux、Android、HarmonyOS 与 iOS，基于 Arctic Penguin T800 版本重建，Flash 内容交由 Ruffle 播放"
+      },
+      "tokens": [
+        {
+          "t": "stars",
+          "field": "stars",
+          "en": "★ {stars}",
+          "zh": "★ {stars}"
+        }
+      ],
+      "note": {
+        "en": "Its repository description names AI as the author of the recreation.",
+        "zh": "它的仓库描述里注明这份复刻出自 AI。"
+      },
+      "method": "M2",
+      "assets": "shipped",
+      "admission": {
+        "a1": "Rebuilt from Tencent's shipped Arctic Penguin T800 client; the client's source was never published",
+        "a2_quote": "QQ 宠物跨平台复刻（Windows / macOS / Linux / Android / HarmonyOS / iOS），基于 Arctic Penguin T800 逆向重建。Flash 内容由 Ruffle 播放。",
+        "a2_read_at": "README.md head#3, 2026-10-18",
+        "a3": "src/ 135 TypeScript files plus ios/, android/ and harmony/ clients, and resources/ content; no gitlinks in the tree"
+      },
+      "_section_index": 8,
+      "measured": {
+        "stars": 758,
+        "forks": 119,
+        "pushed": "2026-10-18",
+        "archived": false,
+        "license_spdx": "GPL-3.0",
+        "snapshot": "2026-10-18"
       },
       "check": true
     },

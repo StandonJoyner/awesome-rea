@@ -54,6 +54,7 @@
 - [ACreTeam/ac-decomp](https://github.com/ACreTeam/ac-decomp) - 动物之森，GameCube，把美版 GAFE01 光盘反编译成 C。★ 1,414。
 - [n64decomp/mk64](https://github.com/n64decomp/mk64) - 马里奥赛车 64，任天堂 64，反编译，尚未匹配的汇编仍列在 `asm/non_matchings` 里。★ 1,311。
 - [SMGCommunity/Petari](https://github.com/SMGCommunity/Petari) - 超级马里奥 银河，Wii，`main.dol` 的进行中反编译，README 写明本项目"not meant to be an effort to create a PC port"。★ 1,250。
+- [peiikai/LASRecomp](https://github.com/peiikai/LASRecomp) - 塞尔达传说 织梦岛，任天堂 Switch → Windows、macOS 与 Linux，对 Switch 程序做静态重编译，游戏代码在玩家本机由其自备的 v1.0.0 文件生成。★ 1,231。它的 README 写明本仓库几乎所有代码、工具、逆向工程与文档都由 AI（Claude Code）写成，再由人指导、测试与审阅。
 - [patchzyy/Wiicompiled](https://github.com/patchzyy/Wiicompiled) - 马里奥赛车 Wii，Wii → Windows、Linux 与 macOS，对 PAL 的 `RMCP01` 光盘镜像做静态重编译，自述"There's no emulator in the loop"。★ 1,173。
 - [zeldaret/tww](https://github.com/zeldaret/tww) - 风之杖，GameCube，逐字节匹配的反编译。★ 1,099。
 - [pret/pokeruby](https://github.com/pret/pokeruby) - 精灵宝可梦 红宝石/蓝宝石，Game Boy Advance，自述为反汇编，构建出匹配的 ROM。★ 1,003。
@@ -62,6 +63,7 @@
 - [Kirby64Ret/kirby64](https://github.com/Kirby64Ret/kirby64) - 星之卡比64，任天堂 64，进行中的逐字节匹配反编译。★ 234。
 - [tangosdev/sm64ds-decomp](https://github.com/tangosdev/sm64ds-decomp) - Super Mario 64 DS，任天堂 DS，由 agent 工作流产出的反编译。★ 202。
 - [jiangzhengwenjz/katam](https://github.com/jiangzhengwenjz/katam) - 星之卡比 镜之大迷宫，Game Boy Advance，进行中的反编译。★ 158。
+- [chasem-dev/sms-pc-port](https://github.com/chasem-dev/sms-pc-port) - 超级马里奥 阳光，GameCube → Windows、Linux 与 macOS，基于对应 GMSE01 反编译成果写成的原生移植，模型、贴图、关卡、音乐与影片读取玩家自备的光盘镜像。★ 145。它所依据的反编译成果以 gitlink 子模块引入，本树放的是移植的平台层与构建工具。
 - [doldecomp/kar](https://github.com/doldecomp/kar) - Kirby Air Ride，GameCube，反编译。★ 88。
 - [Swiftshine/key](https://github.com/Swiftshine/key) - 星之卡比 毛线传说，Wii，针对美版发行的逐字节匹配反编译。★ 52。
 - [Petexy/Tekken-Tag-2-Recompiled](https://github.com/Petexy/Tekken-Tag-2-Recompiled) - 铁拳 Tag Tournament 2，Wii U → Linux，静态重编译，不含游戏文件。★ 9。
@@ -158,6 +160,10 @@ PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编
 - [RSDKModding/RSDKv5-Decompilation](https://github.com/RSDKModding/RSDKv5-Decompilation) - Retro Engine v5 与 v5Ultimate，Sonic Mania 背后的引擎，自述"A complete decompilation of Retro Engine v5 and v5Ultimate"，其 README 声明自己不拥有该引擎并写出它现在的所有者。★ 566。它的 FAQ 称该团队"done with decompiling, at least for the time being"。
 - [nxengine/nxengine-evo](https://github.com/nxengine/nxengine-evo) - Cave Story 引擎，Windows，净室重写。★ 551。
 - [omf2097/openomf](https://github.com/omf2097/openomf) - Diversions Entertainment 的 One Must Fall 2097，MS-DOS 1994 → Windows、Linux、macOS 与 BSD，起因是原版 IPX 联网"is a pain to set up"的引擎重制，跑读者自备的原版游戏资源。★ 485。
+- [nanolathe-gg/nanolathe](https://github.com/nanolathe-gg/nanolathe) - Total Annihilation 引擎，Windows → Linux、Windows、macOS 与浏览器，用 Go 在 Ebitengine 上重建，格式与行为研究文档一并放在仓库里。★ 221。它的 README 自述引擎仍在 beta 阶段，NOTICE 则禁止提交原版程序代码与提取出的游戏美术。
+- [N0zoM1z0/th08](https://github.com/N0zoM1z0/th08) - 东方8 永夜抄，Windows：把日文版 1.00d 可执行文件重建为 C++，用原版 Visual C++ .NET 2002 工具链复现 "its machine code, binary interfaces, and executable layout"。★ 118。它的 README 写道，这次接续 GensokyoClub 的工作由 AI 编码代理承担逆向、比对、语义恢复、工具、文档与移植。
+- [whylurking/IsaacRecomp](https://github.com/whylurking/IsaacRecomp) - 《以撒的结合》，Windows Flash → Windows、Linux、Android 与任天堂 Switch，把 AVM1 代码静态重编译为 C++ 并跑在从零写成的引擎上，图像、音效与音乐读取玩家自备的 Steam 版 Isaac.exe。★ 47。它的 README 写道 Flash Player 8 语义取自 Ruffle 的移植，并列出工具链使用 JPEXS 反编译器。
+- [N0zoM1z0/th095](https://github.com/N0zoM1z0/th095) - 东方9.5 文花帖，Windows：把日文版 1.02a 可执行文件重建为 C++，其 exact 计数只认在钉定的 VC7.1 编译下通过零差异比对的函数。★ 25。它的 README 写道，所有已确认的原作函数都已重建出源码，重建出的 Windows i386 版本可以游玩。
 - [AlisterT/openjazz](https://github.com/AlisterT/openjazz) - Jazz Jackrabbit 引擎，MS-DOS。★ 409。
 - [stefanhendriks/Dune-II---The-Maker](https://github.com/stefanhendriks/Dune-II---The-Maker) - Westwood Studios 的 Dune 2，MS-DOS → Windows、Linux 与 macOS，基于 SDL3 的重制，仓库自带战役、地图与着色器资源，另加遭遇战、缩放与更高分辨率。★ 368。
 - [IllegalCreed/type-pal](https://github.com/IllegalCreed/type-pal) - 软星的《仙剑奇侠传》，1995，DOS 与 Windows → 浏览器，以 TypeScript 从零写成，自带 MKF 解包、脚本虚拟机、调色板渲染与可视化编辑器。★ 196。reference/ 里保留 sdlpal 的 C 源码只作参考规格；仓库自述已入库的 demo 仍含少量 PAL 派生素材，尚未完成版权清理。
@@ -201,6 +207,7 @@ PlayStation 这一节背后是四种不同的重建。`Xeeynamo/sotn-decomp` 编
 - [storytold/deckcraft](https://github.com/storytold/deckcraft) - 净室用 Rust 重写的 Microsoft PowerPoint：可打开与保存 .pptx，导出 PDF、PNG/JPEG 与整份演示的 GIF 动画。★ 3,603。仓库自己公布未完工的部分：README 称其为迈向 beta 的 alpha 版，ROADMAP.md、docs/target-app-parity.md、docs/gaps.md 与 docs/parity-checklist.md 给出分区评估。
 - [storytold/soundcraft](https://github.com/storytold/soundcraft) - 净室用 Rust 重写的 Avid Pro Tools，作多轨音频工作站，带推子自动化、MIDI 音色编辑器与 MusicXML 导出。★ 3,094。它与原版的对齐是公开量出来的：docs/target-app-parity.md 是评估，docs/parity-checklist.md 逐菜单对照。
 - [storytold/figcraft](https://github.com/storytold/figcraft) - 净室用 Rust 重写的 Figma：可进出 SVG、PNG、JPG、WebP 与 PDF，尽力打开 .fig 文件。★ 2,219。它自己划的边界很清楚：不含专有代码、文件格式、图标或图片，每个图标都由代码绘制或为本项目制作；分区进度交给 roadmap 与 docs/target-app-parity.md。
+- [AnkioTomas/qqpet](https://github.com/AnkioTomas/qqpet) - 腾讯 QQ 宠物桌面客户端，Windows → Windows、macOS、Linux、Android、HarmonyOS 与 iOS，基于 Arctic Penguin T800 版本重建，Flash 内容交由 Ruffle 播放。★ 758。它的仓库描述里注明这份复刻出自 AI。
 - [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code) - 对已发布的 npm 包做 AI 辅助反编译后重建的 Anthropic Claude Code 终端代理，复刻其 agent 循环、工具、MCP 传输与权限模式。★ 535。这个仓库同时给了两种自我描述：一处说重建依据的是 ruDevolution 对已发布 npm 包的反编译，另一处又强调是不含泄漏源码的净室实现。它自己的链接列表把剩余部分称作「通往 100% 的路径」，而反编译器是子模块（ruvnet/rudevolution），不在本仓库树内。
 - [daijro/honeydew](https://github.com/daijro/honeydew) - 净室用 Rust 重写的 FL Studio Mobile，有浏览器与 Android 构建，可打开 FL Studio Mobile 的 .flm 演示工程。★ 10。它自己写的进度：首个移植支持播放与应用内保存歌曲，麦克风录音、MIDI 设备与 Android 文件导入导出还没做好；音色与预设要从使用者自己拥有的那份应用里导入。
 - [soyrochus/mucrab](https://github.com/soyrochus/mucrab) - muCommander，一个 Java 桌面应用按观测到的行为用 Rust 重写，附测试报告。★ 1。
